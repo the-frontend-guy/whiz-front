@@ -41,10 +41,11 @@ return(
   <Layout>
     <VideoContainer/>
     <HomeAboutUs windowEl={windowInfo}/>
-    {/* <FixedSlider windowEl={windowInfo}/>
-    <CircleSlider windowEl={windowInfo} />
-    <HorizontalSlider windowEl={windowInfo}/>
-    <CanvasOverlay windowEl={windowInfo}/> */}
+    {/* <FixedSlider windowEl={windowInfo}/> */}
+    {/* <CircleSlider windowEl={windowInfo} /> */}
+    {/* <HorizontalSlider windowEl={windowInfo}/> */}
+    <CanvasOverlay windowEl={windowInfo}/>
+    <HomeContact />
   </Layout>
 )
 }

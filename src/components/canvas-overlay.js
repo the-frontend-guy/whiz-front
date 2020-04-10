@@ -42,7 +42,15 @@ const CanvasOverlay = ({ windowEl }) => {
           backgroundImage: `url('images/banner.jpg')`,
         }}
       ></div> */}
-    <HomeContact/>
+
+<div className="home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center h-screen"  style={{
+    backgroundImage: `url('images/banner.jpg')`,
+  }}>
+    <div className="wrapper  w-4/5">
+      <h2 className="section-title text-white w-4/5">we build more than just experiences <span className="text-blue-100">.</span></h2>
+      </div>
+    </div>  
+    {/* <HomeContact/> */}
 
       <animated.div className="overlay h-screen absolute top-0 left-0 w-full z-10"
       style={{opacity: scale.interpolate((z,y) => 1-(z/100))}}>
