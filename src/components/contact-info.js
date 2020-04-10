@@ -15,7 +15,7 @@ const ContactInfo = () => {
         <div className="email-address">
           <a
             href="mailto:info@whizwafture.com"
-            className="block font-display text-blue-100 text-left md:text-right text-2xl"
+            className="block font-display text-blue-100 text-left md:text-right text-xl"
           >
             info@whizwafture.com
           </a>
