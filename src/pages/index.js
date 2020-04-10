@@ -1,21 +1,52 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, {useState, useEffect} from "react"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import VideoContainer from "../components/video-container"
+import HomeAboutUs from "../components/home-about-us"
+import FixedSlider from "../components/fixed-slider"
+import HomeContact from "../components/home-contact"
+import CanvasOverlay from "../components/canvas-overlay"
+import HorizontalSlider from "../components/horizontal-slider"
+import CircleSlider from "../components/circle-slider"
 
-const IndexPage = () => (
+
+
+const IndexPage = () => {
+  const initData = {
+    scrollX : typeof window !== `undefined` ? window.scrollX : 0,
+    scrollY : typeof window !== `undefined` ? window.scrollY : 0,
+    height : typeof window !== `undefined` ? window.innerHeight : 0,
+    width : typeof window !== `undefined` ? window.innerWidth : 0
+  }
+  const [windowInfo, setWindowEvent] = useState(initData);
+
+useEffect(() => {
+  const windowEvent = () => {
+    setWindowEvent({
+      scrollX : typeof window !== `undefined` ? window.scrollX : 0,
+      scrollY : typeof window !== `undefined` ? window.scrollY : 0,
+      height : typeof window !== `undefined` ? window.innerHeight : 0,
+      width : typeof window !== `undefined` ? window.innerWidth : 0
+    })
+  }
+  window.addEventListener("scroll", windowEvent)
+  window.addEventListener("resize", windowEvent)
+  return () => {
+    window.removeEventListener("scroll", windowEvent)
+    window.removeEventListener("resize", windowEvent)
+  }
+}, [])
+
+return(
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <VideoContainer/>
+    <HomeAboutUs windowEl={windowInfo}/>
+    {/* <FixedSlider windowEl={windowInfo}/>
+    <CircleSlider windowEl={windowInfo} />
+    <HorizontalSlider windowEl={windowInfo}/>
+    <CanvasOverlay windowEl={windowInfo}/> */}
   </Layout>
 )
+}
 
 export default IndexPage

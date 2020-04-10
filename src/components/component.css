@@ -1,0 +1,369 @@
+@import "tailwindcss/base";
+
+
+@font-face {
+  font-family: "mont";
+  src: url("./../fonts/Mont-HeavyDEMO.eot") format("eot"),
+    url("./../fonts/Mont-HeavyDEMO.woff") format("woff"),
+    url("./../fonts/Mont-HeavyDEMO.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@import "tailwindcss/components";
+
+/********************** Extended Classes **********************/
+
+.list-container {
+  @apply inline-flex justify-between flex-col;
+}
+
+.list-container li {
+  min-height: 5rem;
+  @apply list-none block;
+}
+
+.heading-title {
+  @apply font-display text-3xl capitalize;
+}
+
+.sub-services-links a {
+  @apply inline-block text-gray-300 capitalize mr-3;
+}
+
+.link-button {
+  @apply font-display lowercase;
+}
+.secondary-title {
+  @apply block lowercase font-display;
+}
+
+.primary-title {
+  @apply block capitalize font-display text-4xl;
+}
+
+.list-container li > a {
+  @apply font-display text-3xl capitalize block;
+}
+
+.section-title {
+  @apply font-display text-6xl capitalize;
+}
+
+
+/********************** General Styles **********************/
+
+body {
+  overflow-x: hidden;
+}
+
+section {
+  min-height: 40rem;
+}
+
+
+/********************** Home About Us **********************/
+
+.animation-slide-text {
+  font-size: 7vw;
+}
+
+
+
+/********************** Form **********************/
+
+.w-47-p {
+  width: 47%;
+}
+
+/********************** Home Header Overlay **********************/
+
+.header-overlay {
+  margin-top: -101px;
+  min-height: 100vh;
+}
+
+
+
+/********************** Fixed & Horizontal Slider **********************/
+
+.fixed-slider .horizontal-scene,
+.horizontal-slider .horizontal-scene {
+  height: 100vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.fixed-slider .container,
+.horizontal-slider .container {
+  margin: auto;
+  position: relative;
+}
+
+.fixed-slider .slider-slides {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
+.fixed-slider .slider-paginator {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  right: 0;
+}
+
+.horizontal-slider .h-slide {
+  width: 500px;
+  padding: 2rem;
+}
+
+.h-slide figure img {
+  width: 70%;
+  margin: auto;
+}
+
+.slide-card {
+  background-color: #f6f7ff;
+  width: 600px;
+  padding: 50px 86px 50px 60px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  text-decoration: none;
+  position: relative;
+  margin-left: 50px;
+  overflow: hidden;
+}
+
+.slide-card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: black;
+  transform: translateY(100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-card.active::after {
+  transform: translateY(0);
+}
+
+.slide-card:first-child {
+  margin-left: 0;
+}
+
+.slide-card figure {
+  margin-right: 20px;
+}
+
+.slide-card figure,
+.slide-card .slide-card-body {
+  transform: translateY(110px);
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.slide-card .slide-card-body .hidden-text {
+  opacity: 0;
+}
+
+.slide-card figure img {
+  width: 45px;
+  max-width: initial;
+}
+
+.slide-card-body {
+  margin-bottom: 2rem;
+}
+
+.slide-card p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.56;
+}
+
+.slide-card strong {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.slide-card figure .icon-active {
+  display: none;
+}
+
+
+.slide-card.active figure,
+.slide-card.active .slide-card-body {
+  transform: translateY(0px);
+}
+
+.slide-card.active h3,
+.slide-card.active p {
+  color: white;
+}
+
+.slide-card.active .slide-card-body .hidden-text {
+  opacity: 1;
+}
+
+.slide-card.active figure .icon-active {
+  display: block;
+}
+.slide-card.active figure .icon-base {
+  display: none;
+}
+
+/********************** Circle Slider **********************/
+
+.translatex-25 {
+  transform: translateX(-25%);
+}
+
+.circle-slider .inner-circle {
+  border-radius: 50%;
+  transition: all 0.5s linear;
+  transition-delay: 0.25s;
+  background-color: #5564f6 !important;
+}
+
+.inner-circle img {
+  opacity: 0;
+}
+
+.inner-circle.active img {
+  opacity: 1;
+}
+
+.inner-circle.active {
+  background-color: white !important;
+  box-shadow: 0px 0px 20px 0px #5564f64d;
+  overflow: hidden;
+}
+
+.circle-slider .inner-circle:not(.active) {
+  transform: scale(0.05);
+}
+
+.circle-slider .title-block > span {
+  font-size: 13rem;
+  width: 15rem;
+  line-height: 13rem;
+}
+
+.processBlock__navSteps {
+  padding: 3px 4.16667vw 0 12px;
+  position: relative;
+}
+
+.prevNextBttn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  margin-bottom: 1.2rem;
+}
+
+.prevNextBttn__bg,
+.prevNextBttn__circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.prevNextBttn__bg {
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+  background: #000;
+  border-radius: 100%;
+}
+
+.prevNextBttn__circle {
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+}
+
+.prevNextBttn.top .prevNextBttn__arrow {
+  transform: rotate(180deg);
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+.prevNextBttn__arrow {
+  width: 50%;
+}
+.prevNextBttn__arrow path {
+  transition: fill 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: fill;
+}
+
+.prevNextBttn:hover .prevNextBttn__bg {
+  transform: scale(1);
+  transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.prevNextBttn:hover .prevNextBttn__circle {
+  opacity: 0;
+  transform: scale(1.5);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+    opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.prevNextBttn:hover .prevNextBttn__arrow path {
+  fill: #fff;
+  transition: fill 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/********************** Canvas Overlay **********************/
+
+.canvas-overlay {
+  height: 300vh;
+}
+.canvas-overlay text {
+  text-anchor: middle;
+}
+.canvas-overlay #base {
+  mask: url(#mask);
+  fill: white;
+}
+
+.canvas-overlay #alpha {
+  fill: white;
+}
+
+.text-animation-container {
+  padding-top: 3rem;
+  padding-bottom: 27rem;
+}
+
+@import "tailwindcss/utilities";
+
+/********************** Media Query 767 **********************/
+
+@media only screen and (max-width: 767px) {
+  .header-overlay {
+    margin-top: -75px;
+  }
+}
