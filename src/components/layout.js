@@ -32,14 +32,14 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
 
       <main>{children}</main>
-      <footer className="mt-16 px-4">
-        <div className="container mx-auto">
+      <footer className="mt-40 px-4">
+        <div className="mx-auto">
           <div className="footer-title">
-            <span className="capitalize font-display text-blue-100 mb-12 block text-xl">
+            <span className="capitalize font-display text-blue-100 mb-20 block text-3xl">
               looking for something else?
             </span>
           </div>
-          <div className="footer-content grid grid-cols-1 md:grid-cols-3">
+          <div className="footer-content grid grid-cols-1 md:grid-cols-3 mb-16">
             <PageList />
             <ServiceList />
             <div className="flex flex-col justify-end">

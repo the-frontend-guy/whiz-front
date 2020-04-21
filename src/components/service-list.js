@@ -5,51 +5,51 @@ import "./component.css"
 
 const ServiceList = ({ activeService }) => (
   <div>
-  <h5 className="uppercase text-gray-200 font-display mb-6">services</h5>
+  <h5 className="uppercase text-gray-200 font-display mb-12 text-3xl">services</h5>
   <ul className="list-container">
     <li>
-      <Link to="/">web</Link>
+      <Link to="/" className="md:text-4xl">web</Link>
       <div className="sub-services-links mb-6">
-      <Link to="/">ASP.NET</Link>
-      <Link to="/">React.js</Link>
-      <Link to="/">Node.js</Link>
-      <Link to="/">Php</Link>
-      <Link to="/">Angular</Link>
+      <Link to="/" className="text-xl">ASP.NET</Link>
+      <Link to="/" className="text-xl">React.js</Link>
+      <Link to="/" className="text-xl">Node.js</Link>
+      <Link to="/" className="text-xl">Php</Link>
+      <Link to="/" className="text-xl">Angular</Link>
 
       </div>
     </li>
     <li>
-      <Link to="/">mobile</Link>
+      <Link to="/"  className="md:text-4xl">mobile</Link>
       <div className="sub-services-links mb-6">
-      <Link to="/">react native</Link>
-      <Link to="/">flutter</Link>
-      <Link to="/">iOS</Link>
-      <Link to="/">android</Link>
+      <Link to="/" className="text-xl">react native</Link>
+      <Link to="/" className="text-xl">flutter</Link>
+      <Link to="/" className="text-xl">iOS</Link>
+      <Link to="/" className="text-xl">android</Link>
       </div>
     </li>
     <li>
-      <Link to="/">design</Link>
+      <Link to="/" className="md:text-4xl">design</Link>
       <div className="sub-services-links mb-6">
-      <Link to="/">UX Design</Link>
-      <Link to="/">UI Design</Link>
+      <Link to="/" className="text-xl">UX Design</Link>
+      <Link to="/" className="text-xl">UI Design</Link>
     
       </div>
     </li>
     <li>
-      <Link to="/">digital marketing</Link>
+      <Link to="/" className="md:text-4xl">digital marketing</Link>
       <div className="sub-services-links mb-6">
-      <Link to="/">seo</Link>
-      <Link to="/">smo</Link>
-      <Link to="/">ppc</Link>
+      <Link to="/" className="text-xl">seo</Link>
+      <Link to="/" className="text-xl">smo</Link>
+      <Link to="/" className="text-xl">ppc</Link>
       </div>
     </li>
     <li>
-      <Link to="/">services</Link>
+      <Link to="/" className="md:text-4xl">services</Link>
       <div className="sub-services-links mb-6">
-      <Link to="/">services</Link>
-      <Link to="/">services</Link>
-      <Link to="/">services</Link>
-      <Link to="/">services</Link>
+      <Link to="/" className="text-xl">services</Link>
+      <Link to="/" className="text-xl">services</Link>
+      <Link to="/" className="text-xl">services</Link>
+      <Link to="/" className="text-xl">services</Link>
       </div>
     </li>
   </ul>

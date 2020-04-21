@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react"
 import "./component.css"
 import { Link } from "gatsby"
 import { useSpring, animated } from "react-spring"
+import  Hands  from './hands'
 
-const HomeAboutUs = ({ windowEl }) => {
+const HomeAboutUs = ({ windowEl, data }) => {
   const slideContainerRef = React.useRef(null)
   const [sliderContainer, setSliderContainer] = useState()
 
   useEffect(() => {
     setSliderContainer(slideContainerRef.current)
-  })
+  },[])
   const [{ slide }, setSlide] = useSpring(() => ({ slide: 0 }))
   const windowHeight = windowEl.height
-  const scrolled = windowEl.scrollY
+  const scrolled = windowEl.scrollY / .7 
 
   if (sliderContainer) {
     const containerHeight =
@@ -20,10 +21,30 @@ const HomeAboutUs = ({ windowEl }) => {
         ? windowHeight
         : sliderContainer.offsetTop
     const scrollValue =
-      scrolled <= containerHeight ? scrolled - containerHeight : windowHeight
-    const percentage = (100 * scrollValue) / windowHeight
+      scrolled <= containerHeight ? scrolled - containerHeight : scrolled
+    const percentage = (10 * scrollValue) / windowHeight
+    
     setSlide({ slide: percentage })
   }
+
+  const textSliders = []
+
+  data.multitext_slider.forEach((slider, i) => {
+    textSliders.push(
+      <h2 className="heading-title  lg:text-3xl" key={slider.id}>
+        <animated.span
+          className="whitespace-no-wrap block animation-slide-text text-white tracking-tight"
+          style={{
+            transform: slide.interpolate(
+              x => `translate3d(${i % 2 === 0 ? -x : x}%,0,0)`
+            ),
+          }}
+        >
+          {slider.slider_title}
+        </animated.span>
+      </h2>
+    )
+  })
 
   return (
     <>
@@ -32,48 +53,25 @@ const HomeAboutUs = ({ windowEl }) => {
         ref={slideContainerRef}
       >
         <div className="text-animation-container bg-blue-100 self-stretch">
-          <h2 className="heading-title  lg:text-3xl">
-            <animated.span
-              className="whitespace-no-wrap block animation-slide-text text-white"
-              style={{
-                transform: slide.interpolate(x => `translate3d(${-x}%,0,0)`),
-              }}
-            >
-              Let's Sketch Your Business
-            </animated.span>
-          </h2>
-
-          <h2 className="heading-title  lg:text-3xl">
-            <animated.span
-              className="whitespace-no-wrap block animation-slide-text text-white"
-              style={{
-                transform: slide.interpolate(x => `translate3d(${x}%,0,0)`),
-              }}
-            >
-              Let's Sketch Your Business
-            </animated.span>
-          </h2>
+          {textSliders}
         </div>
         <div
           className="sqaured-content  w-auto md:w-9/12 lg:w-3/5 flex flex-col bg-white mx-4 md:mx-0"
           style={{ marginTop: `-400px` }}
         >
           <div className="image-container">
-            <img src="images/hands.jpg" alt="hand" />
+            <Hands />
           </div>
-          <div className="content-container w-full md:w-9/12 lg:w-3/5 mt-4 md:-mt-12 self-end px-4">
-            <h4 className="secondary-title text-blue-100">about whizwafture</h4>
-            <h3 className="primary-title">
-              the finest highlight about us is your business
+          <div className="content-container w-full md:w-9/12 lg:w-3/5 mt-4 md:-mt-12 self-end px-4 mr-0 lg:mr-24">
+            <h4 className="secondary-title  text-xl mb-5 text-blue-100">
+              {data.heading_title}
+            </h4>
+            <h3 className="primary-title mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">
+              {data.title}
             </h3>
-            <p className="text-gray-100">
-              WhizWafture is a complete creative IT solutions company, formed by
-              a cluster of highly skilled IT professionals, with a purpose of
-              digitizing client’s businesses through great professionalism.
-              Situated in Mumbai, we are a prudent company in Web Services ...
-            </p>
-            <Link className="link-button" to="/">
-              explore more
+            <p className="text-gray-100 tracking-wide leading-snug mb-5">{data.content}</p>
+            <Link className="link-button text-xl mb-5 hover:text-blue-100" to={data.link.url}>
+              {data.link.name}
             </Link>
           </div>
         </div>

@@ -1,39 +1,33 @@
 import React, { useState, useEffect } from "react"
 import "./component.css"
 import { useTrail, animated, useSpring } from "react-spring"
-
-const FixedSlider = ({ windowEl }) => {
-  const titleRef = React.useRef(null)
-  const subtitleRef = React.useRef(null)
-  const contentRef = React.useRef(null)
+import useMeasure from "react-use-measure"
+import { Link } from "gatsby"
+const FixedSlider = ({ windowEl, data }) => {
   const sliderRef = React.useRef(null)
   const sectionRef = React.useRef(null)
 
-  const [titleBlocks, setTitleBlock] = useState([])
-  const [sliderContainer, setSliderContainer] = useState()
   const [section, setSection] = useState()
-  const [subtitle, setSubtitle] = useState()
-  const [content, setContent] = useState()
+  const [ref, bounds] = useMeasure()
 
-  let totalSlide = 0
+  const totalSlide = data.slider_cards.length
   let currentSlide = 0
+  const isMobile = bounds.width < 767
+  const titleBlocks = data.heading_show
+  const subtitleBlocks = data.heading_hide
 
   useEffect(() => {
-    setTitleBlock(titleRef.current.children)
-    setSliderContainer(sliderRef.current)
     setSection(sectionRef)
-    setSubtitle(subtitleRef.current)
-    setContent(contentRef.current)
   }, [])
 
-  const titleHeight = titleBlocks.length ? titleBlocks[0].offsetHeight + 5 : 0
-  const subtitleHeight = subtitle ? subtitle.offsetHeight + 5 : 0
+  const titleHeight = 80
+  const subtitleHeight = 60
   const sectionHeightOffset = section
     ? section.current.offsetTop
     : windowEl.height
   const titleDelay = sectionHeightOffset + 300
   const subtitleDelay = titleDelay
-  const slideDelay = 500
+  const slideDelay = 300
 
   const titleTrail = useTrail(titleBlocks.length, {
     mass: 20,
@@ -41,16 +35,19 @@ const FixedSlider = ({ windowEl }) => {
     friction: 50,
     x: windowEl.scrollY < titleDelay ? 0 : 30,
     height: windowEl.scrollY < titleDelay ? titleHeight : 0,
-    from: { x: 40, height: 0 },
+    opacity: windowEl.scrollY < titleDelay ? 1 : 0,
+    from: { x: 40, height: 0, opacity: 0 },
+    
   })
 
-  const subtitleTrail = useTrail(1, {
+  const subtitleTrail = useTrail(subtitleBlocks.length, {
     mass: 20,
     tension: 3000,
     friction: 100,
     x: windowEl.scrollY < subtitleDelay ? 0 : 20,
     height: windowEl.scrollY > subtitleDelay ? subtitleHeight : 0,
-    from: { x: -1, height: 0 },
+    opacity: windowEl.scrollY > titleDelay ? 1 : 0,
+    from: { x: -1, height: 0, opacity: 0 },
   })
 
   const [{ moveX }, set] = useSpring(() => ({ moveX: 0 }))
@@ -60,26 +57,36 @@ const FixedSlider = ({ windowEl }) => {
     tension: 5000,
     friction: 50,
   }))
-  if (sliderContainer) {
-    const sliderWidth = sliderContainer.children[0].children[0].offsetWidth
-    totalSlide = sliderContainer.children[0].children.length
-    const sliderContainerWidth = sliderContainer.children[0].offsetWidth
 
-    let hjhj = windowEl.scrollY - sectionHeightOffset - slideDelay
-
-    if (hjhj < 0) {
-      hjhj = 0
-    } else if (hjhj > sliderWidth * (totalSlide - 1)) {
-      hjhj = sliderWidth * (totalSlide - 1)
-    }
-    currentSlide = Math.ceil(hjhj / sliderWidth) + 1
-
-    set({ moveX: hjhj })
+  function skipTo() {
+    window.scroll({
+      top: sectionHeightOffset + slideDelay + (bounds.width - windowEl.height),
+    })
   }
-  const moveSlider = moveX.interpolate(o => `translate3d(${-o}px,0,0)`)
+
+  if (bounds && !isMobile) {
+    const triggerPosition = sectionHeightOffset + slideDelay
+    const endPosition = triggerPosition + (bounds.width - windowEl.height)
+    const animationPercent = 91
+    const totalAnimationPosition = endPosition - triggerPosition
+    const divisor = totalAnimationPosition / animationPercent
+    const scrolled =
+      windowEl.scrollY > endPosition ? endPosition : windowEl.scrollY
+    const computedTranslateRange = (scrolled - triggerPosition) / divisor
+    const computedTranslate =
+      computedTranslateRange < 0 ? 0 : computedTranslateRange
+    const sildePercent = animationPercent / totalSlide
+    currentSlide =
+      Math.ceil(computedTranslate / sildePercent) <= 0
+        ? 1
+        : Math.ceil(computedTranslate / sildePercent)
+
+    set({ moveX: computedTranslate })
+  }
+  const moveSlider = moveX.interpolate(o => `translate3d(${-o}%,0,0)`)
   const slideContent = slideX.interpolate(o => `translate3d(${o}%,0,0)`)
 
-  if (section) {
+  if (section && !isMobile) {
     if (windowEl.scrollY < subtitleDelay) {
       setSlide({ slideX: 0 })
     } else {
@@ -87,242 +94,156 @@ const FixedSlider = ({ windowEl }) => {
     }
   }
 
+  if (isMobile) {
+    setSlide({ slideX: 0 })
+    set({ moveX: 0 })
+  }
+
+  const slides = []
+
+  data.slider_cards.forEach((slide, i) => {
+
+    const title = [];
+    slide.title.forEach((e,i) => {
+      title.push(
+      <span key={i} className="block leading-snug tracking-tight">{e.heading_content}</span>
+      )
+    })
+    slides.push(
+      <Link
+        key={i}
+        className={`slide-card ${
+          currentSlide - 1 === i || isMobile ? "active" : ""
+        }`}
+        to={slide.link}
+      >
+        <figure className="slide-icon">
+          <img
+            src={(process.env.API_URL || '/staging/whizwafture') + slide.inactive_icon.url}
+            className="icon-base"
+            alt=""
+          />
+          <img
+            src={(process.env.API_URL || '/staging/whizwafture') + slide.active_icon.url}
+            className="icon-active"
+            alt=""
+          />
+        </figure>
+        <span className="slide-card-body">
+          <div className="text-wrapper">
+            <h3 className="primary-title mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">
+              <span className="inline-block">
+              {title}
+              </span>
+              <span className="card-arrow inline-block w-8">
+                <img src="images/back.svg"/>
+              </span>
+            </h3>
+            <p className="tracking-wide leading-snug">
+              <strong>{slide.content_show}</strong> 
+              <span className="hidden-text">{slide.content_hide}</span>
+            </p>
+          </div>
+        </span>
+      </Link>
+    )
+  })
+
   return (
     <>
       <section
         className="min-h-screen fixed-slider"
         style={{
-          height: section ? section.current.children[0].scrollWidth + 800 : 0,
+          height: isMobile ? 'auto' : bounds.width,
         }}
         ref={sectionRef}
       >
         <div className="horizontal-scene">
-          <div className="container mx-auto">
-            <div className="slider-paginator primary-title text-blue-100">
-              {currentSlide}/{totalSlide}
+          <div className="container mx-auto p-4 md:p-8 xl:p-0">
+            <div className="slider-paginator primary-title mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl text-blue-100 md:pr-8 xl:pr-0">
+              {!isMobile ? currentSlide : ""}
+              <span className={`font-body ${isMobile ? 'hidden' : ''}`}>/</span>
+              {!isMobile ? totalSlide : ""}
+              {/* {!isMobile ? currentSlide + "/" + totalSlide : ""} */}
             </div>
-            <div className="slider-text-content inline-block w-5/12">
-              <div className="slider-title-wrapper relative">
-                <h2
-                  className="section-title inline-block opacity-0"
-                  ref={titleRef}
-                >
-                  <span className="block whitespace-no-wrap">our software</span>
-                  <span className="block whitespace-no-wrap">development</span>
-                  <span className="block whitespace-no-wrap">services</span>
-                  {/* <span>services</span> */}
-                </h2>
-                {titleBlocks && (
-                  <h2 className="section-title absolute top-0 left-0">
-                    {titleTrail.map(({ x, height, ...rest }, index) => (
+            <div className="slider-text-content block md:inline-block w-full md:w-8/12 lg:w-6/12 xl:w-5/12">
+              <div className="slider-title-wrapper relative mb-40">
+                <h2 className="section-title md:text-5xl lg:text-6xl">
+                  {titleTrail.map(({ x, height, ...rest }, index) => (
+                    <animated.span
+                      key={index}
+                      className="block overflow-hidden"
+                      style={{
+                        ...rest,
+                        transform: x.interpolate(
+                          x => `translate3d(0,${-x}px,0)`
+                        ),
+                        height: `${titleHeight}px`,
+                      }}
+                    >
                       <animated.span
-                        key={index}
+                        style={{ height }}
                         className="block overflow-hidden"
-                        style={{
-                          ...rest,
-                          transform: x.interpolate(
-                            x => `translate3d(0,${-x}px,0)`
-                          ),
-                          height: `${titleHeight}px`,
-                        }}
                       >
-                        <animated.span
-                          style={{ height }}
-                          className="block overflow-hidden"
-                        >
-                          {titleBlocks[index].innerText}
-                        </animated.span>
+                        {titleBlocks[index].heading_content}
                       </animated.span>
-                    ))}
-                  </h2>
-                )}
+                    </animated.span>
+                  ))}
+                </h2>
 
-                <h2
-                  className="section-title opacity-0 absolute top-0 left-0"
-                  ref={subtitleRef}
-                >
-                  Our Services
-                </h2>
-                {subtitle && (
-                  <h2 className="section-title absolute top-0 left-0">
-                    {subtitleTrail.map(({ x, height, ...rest }, index) => (
+                <h2 className="section-title md:text-4xl lg:text-5xl absolute top-0">
+                  {subtitleTrail.map(({ x, height, ...rest }, index) => (
+                    <animated.span
+                      key={index}
+                      className="block overflow-hidden"
+                      style={{
+                        ...rest,
+                        transform: x.interpolate(
+                          x => `translate3d(0,${x}px,0)`
+                        ),
+                        height: `${subtitleHeight}px`,
+                      }}
+                    >
                       <animated.span
-                        key={index}
+                        style={{ height }}
                         className="block overflow-hidden"
-                        style={{
-                          ...rest,
-                          transform: x.interpolate(
-                            x => `translate3d(0,${x}px,0)`
-                          ),
-                          height: `${subtitleHeight}px`,
-                        }}
                       >
-                        <animated.span
-                          style={{ height }}
-                          className="block overflow-hidden"
-                        >
-                          {subtitle.innerText}
-                        </animated.span>
+                        {subtitleBlocks[index].heading_content}
                       </animated.span>
-                    ))}
-                  </h2>
-                )}
+                    </animated.span>
+                  ))}
+                </h2>
               </div>
 
-              <div className="slider-bottom-text overflow-hidden pt-16 mt-auto">
+              <div className="slider-bottom-text overflow-hidden py-8 md:pt-32 md:pb-0 mt-auto">
                 <animated.div
                   className="bottom-content-wrapper"
                   style={{ transform: slideContent }}
                 >
-                  <h4 className="secondary-title text-blue-100">
-                    about services
+                  <h4 className="secondary-title text-xl mb-5 text-blue-100">
+                    {data.heading_title}
                   </h4>
-                  <p className="text-gray-100 pr-16 ">
-                    WhizWafture is a complete creative IT solutions company,
-                    formed by a cluster of highly skilled IT professionals, with
-                    a purpose of digitizing client’s businesses through great
-                    professionalism. Situated in Mumbai, we are a prudent
-                    company in Web Services ...
-                  </p>
+                  <p className="text-gray-100 pr-0 md:pr-16 ">{data.content}</p>
                 </animated.div>
               </div>
             </div>
-            <div className="slider-slides inline-block w-7/12" ref={sliderRef}>
+            <div
+              className="slider-slides block md:inline-block w-full md:w-4/12 lg:w-6/12 xl:w-7/12"
+              ref={sliderRef}
+            >
               <animated.div
-                className="slide-controller inline-flex"
+                className="slide-controller inline-flex flex-col md:flex-row"
                 style={{ transform: moveSlider }}
+                ref={ref}
               >
-                <a
-                  className={`slide-card ${currentSlide == 1 ? "active" : ""}`}
-                >
-                  <figure className="slide-icon">
-                    <img src="images/web.svg" className="icon-base" alt="" />
-                    <img
-                      src="images/web-hover.svg"
-                      className="icon-active"
-                      alt=""
-                    />
-                  </figure>
-                  <span className="slide-card-body">
-                    <div className="text-wrapper">
-                      <h3 className="primary-title">Web Development</h3>
-                      <p>
-                        <strong>
-                          {" "}
-                          For full-cycle product development, we assemble a team
-                          consisting of the project manager, business analyst,
-                          UI/UX designer, team lead, front and back-end
-                          developer, DevOps and QA engineer.
-                        </strong>
-                        <span className="hidden-text">
-                          In synergy with the product owner and stakeholders on
-                          the client side, we deliver relevant, efficient and
-                          cost-effective products to the market.
-                        </span>
-                      </p>
-                    </div>
-                  </span>
-                </a>
-
-                <a
-                  className={`slide-card ${currentSlide == 2 ? "active" : ""}`}
-                >
-                  <figure className="slide-icon">
-                    <img src="images/web.svg" className="icon-base" alt="" />
-                    <img
-                      src="images/web-hover.svg"
-                      className="icon-active"
-                      alt=""
-                    />
-                  </figure>
-                  <span className="slide-card-body">
-                    <div className="text-wrapper">
-                      <h3 className="primary-title">Web Development</h3>
-                      <p>
-                        <strong>
-                          For full-cycle product development, we assemble a team
-                          consisting of the project manager, business analyst,
-                          UI/UX designer, team lead, front and back-end
-                          developer, DevOps and QA engineer.
-                        </strong>
-                        <span className="hidden-text">
-                          In synergy with the product owner and stakeholders on
-                          the client side, we deliver relevant, efficient and
-                          cost-effective products to the market.
-                        </span>
-                      </p>
-                    </div>
-                  </span>
-                </a>
-
-                <a
-                  className={`slide-card ${currentSlide == 3 ? "active" : ""}`}
-                >
-                  <figure className="slide-icon">
-                    <img src="images/web.svg" className="icon-base" alt="" />
-                    <img
-                      src="images/web-hover.svg"
-                      className="icon-active"
-                      alt=""
-                    />
-                  </figure>
-                  <span className="slide-card-body">
-                    <div className="text-wrapper">
-                      <h3 className="primary-title">Web Development</h3>
-                      <p>
-                        <strong>
-                          For full-cycle product development, we assemble a team
-                          consisting of the project manager, business analyst,
-                          UI/UX designer, team lead, front and back-end
-                          developer, DevOps and QA engineer.
-                        </strong>
-                        <span className="hidden-text">
-                          In synergy with the product owner and stakeholders on
-                          the client side, we deliver relevant, efficient and
-                          cost-effective products to the market.
-                        </span>
-                      </p>
-                    </div>
-                  </span>
-                </a>
-                <a
-                  className={`slide-card ${currentSlide == 4 ? "active" : ""}`}
-                >
-                  <figure className="slide-icon">
-                    <img src="images/web.svg" className="icon-base" alt="" />
-                    <img
-                      src="images/web-hover.svg"
-                      className="icon-active"
-                      alt=""
-                    />
-                  </figure>
-                  <span className="slide-card-body">
-                    <div className="text-wrapper">
-                      <h3 className="primary-title">Web Development</h3>
-                      <p>
-                        <strong>
-                          For full-cycle product development, we assemble a team
-                          consisting of the project manager, business analyst,
-                          UI/UX designer, team lead, front and back-end
-                          developer, DevOps and QA engineer.
-                        </strong>
-                        <span className="hidden-text">
-                          In synergy with the product owner and stakeholders on
-                          the client side, we deliver relevant, efficient and
-                          cost-effective products to the market.
-                        </span>
-                      </p>
-                    </div>
-                  </span>
-                </a>
+                {slides}
               </animated.div>
-
             </div>
           </div>
+          <div className="container mx-auto text-right">
+                    <span className="text-xl underline capitalize cursor-pointer" onClick={skipTo}> {data.skip_link}</span>
+          </div>
         </div>
-        {/* <div className="container mx-auto">
-            <a>skip</a>
-        </div> */}
       </section>
     </>
   )

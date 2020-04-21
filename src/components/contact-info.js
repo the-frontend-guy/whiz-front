@@ -6,7 +6,7 @@ const ContactInfo = () => {
       <div className="contact-info-container flex flex-col">
         <div className="mobile-number">
           <a
-            className="block font-display text-blue-100 text-left md:text-right text-xl"
+            className="block font-display text-blue-100 text-left md:text-right text-3xl"
             href="tel:9967334146"
           >
             +91 9967334146
@@ -15,7 +15,7 @@ const ContactInfo = () => {
         <div className="email-address">
           <a
             href="mailto:info@whizwafture.com"
-            className="block font-display text-blue-100 text-left md:text-right text-xl"
+            className="block font-display text-blue-100 text-left md:text-right text-3xl"
           >
             info@whizwafture.com
           </a>

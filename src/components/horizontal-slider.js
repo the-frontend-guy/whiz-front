@@ -2,116 +2,99 @@ import React, { useState, useEffect } from "react"
 import "./component.css"
 import { animated, useSpring } from "react-spring"
 
-const HorizontalSlider = ({ windowEl }) => {
+const HorizontalSlider = ({ windowEl, data }) => {
   const sliderRef = React.useRef(null)
   const sectionRef = React.useRef(null)
+  const slides = []
+  const heading = []
 
   const [sliderContainer, setSliderContainer] = useState()
   const [section, setSection] = useState()
-  
 
   useEffect(() => {
     setSliderContainer(sliderRef.current)
     setSection(sectionRef.current)
-    
   }, [])
 
-  
-  const sectionHeightOffset = section
-    ? section.offsetTop
-    : windowEl.height
-
+  const sectionHeightOffset = section ? section.offsetTop : windowEl.height
 
   const [{ moveX }, set] = useSpring(() => ({ moveX: 0 }))
-  if (sliderContainer) {
+  if (sliderContainer && windowEl.width > 767) {
+    const triggerPosition = sectionHeightOffset
+    const endPosition =
+      triggerPosition +
+      (sliderContainer.children[0].offsetWidth - windowEl.height)
+    const animationPercent = 75
+    const totalAnimationPosition = endPosition - triggerPosition
+    const divisor = totalAnimationPosition / animationPercent
+    const scrolled =
+      windowEl.scrollY > endPosition ? endPosition : windowEl.scrollY
+    const computedTranslateRange = (scrolled - triggerPosition) / divisor
+    const computedTranslate =
+      computedTranslateRange < 0 ? 0 : computedTranslateRange
 
-    let hjhj = (windowEl.scrollY - (sectionHeightOffset)) - 400;
-
-    if (hjhj < 0){
-      hjhj = 0
-    } else if(hjhj >  section.children[0].scrollWidth - (windowEl.width / 1)){
-      hjhj = section.children[0].scrollWidth  - (windowEl.width / 1);
-    }
-
-    set({ moveX: hjhj })
+    set({ moveX: computedTranslate })
   }
-  const moveSlider = moveX.interpolate(o => `translate3d(${-o}px,0,0)`)
- 
+  const moveSlider = moveX.interpolate(o => `translate3d(${-o}%,0,0)`)
+  if (windowEl.width < 767) {
+    set({ moveX: 0 })
+  }
+
+  data.slider_cards.forEach(slide => {
+    slides.push(
+      <div className="h-slides-container" key={slide.id}>
+        <div className="h-slide">
+          <figure className="mb-10">
+            <img src={(process.env.API_URL || '/staging/whizwafture') + slide.slide_image.url} alt="" />
+          </figure>
+          <h4 className="text-blue-100 mb-5 primary-title leading-snug tracking-tight md:text-3xl lg:text-4xl">
+            {slide.title}
+          </h4>
+          <p className="text-gray-100 tracking-wide leading-snug">{slide.content}</p>
+        </div>
+      </div>
+    )
+  })
+
+  data.heading.forEach(title => {
+    heading.push(
+      <span key={title.id} className="block whitespace-no-wrap">
+        {title.heading_content}
+      </span>
+    )
+  })
+
   return (
     <>
       <section
         className="min-h-screen horizontal-slider"
         style={{
-          height: section ? section.children[0].scrollWidth : 0,
+          height:
+            section && windowEl.width > 767
+              ? sliderContainer.children[0].offsetWidth
+              : "auto",
         }}
         ref={sectionRef}
       >
         <div className="horizontal-scene">
           <div className="container mx-auto">
-            <div className="slider-slides inline-block w-7/12" ref={sliderRef}>
+            <div
+              className="slider-slides inline-block w-full md:w-7/12"
+              ref={sliderRef}
+            >
               <animated.div
-                className="slide-controller inline-flex items-center"
+                className="slide-controller  block md:inline-flex items-center flex-col md:flex-row"
                 style={{ transform: moveSlider }}
               >
-                <div className="slider-title-wrapper">
-                  <h2 className="section-title inline-block">
-                    <span className="block whitespace-no-wrap">Key </span>
-                    <span className="block whitespace-no-wrap">
-                      Responsibilities<span className="text-blue-100">.</span>
-                    </span>
+                <div className="slider-title-wrapper mr-16">
+                  <h2 className="section-title md:text-5xl lg:text-6xl inline-block p-4 md:p-0 mb-5 leading-snug tracking-tight">
+                    {heading}
                   </h2>
-                </div>
-                <div className="h-slides-container">
-                  <div className="h-slide">
-                    <figure>
-                    <img  src="images/whyus-01.svg" />
-                    </figure>
-                    <h4 className="text-blue-100 primary-title">Dedicated Resource</h4>
-                    <p className="mt-4">We Beleieve in providing dedicated professional resources to our clients projetcs so that it is been finished with perfection</p>
-                  </div>
+                  <p className="text-gray-100 tracking-wide leading-snug w-10/12">aksd kahgsdk asdk kagkdsg  kagsdjgaskd   asdgasd kasgdk asdkgasd </p>
                 </div>
 
-                <div className="h-slides-container">
-                  <div className="h-slide">
-                    <figure>
-                    <img  src="images/whyus-01.svg" />
-                    </figure>
-                    <h4 className="text-blue-100 primary-title">Dedicated Resource</h4>
-                    <p className="mt-4">We Beleieve in providing dedicated professional resources to our clients projetcs so that it is been finished with perfection</p>
-                  </div>
-                </div>
-
-                <div className="h-slides-container">
-                  <div className="h-slide">
-                    <figure>
-                    <img  src="images/whyus-01.svg" />
-                    </figure>
-                    <h4 className="text-blue-100 primary-title">Dedicated Resource</h4>
-                    <p className="mt-4">We Beleieve in providing dedicated professional resources to our clients projetcs so that it is been finished with perfection</p>
-                  </div>
-                </div>
-
-                <div className="h-slides-container">
-                  <div className="h-slide">
-                    <figure>
-                    <img  src="images/whyus-01.svg" />
-                    </figure>
-                    <h4 className="text-blue-100 primary-title">Dedicated Resource</h4>
-                    <p className="mt-4">We Beleieve in providing dedicated professional resources to our clients projetcs so that it is been finished with perfection</p>
-                  </div>
-                </div>
-
-                <div className="h-slides-container">
-                  <div className="h-slide">
-                    <figure>
-                    <img  src="images/whyus-01.svg" />
-                    </figure>
-                    <h4 className="text-blue-100 primary-title">Dedicated Resource</h4>
-                    <p className="mt-4">We Beleieve in providing dedicated professional resources to our clients projetcs so that it is been finished with perfection</p>
-                  </div>
-                </div>
+                {slides}
               </animated.div>
-             
             </div>
           </div>
         </div>
