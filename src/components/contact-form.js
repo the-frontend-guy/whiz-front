@@ -10,14 +10,14 @@ const ContactForm = () => {
             name="name"
             placeholder="Name"
             id="name"
-            className="appearance-none bg-transparent text-white placeholder-white w-47-p border-b p-6 capitalize mb-8 md:mb-0 outline-none"
+            className="appearance-none bg-transparent text-white placeholder-white w-47-p border-b p-6 capitalize mb-8 md:mb-0 outline-none tracking-body"
           />
           <input
             type="email"
             name="email"
             placeholder="Email"
             id="email"
-            className="appearance-none bg-transparent text-white placeholder-white w-47-p border-b p-6 capitalize mb-8 md:mb-0 outline-none"
+            className="appearance-none bg-transparent text-white placeholder-white w-47-p border-b p-6 capitalize mb-8 md:mb-0 outline-none tracking-body"
           />
         </div>
         <div className="form-control  flex-col md:flex-row  flex justify-between mb-0 md:mb-12">
@@ -26,14 +26,14 @@ const ContactForm = () => {
             name="phone"
             placeholder="Phone"
             id="phone"
-            className="appearance-none bg-transparent text-white placeholder-white w-47-p border-b p-6 capitalize mb-8 md:mb-0 outline-none"
+            className="appearance-none bg-transparent text-white placeholder-white w-47-p border-b p-6 capitalize mb-8 md:mb-0 tracking-body outline-none"
           />
           <input
             type="text"
             name="services"
             placeholder="Services"
             id="services"
-            className="appearance-none bg-transparent text-white placeholder-white w-47-p border-b p-6 capitalize mb-8 md:mb-0 outline-none"
+            className="appearance-none bg-transparent text-white placeholder-white w-47-p border-b p-6 capitalize mb-8 md:mb-0 tracking-body outline-none"
           />
         </div>
         <div className="form-control flex-col md:flex-row  flex justify-between mb-0 md:mb-20">
@@ -42,7 +42,7 @@ const ContactForm = () => {
             placeholder="Describe your project in short"
             id="message"
             rows="1"
-            className="appearance-none bg-transparent text-white placeholder-white w-full border-b p-6 capitalize mb-8 md:mb-0 outline-none"
+            className="appearance-none bg-transparent text-white tracking-body placeholder-white w-full border-b p-6 capitalize mb-8 md:mb-0 outline-none"
           />
         </div>
       </div>

@@ -5,30 +5,31 @@ import "./component.css"
 
 const PageList = ({ activePage }) => (
   <div className="flex flex-col">
-  <h5 className="uppercase text-gray-200 font-display mb-12 text-3xl ">company</h5>
+  <h5 className="uppercase text-gray-300 font-display mb-12  text-xl md:text-2xl tracking-tight">company</h5>
   <ul className="list-container">
     <StaticQuery
       query = {graphql`
       {
-        allStrapiPages(filter: {Active: {eq: true}}) {
-          edges {
-            node {
-              Order
-              Slug
-              Title
-              Name
-              Description
-              id
+        allStrapiPages(filter: {Active: {eq: true}, Slug: {ne: "home"}}) {
+          nodes {
+            Active
+            Description
+            Name
+            strapiId
+            Slug
+            Order
+            strapiParent {
+              Active
             }
           }
         }
       }
     `
       } 
-      render ={data => data.allStrapiPages.edges.sort((a,b) => a.Order - b.Order).map((page) => {
+      render ={data => data.allStrapiPages.nodes.filter(e => !e.strapiParent).sort((a,b) => a.Order - b.Order).map((page) => {
         return (
-          <li key={page.node.strapiId}>
-            <Link to={page.node.Slug} className="md:text-4xl">{page.node.Name}</Link>
+          <li key={page.strapiId} className="mb-8">
+            <Link className="text-3xl md:text-4xl xl:text-5xl hover:text-blue-100">{page.Name}</Link>
           </li>
         )
       })

@@ -62,7 +62,14 @@ const CircleSlider = ({ data }) => {
   const circleSlides = []
   const heading = []
   const toRotate = 360 / cicleCount
-  const circleDimension = isMobile ? 40 : 30
+  let circleDimension;
+  if(bounds.width < 768) {
+    circleDimension = 50
+  } else if (bounds.height > bounds.width) {
+    circleDimension = bounds.height / 40
+  } else {
+    circleDimension = bounds.width / 55
+  }
 
   function rotateUp() {
     if (currentActive === cicleCount - 1) {
@@ -107,13 +114,13 @@ const CircleSlider = ({ data }) => {
         }}
       >
         <img
-          src={(process.env.API_URL || '/staging/whizwafture') + slide.slide_image.url}
+          src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.slide_image.url}
           alt=""
           style={{
             transform:
               i === currentActive
                 ? `rotate(${Math.abs((360 / cicleCount) * (currentActive + 1)) -
-                    145}deg)`
+                    142}deg)`
                 : `none`,
           }}
         />
@@ -129,8 +136,8 @@ const CircleSlider = ({ data }) => {
         <h5 className="primary-title mb-5 md:text-3xl lg:text-4xl text-blue-100 leading-snug tracking-tight">
           {slide.heading}
         </h5>
-        <h6 className="secondary-title text-xl mb-5 leading-snug tracking-tight">{slide.sub_heading}</h6>
-        <p className="text-gray-100 w-10/12 2xl:w-8/12 tracking-wide leading-snug">{slide.content}</p>
+        {/* <h6 className="secondary-title text-xl mb-5 leading-snug tracking-tight">{slide.sub_heading}</h6> */}
+        <p className="text-gray-100 w-10/12 2xl:w-8/12 tracking-body">{slide.content}</p>
       </div>
     )
   })
@@ -145,9 +152,9 @@ const CircleSlider = ({ data }) => {
               height: dimension >= 0 ? dimension : 600,
               width: dimension >= 0 ? dimension : 600,
               transform:
-                dimension / 2 + circleDimension / 2 < bounds.width / 2
-                  ? `translateX(-50%)rotate(90deg)`
-                  : `translate(-65%)rotate(90deg)`,
+                 bounds.width > 767 && bounds.width < 1024
+                  ? `translateX(-65%)rotate(90deg)`
+                  : `translate(-50%)rotate(90deg)`,
             }}
           >
             <div
@@ -165,14 +172,14 @@ const CircleSlider = ({ data }) => {
           </div>
         </div>
 
-        <div className="w-full lg-3/6">
-          <div className="title-block flex mb-16">
+        <div className="w-auto md:m-full lg-3/6 ml-4 md:ml-0">
+          <div className="title-block flex mb-5 mt-5 md:mb-8 md:mt-0">
             <span className="section-title md:text-5xl lg:text-6xl text-blue-100 hidden xl:block">
               {currentActive < 9
                 ? 0 + (currentActive + 1).toString()
                 : (currentActive + 1).toString()}
             </span>
-            <h2 className="section-title md:text-5xl lg:text-6xl inline-block ml-0 xl:ml-24 leading-snug tracking-tight">
+            <h2 className="section-title md:text-5xl lg:text-6xl inline-block ml-0 xl:ml-20 leading-snug tracking-tight">
               {heading}
             </h2>
           </div>

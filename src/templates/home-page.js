@@ -9,6 +9,7 @@ import CanvasOverlay from "../components/canvas-overlay"
 import HorizontalSlider from "../components/horizontal-slider"
 import CircleSlider from "../components/circle-slider"
 import { graphql } from 'gatsby'
+import SEO from '../components/seo'
 
 
 const IndexPage = ({data}) => {
@@ -39,13 +40,14 @@ useEffect(() => {
 
 return(
   <Layout>
+    <SEO />
     <VideoContainer data={data.strapiHomeData.home_banner}/>
     <HomeAboutUs windowEl={windowInfo} data={data.strapiHomeData.home_about_us}  />
     <FixedSlider windowEl={windowInfo} data={data.strapiHomeData.home_fixed_slider}/>
     <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.home_circle_slider}/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.home_horizontal_slider}/>
-    <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.home_overlay}/>
-    <HomeContact data={data.strapiHomeData.home_overlay}/>
+    <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.home_overlay} />
+    <HomeContact data={data.strapiHomeData.home_form_title}/>
   </Layout>
 )
 }
@@ -128,8 +130,10 @@ query HomeData {
     }
     home_overlay {
       overlay_banner_text
-      overlay_form_title
       overlay_text
+    }
+    home_form_title {
+      heading_content
     }
   }
 }

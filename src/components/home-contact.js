@@ -9,9 +9,9 @@ const HomeContact = ({data}) => {
         <div className="wrapper self-end w-full md:w-4/5  mt-0 md:-mt-32">
           <div className="home-contact-form-container bg-blue-100 md:py-16 md:pl-16 md:pr-8 lg:py-40 lg:pl-40 lg:pr-16 flex flex-col  p-4 md:p-0">
             <span className="primary-title mb-5 leading-snug tracking-tight md:text-4xl lg:text-5xl text-white md:mb-16 lg:mb-20">
-              {data.overlay_form_title}
+              {data.heading_content}
             </span>
-            <div className="w-full lg:w-11/12 self-end">
+            <div className="w-full lg:w-11/12 self-end mr-0 md:mr-8">
               <ContactForm />
             </div>
           </div>

@@ -42,15 +42,15 @@ const HorizontalSlider = ({ windowEl, data }) => {
 
   data.slider_cards.forEach(slide => {
     slides.push(
-      <div className="h-slides-container" key={slide.id}>
+      <div className="h-slides-container mb-8 md:mb-0" key={slide.id}>
         <div className="h-slide">
           <figure className="mb-10">
-            <img src={(process.env.API_URL || '/staging/whizwafture') + slide.slide_image.url} alt="" />
+            <img src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.slide_image.url} alt="" />
           </figure>
           <h4 className="text-blue-100 mb-5 primary-title leading-snug tracking-tight md:text-3xl lg:text-4xl">
             {slide.title}
           </h4>
-          <p className="text-gray-100 tracking-wide leading-snug">{slide.content}</p>
+          <p className="text-gray-100 tracking-body">{slide.content}</p>
         </div>
       </div>
     )
@@ -83,14 +83,14 @@ const HorizontalSlider = ({ windowEl, data }) => {
               ref={sliderRef}
             >
               <animated.div
-                className="slide-controller  block md:inline-flex items-center flex-col md:flex-row"
+                className="slide-controller  block md:inline-flex items-baseline flex-col md:flex-row"
                 style={{ transform: moveSlider }}
               >
-                <div className="slider-title-wrapper mr-16">
+                <div className="slider-title-wrapper mr-0 md:mr-16 md:ml-8 lg:ml-0 ">
                   <h2 className="section-title md:text-5xl lg:text-6xl inline-block p-4 md:p-0 mb-5 leading-snug tracking-tight">
                     {heading}
                   </h2>
-                  <p className="text-gray-100 tracking-wide leading-snug w-10/12">aksd kahgsdk asdk kagkdsg  kagsdjgaskd   asdgasd kasgdk asdkgasd </p>
+                  <p className="text-gray-100 tracking-body w-10/12 p-4 hidden md:block md:p-0">aksd kahgsdk asdk kagkdsg  kagsdjgaskd   asdgasd kasgdk asdkgasd </p>
                 </div>
 
                 {slides}

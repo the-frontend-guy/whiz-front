@@ -10,23 +10,30 @@ const CanvasOverlay = ({ windowEl, data }) => {
   // if(window){
 
   // }
-  const font = windowEl.width ? new FontFaceObserver('mont') : {};
+  const font = windowEl.width ? new FontFaceObserver('brandanbold') : {};
   const sectionRef = React.useRef(null)
-  const overlayRef = React.useRef(null)
+  const textRef = React.useRef(null)
   const canvasRef = React.useRef(null)
+  const fontSize = (windowEl.width/6)
   let isFontLoaded = false;
+  const initialZoom = 1;
+  const finalZoom = 30;
+  let zoom = 20;
+  let xPos = 0;
+  let yPos = 0;
 
-  const fontSize = 187
 
   const [section, setSection] = useState()
-  const [overlay, setOverlay] = useState()
+  const [canvasText, setText] = useState()
   const [canvasOverlay, setCanvas] = useState()
-  const [{ scale }, set] = useSpring(() => ({ scale: [0, 0] }))
+  const [{ opacity }, set] = useSpring(() => ({ opacity: windowEl.width > 767 ? 0 : 1 }))
 
   useEffect(() => {
-    setSection(sectionRef.current)
-    setOverlay(overlayRef.current)
     setCanvas(canvasRef.current)
+    setSection(sectionRef.current)
+    setText(textRef.current)
+    console.log(windowEl);
+    
   }, [])
 
   if(windowEl.width){
@@ -38,22 +45,25 @@ const CanvasOverlay = ({ windowEl, data }) => {
       }
     })
   }
+
   
-  if (section) {
+  
+  if (section && windowEl.width > 767) {
     const triggerPosition = section.offsetTop
     const animationExtender = windowEl.width < 768 ? 1 : 1.5;
-    const endPosition = triggerPosition + (windowEl.height*animationExtender)
-    const animationPercent = 100
+    const endPosition = triggerPosition + (windowEl.height*2)
+    const animationPercent = finalZoom
     const totalAnimationPosition = endPosition - triggerPosition
     const divisor = totalAnimationPosition / animationPercent
     const scrolled =
       windowEl.scrollY > endPosition ? endPosition : windowEl.scrollY
     const computedScaleRange = (scrolled - triggerPosition) / divisor
-    const computedScale = computedScaleRange < 1 ? 1 : computedScaleRange
-    const overlayProps = overlay.getBBox()
-    const computedY =
-      (windowEl.height - fontSize * computedScale) / 2 - overlayProps.y
-    set({ scale: [computedScale, Math.ceil(computedY)] })
+    zoom = computedScaleRange < initialZoom ? initialZoom : computedScaleRange
+    xPos = (windowEl.width / 2 -  (canvasText.width() * zoom) / 2 )
+    yPos = windowEl.height / 2 -  (canvasText.height() * zoom) / 2 
+    
+
+    set({ opacity: zoom < (finalZoom / 4) ? 0 : zoom / finalZoom })
   }
 
   return (
@@ -63,64 +73,39 @@ const CanvasOverlay = ({ windowEl, data }) => {
           className="home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center h-screen"
           style={{
             backgroundImage: `url('images/banner.jpg')`,
+            backgroundSize: `cover`
           }}
         >
           <div className="wrapper w-auto md:w-4/5 mx-4 md:mx-0">
             <animated.h2
-              className="section-title md:text-5xl lg:text-6xl text-white w-4/5"
-              style={{ opacity: scale.interpolate((z, y) => z / 100) }}
+              className="section-title md:text-5xl lg:text-6xl xl:text-7xl leading-snug tracking-tight text-white w-full md:w-4/5"
+              style={{ opacity: opacity.interpolate((o) =>  o ) }}
             >
              {data.overlay_banner_text}
             </animated.h2>
           </div>
         </div>
 
-          <Stage width={windowEl.width} height={windowEl.height} className="overlay h-screen absolute top-0 left-0">
+          <animated.div className="absolute top-0 left-0 hidden md:block" >
+          <Stage width={windowEl.width} height={windowEl.height} className="overlay h-screen ">
             <Layer ref={canvasRef}>
-              <Text text="Whizwafture" 
+              <Text text="WHIZWAFTURE" 
+              ref={textRef}
               fill="tranparent"
-              // x={windowEl.width / 0}
-              // y={windowEl.height / 2}
-              // offset={{x: -(windowEl.width / 2), y:-(windowEl.height /2)}}
-              // fontSize = "10"
-              wrap="words"
-              align='center'
               verticalAlign= 'middle'
-              scale={{x: 50, y: 50}}
-              width={windowEl.width / 50}
-              height={windowEl.height / 50}
-              fontFamily='mont'/>
+              fontSize = {fontSize}
+              scale={{x: zoom, y: zoom}}
+              x = {xPos}
+              y = {yPos}
+              // height={windowEl.height}
+              fontFamily='brandanbold'/>
               <Rect width={windowEl.width} height={windowEl.height} fill='white' globalCompositeOperation='xor'/>
             </Layer>
           </Stage>
+          </animated.div>
 
 
-        <animated.div
-          className="overlay h-screen absolute top-0 left-0 w-full z-10 hidden"
-          style={{ opacity: scale.interpolate((z, y) => 1 - z / 100) }}
-        >
-          <svg className="w-full h-full">
-            <defs>
-              <mask id="mask" x="0" y="0" width="100%" height="100%">
-                <rect id="alpha" x="0" y="0" width="100%" height="100%" />
-                <animated.text
-                  className="overlay-text font-display origin-center"
-                  x="50%"
-                  y="50%"
-                  style={{
-                    transform: scale.interpolate(
-                      (z, y) => `matrix(${z},0,0,${z},0,${-y})`
-                    ),
-                  }}
-                  ref={overlayRef}
-                >
-                  {data.overlay_text}
-                </animated.text>
-              </mask>
-            </defs>
-            <rect id="base" x="0" y="0" width="100%" height="100%" />
-          </svg>
-        </animated.div>
+       
       </div>
     </section>
   )

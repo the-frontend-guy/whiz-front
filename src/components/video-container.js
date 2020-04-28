@@ -10,7 +10,7 @@ const VideoContainer = ({data}) => {
           backgroundImage: `url('images/banner.jpg')`,
         }}
       >
-        <h2 className="heading-title text-white w-full mt-24 leading-snug tracking-tight mx-8 sm:mx-16 lg:mx-32 lg:text-5xl xl:text-6xl  md:w-3/5 lg:w-8/12  2xl:text-7xl ">
+        <h2 className="heading-title  leading-snug tracking-tight text-white mt-24 mx-4 w-full md:w-9/12 lg:w-8/12 sm:mx-16 lg:mx-32 ">
          {data.title}
         </h2>
       </section>

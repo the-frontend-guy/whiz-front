@@ -13,12 +13,17 @@
   font-family:  "brandan";
   src: url("./../fonts/BrandonRegular.otf") format("opentype")
 }
+
+@font-face {
+  font-family:  "brandanbold";
+  src: url("./../fonts/Barbold.ttf") format("truetype")
+}
 @import "tailwindcss/components";
 
 /********************** Extended Classes **********************/
 
 .list-container {
-  @apply inline-flex justify-around flex-col h-full;
+  @apply inline-flex flex-col h-full;
 }
 
 .list-container li {
@@ -27,11 +32,15 @@
 }
 
 .heading-title {
-  @apply font-display text-4xl capitalize;
+  @apply font-display text-3xl capitalize;
 }
 
 .sub-services-links a {
-  @apply inline-block text-gray-300 capitalize mr-3;
+  @apply inline-block text-gray-200 capitalize;
+}
+
+.sub-services-links span {
+  @apply mr-3  text-gray-200;
 }
 
 .link-button {
@@ -44,22 +53,21 @@
 .link-button::before{
   content: '';
   position: absolute;
-  height: 1px;
+  height: 3px;
   background-color: #5466ff;
   left: 0;
   width: 0px;
-  top: calc(50% - 1px);
+  top: calc(50% - 3px);
   transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 }
 
 .link-button:hover{
-  transform: translateX(20px);
+  padding-left: 20px;
 }
 
 .link-button:hover::before{
   width: 15px;
-  transform: translateX(-20px);
 
 }
 .secondary-title {
@@ -82,12 +90,16 @@
 
 body {
   overflow-x: hidden;
-  font-size: 15px;
+  font-size: 16px;
   @apply font-body
 }
 
 section {
   min-height: 40rem;
+}
+
+.header-overlay .heading-title {
+  font-size: 4vw;
 }
 
 /********************** Home About Us **********************/
@@ -118,22 +130,21 @@ form textarea {
 .send-button::before{
   content: '';
   position: absolute;
-  height: 1px;
+  height: 3px;
   background-color: white;
   left: 0;
   width: 0px;
-  top: calc(50% - 1px);
+  top: calc(50% - 3px);
   transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 }
 
 .send-button:hover{
-  transform: translateX(20px);
+  padding-left: 20px;
 }
 
 .send-button:hover::before{
   width: 15px;
-  transform: translateX(-20px);
 
 }
 
@@ -188,17 +199,16 @@ form textarea {
   position: absolute;
   top: 0;
   bottom: auto;
-  right: 0;
+  right: 1rem;
 }
 
 .horizontal-slider .h-slide {
   width: 500px;
-  padding: 2rem;
+  padding: 2rem 4rem;
 }
 
 .h-slide figure img {
   width: 55%;
-  margin: auto;
 }
 
 .slide-card {
@@ -281,6 +291,10 @@ form textarea {
   transition-delay: .1s;
 }
 
+.slide-card.active p {
+  color: rgba(255,255,255,.8);
+}
+
 .slide-card.active .slide-card-body .hidden-text {
   opacity: 1;
 }
@@ -302,7 +316,7 @@ form textarea {
 .circle-slider .inner-circle {
   border-radius: 50%;
   transition: all 0.5s ease-in-out;
-  transition-delay: 0.25s;
+  /* transition-delay: 0.25s; */
   background-color: #5564f6 !important;
 }
 
@@ -315,8 +329,8 @@ form textarea {
 }
 
 .inner-circle.active {
-  background-color: white !important;
-  border: 4px solid;
+  border: 1px solid rgba(0,0,0, .2);
+  /* background-color: white!important; */
   overflow: hidden;
 }
 
@@ -338,6 +352,7 @@ form textarea {
 .prevNextBttn {
   display: flex;
   justify-content: center;
+  outline: none;
   align-items: center;
   width: 60px;
   height: 60px;
@@ -356,6 +371,7 @@ form textarea {
   position: absolute;
   width: 100%;
   height: 100%;
+  outline: none;
   top: 0;
   left: 0;
   will-change: transform;
@@ -363,6 +379,7 @@ form textarea {
 
 .prevNextBttn__bg {
   transform: scale(0);
+  outline: none;
   transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: transform;
   background: #000;
@@ -373,6 +390,8 @@ form textarea {
   transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
     opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: transform;
+  outline: none;
+
 }
 
 .prevNextBttn.top .prevNextBttn__arrow {
@@ -484,5 +503,28 @@ svg:not(:root) {
 
   .fixed-slider .slider-title-wrapper .section-title {
     opacity: 1;
+  }
+
+  .link-button{
+    padding-left: 20px;
+    color: #5466ff;
+  }
+
+  .prevNextBttn{
+    width: 45px;
+    height: 45px;
+  }
+  
+  .link-button::before{
+    width: 15px;
+  
+  }
+
+  .canvas-overlay {
+    height: 100vh;
+  }
+
+  .list-container li {
+    min-height: auto;
   }
 }

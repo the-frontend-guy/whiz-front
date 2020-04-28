@@ -14,6 +14,9 @@ module.exports = {
       margin: {
         '28':'7rem'
       },
+      letterSpacing :{
+        'body':'0.035em'
+      },
       screens:{
         '2xl': '1441px'
       },
@@ -24,9 +27,9 @@ module.exports = {
         },
         gray: {
           ...colors.gray,
-          '100': '#7f7f7f',
-          '200': '#d9d9d9',
-          '300': `#989898`
+          '100': '#585858',
+          '200': `#7f7f7f`,
+          '300': '#e8e8e8',
 
         }
       },
