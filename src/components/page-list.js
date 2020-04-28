@@ -4,8 +4,8 @@ import React from "react";
 import "./component.css"
 
 const PageList = ({ activePage }) => (
-  <div className="flex flex-col">
-  <h5 className="uppercase text-gray-300 font-display mb-12  text-xl md:text-2xl tracking-tight">company</h5>
+  <div className="flex flex-col mb-12 lg:mb-0">
+  <h5 className="uppercase text-gray-300 font-display mb-4 lg:mb-12  text-xl md:text-2xl tracking-tight">company</h5>
   <ul className="list-container">
     <StaticQuery
       query = {graphql`

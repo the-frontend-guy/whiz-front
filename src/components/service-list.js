@@ -5,7 +5,7 @@ import "./component.css"
 
 const ServiceList = ({ activeService }) => (
   <div className="flex flex-col">
-    <h5 className="uppercase text-gray-300 font-display mb-12 text-xl md:text-2xl tracking-tight">
+    <h5 className="uppercase text-gray-300 font-display mb-4 lg:mb-12 text-xl md:text-2xl tracking-tight">
       services
     </h5>
 
@@ -41,7 +41,7 @@ const ServiceList = ({ activeService }) => (
             {page.strapiChildren.sort((a,b) => a.Order - b.Order).map((iPage)=>{
               return (
                 <>
-              <Link key={iPage.id} className="text-xl">{iPage.Name}</Link>
+              <Link key={iPage.id} className="text-base">{iPage.Name}</Link>
               <span>,</span>
               </>
                )

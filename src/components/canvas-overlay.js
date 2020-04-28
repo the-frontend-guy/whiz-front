@@ -66,6 +66,10 @@ const CanvasOverlay = ({ windowEl, data }) => {
     set({ opacity: zoom < (finalZoom / 4) ? 0 : zoom / finalZoom })
   }
 
+  if(windowEl.width < 768){
+    set({opacity: 1})
+  }
+
   return (
     <section className="canvas-overlay relative" ref={sectionRef}>
       <div className="overlay-fixed sticky top-0">

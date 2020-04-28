@@ -19,12 +19,12 @@ const HorizontalSlider = ({ windowEl, data }) => {
   const sectionHeightOffset = section ? section.offsetTop : windowEl.height
 
   const [{ moveX }, set] = useSpring(() => ({ moveX: 0 }))
-  if (sliderContainer && windowEl.width > 767) {
+  if (sliderContainer) {
     const triggerPosition = sectionHeightOffset
     const endPosition =
       triggerPosition +
       (sliderContainer.children[0].offsetWidth - windowEl.height)
-    const animationPercent = 75
+    const animationPercent = windowEl.width > windowEl.height ? 75 : 90
     const totalAnimationPosition = endPosition - triggerPosition
     const divisor = totalAnimationPosition / animationPercent
     const scrolled =
@@ -36,9 +36,9 @@ const HorizontalSlider = ({ windowEl, data }) => {
     set({ moveX: computedTranslate })
   }
   const moveSlider = moveX.interpolate(o => `translate3d(${-o}%,0,0)`)
-  if (windowEl.width < 767) {
-    set({ moveX: 0 })
-  }
+  // if (windowEl.width < 767) {
+  //   set({ moveX: 0 })
+  // }
 
   data.slider_cards.forEach(slide => {
     slides.push(
@@ -69,10 +69,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
       <section
         className="min-h-screen horizontal-slider"
         style={{
-          height:
-            section && windowEl.width > 767
-              ? sliderContainer.children[0].offsetWidth
-              : "auto",
+          height: sliderContainer ? sliderContainer.children[0].offsetWidth : 0
         }}
         ref={sectionRef}
       >
@@ -83,7 +80,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
               ref={sliderRef}
             >
               <animated.div
-                className="slide-controller  block md:inline-flex items-baseline flex-col md:flex-row"
+                className="slide-controller inline-flex items-baseline flex-row"
                 style={{ transform: moveSlider }}
               >
                 <div className="slider-title-wrapper mr-0 md:mr-16 md:ml-8 lg:ml-0 ">

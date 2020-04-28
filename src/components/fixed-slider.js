@@ -230,7 +230,7 @@ const FixedSlider = ({ windowEl, data }) => {
                   className="bottom-content-wrapper"
                   style={{ transform: slideContent }}
                 >
-                  <h4 className="secondary-title text-xl mb-5 text-blue-100">
+                  <h4 className="secondary-title text-lg mb-5 text-blue-100">
                     {data.heading_title}
                   </h4>
                   <p className="text-gray-100 pr-0 md:pr-16 tracking-body">{data.content}</p>
@@ -251,7 +251,7 @@ const FixedSlider = ({ windowEl, data }) => {
             </div>
           </div>
           <div className="container mx-auto text-right">
-                    <span className={`text-xl underline capitalize cursor-pointer mr-4 inline-block ${isMobile ? 'hidden' : ''}`} onClick={skipTo}> {data.skip_link}</span>
+                    <span className={`text-xl underline capitalize cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block ${isMobile ? 'hidden' : ''}`} onClick={skipTo}> {data.skip_link}</span>
           </div>
         </div>
       </section>

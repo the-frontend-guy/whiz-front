@@ -62,8 +62,8 @@ const HomeAboutUs = ({ windowEl, data }) => {
           <div className="image-container">
             <Hands windowEl={windowEl} />
           </div>
-          <div className="content-container w-full md:w-9/12 lg:w-3/5 mt-5 md:-mt-12 self-end px-4 mr-0 lg:mr-24">
-            <h4 className="secondary-title  text-xl mb-5 text-blue-100">
+          <div className="content-container w-full md:w-9/12 lg:w-3/5 mt-5 md:mt-0 lg:-mt-12 self-end px-4 mr-0 lg:mr-24">
+            <h4 className="secondary-title  text-lg mb-5 text-blue-100">
               {data.heading_title}
             </h4>
             <h3 className="primary-title mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">

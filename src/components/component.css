@@ -31,6 +31,11 @@
   @apply list-none block;
 }
 
+.list-container > li:last-child {
+  margin-bottom: 0 ;
+  min-height: auto;
+}
+
 .heading-title {
   @apply font-display text-3xl capitalize;
 }
@@ -75,7 +80,7 @@
 }
 
 .primary-title {
-  @apply block capitalize font-display text-2xl;
+  @apply block capitalize font-display text-3xl;
 }
 
 .list-container li > a {
@@ -330,7 +335,7 @@ form textarea {
 
 .inner-circle.active {
   border: 1px solid rgba(0,0,0, .2);
-  /* background-color: white!important; */
+  background-color: #f6f7ff!important;
   overflow: hidden;
 }
 
@@ -469,6 +474,9 @@ svg:not(:root) {
   .header-overlay {
     margin-top: -75px;
   }
+  .header-overlay .heading-title{
+    font-size: 8vw;
+  }
   .canvas-overlay {
     height: 200vh;
   }
@@ -490,11 +498,11 @@ svg:not(:root) {
     margin-right: 0;
   }
   .slide-card figure img{
-    width: 18vw;
+    width: 15vw;
   }
   .horizontal-slider .h-slide{
-    width: auto;
-    padding: 1rem;
+    width: 400px;
+    padding: 2rem;
   }
 
   .horizontal-scene .container{
@@ -508,6 +516,11 @@ svg:not(:root) {
   .link-button{
     padding-left: 20px;
     color: #5466ff;
+  }
+
+  .card-arrow{
+    opacity: 1;
+    transform: translate(0px, 0px)rotate(135deg);
   }
 
   .prevNextBttn{
@@ -526,5 +539,14 @@ svg:not(:root) {
 
   .list-container li {
     min-height: auto;
+  }
+
+  .send-button{
+    padding-left: 20px;
+  }
+  
+  .send-button::before{
+    width: 15px;
+  
   }
 }

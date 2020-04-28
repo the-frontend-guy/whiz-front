@@ -7,7 +7,7 @@ const CircleSlider = ({ data }) => {
   const [currentActive, setActive] = useState(0)
   const [ref, bounds] = useMeasure()
 
-  const isMobile = bounds.width < 767
+
 
 
   const circlePositions = {
@@ -64,9 +64,9 @@ const CircleSlider = ({ data }) => {
   const toRotate = 360 / cicleCount
   let circleDimension;
   if(bounds.width < 768) {
-    circleDimension = 50
+    circleDimension = 70
   } else if (bounds.height > bounds.width) {
-    circleDimension = bounds.height / 40
+    circleDimension = bounds.height / 20
   } else {
     circleDimension = bounds.width / 55
   }
@@ -144,8 +144,8 @@ const CircleSlider = ({ data }) => {
 
   return (
     <>
-      <section className="min-h-screen circle-slider flex items-center flex-col md:flex-row" ref={ref}>
-        <div className="w-auto md:w-3/6">
+      <section className="min-h-screen circle-slider flex items-center flex-col lg:flex-row" ref={ref}>
+        <div className="w-auto lg:w-3/6">
           <div
             className="transform rotate-90 relative"
             style={{
@@ -172,7 +172,7 @@ const CircleSlider = ({ data }) => {
           </div>
         </div>
 
-        <div className="w-auto md:m-full lg-3/6 ml-4 md:ml-0">
+        <div className="w-auto md:m-full lg-3/6 ml-4 lg:ml-0">
           <div className="title-block flex mb-5 mt-5 md:mb-8 md:mt-0">
             <span className="section-title md:text-5xl lg:text-6xl text-blue-100 hidden xl:block">
               {currentActive < 9
