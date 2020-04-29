@@ -10,6 +10,7 @@ const path = require(`path`)
 exports.createPages = async({graphql, actions}) => {
   const { createPage } = actions
   const homeTemplate = path.resolve(`src/templates/home-page.js`)
+  const serviceTemplate = path.resolve(`src/templates/service-detail-page.js`)
   const result = await graphql(`
       {
         allStrapiPages(filter: {Active: {eq: true}}) {
@@ -24,7 +25,7 @@ exports.createPages = async({graphql, actions}) => {
 result.data.allStrapiPages.nodes.forEach(node => {
   createPage({
     path: `/${node.Slug === 'home' ? '' : node.Slug}`,
-    component: homeTemplate
+    component: node.Slug === 'home' ?  homeTemplate : serviceTemplate
   })
 })
 }

@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
- <header className="p-4 md:p-5">
+ <header className="p-4 md:p-5 bg-black">
    <div className="container flex justify-between items-center">
    <div className="logo-container">
     <Link className="inline-block w-32 md:w-48" to="/">
