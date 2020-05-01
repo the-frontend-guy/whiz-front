@@ -12,4 +12,4 @@ const Hero = ({ data }) => (
 )
 
 
-export default Navigation
+export default Hero

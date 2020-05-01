@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import Layout from "../components/layout"
 
 import Navigation from '../components/navigation'
+import Hero from '../components/hero'
 
 const ServiceDetailPage = ({data}) => {
 
@@ -37,6 +38,7 @@ return(
   <Layout>
     <SEO />
       <Navigation/>
+      <Hero />
   </Layout>
 )
 

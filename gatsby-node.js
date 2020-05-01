@@ -17,6 +17,7 @@ exports.createPages = async({graphql, actions}) => {
       nodes {
         name
         slug
+        strapiId
       }
     }
   }
@@ -25,7 +26,10 @@ exports.createPages = async({graphql, actions}) => {
 result.data.allStrapiPage.nodes.forEach(node => {
   createPage({
     path: `/${node.slug === 'home' ? '' : node.slug}`,
-    component: node.slug === 'home' ?  homeTemplate : serviceTemplate
+    component: node.slug === 'home' ?  homeTemplate : serviceTemplate,
+    context: {
+      pageId : node.strapiId
+    }
   })
 })
 }
