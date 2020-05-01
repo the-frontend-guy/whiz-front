@@ -41,13 +41,13 @@ useEffect(() => {
 return(
   <Layout>
     <SEO />
-    <VideoContainer data={data.strapiHomeData.home_banner}/>
-    <HomeAboutUs windowEl={windowInfo} data={data.strapiHomeData.home_about_us}  />
-    <FixedSlider windowEl={windowInfo} data={data.strapiHomeData.home_fixed_slider}/>
-    <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.home_circle_slider}/>
-    <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.home_horizontal_slider}/>
-    <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.home_overlay} />
-    <HomeContact data={data.strapiHomeData.home_form_title}/>
+    <VideoContainer data={data.strapiHomeData.banner}/>
+    <HomeAboutUs windowEl={windowInfo} data={data.strapiHomeData.about_us}  />
+    <FixedSlider windowEl={windowInfo} data={data.strapiHomeData.fixed_slider}/>
+    <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.circle_slider}/>
+    <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.horizontal_slider}/>
+    <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.overlay} />
+    <HomeContact data={data.strapiHomeData.form_content}/>
   </Layout>
 )
 }
@@ -55,51 +55,53 @@ return(
 export const query = graphql`
 query HomeData {
   strapiHomeData {
-    home_banner {
-      id
-      title
-    }
-    home_about_us {
+    about_us {
       content
       heading_title
-      title
       link {
-        url
         name
+        url
       }
       multitext_slider {
         slider_title
         id
       }
+      title
     }
-    home_circle_slider {
-      circle_slider_heading {
-        heading_content
+    banner {
+      heading
+    }
+    circle_slider {
+      heading {
+        title
         id
       }
-      circle_slides {
-        id
-        heading
+      slides {
         content
+        heading
+        order
         sub_heading
-        slide_image {
+        id
+        image {
           url
         }
       }
+      theme
     }
-    home_fixed_slider {
-      content
-      heading_title
-      skip_link
+    fixed_slider {
       heading_hide {
-        heading_content
+        title
         id
       }
       heading_show {
-        heading_content
         id
+        title
       }
-      slider_cards {
+      content
+      heading_title
+      skip_link
+      theme
+      slides {
         content_hide
         content_show
         id
@@ -110,30 +112,39 @@ query HomeData {
           url
         }
         link
+        order
         title {
-          heading_content
+          title
+          id
         }
       }
     }
-    home_horizontal_slider {
+    form_content {
+      title
+    }
+    horizontal_slider {
       heading {
-        heading_content
+        title
         id
       }
-      slider_cards {
+      slides {
         content
-        slide_image {
+        id
+        order
+        title
+        image {
           url
         }
+      }
+      theme
+      sub_heading {
         title
+        id
       }
     }
-    home_overlay {
-      overlay_banner_text
+    overlay {
+      banner_text
       overlay_text
-    }
-    home_form_title {
-      heading_content
     }
   }
 }

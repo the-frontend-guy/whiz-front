@@ -9,27 +9,25 @@ const PageList = ({ activePage }) => (
   <ul className="list-container">
     <StaticQuery
       query = {graphql`
-      {
-        allStrapiPages(filter: {Active: {eq: true}, Slug: {ne: "home"}}) {
+      query PageList{
+        allStrapiPage(filter: {active: {eq: true}, slug: {ne: "home"}}) {
           nodes {
-            Active
-            Description
-            Name
+            name
+            slug
             strapiId
-            Slug
-            Order
+            order
             strapiParent {
-              Active
+              active
             }
           }
         }
       }
     `
       } 
-      render ={data => data.allStrapiPages.nodes.filter(e => !e.strapiParent).sort((a,b) => a.Order - b.Order).map((page) => {
+      render ={data => data.allStrapiPage.nodes.filter(e => !e.strapiParent).sort((a,b) => a.order - b.order).map((page) => {
         return (
           <li key={page.strapiId} className="mb-8">
-            <Link className="text-3xl md:text-4xl xl:text-5xl hover:text-blue-100">{page.Name}</Link>
+            <Link className="text-3xl md:text-4xl xl:text-5xl hover:text-blue-100">{page.name}</Link>
           </li>
         )
       })

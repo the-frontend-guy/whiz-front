@@ -85,7 +85,7 @@ const CanvasOverlay = ({ windowEl, data }) => {
               className="section-title md:text-5xl lg:text-6xl xl:text-7xl leading-snug tracking-tight text-white w-full md:w-4/5"
               style={{ opacity: opacity.interpolate((o) =>  o ) }}
             >
-             {data.overlay_banner_text}
+             {data.banner_text}
             </animated.h2>
           </div>
         </div>
@@ -93,7 +93,7 @@ const CanvasOverlay = ({ windowEl, data }) => {
           <animated.div className="absolute top-0 left-0 hidden md:block" >
           <Stage width={windowEl.width} height={windowEl.height} className="overlay h-screen ">
             <Layer ref={canvasRef}>
-              <Text text="WHIZWAFTURE" 
+              <Text text={data.overlay_text} 
               ref={textRef}
               fill="tranparent"
               verticalAlign= 'middle'
@@ -101,7 +101,6 @@ const CanvasOverlay = ({ windowEl, data }) => {
               scale={{x: zoom, y: zoom}}
               x = {xPos}
               y = {yPos}
-              // height={windowEl.height}
               fontFamily='brandanbold'/>
               <Rect width={windowEl.width} height={windowEl.height} fill='white' globalCompositeOperation='xor'/>
             </Layer>

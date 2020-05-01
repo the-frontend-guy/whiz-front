@@ -12,20 +12,20 @@ exports.createPages = async({graphql, actions}) => {
   const homeTemplate = path.resolve(`src/templates/home-page.js`)
   const serviceTemplate = path.resolve(`src/templates/service-detail-page.js`)
   const result = await graphql(`
-      {
-        allStrapiPages(filter: {Active: {eq: true}}) {
-          nodes {
-            Name
-            Slug
-          }
-        }
+  query AllactivePages {
+    allStrapiPage(filter: {active: {eq: true}}) {
+      nodes {
+        name
+        slug
       }
-  `)
-  console.log(result.data.allStrapiPages.nodes);
-result.data.allStrapiPages.nodes.forEach(node => {
+    }
+  }
+  `
+  )
+result.data.allStrapiPage.nodes.forEach(node => {
   createPage({
-    path: `/${node.Slug === 'home' ? '' : node.Slug}`,
-    component: node.Slug === 'home' ?  homeTemplate : serviceTemplate
+    path: `/${node.slug === 'home' ? '' : node.slug}`,
+    component: node.slug === 'home' ?  homeTemplate : serviceTemplate
   })
 })
 }

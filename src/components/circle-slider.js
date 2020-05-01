@@ -57,7 +57,7 @@ const CircleSlider = ({ data }) => {
       ? bounds.width - 10
       : bounds.height - 10
 
-  const cicleCount = data.circle_slides.length
+  const cicleCount = data.slides.length
   const circles = []
   const circleSlides = []
   const heading = []
@@ -90,15 +90,15 @@ const CircleSlider = ({ data }) => {
     setRotation(rotateDeg + toRotate)
   }
 
-  data.circle_slider_heading.forEach(title => {
+  data.heading.forEach(title => {
     heading.push(
       <span key={title.id} className="block whitespace-no-wrap">
-        {title.heading_content}
+        {title.title}
       </span>
     )
   })
 
-  data.circle_slides.forEach((slide, i, circleArr) => {
+  data.slides.forEach((slide, i, circleArr) => {
     let position = circlePositions[circleArr.length][i]
 
     circles.push(
@@ -114,7 +114,7 @@ const CircleSlider = ({ data }) => {
         }}
       >
         <img
-          src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.slide_image.url}
+          src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.image.url}
           alt=""
           style={{
             transform:

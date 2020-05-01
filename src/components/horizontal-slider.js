@@ -40,12 +40,12 @@ const HorizontalSlider = ({ windowEl, data }) => {
   //   set({ moveX: 0 })
   // }
 
-  data.slider_cards.forEach(slide => {
+  data.slides.forEach(slide => {
     slides.push(
       <div className="h-slides-container mb-8 md:mb-0" key={slide.id}>
         <div className="h-slide">
           <figure className="mb-10">
-            <img src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.slide_image.url} alt="" />
+            <img src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.image.url} alt="" />
           </figure>
           <h4 className="text-blue-100 mb-5 primary-title leading-snug tracking-tight md:text-3xl lg:text-4xl">
             {slide.title}
@@ -59,7 +59,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
   data.heading.forEach(title => {
     heading.push(
       <span key={title.id} className="block whitespace-no-wrap">
-        {title.heading_content}
+        {title.title}
       </span>
     )
   })

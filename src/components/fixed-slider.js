@@ -10,7 +10,7 @@ const FixedSlider = ({ windowEl, data }) => {
   const [section, setSection] = useState()
   const [ref, bounds] = useMeasure()
 
-  const totalSlide = data.slider_cards.length
+  const totalSlide = data.slides.length
   let currentSlide = 0
   const isMobile = bounds.width < 767
   const titleBlocks = data.heading_show
@@ -101,12 +101,12 @@ const FixedSlider = ({ windowEl, data }) => {
 
   const slides = []
 
-  data.slider_cards.forEach((slide, i) => {
+  data.slides.forEach((slide, i) => {
 
     const title = [];
     slide.title.forEach((e,i) => {
       title.push(
-      <span key={i} className="block leading-snug tracking-tight">{e.heading_content}</span>
+      <span key={i} className="block leading-snug tracking-tight">{e.title}</span>
       )
     })
     slides.push(
@@ -188,14 +188,14 @@ const FixedSlider = ({ windowEl, data }) => {
                         style={{ height }}
                         className="block overflow-hidden"
                       >
-                        {titleBlocks[index].heading_content}
+                        {titleBlocks[index].title}
                       </animated.span>
                     </animated.span>
 
                   ))}
 
                   {isMobile && <span>
-                    {titleBlocks.map(e => e.heading_content).join(' ')}
+                    {titleBlocks.map(e => e.title).join(' ')}
                     </span>
                   }
                   
@@ -218,7 +218,7 @@ const FixedSlider = ({ windowEl, data }) => {
                         style={{ height }}
                         className="block overflow-hidden"
                       >
-                        {subtitleBlocks[index].heading_content}
+                        {subtitleBlocks[index].title}
                       </animated.span>
                     </animated.span>
                   ))}

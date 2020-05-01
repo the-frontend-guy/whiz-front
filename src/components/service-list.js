@@ -12,36 +12,35 @@ const ServiceList = ({ activeService }) => (
     <ul className="list-container">
     <StaticQuery
       query = {graphql`
-      {
-        allStrapiPages(filter: {Active: {eq: true}, strapiId: {eq: 7}, strapiChildren: {elemMatch: {Active: {eq: true}}}}) {
+      query ServiceList{
+      
+        allStrapiPage(filter: {active: {eq: true}, slug: {ne: "home"}, strapiId: {eq: 3}, strapiChildren: {elemMatch: {active: {eq: true}}}}) {
           nodes {
-            Name
+            name
+            slug
             strapiId
-            Slug
-            Order
             strapiChildren {
-              Name
-              Description
-              Order
-              Slug
-              Title
+              active
               id
+              name
+              order
+              slug
+              title
             }
-            Title
           }
         }
       }
     `
       } 
-      render ={data => data.allStrapiPages.nodes.sort((a,b) => a.Order - b.Order).map((page) => {
+      render ={data => data.allStrapiPage.nodes.sort((a,b) => a.order - b.order).map((page) => {
         return (
           <li key={page.strapiId} className="mb-4">
             <Link  className=" text-2xl md:text-3xl xl:text-3xl hover:text-blue-100">{page.Name}</Link>
             <div className="sub-services-links mb-6">
-            {page.strapiChildren.sort((a,b) => a.Order - b.Order).map((iPage)=>{
+            {page.strapiChildren.sort((a,b) => a.order - b.order).map((iPage)=>{
               return (
                 <>
-              <Link key={iPage.id} className="text-base">{iPage.Name}</Link>
+              <Link key={iPage.id} className="text-base">{iPage.name}</Link>
               <span>,</span>
               </>
                )
@@ -55,76 +54,7 @@ const ServiceList = ({ activeService }) => (
       }
     />
 
-      {/* <li className="mb-4">
-        <Link to="/" className=" text-2xl md:text-3xl xl:text-3xl hover:text-blue-100">
-          web
-        </Link>
-        <div className="sub-services-links mb-6">
-          <Link to="/" className="text-xl">
-            ASP.NET
-          </Link>
-          <Link to="/" className="text-xl">
-            React.js
-          </Link>
-          <Link to="/" className="text-xl">
-            Node.js
-          </Link>
-          <Link to="/" className="text-xl">
-            Php
-          </Link>
-          <Link to="/" className="text-xl">
-            Angular
-          </Link>
-        </div>
-      </li>
-      <li className="mb-4">
-        <Link to="/" className="text-2xl md:text-3xl xl:text-3xl hover:text-blue-100">
-          mobile
-        </Link>
-        <div className="sub-services-links mb-6">
-          <Link to="/" className="text-xl">
-            react native
-          </Link>
-          <Link to="/" className="text-xl">
-            flutter
-          </Link>
-          <Link to="/" className="text-xl">
-            iOS
-          </Link>
-          <Link to="/" className="text-xl">
-            android
-          </Link>
-        </div>
-      </li>
-      <li className="mb-4">
-        <Link to="/" className="md:text-3xl text-2xl  xl:text-3xl hover:text-blue-100">
-          design
-        </Link>
-        <div className="sub-services-links mb-6">
-          <Link to="/" className="text-xl">
-            UX Design
-          </Link>
-          <Link to="/" className="text-xl">
-            UI Design
-          </Link>
-        </div>
-      </li>
-      <li className="mb-4">
-        <Link to="/" className="md:text-3xl text-2xl  xl:text-3xl hover:text-blue-100">
-          digital marketing
-        </Link>
-        <div className="sub-services-links mb-6">
-          <Link to="/" className="text-xl">
-            seo
-          </Link>
-          <Link to="/" className="text-xl">
-            smo
-          </Link>
-          <Link to="/" className="text-xl">
-            ppc
-          </Link>
-        </div>
-      </li> */}
+      
       
     </ul>
   </div>
