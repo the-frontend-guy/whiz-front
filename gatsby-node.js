@@ -21,17 +21,20 @@ exports.createPages = async({graphql, actions}) => {
         slug
         strapiId
         order
+        title
         strapiParent {
           id
           name
           slug
           order
+          title
         }
         strapiChildren {
           name
           order
           id
           slug
+          title
         }
       }
     }
@@ -48,6 +51,7 @@ exports.createPages = async({graphql, actions}) => {
       component: node.strapiChildren.length ? serviceTemplate : innerTemplate,
       context: {
         pageId: node.strapiId,
+        pageInfo:  node,
         parentId: node.strapiParent ? node.strapiParent.id : null
       }
     })

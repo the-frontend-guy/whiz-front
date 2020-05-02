@@ -40,7 +40,7 @@ useEffect(() => {
 
 return(
   <Layout>
-    <SEO />
+    <SEO title={pageContext.pageInfo.title}/>
       <Navigation data={data.allStrapiPage.nodes} active={pageContext.pageId} windowEl={windowInfo}/>
       <Hero data={data.strapiServiceDetails.banner}/>
     <FixedSlider windowEl={windowInfo} data={data.strapiServiceDetails.fixed_slider}/>
