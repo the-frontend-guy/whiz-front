@@ -136,7 +136,7 @@ const FixedSlider = ({ windowEl, data }) => {
               {title}
               </span>
               <span className="card-arrow inline-block w-8">
-                <img src="images/back.svg"/>
+                <img src="images/back.svg" alt=""/>
               </span>
             </h3>
             <p className="tracking-body mb-5 pb-5 md:mb-0 md:pb-0">
@@ -251,7 +251,7 @@ const FixedSlider = ({ windowEl, data }) => {
             </div>
           </div>
           <div className="container mx-auto text-right">
-                    <span className={`text-xl underline capitalize cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block ${isMobile ? 'hidden' : ''}`} onClick={skipTo}> {data.skip_link}</span>
+                    <span className={`text-xl underline capitalize cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block ${isMobile ? 'hidden' : ''}`} onClick={skipTo} onKeyDown={skipTo} role="button" tabIndex={0}> {data.skip_link}</span>
           </div>
         </div>
       </section>
