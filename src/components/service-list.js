@@ -1,6 +1,6 @@
 import { Link, StaticQuery, graphql } from "gatsby"
 import { PropTypes } from "prop-types"
-import React from "react"
+import React, { Fragment } from "react"
 import "./component.css"
 
 const ServiceList = ({ activeService }) => (
@@ -40,14 +40,14 @@ const ServiceList = ({ activeService }) => (
       render ={data => data.allStrapiPage.nodes.sort((a,b) => a.order - b.order).map((page, i) => {
         return (
           <li key={i} className="mb-4">
-            <Link  className=" text-2xl md:text-3xl xl:text-3xl hover:text-blue-100">{page.name}</Link>
+            <Link  className=" text-2xl md:text-3xl xl:text-3xl hover:text-blue-100" to={`/${page.slug}`}>{page.name}</Link>
             <div className="sub-services-links mb-6">
             {page.strapiChildren.sort((a,b) => a.order - b.order).map((iPage)=>{
               return (
-                <>
-              <Link key={iPage.id} className="text-base">{iPage.name}</Link>
-              <span key={iPage.id}>,</span>
-              </>
+                <Fragment key={iPage.id}>
+              <Link  className="text-base" to={`/${iPage.slug}`}>{iPage.name}</Link>
+              <span>,</span>
+              </Fragment>
                )
             })}
           </div>

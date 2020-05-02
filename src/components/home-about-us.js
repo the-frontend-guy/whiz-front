@@ -70,7 +70,7 @@ const HomeAboutUs = ({ windowEl, data }) => {
               {data.title}
             </h3>
             <p className="text-gray-100 tracking-body mb-5">{data.content}</p>
-            <Link className="link-button text-xl mb-5 hover:text-blue-100" to={data.link.url}>
+            <Link className="link-button text-xl mb-5 hover:text-blue-100" to={`/${data.link.url}`}>
               {data.link.name}
             </Link>
           </div>

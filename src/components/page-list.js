@@ -27,7 +27,7 @@ const PageList = ({ activePage }) => (
       render ={data => data.allStrapiPage.nodes.filter(e => !e.strapiParent).sort((a,b) => a.order - b.order).map((page) => {
         return (
           <li key={page.strapiId} className="mb-8">
-            <Link className="text-3xl md:text-4xl xl:text-5xl hover:text-blue-100">{page.name}</Link>
+            <Link className="text-3xl md:text-4xl xl:text-5xl hover:text-blue-100" to={`/${page.slug}`}>{page.name}</Link>
           </li>
         )
       })

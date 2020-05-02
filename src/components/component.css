@@ -37,11 +37,11 @@
 }
 
 .heading-title {
-  @apply font-display text-3xl capitalize;
+  @apply font-display text-3xl;
 }
 
 .sub-services-links a {
-  @apply inline-block text-gray-200 capitalize;
+  @apply inline-block text-gray-200;
 }
 
 .sub-services-links span {
@@ -76,19 +76,19 @@
 
 }
 .secondary-title {
-  @apply block lowercase font-display;
+  @apply block font-display;
 }
 
 .primary-title {
-  @apply block capitalize font-display text-3xl;
+  @apply block font-display text-3xl;
 }
 
 .list-container li > a {
-  @apply font-display capitalize block;
+  @apply font-display block;
 }
 
 .section-title {
-  @apply font-display text-4xl capitalize;
+  @apply font-display text-4xl;
 }
 
 /********************** General Styles **********************/
