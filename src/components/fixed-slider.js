@@ -112,6 +112,7 @@ const FixedSlider = ({ windowEl, data }) => {
     slides.push(
       <Link
         key={i}
+        to={`/${slide.link}`}
         className={`slide-card ${
           currentSlide - 1 === i || isMobile ? "active" : ""
         }`}
