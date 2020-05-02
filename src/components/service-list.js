@@ -14,34 +14,39 @@ const ServiceList = ({ activeService }) => (
       query = {graphql`
       query ServiceList{
       
-        allStrapiPage(filter: {active: {eq: true}, slug: {ne: "home"}, strapiId: {eq: 3}, strapiChildren: {elemMatch: {active: {eq: true}}}}) {
+        allStrapiPage(filter: {active: {eq: true}}) {
           nodes {
             name
             slug
             strapiId
-            strapiChildren {
-              active
+            order
+            strapiParent {
               id
               name
-              order
               slug
-              title
+              order
+            }
+            strapiChildren {
+              name
+              order
+              id
+              slug
             }
           }
         }
       }
     `
       } 
-      render ={data => data.allStrapiPage.nodes.sort((a,b) => a.order - b.order).map((page) => {
+      render ={data => data.allStrapiPage.nodes.sort((a,b) => a.order - b.order).map((page, i) => {
         return (
-          <li key={page.strapiId} className="mb-4">
+          <li key={i} className="mb-4">
             <Link  className=" text-2xl md:text-3xl xl:text-3xl hover:text-blue-100">{page.name}</Link>
             <div className="sub-services-links mb-6">
             {page.strapiChildren.sort((a,b) => a.order - b.order).map((iPage)=>{
               return (
                 <>
               <Link key={iPage.id} className="text-base">{iPage.name}</Link>
-              <span>,</span>
+              <span key={iPage.id}>,</span>
               </>
                )
             })}

@@ -156,7 +156,7 @@ const FixedSlider = ({ windowEl, data }) => {
   return (
     <>
       <section
-        className="min-h-screen fixed-slider"
+        className={`min-h-screen fixed-slider ${data.theme === 'dark' ? 'dark' : ''}`}
         style={{
           height: isMobile ? 'auto' : bounds.width,
         }}

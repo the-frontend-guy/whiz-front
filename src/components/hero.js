@@ -2,12 +2,16 @@ import React from "react"
 
 const Hero = ({ data }) => (
  <section className="bg-black hero">
-   <h1>
-     web development
+   <div className="content-container py-24 px-4 w-full md:w-9/12 lg:w-8/12 sm:px-16 lg:px-32">
+
+   <h1 className="section-title text-white md:text-4xl lg:text-5xl leading-snug tracking-tight mb-8">
+     {data.heading}
    </h1>
-   <p>
-   WhizWafture is a complete creative IT solutions company, formed by a cluster of highly skilled IT professionals, with the purpose of digitizing client’s businesses through great professionalism. Situated in Mumbai, we are a prudent company in Web Services
+   <p className="text-white tracking-body mb-5">
+     {data.content}
    </p>
+   </div>
+
  </section>
 )
 

@@ -12,7 +12,7 @@ import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 
 
-const IndexPage = ({data}) => {
+const IndexPage = ({data, pageContext}) => {
   const initData = {
     scrollX : typeof window !== `undefined` ? window.scrollX : 0,
     scrollY : typeof window !== `undefined` ? window.scrollY : 0,
@@ -40,7 +40,7 @@ useEffect(() => {
 
 return(
   <Layout>
-    <SEO />
+    <SEO title="home"/>
     <VideoContainer data={data.strapiHomeData.banner}/>
     <HomeAboutUs windowEl={windowInfo} data={data.strapiHomeData.about_us}  />
     <FixedSlider windowEl={windowInfo} data={data.strapiHomeData.fixed_slider}/>

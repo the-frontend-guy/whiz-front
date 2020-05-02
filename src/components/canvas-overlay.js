@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react"
-// if(document){
-  import * as FontFaceObserver from 'fontfaceobserver'
-// }
+import * as FontFaceObserver from 'fontfaceobserver'
 import "./component.css"
 import { animated, useSpring } from "react-spring"
 import { Stage, Layer, Text, Rect } from "react-konva"
 
 const CanvasOverlay = ({ windowEl, data }) => {
-  // if(window){
 
-  // }
   const font = windowEl.width ? new FontFaceObserver('brandanbold') : {};
   const sectionRef = React.useRef(null)
   const textRef = React.useRef(null)
   const canvasRef = React.useRef(null)
   const fontSize = (windowEl.width/6)
-  let isFontLoaded = false;
   const initialZoom = 1;
   const finalZoom = 30;
   let zoom = 20;
@@ -32,13 +27,11 @@ const CanvasOverlay = ({ windowEl, data }) => {
     setCanvas(canvasRef.current)
     setSection(sectionRef.current)
     setText(textRef.current)
-    console.log(windowEl);
     
   }, [])
 
   if(windowEl.width){
     font.load().then(e => {
-      isFontLoaded = true;
       if(canvasOverlay){
         canvasOverlay.draw()
   
@@ -50,7 +43,6 @@ const CanvasOverlay = ({ windowEl, data }) => {
   
   if (section && windowEl.width > 767) {
     const triggerPosition = section.offsetTop
-    const animationExtender = windowEl.width < 768 ? 1 : 1.5;
     const endPosition = triggerPosition + (windowEl.height*2)
     const animationPercent = finalZoom
     const totalAnimationPosition = endPosition - triggerPosition

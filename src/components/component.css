@@ -241,6 +241,10 @@ form textarea {
   transition: all 0.3s linear;
 }
 
+.dark .slide-card::after{
+  background-color: #5466ff;
+}
+
 .slide-card.active::after {
   transform: translateY(0);
 }

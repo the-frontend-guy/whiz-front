@@ -188,7 +188,7 @@ const CircleSlider = ({ data }) => {
               <div className="processBlock__navSteps">
                 <div
                   className="ms-transition__line-2 prevNextBttn needClick top"
-                  onClick={rotateUp}
+                  onClick={rotateUp} onKeyDown={rotateUp} role="button" tabIndex={0}
                 >
                   <div className="prevNextBttn__bg"></div>
                   <svg
@@ -218,7 +218,7 @@ const CircleSlider = ({ data }) => {
                 </div>
                 <div
                   className="ms-transition__line-3 prevNextBttn needClick bottom"
-                  onClick={rotateDown}
+                  onClick={rotateDown} onKeyDown={rotateDown} role="button" tabIndex={0}
                 >
                   <div className="prevNextBttn__bg"></div>
                   <svg
