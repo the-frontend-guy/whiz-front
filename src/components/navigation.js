@@ -23,8 +23,8 @@ const Navigation = ({ active, data, windowEl }) => {
   }
   data[0].strapiChildren.sort((a,b) => a.order - b.order).forEach(list => {
     lists.push(
-      <li className={`${list.id === active ? 'active' : ''}`}>
-        <Link>{list.name}</Link>
+      <li key={list.id} className={`${list.id === active ? 'active' : ''}`}>
+        <Link to={`/${list.slug}`}>{list.name}</Link>
       </li>
     )
   })
