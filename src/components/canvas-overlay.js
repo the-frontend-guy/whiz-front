@@ -5,7 +5,8 @@ import { animated, useSpring } from "react-spring"
 import { Stage, Layer, Text, Rect } from "react-konva"
 
 const CanvasOverlay = ({ windowEl, data }) => {
-  const font = windowEl.width ? new FontFaceObserver("brandanbold") : {}
+  const fontName = "mont"
+  const font = windowEl.width ? new FontFaceObserver(fontName) : {}
   const sectionRef = React.useRef(null)
   const textRef = React.useRef(null)
   const canvasRef = React.useRef(null)
@@ -93,7 +94,7 @@ const CanvasOverlay = ({ windowEl, data }) => {
                 scale={{ x: zoom, y: zoom }}
                 x={xPos}
                 y={yPos}
-                fontFamily="brandanbold"
+                fontFamily={fontName}
               />
               <Rect
                 width={windowEl.width}
