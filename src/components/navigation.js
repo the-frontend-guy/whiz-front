@@ -1,36 +1,40 @@
 import { Link } from "gatsby"
-import React from "react"
+import React, {useEffect} from "react"
 import useMeasure from "react-use-measure"
 
+let scrolled = 0;
 const Navigation = ({ active, data, windowEl }) => {
   const lists = [];
   const [ref, bounds] = useMeasure()
-  console.log(bounds);
   let navFixed = false;
-  let initScroll = 0;
+  let transformNav = false;
 
-  if(windowEl.scrollY > (bounds.top)){
+  if(windowEl.scrollY > (bounds.top + bounds.height)){
     navFixed = true
-    if(initScroll > windowEl.scrollY){
-      console.log('down');
+
+    if(scrolled > windowEl.scrollY){
+      transformNav = false;
     } else {
-      console.log('up');
+      transformNav = true;
     }
-    initScroll = windowEl.scrollY;
 
   } else {
     navFixed = false;
+    transformNav = false;
+
   }
+  scrolled = windowEl.scrollY;
+
   data[0].strapiChildren.sort((a,b) => a.order - b.order).forEach(list => {
     lists.push(
-      <li key={list.id} className={`${list.id === active ? 'active' : ''}`}>
-        <Link to={`/${list.slug}`}>{list.name}</Link>
+      <li key={list.id} className={`mx-12 text-white text-lg opacity-50 hover:opacity-75 transition opacity duration:500 ease-in-out ${list.id === active ? 'active opacity-100' : ''}`}>
+        <Link to={`/${list.slug}`} className="inline-block">{list.name}</Link>
       </li>
     )
   })
   return(
-    <nav className={`p-4 md:p-5 bg-blue-100 top-0 ${navFixed ? 'sticky' : ''}`} ref={ref}>
-   <ul className="container flex justify-between items-center">
+    <nav className={`p-4 md:p-5 bg-blue-100 top-0 transition ease-in-out duration-500 sticky  ${navFixed ? 'z-10' : ''} ${transformNav&&navFixed ? 'transform -translate-y-full': ''}`} ref={ref}>
+   <ul className="container inline-flex">
    {lists}
    </ul>
   </nav>

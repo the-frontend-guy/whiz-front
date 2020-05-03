@@ -26,6 +26,7 @@ module.exports = {
         apiURL:  process.env.API_URL || "http://localhost:1337",
         contentTypes: [
           "service-details",
+          "service-child-details",
           "page",
          
         ],

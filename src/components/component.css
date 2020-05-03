@@ -212,6 +212,20 @@ form textarea {
   padding: 2rem 4rem;
 }
 
+.horizontal-slider.dark .h-slides-container{
+  position: relative;
+}
+
+.horizontal-slider.dark .h-slides-container::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  bottom: 9.5rem;
+  left: 0;
+}
+
 .h-slide figure img {
   width: 55%;
 }

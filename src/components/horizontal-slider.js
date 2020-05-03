@@ -40,17 +40,20 @@ const HorizontalSlider = ({ windowEl, data }) => {
   //   set({ moveX: 0 })
   // }
 
-  data.slides.forEach(slide => {
+  data.slides.forEach((slide,index) => {
     slides.push(
       <div className="h-slides-container mb-8 md:mb-0" key={slide.id}>
         <div className="h-slide">
           <figure className="mb-10">
             <img src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.image.url} alt="" />
           </figure>
-          <h4 className="text-blue-100 mb-5 primary-title leading-snug tracking-tight md:text-3xl lg:text-4xl">
+          <span className={`text-blue-100 font-display ${data.theme !== 'dark' ? 'hidden' : ''}`}> {index < 9
+                ? 0 + (index + 1).toString()
+                : (index + 1).toString()}</span>
+          <h4 className={`${data.theme === 'dark' ? 'text-white' : 'text-blue-100'} mb-5 primary-title leading-snug tracking-tight md:text-3xl lg:text-4xl`}>
             {slide.title}
           </h4>
-          <p className="text-gray-100 tracking-body">{slide.content}</p>
+          <p className={`text-gray-100 tracking-body ${data.theme === 'dark' ? 'hidden' : ''}`}>{slide.content}</p>
         </div>
       </div>
     )
@@ -67,7 +70,9 @@ const HorizontalSlider = ({ windowEl, data }) => {
   return (
     <>
       <section
-        className="min-h-screen horizontal-slider"
+        className={`min-h-screen horizontal-slider ${
+          data.theme === "dark" ? "dark bg-black" : ""
+        }`}
         style={{
           height: sliderContainer ? sliderContainer.children[0].offsetWidth : 0
         }}
@@ -84,10 +89,10 @@ const HorizontalSlider = ({ windowEl, data }) => {
                 style={{ transform: moveSlider }}
               >
                 <div className="slider-title-wrapper mr-0 md:mr-16 md:ml-8 lg:ml-0 ">
-                  <h2 className="section-title md:text-5xl lg:text-6xl inline-block p-4 md:p-0 mb-5 leading-snug tracking-tight">
+                  <h2 className={`section-title md:text-5xl lg:text-6xl inline-block p-4 md:p-0 mb-5 leading-snug tracking-tight ${data.theme === 'dark' ? 'text-white' : ''}`}>
                     {heading}
                   </h2>
-                  <p className="text-gray-100 tracking-body w-10/12 p-4 hidden md:block md:p-0">aksd kahgsdk asdk kagkdsg  kagsdjgaskd   asdgasd kasgdk asdkgasd </p>
+                  <p className={`${data.theme === 'dark' ? 'text-white' : 'text-gray-100'} tracking-body w-10/12 p-4 hidden md:block md:p-0`}>aksd kahgsdk asdk kagkdsg  kagsdjgaskd   asdgasd kasgdk asdkgasd </p>
                 </div>
 
                 {slides}

@@ -20,7 +20,7 @@ const FixedSlider = ({ windowEl, data }) => {
     setSection(sectionRef)
   }, [])
 
-  const titleHeight = isMobile  ? 60 : 80;
+  const titleHeight = isMobile ? 60 : 80
   const subtitleHeight = 60
   const sectionHeightOffset = section
     ? section.current.offsetTop
@@ -37,7 +37,6 @@ const FixedSlider = ({ windowEl, data }) => {
     height: windowEl.scrollY < titleDelay ? titleHeight : 0,
     opacity: windowEl.scrollY < titleDelay ? 1 : 0,
     from: { x: 40, height: 0, opacity: 0 },
-    
   })
 
   const subtitleTrail = useTrail(subtitleBlocks.length, {
@@ -60,13 +59,16 @@ const FixedSlider = ({ windowEl, data }) => {
 
   function skipTo() {
     window.scroll({
-      top: sectionHeightOffset + (slideDelay*2.7) + (bounds.width - windowEl.height),
+      top:
+        sectionHeightOffset +
+        slideDelay * 2.7 +
+        (bounds.width - windowEl.height),
     })
   }
 
   if (bounds && !isMobile) {
     const triggerPosition = sectionHeightOffset + slideDelay
-    const endPosition = triggerPosition + (bounds.width - (windowEl.height*1.5))
+    const endPosition = triggerPosition + (bounds.width - windowEl.height * 1.5)
     const animationPercent = windowEl.width > windowEl.height ? 85 : 95
     const totalAnimationPosition = endPosition - triggerPosition
     const divisor = totalAnimationPosition / animationPercent
@@ -102,11 +104,12 @@ const FixedSlider = ({ windowEl, data }) => {
   const slides = []
 
   data.slides.forEach((slide, i) => {
-
-    const title = [];
-    slide.title.forEach((e,i) => {
+    const title = []
+    slide.title.forEach((e, i) => {
       title.push(
-      <span key={i} className="block leading-snug tracking-tight">{e.title}</span>
+        <span key={i} className="block leading-snug tracking-tight">
+          {e.title}
+        </span>
       )
     })
     slides.push(
@@ -116,16 +119,21 @@ const FixedSlider = ({ windowEl, data }) => {
         className={`slide-card ${
           currentSlide - 1 === i || isMobile ? "active" : ""
         }`}
-        
       >
         <figure className="slide-icon mb-5 md:mb-0">
           <img
-            src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.inactive_icon.url}
+            src={
+              (process.env.ASSETS_URL || "/staging/whizwafture") +
+              slide.inactive_icon.url
+            }
             className="icon-base"
             alt=""
           />
           <img
-            src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.active_icon.url}
+            src={
+              (process.env.ASSETS_URL || "/staging/whizwafture") +
+              slide.active_icon.url
+            }
             className="icon-active"
             alt=""
           />
@@ -133,33 +141,29 @@ const FixedSlider = ({ windowEl, data }) => {
         <span className="slide-card-body">
           <div className="text-wrapper">
             <h3 className="primary-title normal-case mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">
-              <span className="inline-block">
-              {title}
-              </span>
+              <span className="inline-block">{title}</span>
               <span className="card-arrow inline-block w-8">
-                <img src="images/back.svg" alt=""/>
+                <img src="images/back.svg" alt="" />
               </span>
             </h3>
             <p className="tracking-body mb-5 pb-5 md:mb-0 md:pb-0">
-              <strong>{slide.content_show}</strong> 
+              <strong>{slide.content_show}</strong>
               <span className="hidden-text">{slide.content_hide}</span>
             </p>
           </div>
         </span>
       </Link>
     )
-
-    
   })
-
- 
 
   return (
     <>
       <section
-        className={`min-h-screen fixed-slider ${data.theme === 'dark' ? 'dark' : ''}`}
+        className={`min-h-screen fixed-slider ${
+          data.theme === "dark" ? "dark" : ""
+        }`}
         style={{
-          height: isMobile ? 'auto' : bounds.width,
+          height: isMobile ? "auto" : bounds.width,
         }}
         ref={sectionRef}
       >
@@ -167,39 +171,37 @@ const FixedSlider = ({ windowEl, data }) => {
           <div className="container mx-auto p-4 md:p-8 xl:p-4 2xl:p-0">
             <div className="slider-paginator primary-title mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl text-blue-100 md:pr-8 xl:pr-0">
               {!isMobile ? currentSlide : ""}
-              <span className={`font-body ${isMobile ? 'hidden' : ''}`}>/</span>
+              <span className={`font-body ${isMobile ? "hidden" : ""}`}>/</span>
               {!isMobile ? totalSlide : ""}
             </div>
             <div className="slider-text-content block md:inline-block w-full md:w-8/12 lg:w-6/12 xl:w-5/12">
               <div className="slider-title-wrapper relative md:mb-24 xl:mb-20 2xl:mb-40">
                 <h2 className="section-title md:text-5xl lg:text-6xl leading-snug tracking-tight">
-                  {!isMobile && titleTrail.map(({ x, height, ...rest }, index) => (
-                    <animated.span
-                      key={index}
-                      className="block overflow-hidden"
-                      style={{
-                        ...rest,
-                        transform: x.interpolate(
-                          x => `translate3d(0,${-x}px,0)`
-                        ),
-                        height: `${titleHeight}px`,
-                      }}
-                    >
+                  {!isMobile &&
+                    titleTrail.map(({ x, height, ...rest }, index) => (
                       <animated.span
-                        style={{ height }}
+                        key={index}
                         className="block overflow-hidden"
+                        style={{
+                          ...rest,
+                          transform: x.interpolate(
+                            x => `translate3d(0,${-x}px,0)`
+                          ),
+                          height: `${titleHeight}px`,
+                        }}
                       >
-                        {titleBlocks[index].title}
+                        <animated.span
+                          style={{ height }}
+                          className="block overflow-hidden"
+                        >
+                          {titleBlocks[index].title}
+                        </animated.span>
                       </animated.span>
-                    </animated.span>
+                    ))}
 
-                  ))}
-
-                  {isMobile && <span>
-                    {titleBlocks.map(e => e.title).join(' ')}
-                    </span>
-                  }
-                  
+                  {isMobile && (
+                    <span>{titleBlocks.map(e => e.title).join(" ")}</span>
+                  )}
                 </h2>
 
                 <h2 className="section-title md:text-4xl lg:text-5xl absolute top-0 hidden md:block leading-snug tracking-tight">
@@ -234,7 +236,9 @@ const FixedSlider = ({ windowEl, data }) => {
                   <h4 className="secondary-title text-lg mb-5 text-blue-100">
                     {data.heading_title}
                   </h4>
-                  <p className="text-gray-100 pr-0 md:pr-16 tracking-body">{data.content}</p>
+                  <p className="text-gray-100 pr-0 md:pr-16 tracking-body">
+                    {data.content}
+                  </p>
                 </animated.div>
               </div>
             </div>
@@ -252,7 +256,18 @@ const FixedSlider = ({ windowEl, data }) => {
             </div>
           </div>
           <div className="container mx-auto text-right">
-                    <span className={`text-xl underline cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block ${isMobile ? 'hidden' : ''}`} onClick={skipTo} onKeyDown={skipTo} role="button" tabIndex={0}> {data.skip_link}</span>
+            <span
+              className={`text-xl underline cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block ${
+                isMobile ? "hidden" : ""
+              }`}
+              onClick={skipTo}
+              onKeyDown={skipTo}
+              role="button"
+              tabIndex={0}
+            >
+              {" "}
+              {data.skip_link}
+            </span>
           </div>
         </div>
       </section>

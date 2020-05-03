@@ -37,7 +37,7 @@ const ServiceList = ({ activeService }) => (
       }
     `
       } 
-      render ={data => data.allStrapiPage.nodes.sort((a,b) => a.order - b.order).map((page, i) => {
+      render ={data => data.allStrapiPage.nodes.filter(e => e.strapiParent && e.strapiChildren.length).sort((a,b) => a.order - b.order).map((page, i) => {
         return (
           <li key={i} className="mb-4">
             <Link  className=" text-2xl md:text-3xl xl:text-3xl hover:text-blue-100" to={`/${page.slug}`}>{page.name}</Link>
