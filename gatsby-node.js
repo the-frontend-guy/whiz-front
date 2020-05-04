@@ -12,10 +12,11 @@ exports.createPages = async({graphql, actions}) => {
   const { createPage } = actions
   const serviceTemplate = path.resolve(`src/templates/service-detail-page.js`)
   const innerTemplate = path.resolve(`src/templates/service-child-detail-page.js`)
+  const homeTemplate = path.resolve(`src/pages/index.js`)
 
   const result = await graphql(`
   query AllactivePages {
-    allStrapiPage(filter: {}) {
+    allStrapiPage(filter: { active: {eq: true}}) {
       nodes {
         name
         slug
@@ -54,7 +55,7 @@ exports.createPages = async({graphql, actions}) => {
   allPages.forEach(node => {
     createPage({
       path: node.slug,
-      component: node.strapiChildren.length ? serviceTemplate : innerTemplate,
+      component: node.strapiChildren.length ? node.slug === 'services' ? homeTemplate : serviceTemplate : innerTemplate,
       context: {
         pageId: node.strapiId,
         pageInfo:  node,
