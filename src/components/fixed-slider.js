@@ -143,7 +143,8 @@ const FixedSlider = ({ windowEl, data }) => {
             <h3 className="primary-title normal-case mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">
               <span className="inline-block">{title}</span>
               <span className="card-arrow inline-block w-8">
-                <img src="images/back.svg" alt="" />
+                <img src={`${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/back_0f22caf10c.svg`}
+                 alt="" />
               </span>
             </h3>
             <p className="tracking-body mb-5 pb-5 md:mb-0 md:pb-0">

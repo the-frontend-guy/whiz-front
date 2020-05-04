@@ -64,7 +64,7 @@ const CanvasOverlay = ({ windowEl, data }) => {
         <div
           className="home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center h-screen"
           style={{
-            backgroundImage: `url('images/banner.jpg')`,
+            backgroundImage: `url('${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/banner_3d7ab820ac.jpeg')`,
             backgroundSize: `cover`,
           }}
         >

@@ -7,7 +7,8 @@ const Header = ({ siteTitle }) => (
    <div className="container flex justify-between items-center">
    <div className="logo-container">
     <Link className="inline-block w-32 md:w-48" to="/">
-    <img src="images/logo.png" alt="logo"/>
+    <img src={`${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/logo_a140ab2cac.png`}
+    alt="logo"/>
     </Link>
    </div>
    <div className="hamburger-container">
