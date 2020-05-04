@@ -3,8 +3,6 @@ import React  from "react"
 
 const Navigation = ({ active, data }) => {
   const lists = [];
-  let navFixed = false;
-  let transformNav = false;
 
   
 
