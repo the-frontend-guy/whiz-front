@@ -107,6 +107,25 @@ section {
   font-size: 4vw;
 }
 
+nav {
+  overflow: hidden;
+}
+
+nav ul{
+  overflow-y: hidden;
+  overflow-x: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+
+}
+
+nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
 /********************** Home About Us **********************/
 
 .animation-slide-text {
