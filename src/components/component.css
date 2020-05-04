@@ -274,6 +274,18 @@ form textarea {
   transition: all 0.3s linear;
 }
 
+.dark .slide-card {
+  flex-direction: column;
+}
+
+.dark .slide-card figure img{
+  width: 90px;
+}
+
+.dark.fixed-slider .slider-text-content{
+  min-height: 72vh;
+}
+
 .dark .slide-card::after{
   background-color: #5466ff;
 }
