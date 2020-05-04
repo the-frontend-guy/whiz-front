@@ -47,7 +47,7 @@ return(
     <ImageGrid data={data.strapiServiceDetails.image_grid_1}/>
     <ImageGrid data={data.strapiServiceDetails.image_grid_2}/>
     <CanvasOverlay windowEl={windowInfo} data={data.strapiServiceDetails.overlay} />
-    <HomeContact data={data.strapiServiceDetails.form_content}/>
+    <HomeContact data={data.strapiServiceDetails.form_content} overlap={false}/>
 
   </Layout>
 )
