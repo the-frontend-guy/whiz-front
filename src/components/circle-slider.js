@@ -121,8 +121,7 @@ const CircleSlider = ({ data, direction }) => {
           style={{
             transform:
               i === currentActive
-                ? `rotate(${Math.abs((360 / cicleCount) * (currentActive + 1)) -
-                    (isRight ? -38 : 142)}deg)`
+                ? `rotate(${(360 / cicleCount) * (currentActive) + (isRight ? +90 : -90) }deg)`
                 : `none`,
           }}
         />

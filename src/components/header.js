@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
     </Link>
    </div>
    <div className="hamburger-container">
-      <span className="uppercase">our collection</span>
+      <span className="uppercase text-white">our collection</span>
       <span className="hamburger"></span>
    </div>
    </div>
