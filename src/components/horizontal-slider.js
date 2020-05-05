@@ -47,7 +47,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
           <figure className="mb-10">
             <img src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.image.url} alt="" />
           </figure>
-          <span className={`text-blue-100 font-display ${data.theme !== 'dark' ? 'hidden' : ''}`}> {index < 9
+          <span className={`text-blue-100 font-display text-3xl ${data.theme !== 'dark' ? 'hidden' : ''}`}> {index < 9
                 ? 0 + (index + 1).toString()
                 : (index + 1).toString()}</span>
           <h4 className={`${data.theme === 'dark' ? 'text-white' : 'text-blue-100'} mb-5 primary-title leading-snug tracking-tight md:text-3xl lg:text-4xl`}>
