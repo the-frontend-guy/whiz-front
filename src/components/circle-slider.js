@@ -192,8 +192,8 @@ const CircleSlider = ({ data, direction }) => {
               {heading}
             </h2>
           </div>
-          <div className="arrow-block flex">
-            <div className="arrow-buttons">
+          <div className={`arrow-block flex ${isRight ? 'justify-between ml-8' : ''}`}>
+            <div className={`arrow-buttons ${isRight ? 'order-2' : ''}`}>
               <div className="processBlock__navSteps">
                 <div
                   className="ms-transition__line-2 prevNextBttn needClick top"

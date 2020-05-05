@@ -10,6 +10,7 @@ import FixedSlider from "../components/fixed-slider"
 import ImageGrid from '../components/image-grid'
 import CanvasOverlay from "../components/canvas-overlay"
 import HomeContact from "../components/home-contact"
+import CircleSlider from "../components/circle-slider"
 
 const ServiceDetailPage = ({data, pageContext}) => {
 
@@ -46,6 +47,7 @@ return(
     <FixedSlider windowEl={windowInfo} data={data.strapiServiceDetails.fixed_slider}/>
     <ImageGrid data={data.strapiServiceDetails.image_grid_1}/>
     <ImageGrid data={data.strapiServiceDetails.image_grid_2}/>
+    <CircleSlider windowEl={windowInfo} data={data.strapiServiceDetails.circle_slider} direction="right"/>
     <CanvasOverlay windowEl={windowInfo} data={data.strapiServiceDetails.overlay} />
     <HomeContact data={data.strapiServiceDetails.form_content} overlap={false}/>
 
@@ -148,6 +150,23 @@ query ServiceDetails($parentId: Int) {
           url
         }
       }
+    }
+    circle_slider {
+      heading {
+        title
+        id
+      }
+      slides {
+        content
+        heading
+        order
+        sub_heading
+        id
+        image {
+          url
+        }
+      }
+      theme
     }
   }
 

@@ -44,7 +44,7 @@ return(
     <VideoContainer data={data.strapiHomeData.banner}/>
     <HomeAboutUs windowEl={windowInfo} data={data.strapiHomeData.about_us}  />
     <FixedSlider windowEl={windowInfo} data={data.strapiHomeData.fixed_slider}/>
-    <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.circle_slider} direction="false"/>
+    <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.circle_slider} direction="left"/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.horizontal_slider}/>
     <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.overlay} />
     <HomeContact data={data.strapiHomeData.form_content}/>
