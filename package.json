@@ -38,7 +38,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "develop-multi-device": "gatsby develop -H 192.168.0.104 -p 4000",
+    "develop-multi-device": "gatsby develop -H 192.168.0.100 -p 4000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
