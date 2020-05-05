@@ -294,6 +294,22 @@ form textarea {
   transform: translateY(0);
 }
 
+.slide-card p {
+  max-height: 30vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+.slide-card p::-webkit-scrollbar {
+  display: none;
+}
+
+.dark .slide-card p {
+  max-height: 24vh;
+}
+
 .slide-card:first-child {
   margin-left: 0;
 }

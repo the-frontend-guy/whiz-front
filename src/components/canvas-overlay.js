@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import * as FontFaceObserver from "fontfaceobserver"
 import "./component.css"
 import { animated, useSpring } from "react-spring"
-import { Stage, Layer, Text, Rect } from "react-konva"
+import { Stage, Layer, Text, Rect, Circle } from "react-konva"
 
 const CanvasOverlay = ({ windowEl, data }) => {
   const fontName = "mont"
@@ -12,7 +12,7 @@ const CanvasOverlay = ({ windowEl, data }) => {
   const canvasRef = React.useRef(null)
   const fontSize = windowEl.width / 6
   const initialZoom = 1
-  const finalZoom = 30
+  const finalZoom = 20
   let zoom = 20
   let xPos = 0
   let yPos = 0
@@ -47,11 +47,12 @@ const CanvasOverlay = ({ windowEl, data }) => {
     const scrolled =
       windowEl.scrollY > endPosition ? endPosition : windowEl.scrollY
     const computedScaleRange = (scrolled - triggerPosition) / divisor
-    zoom = computedScaleRange < initialZoom ? initialZoom : computedScaleRange
-    xPos = windowEl.width / 2 - (canvasText.width() * zoom) / 2
-    yPos = windowEl.height / 2 - (canvasText.height() * zoom) / 2
+    zoom = computedScaleRange < initialZoom ? initialZoom : computedScaleRange * 50
+    xPos = windowEl.width / 2 - (canvasText.width()) / 2
+    yPos = windowEl.height / 2 - (canvasText.height()) / 2
+    const computeOpacity  = computedScaleRange / (finalZoom/2)
 
-    set({ opacity: zoom < finalZoom / 4 ? 0 : zoom / finalZoom })
+    set({ opacity: computeOpacity })
   }
 
   if (windowEl.width < 768) {
@@ -85,13 +86,20 @@ const CanvasOverlay = ({ windowEl, data }) => {
             className="overlay h-screen "
           >
             <Layer ref={canvasRef}>
+            <Circle
+                radius={1}
+                scale={{ x: zoom, y: zoom }}
+                x={windowEl.width / 2}
+                y={windowEl.height / 2}
+                fill="orange"
+                globalCompositeOperation="xor"
+              />
               <Text
                 text={data.overlay_text}
                 ref={textRef}
                 fill="tranparent"
                 verticalAlign="middle"
                 fontSize={fontSize}
-                scale={{ x: zoom, y: zoom }}
                 x={xPos}
                 y={yPos}
                 fontFamily={fontName}
@@ -102,6 +110,8 @@ const CanvasOverlay = ({ windowEl, data }) => {
                 fill="white"
                 globalCompositeOperation="xor"
               />
+
+              
             </Layer>
           </Stage>
         </animated.div>

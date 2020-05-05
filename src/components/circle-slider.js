@@ -1,13 +1,14 @@
 import React, { useState } from "react"
 import "./component.css"
+import { PropTypes } from "prop-types"
 import useMeasure from "react-use-measure"
 
-const CircleSlider = ({ data }) => {
+const CircleSlider = ({ data, direction }) => {
   const [rotateDeg, setRotation] = useState(0)
   const [currentActive, setActive] = useState(0)
   const [ref, bounds] = useMeasure()
 
-
+  const isRight = direction === 'right';
 
 
   const circlePositions = {
@@ -51,6 +52,7 @@ const CircleSlider = ({ data }) => {
       ["11%", "19%"],
     ],
   }
+
 
   let dimension =
     bounds.width < bounds.height
@@ -120,7 +122,7 @@ const CircleSlider = ({ data }) => {
             transform:
               i === currentActive
                 ? `rotate(${Math.abs((360 / cicleCount) * (currentActive + 1)) -
-                    142}deg)`
+                    (isRight ? -38 : 142)}deg)`
                 : `none`,
           }}
         />
@@ -145,13 +147,20 @@ const CircleSlider = ({ data }) => {
   return (
     <>
       <section className="min-h-screen circle-slider flex items-center flex-col lg:flex-row" ref={ref}>
-        <div className="w-auto lg:w-3/6">
+        <div className={`w-auto lg:w-3/6 
+        ${isRight ? 'order-2' : ''}
+        `}>
           <div
-            className="transform rotate-90 relative"
+            className={`transform rotate-90 relative`}
             style={{
               height: dimension >= 0 ? dimension : 600,
               width: dimension >= 0 ? dimension : 600,
               transform:
+                isRight ?
+                bounds.width > 767 && bounds.width < 1024
+                ? `translateX(65%)rotate(-90deg)`
+                : `translate(50%)rotate(-90deg)`
+                 :
                  bounds.width > 767 && bounds.width < 1024
                   ? `translateX(-65%)rotate(90deg)`
                   : `translate(-50%)rotate(90deg)`,
@@ -255,6 +264,14 @@ const CircleSlider = ({ data }) => {
       </section>
     </>
   )
+}
+
+CircleSlider.propTypes = {
+  direction: PropTypes.string
+}
+
+CircleSlider.defaultProps = {
+  direction: `left`
 }
 
 export default CircleSlider
