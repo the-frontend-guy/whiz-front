@@ -66,7 +66,8 @@ const CanvasOverlay = ({ windowEl, data }) => {
 
         <animated.div className="absolute top-0 left-0 hidden md:block"
           style={{
-            left : moveX.interpolate(x => x > 0 ? -x : 0)
+            left : moveX.interpolate(x => x > 0 ? -x : 0),
+            transform: moveX.interpolate(x => x > 0 ? `translateX(${-(x/2)}px)` : `none`)
           }}
         >
           <Stage
