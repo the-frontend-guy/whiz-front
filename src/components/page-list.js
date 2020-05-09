@@ -10,7 +10,7 @@ const PageList = ({ activePage }) => (
     <StaticQuery
       query = {graphql`
       query PageList{
-        allStrapiPage(filter: {active: {eq: true}, slug: {ne: "home"}}) {
+        allStrapiPage(filter: {active: {eq: true}, slug: {nin: ["home","services"]}}) {
           nodes {
             name
             slug

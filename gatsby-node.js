@@ -53,9 +53,10 @@ exports.createPages = async({graphql, actions}) => {
 
  
   allPages.forEach(node => {
+    if(node.slug !== 'services'){
     createPage({
       path: node.slug,
-      component: node.strapiChildren.length ? node.slug === 'services' ? homeTemplate : serviceTemplate : innerTemplate,
+      component: node.strapiChildren.length  ?  serviceTemplate : innerTemplate,
       context: {
         pageId: node.strapiId,
         pageInfo:  node,
@@ -64,6 +65,7 @@ exports.createPages = async({graphql, actions}) => {
         parentId: node.strapiParent ? node.strapiParent.id : null
       }
     })
+  }
   })
 }
 
