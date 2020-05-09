@@ -2,32 +2,23 @@ import React, { useState, useEffect } from "react"
 import * as FontFaceObserver from "fontfaceobserver"
 import "./component.css"
 import { animated, useSpring } from "react-spring"
-import { Stage, Layer, Text, Rect, Circle } from "react-konva"
+import { Stage, Layer, Text, Rect } from "react-konva"
 
 const CanvasOverlay = ({ windowEl, data }) => {
   const fontName = "mont"
   const font = windowEl.width ? new FontFaceObserver(fontName) : {}
   const sectionRef = React.useRef(null)
-  const textRef = React.useRef(null)
   const canvasRef = React.useRef(null)
-  const fontSize = windowEl.width / 6
-  const initialZoom = 1
-  const finalZoom = 20
-  let zoom = 20
-  let xPos = 0
-  let yPos = 0
+  const fontSize = windowEl.width / 7
 
   const [section, setSection] = useState()
-  const [canvasText, setText] = useState()
   const [canvasOverlay, setCanvas] = useState()
-  const [{ opacity }, set] = useSpring(() => ({
-    opacity: windowEl.width > 767 ? 0 : 1,
-  }))
-
+  const [{moveX}, set] = useSpring(()=>({moveX: 0}))
+  let slideX = 0;
+  // let moveX = 0;
   useEffect(() => {
     setCanvas(canvasRef.current)
     setSection(sectionRef.current)
-    setText(textRef.current)
   }, [])
 
   if (windowEl.width) {
@@ -39,25 +30,19 @@ const CanvasOverlay = ({ windowEl, data }) => {
   }
 
   if (section && windowEl.width > 767) {
-    const triggerPosition = section.offsetTop
-    const endPosition = triggerPosition + windowEl.height * 2
-    const animationPercent = finalZoom
+    const triggerPosition = section.offsetTop + windowEl.height
+    const endPosition = triggerPosition + windowEl.height*2
     const totalAnimationPosition = endPosition - triggerPosition
-    const divisor = totalAnimationPosition / animationPercent
+    const divisor = (totalAnimationPosition) / windowEl.height
     const scrolled =
       windowEl.scrollY > endPosition ? endPosition : windowEl.scrollY
-    const computedScaleRange = (scrolled - triggerPosition) / divisor
-    zoom = computedScaleRange < initialZoom ? initialZoom : computedScaleRange * 50
-    xPos = windowEl.width / 2 - (canvasText.width()) / 2
-    yPos = windowEl.height / 2 - (canvasText.height()) / 2
-    const computeOpacity  = computedScaleRange / (finalZoom/2)
-
-    set({ opacity: computeOpacity })
+    const computedScaleRange = (scrolled - triggerPosition) * (divisor)
+    slideX = computedScaleRange;
+    set({moveX: (windowEl.width/2) + slideX})
   }
 
-  if (windowEl.width < 768) {
-    set({ opacity: 1 })
-  }
+ 
+
 
   return (
     <section className="canvas-overlay relative" ref={sectionRef}>
@@ -70,46 +55,52 @@ const CanvasOverlay = ({ windowEl, data }) => {
           }}
         >
           <div className="wrapper w-auto md:w-4/5 mx-4 md:mx-0">
-            <animated.h2
+            <h2
               className="section-title md:text-5xl lg:text-6xl xl:text-7xl leading-snug tracking-tight text-white w-full md:w-4/5"
-              style={{ opacity: opacity.interpolate(o => o) }}
             >
               {data.banner_text}
-            </animated.h2>
+              {/* hello all jgsdfj  jsdf j  jsgdfjs df jsdgf */}
+            </h2>
           </div>
         </div>
 
-        <animated.div className="absolute top-0 left-0 hidden md:block">
+        <animated.div className="absolute top-0 left-0 hidden md:block"
+          style={{
+            left : moveX.interpolate(x => x > 0 ? -x : 0)
+          }}
+        >
           <Stage
             width={windowEl.width}
             height={windowEl.height}
             className="overlay h-screen "
           >
             <Layer ref={canvasRef}>
-            <Circle
-                radius={1}
-                scale={{ x: zoom, y: zoom }}
-                x={windowEl.width / 2}
-                y={windowEl.height / 2}
-                fill="orange"
-                globalCompositeOperation="xor"
-              />
-              <Text
-                text={data.overlay_text}
-                ref={textRef}
-                fill="tranparent"
-                verticalAlign="middle"
-                fontSize={fontSize}
-                x={xPos}
-                y={yPos}
-                fontFamily={fontName}
-              />
+            
+              
               <Rect
                 width={windowEl.width}
                 height={windowEl.height}
                 fill="white"
-                globalCompositeOperation="xor"
               />
+
+              <Text
+                text={data.overlay_text}
+                // text={ `whizwafture`}
+                fill="black"
+                verticalAlign="middle"
+                align="center"
+                fontSize={fontSize}
+                width={windowEl.width}
+                height = { windowEl.height}
+                fontFamily={fontName}
+              />
+
+              <Rect
+                width={windowEl.width}
+                height={windowEl.height}
+                x={slideX  > 0 ? 0 : -slideX}
+                fill="white"
+              />    
 
               
             </Layer>

@@ -156,23 +156,7 @@ query ServiceDetails($parentId: Int) {
         }
       }
     }
-    circle_slider {
-      heading {
-        title
-        id
-      }
-      slides {
-        content
-        heading
-        order
-        sub_heading
-        id
-        image {
-          url
-        }
-      }
-      theme
-    }
+   
   }
 
   allStrapiPage(filter: {active: {eq: true}, strapiId : {eq: $parentId }} ) {

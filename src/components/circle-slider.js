@@ -8,7 +8,7 @@ const CircleSlider = ({ data, direction }) => {
   const [currentActive, setActive] = useState(0)
   const [ref, bounds] = useMeasure()
 
-  const isRight = direction === 'right';
+  const isRight = false;
 
 
   const circlePositions = {
