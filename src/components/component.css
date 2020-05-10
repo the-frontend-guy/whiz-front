@@ -540,6 +540,33 @@ svg:not(:root) {
   transform: scale(1.3,1.3);
 }
 
+/********************** Vertical Slider **********************/
+
+.vertical-slider .vertical-slider-content p{
+  height: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+}
+
+.vertical-slider .vertical-slider-content.active p{
+  height: 150px;
+  max-height: 150px;
+}
+
+.vertical-slider .vertical-slider-content {
+  margin-left: 2rem;
+}
+
+.vertical-slider .highlighter {
+  height: 50px;
+  width: 10px;
+  display: inline-block;
+  background-color: #5564f6;
+  position: absolute;
+  transition: all .5s ease-in-out .25s;
+}
+
 
 /********************** 404 Page **********************/
 
@@ -574,6 +601,13 @@ svg:not(:root) {
     flex-direction: column;
     margin-bottom: 2.5rem;
     /* align-items: center; */
+  }
+  .image-grid .grid div:hover img{
+    transform: scale(1,1);
+  }
+
+  .dark .slide-card p{
+    max-height: initial;
   }
   .slide-card figure {
     margin-right: 0;

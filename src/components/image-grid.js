@@ -6,15 +6,15 @@ const ImageGrid = ({ data }) => {
 
   data.heading.forEach(e => {
     title.push(
-      <span key={e.id} className="block whitespace-no-wrap">
+      <span key={e.id} className="block md:whitespace-no-wrap">
         {e.title}
       </span>
     )
   })
   data.grids.forEach(e => {
   slides.push(
-    <div className="flex flex-col items-start my-12" key={e.id}>
-      <figure className="slide-icon mb-8  w-2/12">
+    <div className="flex flex-col items-start my-4 md:my-12" key={e.id}>
+      <figure className="slide-icon mb-8 ml-0 md:ml-6 w-4/12 md:w-2/12">
           <img
             src={(process.env.ASSETS_URL || '/staging/whizwafture') + e.icon.url}
             className="icon-base"
@@ -40,7 +40,7 @@ return(
      {data.sub_heading.title}
    </p>
    </div>
-   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-16">
+   <div className="grid gap-0 md:gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-16">
     {slides}
    </div>
    </div>

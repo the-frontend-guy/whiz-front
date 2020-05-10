@@ -61,7 +61,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
 
   data.heading.forEach(title => {
     heading.push(
-      <span key={title.id} className="block whitespace-no-wrap">
+      <span key={title.id} className="block md:whitespace-no-wrap">
         {title.title}
       </span>
     )

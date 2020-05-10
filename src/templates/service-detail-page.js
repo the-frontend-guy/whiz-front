@@ -11,7 +11,7 @@ import ImageGrid from '../components/image-grid'
 import CanvasOverlay from "../components/canvas-overlay"
 import HomeContact from "../components/home-contact"
 import NextPage from "../components/next-page"
-
+import VerticalSlider from "../components/vertical-slider"
 
 const ServiceDetailPage = ({data, pageContext}) => {
 
@@ -48,7 +48,7 @@ return(
     <FixedSlider windowEl={windowInfo} data={data.strapiServiceDetails.fixed_slider}/>
     <ImageGrid data={data.strapiServiceDetails.image_grid_1}/>
     <ImageGrid data={data.strapiServiceDetails.image_grid_2}/>
-
+    <VerticalSlider  />
     <CanvasOverlay windowEl={windowInfo} data={data.strapiServiceDetails.overlay} />
     <NextPage data={data.allStrapiPage.nodes} currentPage={pageContext.pageId}/>
 

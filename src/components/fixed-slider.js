@@ -69,7 +69,7 @@ const FixedSlider = ({ windowEl, data }) => {
   if (bounds && !isMobile) {
     const triggerPosition = sectionHeightOffset + slideDelay
     const endPosition = triggerPosition + (bounds.width - windowEl.height * 1.5)
-    const animationPercent = windowEl.width > windowEl.height ? 85 : 95
+    const animationPercent = windowEl.width > windowEl.height ? 90 : 95
     const totalAnimationPosition = endPosition - triggerPosition
     const divisor = totalAnimationPosition / animationPercent
     const scrolled =

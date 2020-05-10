@@ -8,7 +8,7 @@ const HomeContact = ({data, overlap}) => {
     <>
       <section className="flex flex-col relative">
         <div className={`wrapper self-end w-full mt-0 ${overlap ? 'md:-mt-32 md:w-4/5 ': ''}`}>
-          <div className={`home-contact-form-container bg-blue-100  flex  ${overlap ? 'flex-col md:py-16 md:pl-16 md:pr-8 lg:py-40 lg:pl-40 lg:pr-16 py-16 px-4 md:px-0 md:py-0' : 'flex-col md:flex-row md:items-center px-20 py-40'}`}>
+          <div className={`home-contact-form-container bg-blue-100  flex  ${overlap ? 'flex-col md:py-16 md:pl-16 md:pr-8 lg:py-40 lg:pl-40 lg:pr-16 py-16 px-4 md:px-0 md:py-0' : 'flex-col md:flex-row md:items-center px-4 py-16 md:px-20 md:py-40'}`}>
             <span className="primary-title mb-5 leading-snug tracking-tight md:text-4xl lg:text-5xl text-white md:mb-16 lg:mb-20">
               {data.title}
             </span>
