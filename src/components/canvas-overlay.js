@@ -3,13 +3,16 @@ import * as FontFaceObserver from "fontfaceobserver"
 import "./component.css"
 import { animated, useSpring } from "react-spring"
 import { Stage, Layer, Text, Rect } from "react-konva"
+import VerticalSlider from "../components/vertical-slider"
 
-const CanvasOverlay = ({ windowEl, data }) => {
+const CanvasOverlay = ({ windowEl, data, sliderData }) => {
   const fontName = "mont"
   const font = windowEl.width ? new FontFaceObserver(fontName) : {}
   const sectionRef = React.useRef(null)
   const canvasRef = React.useRef(null)
   const fontSize = windowEl.width / 7
+
+  let activeSlide = 0
 
   const [section, setSection] = useState()
   const [canvasOverlay, setCanvas] = useState()
@@ -39,9 +42,13 @@ const CanvasOverlay = ({ windowEl, data }) => {
     const computedScaleRange = (scrolled - triggerPosition) * (divisor)
     slideX = computedScaleRange;
     set({moveX: (windowEl.width/2) + slideX})
+    const hj = (scrolled - triggerPosition) - (windowEl.width / 6);
+    const ksdf = (totalAnimationPosition) -  (windowEl.width / 6);
+    const jkk = ksdf / sliderData.slides.length;
+    activeSlide = Math.trunc(hj / jkk) < 1 ? 0 : Math.trunc(hj / jkk) - 1;
+    
   }
 
- 
 
 
   return (
@@ -54,17 +61,19 @@ const CanvasOverlay = ({ windowEl, data }) => {
             backgroundSize: `cover`,
           }}
         >
-          <div className="wrapper w-auto md:w-4/5 mx-4 md:mx-0">
+   {sliderData && <VerticalSlider windowEl={windowEl} active={activeSlide} data={sliderData}/>}
+
+          {!sliderData && <div className="wrapper w-auto md:w-4/5 mx-4 md:mx-0">
+
             <h2
               className="section-title md:text-5xl lg:text-6xl xl:text-7xl leading-snug tracking-tight text-white w-full md:w-4/5"
             >
               {data.banner_text}
-              {/* hello all jgsdfj  jsdf j  jsgdfjs df jsdgf */}
             </h2>
-          </div>
+          </div>}
         </div>
 
-        <animated.div className="absolute top-0 left-0 hidden md:block"
+        <animated.div className="absolute top-0 z-20 left-0 hidden md:block"
           style={{
             left : moveX.interpolate(x => x > 0 ? -x : 0),
             transform: moveX.interpolate(x => x > 0 ? `translateX(${-(x/2)}px)` : `none`)

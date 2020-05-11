@@ -507,7 +507,7 @@ svg:not(:root) {
 /********************** Canvas Overlay **********************/
 
 .canvas-overlay {
-  height: 300vh;
+  height: 400vh;
 }
 
 .canvas-overlay .overlay-text{
@@ -565,6 +565,54 @@ svg:not(:root) {
   background-color: #5564f6;
   position: absolute;
   transition: all .5s ease-in-out .25s;
+}
+
+.vertical-slider-circle .circle{
+  background-color: #5564f6;
+  border-radius: 50%;
+  transition: all .5s ease-in-out;
+}
+
+.vertical-slider .circle-static {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #5466ff;
+  border-radius: 50%;
+}
+
+.vertical-slider .circle-static:nth-child(1) {
+  top: 42px;
+  z-index: 10;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.vertical-slider .circle-static:nth-child(2) {
+  top: calc(100% - 47px);
+  z-index: 10;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.vertical-slider .slides-container {
+  position: relative;
+  transition: all .5s ease-in-out;
+}
+
+.vertical-slider .slides-container::after {
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 100vh;
+  background-color: white;
+}
+
+
+.vertical-slider .vertical-slider-circle {
+  transition: all .5s ease-in-out;
 }
 
 

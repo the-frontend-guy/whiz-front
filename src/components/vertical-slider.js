@@ -1,40 +1,45 @@
-import React, { useState} from "react"
+import React from "react"
 
-const VerticalSlider = ({ data }) => {
-  const slides = [{
-    title: 'Goal Identiication',
-    content: 'aksdha  sdlh asd sdkd fgk dfkg dkfg kdf g dfkghdkfg kd gfdfg kdg '
-  },
-  {
-    title: 'Goal Identiication',
-    content: 'aksdha  sdlh asd sdkd fgk dfkg dkfg kdf g dfkghdkfg kd gfdfg kdg kdsf  fsdkh fds ksdfh k fsdkh sdfk kdsf kdfs sfgdlkdfgs lg sfd ldksf  ldgsdfg f dnsdlgn lfdn lds ldsg lds nlfsdg nlsfd nglfsgd  '
-  },
-  {
-    title: 'Goal Identiication',
-    content: 'aksdha  sdlh asd sdkd fgk dfkg dkfg kdf g dfkghdkfg kd gfdfg kdg kdsf  fsdkh fds ksdfh k fsdkh sdfk kdsf kdfs sfgdlkdfgs lg sfd ldksf  ldgsdfg f dnsdlgn lfdn lds ldsg lds nlfsdg nlsfd nglfsgd  '
-  },
-  {
-    title: 'Goal Identiication',
-    content: 'aksdha  sdlh asd sdkd fgk dfkg dkfg kdf g dfkghdkfg kd gfdfg kdg kdsf  fsdkh fds ksdfh k fsdkh sdfk kdsf kdfs sfgdlkdfgs lg sfd ldksf  ldgsdfg f dnsdlgn lfdn lds ldsg lds nlfsdg nlsfd nglfsgd  '
-  },
-  {
-    title: 'Goal Identiication',
-    content: 'aksdha  sdlh asd sdkd fgk dfkg dkfg kdf g dfkghdkfg kd gfdfg kdg kdsf  fsdkh fds ksdfh k fsdkh sdfk kdsf kdfs sfgdlkdfgs lg sfd ldksf  ldgsdfg f dnsdlgn lfdn lds ldsg lds nlfsdg nlsfd nglfsgd  '
-  },
-  {
-    title: 'Goal Identiication',
-    content: 'aksdha  sdlh asd sdkd fgk dfkg dkfg kdf g dfkghdkfg kd gfdfg kdg kdsf  fsdkh fds ksdfh k fsdkh sdfk kdsf kdfs sfgdlkdfgs lg sfd ldksf  ldgsdfg f dnsdlgn lfdn lds ldsg lds nlfsdg nlsfd nglfsgd  '
-  },
-];
+const VerticalSlider = ({ data, windowEl, active }) => {
+  console.log(data);
+  const slides = data.slides;
 
   const verticalLabels = [];
-  const  [active, setActive] = useState(0);
+  const circleSlides = [];
+  // const [ref, bounds] = useMeasure();
+  // const  [active, setActive] = useState(0);
+  
+
+  const radius = windowEl.width > windowEl.height ? `35vw` : `35vh`;
 
   slides.forEach((e,i) => {
     verticalLabels.push(
-      <div className={`vertical-slider-content ${ i === active ? 'active' : ''}`}>
+      <div key={i} className={`vertical-slider-content ${ i === active ? 'active' : ''}`}>
         <h5 className="text-white font-display text-4xl mb-3">{e.title}</h5>
         <p className="text-white text-xl">{e.content}</p>
+      </div>
+    )
+    circleSlides.push(
+      <div key={i} className={`vertical-slider-circle absolute z-10 ${ i === active ? 'active' : ''}`} style={{
+        top: i === active ? `50%` : i < active ? `45px` : `calc(100% - 45px)`,
+        left: `50%`,
+        transform: `translate(-50%, -50%)`,
+
+      }}>
+        <span class="circle inline-block" style={{
+          width: i=== active ? radius : 20,
+          height: i=== active ? radius : 20,
+          // transform: `scale(${ i === active ? 1 : .1})`
+        }}>
+          <img
+          src={(process.env.ASSETS_URL || '/staging/whizwafture') + e.image.url}
+          alt=""
+          style={{
+            opacity: i===active ? 1 : 0,
+            transition: `all .5s ease-in-out`
+          }}
+        />
+        </span>
       </div>
     )
   })
@@ -45,9 +50,9 @@ const VerticalSlider = ({ data }) => {
     let currentActive = active + 1;
     let totalLength = slides.length - 1;
     if(currentActive > totalLength){
-      setActive(0)
+      // setActive(0)
     } else {
-      setActive(currentActive)
+      // setActive(currentActive)
     }
   }
 
@@ -55,16 +60,16 @@ const VerticalSlider = ({ data }) => {
     let currentActive = active - 1;
     let totalLength = slides.length - 1;
     if(currentActive < 0){
-      setActive(totalLength)
+      // setActive(totalLength)
     } else {
-      setActive(currentActive)
+      // setActive(currentActive)
     }
   }
 
  
 return(
- <section className="vertical-slider bg-black">
-   <div className="vertical-slider-wrapper">
+ <section className="vertical-slider bg-black h-screen overflow-hidden">
+   <div className="vertical-slider-wrapper flex h-screen items-center">
      <div className="w-3/6">
        <div className="content-container">
         <span class="highlighter" style={{
@@ -73,9 +78,16 @@ return(
        {verticalLabels}
        </div>
      </div>
-     <div className="w-3/6">
+     <div className="w-3/6 h-screen relative">
+       
 
-     <div className={`arrow-buttons`}>
+
+      <div className="slides-container h-screen flex flex-col items-center">
+      <span className="circle-static"></span>
+       <span className="circle-static"></span>
+        {circleSlides}
+      </div>
+      {/* <div className={`arrow-buttons absolute bottom-0`}>
               <div className="processBlock__navSteps">
                 <div
                   className="ms-transition__line-2 prevNextBttn needClick top"
@@ -138,7 +150,8 @@ return(
                   </svg>
                 </div>
               </div>
-            </div>
+            </div> */}
+      
      </div>
 
    </div>
