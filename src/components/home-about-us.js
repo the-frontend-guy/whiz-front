@@ -33,7 +33,7 @@ const HomeAboutUs = ({ windowEl, data }) => {
     textSliders.push(
       <h2 className="heading-title  lg:text-3xl" key={slider.id}>
         <animated.span
-          className="md:whitespace-no-wrap block animation-slide-text text-white tracking-tight"
+          className="whitespace-no-wrap block animation-slide-text text-white tracking-tight"
           style={{
             transform: slide.interpolate(
               x => `translate3d(${i % 2 === 0 ? -x : x}%,0,0)`

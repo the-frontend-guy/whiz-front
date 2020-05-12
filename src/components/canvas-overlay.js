@@ -42,10 +42,12 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
     const computedScaleRange = (scrolled - triggerPosition) * (divisor)
     slideX = computedScaleRange;
     set({moveX: (windowEl.width/2) + slideX})
+    if(sliderData){
     const hj = (scrolled - triggerPosition) - (windowEl.width / 6);
     const ksdf = (totalAnimationPosition) -  (windowEl.width / 6);
     const jkk = ksdf / sliderData.slides.length;
     activeSlide = Math.trunc(hj / jkk) < 1 ? 0 : Math.trunc(hj / jkk) - 1;
+    }
     
   }
 

@@ -654,7 +654,7 @@ svg:not(:root) {
     transform: scale(1,1);
   }
 
-  .dark .slide-card p{
+  .slide-card p{
     max-height: initial;
   }
   .slide-card figure {
