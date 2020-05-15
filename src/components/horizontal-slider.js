@@ -46,7 +46,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
       <div className="h-slides-container mb-8 md:mb-0" key={slide.id}>
         <div className="h-slide">
           <figure className="mb-10">
-            <img src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.image.url} alt="" />
+            <img src={'.'+ slide.image.url} alt="" />
           </figure>
           <span className={`text-blue-100 font-display text-3xl ${data.theme !== 'dark' ? 'hidden' : ''}`}> {index < 9
                 ? 0 + (index + 1).toString()

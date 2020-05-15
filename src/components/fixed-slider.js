@@ -115,7 +115,7 @@ const FixedSlider = ({ windowEl, data }) => {
     slides.push(
       <Link
         key={i}
-        to={`/${slide.link}`}
+        to={`#`}
         className={`slide-card ${
           currentSlide - 1 === i || isMobile ? "active" : ""
         }`}
@@ -143,7 +143,7 @@ const FixedSlider = ({ windowEl, data }) => {
             <h3 className="primary-title normal-case mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">
               <span className="inline-block">{title}</span>
               <span className="card-arrow inline-block w-8">
-                <img src={`${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/back_0f22caf10c.svg`}
+                <img src={`uploads/back_0f22caf10c.svg`}
                  alt="" />
               </span>
             </h3>

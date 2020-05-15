@@ -507,7 +507,7 @@ svg:not(:root) {
 /********************** Canvas Overlay **********************/
 
 .canvas-overlay {
-  height: 550vh;
+  height: 400vh;
 }
 
 .canvas-overlay .overlay-text{

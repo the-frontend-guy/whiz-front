@@ -116,7 +116,7 @@ const CircleSlider = ({ data, direction }) => {
         }}
       >
         <img
-          src={(process.env.ASSETS_URL || '/staging/whizwafture') + slide.image.url}
+          src={'.' + slide.image.url}
           alt=""
           style={{
             transform:

@@ -47,7 +47,7 @@ return(
     <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.circle_slider} direction="false"/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.horizontal_slider}/>
     <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.overlay} />
-    <HomeContact data={data.strapiHomeData.form_content}/>
+    {/* <HomeContact data={data.strapiHomeData.form_content}/> */}
   </Layout>
 )
 }
