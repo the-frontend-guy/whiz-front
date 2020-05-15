@@ -10,7 +10,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
   const font = windowEl.width ? new FontFaceObserver(fontName) : {}
   const sectionRef = React.useRef(null)
   const canvasRef = React.useRef(null)
-  const fontSize = windowEl.width / 7
+  const fontSize = windowEl.width / 9
 
   let activeSlide = 0
 
@@ -41,7 +41,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
       windowEl.scrollY > endPosition ? endPosition : windowEl.scrollY
     const computedScaleRange = (scrolled - triggerPosition) * (divisor)
     slideX = computedScaleRange;
-    set({moveX: (windowEl.width/2) + slideX})
+    set({moveX: (windowEl.width/3) + slideX})
     if(sliderData){
     const hj = (scrolled - triggerPosition) - (windowEl.width / 6);
     const ksdf = (totalAnimationPosition) -  (windowEl.width / 6);
@@ -105,6 +105,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
                 width={windowEl.width}
                 height = { windowEl.height}
                 fontFamily={fontName}
+                letterSpacing = { -1}
               />
 
               <Rect
