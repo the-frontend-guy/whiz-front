@@ -11,6 +11,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
   const sectionRef = React.useRef(null)
   const canvasRef = React.useRef(null)
   const fontSize = windowEl.width / 9
+  const sliderFontSize = windowEl.width / 4
 
   let activeSlide = 0
 
@@ -57,9 +58,33 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
     <section className="canvas-overlay relative" ref={sectionRef}>
       <div className="overlay-fixed sticky top-0">
 
-        <div className="h-screen overlay-slider absolute top-0 left-0 w-full z-10 bg-white">
-          <h2 className="absolute">Whizwafture</h2>
-          <div className="content-container sticky ">
+        <div className="h-screen overlay-slider absolute top-0 left-0 w-full z-10 bg-black">
+        <Stage
+            width={windowEl.width/2}
+            height={windowEl.height}
+            className="absolute"
+          >
+            <Layer>
+            <Text
+                text={data.overlay_text}
+                // text={ `whizwafture`}
+                fill="white"
+                fontSize={sliderFontSize}
+                // width={windowEl.width}
+                
+                y={slideX}
+                rotationDeg = {-90}
+                fontFamily={fontName}
+                letterSpacing = { -1}
+              />
+            </Layer>
+          </Stage>
+          {/* <h2 className="absolute font-display">Whizwafture</h2> */}
+          <div className="content-container sticky" 
+          // style={{
+          //   transform: `translateY(${-(slideX-(windowEl.height*3))}px)`
+          // }}
+          >
           <p class="tracking-body mb-5 pb-5 md:mb-0 md:pb-0"><strong>Cease to think about your competitors now and bundle up to possess the liberty for dominance. A well prepared digital marketing strategy is what you need to rank higher than your competitors. Cease to think about your competitors now and bundle up to possess the liberty for dominance</strong><span class="hidden-text">A well prepared digital marketing strategy is what you need to rank higher than your competitors. At Whizwafture, we work with passion to create the identity and campaigns that hit right into every day changing trends.</span></p>
           </div>
 

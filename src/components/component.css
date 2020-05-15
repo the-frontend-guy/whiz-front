@@ -525,6 +525,16 @@ svg:not(:root) {
   fill: white;
 }
 
+
+.overlay-slider h2{
+transform: rotate(-90deg);
+transform-origin: top left;
+font-size: 40vh;
+left: 40px;
+}
+.overlay-slider .content-container {
+  top: 50%;
+}
 .text-animation-container {
   padding-top: 3rem;
   padding-bottom: 27rem;
