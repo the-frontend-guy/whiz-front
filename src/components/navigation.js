@@ -14,7 +14,7 @@ const Navigation = ({ active, data }) => {
     )
   })
   return(
-    <nav className={`p-4 md:p-5 bg-blue-100 top-0 transition ease-in-out duration-500 sticky z-10`}>
+    <nav className={`p-3 bg-blue-100 top-0 transition ease-in-out duration-500 sticky z-10`}>
    <ul className="container inline-flex">
    {lists}
    </ul>

@@ -7,7 +7,8 @@ const HorizontalSlider = ({ windowEl, data }) => {
   const sectionRef = React.useRef(null)
   const slides = []
   const heading = []
-
+  const isMobile = windowEl.width < 768
+  console.log(windowEl.width);
   const [sliderContainer, setSliderContainer] = useState()
   const [section, setSection] = useState()
 
@@ -80,20 +81,27 @@ const HorizontalSlider = ({ windowEl, data }) => {
       >
         <div className="horizontal-scene">
           <div className="container mx-auto">
+          { isMobile && <h2 className={`section-title md:text-5xl lg:text-6xl inline-block p-4 md:p-0 mb-5 leading-snug tracking-tight ${data.theme === 'dark' ? 'text-white' : ''}`}>
+                    {heading}
+                  </h2>
+
+              }
             <div
               className="slider-slides inline-block w-full md:w-7/12"
               ref={sliderRef}
             >
+             
               <animated.div
                 className="slide-controller inline-flex items-baseline flex-row"
                 style={{ transform: moveSlider }}
               >
-                <div className="slider-title-wrapper mr-0 md:mr-16 md:ml-8 lg:ml-0 ">
+                {!isMobile && <div className="slider-title-wrapper mr-0 md:mr-16 md:ml-8 lg:ml-0 ">
                   <h2 className={`section-title md:text-5xl lg:text-6xl inline-block p-4 md:p-0 mb-5 leading-snug tracking-tight ${data.theme === 'dark' ? 'text-white' : ''}`}>
                     {heading}
                   </h2>
                   <p className={`${data.theme === 'dark' ? 'text-white' : 'text-gray-100'} tracking-body w-10/12 p-4 hidden md:block md:p-0`}>aksd kahgsdk asdk kagkdsg  kagsdjgaskd   asdgasd kasgdk asdkgasd </p>
                 </div>
+                }
 
                 {slides}
               </animated.div>

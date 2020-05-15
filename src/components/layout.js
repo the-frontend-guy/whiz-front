@@ -27,10 +27,12 @@ const Layout = ({ children }) => {
     }
   `)
 
+  console.log(children);
+
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-
+      
       <main>{children}</main>
       <footer className="mt-12 lg:mt-40 mx-4 lg:mx-20">
         <div className="container mx-auto">

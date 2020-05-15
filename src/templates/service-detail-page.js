@@ -21,6 +21,7 @@ const ServiceDetailPage = ({data, pageContext}) => {
     width : typeof window !== `undefined` ? window.innerWidth : 0
   }
   const [windowInfo, setWindowEvent] = useState(initData);
+  // const [formOffset, setFormOffset] = useState(0);
 
 useEffect(() => {
   const windowEvent = () => {

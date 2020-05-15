@@ -279,7 +279,7 @@ form textarea {
 }
 
 .dark .slide-card figure img{
-  width: 90px;
+  width: 70px;
 }
 
 .dark.fixed-slider .slider-text-content{
@@ -507,7 +507,7 @@ svg:not(:root) {
 /********************** Canvas Overlay **********************/
 
 .canvas-overlay {
-  height: 400vh;
+  height: 550vh;
 }
 
 .canvas-overlay .overlay-text{
@@ -613,6 +613,18 @@ svg:not(:root) {
 
 .vertical-slider .vertical-slider-circle {
   transition: all .5s ease-in-out;
+}
+
+/********************** Hero Banner Section **********************/
+section.hero {
+  min-height: calc(100vh - 168px);
+  display: flex;
+  align-items: center;
+}
+
+/********************** Form Section **********************/
+.home-contact-form-container {
+  min-height: calc(100vh);
 }
 
 
