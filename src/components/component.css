@@ -266,8 +266,8 @@ form textarea {
   content: "";
   width: 100%;
   height: 100%;
-  bottom: 0;
-  left: -1px;
+  bottom: -1px;
+  left: 0px;
   position: absolute;
   background-color: black;
   transform: translateY(100%);
@@ -510,6 +510,21 @@ svg:not(:root) {
   height: 550vh;
 }
 
+.canvas-overlay .content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.canvas-overlay .content-container p {
+  width: 65%;
+  color: white;
+  padding: 2rem;
+  padding-right: 4rem;
+  font-size: 1.5rem;
+
+}
+
 .canvas-overlay .overlay-text{
   font-size: 13vw;
 }
@@ -627,7 +642,7 @@ left: 40px;
 
 /********************** Hero Banner Section **********************/
 section.hero {
-  min-height: calc(100vh - 168px);
+  min-height: calc(100vh - 51px);
   display: flex;
   align-items: center;
 }
@@ -685,9 +700,15 @@ section.hero {
   .slide-card figure img{
     width: 15vw;
   }
+  .horizontal-slider{
+    min-height: 40rem!important;
+  }
+  .horizontal-slider .horizontal-scene{
+    display: none!important;
+  }
   .horizontal-slider .h-slide{
-    width: 400px;
-    padding: 2rem;
+    width: auto;
+    padding: 1rem;
   }
 
   .horizontal-scene .container{

@@ -71,7 +71,7 @@ return(
  <section className="vertical-slider bg-black h-screen overflow-hidden">
    <div className="vertical-slider-wrapper flex h-screen items-center">
      <div className="w-3/6">
-       <div className="content-container">
+       <div className="vertical-content-container">
         <span class="highlighter" style={{
           transform: `translateY(${active*66}px)`
         }}></span>

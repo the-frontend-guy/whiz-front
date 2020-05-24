@@ -33,6 +33,19 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
+      link = {[
+        {
+          href : `https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css`,
+          type : `text/css`,
+          rel: `stylesheet`
+        },
+        {
+          href : `https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css`,
+          type : `text/css`,
+          rel: `stylesheet`
+
+        }
+      ]}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {

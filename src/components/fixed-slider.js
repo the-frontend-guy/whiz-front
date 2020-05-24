@@ -59,6 +59,7 @@ const FixedSlider = ({ windowEl, data }) => {
 
   function skipTo() {
     window.scroll({
+      behavior: 'smooth',
       top:
         sectionHeightOffset +
         slideDelay * 2.7 +
@@ -258,7 +259,7 @@ const FixedSlider = ({ windowEl, data }) => {
           </div>
           <div className="container mx-auto text-right">
             <span
-              className={`text-xl underline cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block ${
+              className={`text-xl underline cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block outline-none ${
                 isMobile ? "hidden" : ""
               }`}
               onClick={skipTo}
