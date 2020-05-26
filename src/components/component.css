@@ -659,6 +659,10 @@ section.hero {
   font-size: 45vw;
 }
 
+.vertical-slider .slick-dots li button:before {
+  color: white!important;
+}
+
 @import "tailwindcss/utilities";
 
 /********************** Media Query 767 **********************/
@@ -666,6 +670,9 @@ section.hero {
 @media only screen and (max-width: 767px) {
   .header-overlay {
     margin-top: -75px;
+  }
+  .dark .slide-card p{
+    max-height: inherit;
   }
   .header-overlay .heading-title{
     font-size: 8vw;
@@ -701,7 +708,7 @@ section.hero {
     width: 15vw;
   }
   .horizontal-slider{
-    min-height: 40rem!important;
+    min-height: 42rem!important;
   }
   .horizontal-slider .horizontal-scene{
     display: none!important;

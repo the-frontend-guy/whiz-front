@@ -123,10 +123,10 @@ const HorizontalSlider = ({ windowEl, data }) => {
         { isMobile && 
         <div>
           <div className="slider-title-wrapper mr-0 md:mr-16 md:ml-8 lg:ml-0 ">
-                  <h2 className={`section-title md:text-5xl lg:text-6xl inline-block p-4 md:p-0 mb-5 leading-snug tracking-tight ${data.theme === 'dark' ? 'text-white' : ''}`}>
+                  <h2 className={`section-title md:text-5xl lg:text-6xl inline-block pt-4 px-4 md:p-0 leading-snug tracking-tight ${data.theme === 'dark' ? 'text-white' : ''}`}>
                     {heading}
                   </h2>
-                  <p className={`${data.theme === 'dark' ? 'text-white' : 'text-gray-100'} tracking-body w-10/12 p-4  md:block md:p-0`}>aksd kahgsdk asdk kagkdsg  kagsdjgaskd   asdgasd kasgdk asdkgasd </p>
+                  <p className={`${data.theme === 'dark' ? 'text-white' : 'text-gray-100'} tracking-body  p-4  md:block md:p-0`}>aksd kahgsdk asdk kagkdsg  kagsdjgaskd   asdgasd kasgdk asdkgasd </p>
                 </div>
           
         <Slider {...carouselSettings}>

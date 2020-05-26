@@ -5,7 +5,6 @@ import { animated, useSpring } from "react-spring"
 import { Stage, Layer, Text, Rect } from "react-konva"
 import VerticalSlider from "../components/vertical-slider"
 
-const outerScrolled = 0;
 const CanvasOverlay = ({ windowEl, data, sliderData }) => {
   const fontName = "mont"
   const font = windowEl.width ? new FontFaceObserver(fontName) : {}
@@ -17,12 +16,11 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
 
   let activeSlide = 0
 
+  const isMobile = windowEl.width < 768;
+
   const [section, setSection] = useState()
   const [canvasOverlay, setCanvas] = useState()
   const [text, setText] = useState()
-  const [{moveX}, set] = useSpring(()=>({moveX: 0}))
-  let slideX = 0;
-  let moveY = 0;
   useEffect(() => {
     setCanvas(canvasRef.current)
     setSection(sectionRef.current)
@@ -70,23 +68,8 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
       slideStatic = slideStatic - moveSlide;
     }
 
-    // if(windowEl.scrollY > (triggerPosition + (windowEl.width*2) + (windowEl.height*2))){
-    //   let calc = windowEl.scrollY -  (triggerPosition + (windowEl.width*2) + (windowEl.height*2));
-    //   slideStatic = calc > windowEl.height
-    // }
-    //  revealSlider = windowEl.scrollY triggerPosition + windowEl.width
-    // const textHeight = text.width()
-    // const endPosition = triggerPosition + windowEl.height*2
-    // const totalAnimationPosition = endPosition - triggerPosition
-    // const divisor = (totalAnimationPosition) / windowEl.height
-    // const scrolled =
-    //   windowEl.scrollY > endPosition ? endPosition : windowEl.scrollY
-    // const computedScaleRange = (scrolled - triggerPosition) * (divisor)
-    // slideX = computedScaleRange;
-
   
-    
-    // set({moveX: (windowEl.width/6) + slideX})
+
     if(sliderData){
        if(windowEl.scrollY > (triggerPosition + (windowEl.width*2) + (windowEl.height*2))){
       let calc = windowEl.scrollY -  (triggerPosition + (windowEl.width*2) + (windowEl.height*2));
@@ -99,23 +82,30 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
       activeSlide = Math.trunc(calc / jkk) < 1 ? 0 : Math.trunc(calc / jkk)- 1 ; 
     }
       
-      
-    // const hj = (scrolled - triggerPosition) - (windowEl.width / 6);
-    // const ksdf = (totalAnimationPosition) -  (windowEl.width / 6);
-    // activeSlide = Math.trunc(hj / jkk) < 1 ? 0 : Math.trunc(hj / jkk) - 1;
     }
     
   }
+
+  if(isMobile){
+    slideStatic = 0;
+    revealSlider = 0 ;
+    moveText = 0;
+    slideText = 0;
+    moveSlide = 0;
+    sectionHeight = 0;
+  }
+
 
 
 
   return (
     <section className="canvas-overlay relative" ref={sectionRef} style={{
-      height: sectionHeight
+      height: isMobile ? `auto` : sectionHeight,
+      minHeight: `auto`
     }}>
-      <div className="overlay-fixed sticky top-0">
+      <div className={`overlay-fixed top-0 ${!isMobile ? 'sticky' : ''}`}>
 
-        <div className="h-screen overlay-slider absolute top-0 left-0 w-full z-20 bg-black" style={{
+        { !isMobile && <div className="h-screen overlay-slider absolute top-0 left-0 w-full z-20 bg-black" style={{
           top: -moveSlide
         }}>
         <Stage
@@ -140,7 +130,6 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
               />
             </Layer>
           </Stage>
-          {/* <h2 className="absolute font-display">Whizwafture</h2> */}
           <div className="content-container" 
            style={{
              transform: `translateY(${slidePara}px)`
@@ -154,9 +143,23 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
           </div>
 
         </div>
+        }
+
+        {isMobile && <div>
+          <h2 className="section-title p-4 md:text-5xl lg:text-6xl leading-snug tracking-tight">
+            {data.overlay_text}
+          </h2>
+          <div>
+          <p className="tracking-body text-gray-100 p-4">
+            Cease to think about your competitors now and bundle up to possess the liberty for dominance.</p>
+            <p className="tracking-body text-gray-100 p-4">A well prepared digital marketing strategy is what you need to rank higher than your competitors.Cease to think about your competitors now and bundle up to possess the liberty for dominance.</p>
+            <p className="tracking-body text-gray-100 p-4">A well prepared digital marketing strategy is what you need to rank higher than your competitors.</p> 
+            <p className="tracking-body text-gray-100 p-4">At Whizwafture, we work with passion to create the identity and campaigns that hit right into every day changing trends.</p>
+          </div>
+          </div>}
 
         <div
-          className="home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center h-screen"
+          className={`home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center ${!isMobile ? 'h-screen' : ''}`}
           style={{
             backgroundImage: `url('${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/banner_3d7ab820ac.jpeg')`,
             backgroundSize: `cover`,
@@ -175,7 +178,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
           </div>}
         </div>
 
-        <animated.div className="absolute top-0 z-20 left-0 hidden md:block"
+        {!isMobile && <animated.div className="absolute top-0 z-20 left-0 hidden md:block"
           style={{
             left : -moveText,
             // transform: moveX.interpolate(x => x > 0 ? `translateX(${-(x*.3)}px)` : `none`)
@@ -219,6 +222,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
             </Layer>
           </Stage>
         </animated.div>
+        }
       </div>
     </section>
   )
