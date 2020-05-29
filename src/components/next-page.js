@@ -12,7 +12,6 @@ const NextPage = ({ data, currentPage }) => {
     nextPage = sortedPages[0]
   }
 
-  console.log(nextPage);
 
 
 

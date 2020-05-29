@@ -14,8 +14,6 @@ import HorizontalSlider from "../components/horizontal-slider"
 
 
 const ServiceChildDetailPage = ({data, pageContext}) => {
-  console.log(pageContext);
-  console.log(data);
   const initData = {
     scrollX : typeof window !== `undefined` ? window.scrollX : 0,
     scrollY : typeof window !== `undefined` ? window.scrollY : 0,

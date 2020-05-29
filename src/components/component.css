@@ -663,6 +663,18 @@ section.hero {
   color: white!important;
 }
 
+.vertical-slider .slick-dots {
+  bottom: -50px;
+}
+
+.slick-slider{
+  padding-bottom: 2rem;
+}
+
+.slick-dots {
+  bottom: 5px !important;
+}
+
 @import "tailwindcss/utilities";
 
 /********************** Media Query 767 **********************/
@@ -708,7 +720,14 @@ section.hero {
     width: 15vw;
   }
   .horizontal-slider{
-    min-height: 42rem!important;
+    padding-bottom: 0 !important;
+    height: auto !important;
+  }
+
+  .vertical-slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .horizontal-slider .horizontal-scene{
     display: none!important;

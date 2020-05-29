@@ -2,7 +2,6 @@ import React from "react"
 import Slider from "react-slick";
 
 const VerticalSlider = ({ data, windowEl, active }) => {
-  console.log(data)
   const slides = data.slides
 
   const verticalLabels = []
@@ -34,9 +33,9 @@ const VerticalSlider = ({ data, windowEl, active }) => {
             }
             width="60%"
             alt=""
-            
+            className ="mb-8"
           />
-        <h5 className="text-white font-display text-4xl mb-3">{e.title}</h5>
+        <h5 className="text-white font-display text-4xl mb-8">{e.title}</h5>
         <p className="text-white tracking-body">{e.content}</p>
       </div>
     )

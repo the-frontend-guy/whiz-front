@@ -4,6 +4,7 @@ import "./component.css"
 import { animated, useSpring } from "react-spring"
 import { Stage, Layer, Text, Rect } from "react-konva"
 import VerticalSlider from "../components/vertical-slider"
+import useMeasure from "react-use-measure"
 
 const CanvasOverlay = ({ windowEl, data, sliderData }) => {
   const fontName = "mont"
@@ -16,8 +17,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
 
   let activeSlide = 0
 
-  const isMobile = windowEl.width < 768;
-
+  
   const [section, setSection] = useState()
   const [canvasOverlay, setCanvas] = useState()
   const [text, setText] = useState()
@@ -26,7 +26,8 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
     setSection(sectionRef.current)
     setText(textRef.current)
   }, [])
-
+  
+  const isMobile = section ? section.offsetWidth < 768 : false;
   if (windowEl.width) {
     font.load().then(e => {
       if (canvasOverlay) {
@@ -46,19 +47,17 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
     sectionHeight = (windowEl.width*2) + (windowEl.height*5);
     if(windowEl.scrollY > triggerPosition){
       let calc = windowEl.width - (windowEl.scrollY - triggerPosition);
-      revealSlider = calc <= 0 ? 0 : calc;
+      revealSlider = calc <= 0 ? 0 : calc*2;
     }
     if(windowEl.scrollY > (triggerPosition + windowEl.width)){
       let calc = windowEl.scrollY - (triggerPosition + windowEl.width)
-      moveText = calc > windowEl.width  ? windowEl.width : calc
+      moveText = calc > windowEl.width  ? windowEl.width : calc*2
     }
 
     if(windowEl.scrollY > (triggerPosition + (windowEl.width*2))){
       let calc = windowEl.scrollY - (triggerPosition + (windowEl.width*2))
-      console.log(calc);
       let ui = text.width() / windowEl.height;
       slideText = calc > windowEl.height ? windowEl.height*ui + 100 : calc*ui
-      console.log(slideText);
       slidePara = slidePara - (slideText / (ui));
     }
 
@@ -145,7 +144,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
         </div>
         }
 
-        {isMobile && <div>
+        {isMobile && <div className="my-12">
           <h2 className="section-title p-4 md:text-5xl lg:text-6xl leading-snug tracking-tight">
             {data.overlay_text}
           </h2>
@@ -159,7 +158,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
           </div>}
 
         <div
-          className={`home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center ${!isMobile ? 'h-screen' : ''}`}
+          className={`home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center min-h-screen`}
           style={{
             backgroundImage: `url('${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/banner_3d7ab820ac.jpeg')`,
             backgroundSize: `cover`,

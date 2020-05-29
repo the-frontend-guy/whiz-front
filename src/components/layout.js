@@ -27,7 +27,6 @@ const Layout = ({ children }) => {
     }
   `)
 
-  console.log(children);
 
   return (
     <>
