@@ -657,6 +657,10 @@ section.hero {
   min-height: calc(100vh);
 }
 
+/********************** Contact Us **********************/
+.contact-us .content-wrapper{
+  min-height: calc(100vh - 285px);
+}
 
 /********************** 404 Page **********************/
 
