@@ -23,7 +23,7 @@
 /********************** Extended Classes **********************/
 
 .list-container {
-  @apply inline-flex flex-col h-full;
+  @apply inline-flex flex-col;
 }
 
 .list-container li {
@@ -97,6 +97,11 @@ body {
   overflow-x: hidden;
   font-size: 16px;
   @apply font-body
+}
+
+body.block{
+  height: 100vh;
+  overflow: hidden;
 }
 
 section {
@@ -655,9 +660,18 @@ section.hero {
 
 /********************** 404 Page **********************/
 
-.not-found .container {
-  font-size: 45vw;
+.not-found {
+  height: calc(100vh - 101px);
 }
+.not-found .image-wrap{
+  height: 70%;
+}
+.not-found .content-wrap {
+height: 30%;
+}
+
+/********************** Vertical Slider **********************/
+
 
 .vertical-slider .slick-dots li button:before {
   color: white!important;
@@ -667,6 +681,9 @@ section.hero {
   bottom: -50px;
 }
 
+/********************** Slick Slider **********************/
+
+
 .slick-slider{
   padding-bottom: 2rem;
 }
@@ -675,6 +692,150 @@ section.hero {
   bottom: 5px !important;
 }
 
+/********************** Header **********************/
+
+@keyframes hamburgerEffect{
+  0%{
+    transform: translateX(0);
+    transform-origin: center;
+  }
+
+  52% { 
+    transform:translateX(100%);
+    transform-origin: center;
+  }
+
+  70%{
+    opacity:0;
+    transform: translateX(-100%);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0%);
+
+  }
+
+}
+
+.menu-wrapper {
+  transition: all .5s ease-in-out;
+  position: absolute;
+  z-index: 999;
+}
+
+.menu-wrapper.show{
+  opacity: 1;
+  width: 100%;
+}
+
+.menu-wrapper.hide{
+  opacity: 0;
+  width: 100%;
+
+}
+
+.hamburger-container {
+display: block;
+width: 40px;
+padding: 10px;
+}
+
+.hamburger {
+  width: 20px;
+  overflow: hidden;
+  display: block;
+}
+
+.hamburger .line {
+  background-color: white;
+  width: 100%;
+  height: 3px;
+  display: block;
+  /* transition: all .5s ease-in-out; */
+
+}
+
+
+
+.hamburger-container:not(.menu-visible):hover .line:first-child{
+  animation: hamburgerEffect .5s linear  1 forwards;
+}
+
+.hamburger-container:not(.menu-visible):hover .line:last-child{
+  animation: hamburgerEffect .5s linear .1s  1 forwards;
+
+}
+
+.hamburger-container.menu-visible .hamburger {
+  overflow: visible;
+}
+
+.hamburger-container.menu-visible .line:first-child{
+  transform: rotate(45deg) translateX(2px);
+  /* transform-origin: top right; */
+  margin-bottom: 0;
+  transition: all .5s ease-in-out;
+
+}
+
+.hamburger-container.menu-visible .line:last-child{
+  transform: rotate(-45deg) translateX(2px);
+  /* transform-origin: bottom right; */
+  transition: all .5s ease-in-out;
+
+}
+
+.hamburger .line:first-child {
+  margin-bottom: 5px;
+  /* transition: all .2s linear; */
+} 
+
+
+/********************** Menu **********************/
+.menu-container{
+  height: calc(100vh - 101px);
+}
+
+.menu-link {
+  height: 0.9em;
+  overflow: hidden;
+  line-height: 1em;
+  /* pointer-events: none; */
+
+}
+
+.menu-link-wrap {
+  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+}
+
+.menu-link:hover .menu-link-wrap{
+  transform: translateY(-1em);
+}
+
+.menu-link .border-text{
+  -webkit-text-stroke-color: hsla(0,0%,100%,.3);
+  -webkit-text-stroke-width: 1px;
+  color: transparent;
+  box-sizing: border-box
+}
+
+
+/********************** Social Icons **********************/
+.social-icon-container img:last-child {
+  display: none;
+}
+
+.social-icon-container.dark img:first-child {
+  display: none;
+}
+
+.social-icon-container.dark img:last-child{
+  display: block;
+}
+
+
 @import "tailwindcss/utilities";
 
 /********************** Media Query 767 **********************/
@@ -682,6 +843,19 @@ section.hero {
 @media only screen and (max-width: 767px) {
   .header-overlay {
     margin-top: -75px;
+  }
+
+  .not-found .image-wrap{
+    height: 60%;
+  }
+  .not-found .content-wrap {
+  height: auto;
+  }
+
+  .menu-container,
+  .not-found{
+    min-height: calc(100vh - 75px) ;
+    height: calc(100vh - 75px);
   }
   .dark .slide-card p{
     max-height: inherit;

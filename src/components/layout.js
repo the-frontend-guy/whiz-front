@@ -16,7 +16,7 @@ import ServiceList from "./service-list"
 import ContactInfo from "./contact-info"
 import SocialIcons from "./social-icons"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hideFooter, hideHamburger }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -30,10 +30,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      
+      <Header siteTitle={data.site.siteMetadata.title} hideHamburger={hideHamburger} />
       <main>{children}</main>
-      <footer className="mt-12 lg:mt-40 mx-4 lg:mx-20">
+      {!hideFooter && <footer className="mt-12 lg:mt-40 mx-4 lg:mx-20">
         <div className="container mx-auto">
           <div className="footer-title">
             <span className="capitalize font-display text-blue-100 mb-10 lg:mb-20 block text-3xl tracking-tight">
@@ -52,6 +51,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </footer>
+}
     </>
   )
 }
