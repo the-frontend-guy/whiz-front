@@ -661,6 +661,36 @@ section.hero {
 .contact-us .content-wrapper{
   min-height: calc(100vh - 285px);
 }
+/********************** Loader **********************/
+.loader {
+  transition: all .5s ease-in-out;
+}
+
+.loader-images {
+  height: 256px;
+  width: 256px;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+}
+
+.loader-images img{
+  opacity: 0;
+  transition: all .03s ease-in-out;
+}
+
+.loader-images img.active{
+  opacity: 1!important;
+}
+
+.loader-company{
+  font-size: 12vw;
+  line-height: 10vw;
+}
+
+.percent-text{
+  opacity: .4;
+}
 
 /********************** 404 Page **********************/
 
@@ -672,6 +702,14 @@ section.hero {
 }
 .not-found .content-wrap {
 height: 30%;
+}
+
+.not-found .img-container{
+  bottom: -3px;
+}
+
+.not-found .message {
+  font-family: 'brandanbold';
 }
 
 /********************** Vertical Slider **********************/
@@ -847,6 +885,15 @@ padding: 10px;
 @media only screen and (max-width: 767px) {
   .header-overlay {
     margin-top: -75px;
+  }
+
+  .loader-images{
+    height: 156px;
+  width: 156px;
+  }
+
+  .percent-text {
+    font-size: 50vw!important;
   }
 
   .not-found .image-wrap{

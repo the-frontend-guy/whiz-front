@@ -23,7 +23,7 @@ const Header = ({ siteTitle, hideHamburger }) => {
   
 
   return(
-    <Fragment>
+    <>
  <header className="p-4 md:p-5 bg-black relative">
    <div className="container flex justify-between items-center">
    <div className="logo-container">
@@ -43,11 +43,9 @@ const Header = ({ siteTitle, hideHamburger }) => {
    </div>
   </header>
   <div className={`menu-wrapper overflow-y-auto bg-black ${showMenu ? 'show' : 'hide'}`}>
-  {showMenu && 
-    <Menu></Menu>
-    }
+  {showMenu && <Menu></Menu>}
     </div>
-  </Fragment>
+  </>
   
 )}
 

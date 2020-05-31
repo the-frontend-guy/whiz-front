@@ -14,6 +14,9 @@ module.exports = {
       margin: {
         '28':'7rem'
       },
+      padding:{
+        '28':'7rem'
+      },
       letterSpacing :{
         'body':'0.035em'
       },

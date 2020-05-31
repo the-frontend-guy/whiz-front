@@ -11,7 +11,7 @@ const NotFoundPage = () => (
     <SEO title="404: Not found" />
     <section className="flex flex-col relative not-found">
       <div className="w-full bg-black mx-auto relative image-wrap">
-        <div className="img-container absolute bottom-0 w-full">
+        <div className="img-container absolute w-full">
       <img src={`${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/404_06ffc640f8.png`} className="m-auto" alt="" style={{
         width: `75%`
       }}/>
@@ -24,7 +24,7 @@ const NotFoundPage = () => (
           <p className="text-2xl">Oops! An error occured.</p>
           <div className="flex items-start  flex-col md:flex-row md:items-center">
           <p className="text-2xl">Don't worry you can find us : </p>
-          <SocialIcons/>
+            <div className="ml-4"><SocialIcons/></div>
           </div>
         </div>
         <Link to={'/'} className="text-blue-100 text-3xl font-display mt-8 md:mt-0">back to homepage</Link>
