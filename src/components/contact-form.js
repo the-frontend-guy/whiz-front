@@ -1,8 +1,8 @@
 import React from "react"
 
-const ContactForm = () => {
+const ContactForm = ({isContactPage}) => {
   return (
-    <form method="post" action="#">
+    <form method="post" action="#" className={`${isContactPage?'contact-page':''}`}>
       <div className="form-controls">
         <div className="form-control flex-col md:flex-row flex justify-between mb-0 md:mb-8">
           <input

@@ -18,14 +18,14 @@ const ContactPage = () => {
         </div>
 
         <div className="content-wrapper flex  flex-col md:items-center md:flex-row">
-          <div className="px-4 w-full md:px-28 md:w-4/12">
+          <div className="px-4 w-full md:px-28 md:w-6/12">
             <h2 className="text-white section-title text-4xl">Let's talk</h2>
             <p className="text-white tracking-body mt-4">
               Let's discuss your project!
             </p>
           </div>
-          <div className="px-4 w-full md:w-8/12 md:px-28">
-            <ContactForm />
+          <div className="pr-4 w-full md:w-6/12 md:pr-28">
+            <ContactForm isContactPage={true}/>
           </div>
         </div>
       </section>
