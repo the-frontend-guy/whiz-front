@@ -37,52 +37,52 @@ const AboutUsPage = ({data}) => {
   return(
     <Layout>
       <SEO title="about-us" />
-      <AboutUsBanner data={data.strapiAboutData.banner}/>
-      <AboutUsMain descData={data.strapiAboutData.description} sliderData={data.strapiAboutData.popup_slider}/>
-      <CanvasOverlay windowEl={windowInfo} data={data.strapiAboutData.overlay} hoverSliderData={data.strapiAboutData.hover_slider}/>
-      <HomeContact data={data.strapiAboutData.form_content}/>
+      <AboutUsBanner data={data.strapiAboutusData.banner}/>
+      <AboutUsMain descData={data.strapiAboutusData.description} sliderData={data.strapiAboutusData.popup_slider}/>
+      <CanvasOverlay windowEl={windowInfo} data={data.strapiAboutusData.overlay} hoverSliderData={data.strapiAboutusData.aboutus_hoverslides}/>
+      {/* <HomeContact data={data.strapiAboutData.form_content}/> */}
     </Layout>
   )
 }
 
 
-// export const query = graphql`
-// query AboutData{
-//   strapiAboutData {
-//     banner {
-//       banner_desc
-//       blue
-//       post_blue
-//       pre_blue
-//     }
-//     description {
-//       content
-//       heading
-//     }
-//     form_content {
-//       title
-//       id
-//     }
-//     hover_slider {
-//       desc
-//       title
-//       id
-//       slide_image {
-//         publicURL
-//       }
-//       desc_list {
-//         id
-//         title
-//       }
-//     }
-//     overlay {
-//       overlay_text
-//     }
-//     popup_slider {
-//       content
-//       heading
-//     }
-//   }
-// }`
+export const query = graphql`
+query AboutData{
+  strapiAboutusData {
+    aboutus_hoverslides {
+      title
+      description
+    }
+    banner {
+      banner_desc
+      blue
+      post_blue
+      pre_blue
+    }
+    description {
+      description_hide
+      description_show
+      heading
+      read_more
+      sub_heading
+    }
+    next_page {
+      id
+      url
+    }
+    overlay {
+      desc_heading
+      description {
+        title
+      }
+      overlay_text
+      vertical_text
+    }
+    popup_slider {
+      heading
+      content
+    }
+  }
+}`
 
 export default AboutUsPage
