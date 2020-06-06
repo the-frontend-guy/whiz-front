@@ -8,8 +8,7 @@ const VerticalSlider = ({ data, windowEl, active }) => {
   const circleSlides = []
   const mobileSlides = []
   const isMobile = windowEl.width < 768
-  // const [ref, bounds] = useMeasure();
-  // const  [active, setActive] = useState(0);
+
 
   const carouselSettings = {
     dots: true,
@@ -65,7 +64,6 @@ const VerticalSlider = ({ data, windowEl, active }) => {
           style={{
             width: i === active ? radius : 20,
             height: i === active ? radius : 20,
-            // transform: `scale(${ i === active ? 1 : .1})`
           }}
         >
           <img
@@ -83,25 +81,9 @@ const VerticalSlider = ({ data, windowEl, active }) => {
     )
   })
 
-  function rotateUp() {
-    let currentActive = active + 1
-    let totalLength = slides.length - 1
-    if (currentActive > totalLength) {
-      // setActive(0)
-    } else {
-      // setActive(currentActive)
-    }
-  }
 
-  function rotateDown() {
-    let currentActive = active - 1
-    let totalLength = slides.length - 1
-    if (currentActive < 0) {
-      // setActive(totalLength)
-    } else {
-      // setActive(currentActive)
-    }
-  }
+
+ 
 
   return (
     <section className="vertical-slider bg-black h-screen overflow-hidden">
