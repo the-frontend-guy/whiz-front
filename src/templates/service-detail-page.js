@@ -98,6 +98,7 @@ query ServiceDetails($parentId: Int) {
     }
     form_content {
       title
+      form_heading
     }
     image_grid_1 {
       grids {
@@ -138,7 +139,13 @@ query ServiceDetails($parentId: Int) {
       }
     }
     overlay {
+      banner_text
       overlay_text
+      description {
+        title
+        id
+      }
+      vertical_text
     }
     vertical_slider {
       skip_link

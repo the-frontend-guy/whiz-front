@@ -96,6 +96,8 @@ query ServiceChildDetails($parentId: Int, $serviceChild: Int) {
     }
     form_content {
       title
+      form_heading
+      form_description
     }
     image_grid_1 {
       grids {

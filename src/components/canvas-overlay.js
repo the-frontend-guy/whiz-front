@@ -4,9 +4,10 @@ import "./component.css"
 import { animated, useSpring } from "react-spring"
 import { Stage, Layer, Text, Rect } from "react-konva"
 import VerticalSlider from "../components/vertical-slider"
+import HoverSlider from "../components/hover-slider"
 import useMeasure from "react-use-measure"
 
-const CanvasOverlay = ({ windowEl, data, sliderData }) => {
+const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
   const fontName = "mont"
   const font = windowEl.width ? new FontFaceObserver(fontName) : {}
   const sectionRef = React.useRef(null)
@@ -166,8 +167,9 @@ const CanvasOverlay = ({ windowEl, data, sliderData }) => {
           }}
         >
    {sliderData && <VerticalSlider windowEl={windowEl} active={activeSlide} data={sliderData}/>}
+   {hoverSliderData && <HoverSlider data={hoverSliderData}/>}
 
-          {!sliderData && <div className="wrapper w-auto md:w-4/5 mx-4 md:mx-0">
+          {!sliderData && !hoverSliderData &&  <div className="wrapper w-auto md:w-4/5 mx-4 md:mx-0">
 
             <h2
               className="section-title md:text-5xl lg:text-6xl xl:text-7xl leading-snug tracking-tight text-white w-full md:w-4/5"

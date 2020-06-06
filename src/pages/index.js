@@ -121,6 +121,8 @@ query HomeData {
     }
     form_content {
       title
+      form_heading
+      form_description
     }
     horizontal_slider {
       heading {
@@ -145,6 +147,11 @@ query HomeData {
     overlay {
       banner_text
       overlay_text
+      description {
+        title
+        id
+      }
+      vertical_text
     }
   }
 }

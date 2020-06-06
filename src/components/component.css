@@ -240,7 +240,7 @@ form textarea {
   position: relative;
 }
 
-.horizontal-slider.dark .h-slides-container::after{
+/* .horizontal-slider.dark .h-slides-container::after{
   position: absolute;
   content: '';
   width: 100%;
@@ -248,7 +248,7 @@ form textarea {
   background-color: #353535;
   bottom: 10.5rem;
   left: 0;
-}
+} */
 
 .h-slide figure img {
   width: 55%;
@@ -875,6 +875,52 @@ padding: 10px;
 
 .social-icon-container.dark img:last-child{
   display: block;
+}
+
+/********************** Slider Pop Up**********************/
+
+.sentence-container {
+  white-space: nowrap;
+
+}
+.sentence-container .sentence{
+  font-size: 5vw;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.sentence:last-child{
+  margin-left: 5vw;
+}
+
+
+
+.sentence-container:nth-child(odd) {
+  transition: all .2s linear;
+}
+
+.sentence-container:nth-child(even) {
+  transition: all .25s linear;
+
+}
+
+.sentence-container:nth-child(odd) .sentence:last-child,
+.sentence-container:nth-child(even) .sentence:first-child{
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.9);
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+}
+
+/********************** Slider Pop Up**********************/
+
+.hover-slider-container .content{
+  width: 70%;
+  display: inline-block;
+}
+
+.hover-slider-container .hover-slider{
+  width: 30%;
+  display: inline-block;
 }
 
 

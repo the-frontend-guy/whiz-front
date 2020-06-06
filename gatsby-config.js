@@ -31,8 +31,8 @@ module.exports = {
          
         ],
         singleTypes:[
-          `home-data`
-        ],        
+          `home-data`,`aboutus-data`,`contact-us`
+        ],       
         queryLimit: 1000,
       },
     },
