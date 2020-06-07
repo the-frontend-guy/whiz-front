@@ -31,19 +31,13 @@ const SliderPopup = ({data}) => {
       screenPos = 1
     }
     let percent = (screenPos / window.innerWidth) * 30
-    console.log(percent)
-    // if(screenPos == 0){
-    //   screenPos = 1
-    // }
+  
 
     setAnimation(percent - 20)
-
-    console.log()
-    // setAnimation((screenPos/ window.innerWidth)*100);
-    // console.log(e.pageX * -1 / 15)
   }
 
   return (
+    <>
     <div
       className="slider-popup-container heading-title"
       onMouseMove={handleMouseMove}
@@ -52,13 +46,17 @@ const SliderPopup = ({data}) => {
         <div
           className="sentence-container"
           style={{
-            transform: `translateX(${animateMouse}vw)`,
+            transform: `translateX(${animateMouse-10}vw)`,
           }}
         >
           {e}
         </div>
       ))}
     </div>
+    <div className="popup-container w-full-screen h-full-screen absolute top-0">
+      <div className="popup"></div>
+    </div>
+    </>
   )
 }
 

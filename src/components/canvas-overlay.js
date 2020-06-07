@@ -34,13 +34,20 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
     setText(textRef.current)
   }, [])
 
-data.description.forEach(e => {
-  console.log(e);
-paragraphs.push(
-<p className={`${isMobile ? "tracking-body text-gray-100 p-4" : "tracking-body mb-5 pb-5 md:mb-0 md:pb-0"}`}>{e.title}</p>
-)
-}
-)
+  data.description.forEach(e => {
+    console.log(e)
+    paragraphs.push(
+      <p
+        className={`${
+          isMobile
+            ? "tracking-body text-gray-100 p-4"
+            : "tracking-body mb-5 pb-5 md:mb-0 md:pb-0"
+        }`}
+      >
+        {e.title}
+      </p>
+    )
+  })
 
   const isMobile = section ? section.offsetWidth < 768 : false
   if (windowEl.width) {
@@ -163,9 +170,7 @@ paragraphs.push(
             <h2 className="section-title p-4 md:text-5xl lg:text-6xl leading-snug tracking-tight">
               {data.vertical_text}
             </h2>
-            <div>
-              {paragraphs}
-            </div>
+            <div>{paragraphs}</div>
           </div>
         )}
 
