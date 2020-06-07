@@ -63,8 +63,8 @@ const Loader = ({ data }) => {
 
   <div className="percent-text-wrap relative text-center">
   <h1 className="font-display percent-text text-blue-100" style={{
-     fontSize: `60vh`,
-     lineHeight: `51vh`
+     fontSize: `50vw`,
+     lineHeight: `40vw`
    }}>
      {percentLoaded}
    </h1>
