@@ -59,32 +59,33 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
   }
 
   if (section && windowEl.width > 767) {
-    const triggerPosition = section.offsetTop + windowEl.height
-    sectionHeight = windowEl.width * 2 + windowEl.height * 5
-    if (windowEl.scrollY > triggerPosition) {
-      let calc = windowEl.width - (windowEl.scrollY - triggerPosition)
-      revealSlider = calc <= 0 ? 0 : calc * 2
+    const triggerPosition = section.offsetTop
+    sectionHeight = sliderData ? windowEl.width * 1.5 + windowEl.height * 4.5 : windowEl.width * 1.5 + windowEl.height * 3.5
+    if ((windowEl.scrollY) > triggerPosition) {
+      let calc = windowEl.width - ((windowEl.scrollY) - triggerPosition)
+      revealSlider = calc <= 0 ? 0 : calc 
     }
     if (windowEl.scrollY > triggerPosition + windowEl.width) {
       let calc = windowEl.scrollY - (triggerPosition + windowEl.width)
-      moveText = calc > windowEl.width ? windowEl.width : calc * 2
+      moveText = calc > windowEl.width ? windowEl.width : calc 
     }
 
-    if (windowEl.scrollY > triggerPosition + windowEl.width * 2) {
-      let calc = windowEl.scrollY - (triggerPosition + windowEl.width * 2)
+    if (windowEl.scrollY > triggerPosition + (windowEl.width * 1.5) ) {
+      let calc = windowEl.scrollY - (triggerPosition + (windowEl.width * 1.5 ))
       let ui = text.width() / windowEl.height
-      slideText =
-        calc > windowEl.height ? windowEl.height * ui + 100 : calc * ui
-      slidePara = slidePara - slideText / ui
+  
+      slideText = 
+       calc * ui
+      slidePara = slidePara - (slideText / ui)
     }
 
     if (
       windowEl.scrollY >
-      triggerPosition + windowEl.width * 2 + windowEl.height
+      triggerPosition + (windowEl.width * 1.5) + windowEl.height
     ) {
       let calc =
         windowEl.scrollY -
-        (triggerPosition + windowEl.width * 2 + windowEl.height)
+        (triggerPosition + (windowEl.width * 1.5) + windowEl.height)
       moveSlide = calc > windowEl.height ? windowEl.height : calc
       slideStatic = slideStatic - moveSlide
     }
@@ -92,11 +93,11 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
     if (sliderData) {
       if (
         windowEl.scrollY >
-        triggerPosition + windowEl.width * 2 + windowEl.height * 2
+        triggerPosition + (windowEl.width * 1.5) + windowEl.height * 2
       ) {
         let calc =
           windowEl.scrollY -
-          (triggerPosition + windowEl.width * 2 + windowEl.height * 2)
+          (triggerPosition + (windowEl.width * 1.5) + windowEl.height * 2)
         if (calc > windowEl.height) {
           calc = windowEl.height
         } else {
@@ -127,12 +128,14 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
         minHeight: `auto`,
       }}
     >
-      <div className={`overlay-fixed top-0 ${!isMobile ? "sticky" : ""}`}>
+      <div className={`overlay-fixed top-0 ${!isMobile ? "sticky" : ""}`}
+      >
         {!isMobile && (
           <div
-            className="h-screen overlay-slider absolute top-0 left-0 w-full z-20 bg-black"
+            className="h-screen overlay-slider absolute top-0 left-0 w-full z-20 bg-white"
             style={{
               top: -moveSlide,
+                transform: `translateX(${windowEl.width-moveText}px)`
             }}
           >
             <Stage
@@ -144,7 +147,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
                 <Text
                   ref={textRef}
                   text={data.vertical_text}
-                  fill="white"
+                  fill="black"
                   fontSize={sliderFontSize}
                   y={slideText}
                   x={50}
@@ -236,7 +239,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
                   width={windowEl.width}
                   height={windowEl.height}
                   x={revealSlider}
-                  fill="white"
+                  fill="black"
                 />
               </Layer>
             </Stage>

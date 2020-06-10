@@ -8,6 +8,7 @@ import AboutUsBanner from '../components/about-us-banner'
 import AboutUsMain from '../components/about-us-main'
 import CanvasOverlay from "../components/canvas-overlay"
 import HomeContact from "../components/home-contact"
+import NextPage from "../components/next-page"
 
 const AboutUsPage = ({data}) => {
   const initData = {
@@ -40,49 +41,51 @@ const AboutUsPage = ({data}) => {
       <AboutUsBanner data={data.strapiAboutusData.banner}/>
       <AboutUsMain descData={data.strapiAboutusData.description} sliderData={data.strapiAboutusData.popup_slider}/>
       <CanvasOverlay windowEl={windowInfo} data={data.strapiAboutusData.overlay} hoverSliderData={data.strapiAboutusData.aboutus_hoverslides}/>
-      {/* <HomeContact data={data.strapiAboutData.form_content}/> */}
+      <NextPage nextPageData={data.strapiAboutusData.next_page}/>
+      <HomeContact overlap={false} data={{title:'Request Quote'}}/>
     </Layout>
   )
 }
 
 
-export const query = graphql`
-query AboutData{
-  strapiAboutusData {
-    aboutus_hoverslides {
-      title
-      description
-    }
-    banner {
-      banner_desc
-      blue
-      post_blue
-      pre_blue
-    }
-    description {
-      description_hide
-      description_show
-      heading
-      read_more
-      sub_heading
-    }
-    next_page {
-      id
-      url
-    }
-    overlay {
-      desc_heading
-      description {
-        title
-      }
-      overlay_text
-      vertical_text
-    }
-    popup_slider {
-      heading
-      content
-    }
-  }
-}`
+// export const query = graphql`
+// query AboutData{
+//   strapiAboutusData {
+//     aboutus_hoverslides {
+//       title
+//       description
+//     }
+//     banner {
+//       banner_desc
+//       blue
+//       post_blue
+//       pre_blue
+//     }
+//     description {
+//       description_hide
+//       description_show
+//       heading
+//       read_more
+//       sub_heading
+//     }
+//     next_page {
+//       id
+//       url
+//       name
+//     }
+//     overlay {
+//       desc_heading
+//       description {
+//         title
+//       }
+//       overlay_text
+//       vertical_text
+//     }
+//     popup_slider {
+//       heading
+//       content
+//     }
+//   }
+// }`
 
 export default AboutUsPage

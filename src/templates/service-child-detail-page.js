@@ -56,131 +56,131 @@ return(
 
 }
 
-export const query = graphql`
-query ServiceChildDetails($parentId: Int, $serviceChild: Int) {
-  strapiServiceChildDetails(strapiId : {eq:$serviceChild}) {
-    strapiId
-    banner {
-      content
-      heading
-    }
-    fixed_slider {
-      content
-      heading_hide {
-        id
-        title
-      }
-      heading_show {
-        id
-        title
-      }
-      skip_link
-      heading_title
-      theme
-      slides {
-        content_hide
-        content_show
-        id
-        link
-        order
-        title {
-          title
-        }
-        active_icon {
-          url
-        }
-        inactive_icon {
-          url
-        }
-      }
-    }
-    form_content {
-      title
-      form_heading
-      form_description
-    }
-    image_grid_1 {
-      grids {
-        icon {
-          url
-        }
-        id
-        order
-        title
-      }
-      heading {
-        title
-        id
-      }
-      sub_heading {
-        id
-        title
-      }
-      theme
-    }
-    horizontal_slider {
-      heading {
-        title
-        id
-      }
-      slides {
-        content
-        id
-        order
-        title
-        image {
-          url
-        }
-      }
-      theme
-      sub_heading {
-        title
-        id
-      }
-    }
-    image_grid_2 {
-      theme
-      grids {
-        title
-        order
-        id
-        icon {
-          url
-        }
-      }
-      heading {
-        title
-        id
-      }
-      sub_heading {
-        title
-        id
-      }
-    }
-  }
+// export const query = graphql`
+// query ServiceChildDetails($parentId: Int, $serviceChild: Int) {
+//   strapiServiceChildDetails(strapiId : {eq:$serviceChild}) {
+//     strapiId
+//     banner {
+//       content
+//       heading
+//     }
+//     fixed_slider {
+//       content
+//       heading_hide {
+//         id
+//         title
+//       }
+//       heading_show {
+//         id
+//         title
+//       }
+//       skip_link
+//       heading_title
+//       theme
+//       slides {
+//         content_hide
+//         content_show
+//         id
+//         link
+//         order
+//         title {
+//           title
+//         }
+//         active_icon {
+//           url
+//         }
+//         inactive_icon {
+//           url
+//         }
+//       }
+//     }
+//     form_content {
+//       title
+//       form_heading
+//       form_description
+//     }
+//     image_grid_1 {
+//       grids {
+//         icon {
+//           url
+//         }
+//         id
+//         order
+//         title
+//       }
+//       heading {
+//         title
+//         id
+//       }
+//       sub_heading {
+//         id
+//         title
+//       }
+//       theme
+//     }
+//     horizontal_slider {
+//       heading {
+//         title
+//         id
+//       }
+//       slides {
+//         content
+//         id
+//         order
+//         title
+//         image {
+//           url
+//         }
+//       }
+//       theme
+//       sub_heading {
+//         title
+//         id
+//       }
+//     }
+//     image_grid_2 {
+//       theme
+//       grids {
+//         title
+//         order
+//         id
+//         icon {
+//           url
+//         }
+//       }
+//       heading {
+//         title
+//         id
+//       }
+//       sub_heading {
+//         title
+//         id
+//       }
+//     }
+//   }
 
-  allStrapiPage(filter: {active: {eq: true}, strapiId : {eq: $parentId }} ) {
-    nodes {
-      name
-      slug
-      strapiId
-      order
-      strapiParent {
-        id
-        name
-        slug
-        order
-      }
-      strapiChildren {
-        name
-        order
-        id
-        slug
-      }
-    }
-  }
-}
+//   allStrapiPage(filter: {active: {eq: true}, strapiId : {eq: $parentId }} ) {
+//     nodes {
+//       name
+//       slug
+//       strapiId
+//       order
+//       strapiParent {
+//         id
+//         name
+//         slug
+//         order
+//       }
+//       strapiChildren {
+//         name
+//         order
+//         id
+//         slug
+//       }
+//     }
+//   }
+// }
 
-`
+// `
 
 export default ServiceChildDetailPage

@@ -1,12 +1,25 @@
-import React from "react"
+import React, {useState, useEffect, useRef} from "react"
 import "./component.css"
 import { PropTypes } from "prop-types"
 import ContactForm from "./contact-form"
 
-const HomeContact = ({data, overlap}) => {
+const HomeContact = (props) => {
+  const {data, overlap} = props;
+  // console.log(props);
+  const [section, setSection] = useState()
+  const sectionRef = useRef(null)
+
+  // const getOffset = () => {
+  //   // props
+  // }
+
+  useEffect(() => {
+    setSection(sectionRef)
+    props.onClick(454)
+  })
   return (
     <>
-      <section className="flex flex-col relative form">
+      <section className="flex flex-col relative form" ref={sectionRef} >
         <div className={`wrapper self-end w-full mt-0 ${overlap ? 'md:-mt-32 md:w-4/5 ': ''}`}>
           <div className={`home-contact-form-container bg-blue-100  flex  ${overlap ? 'flex-col  md:pl-16 md:pr-8 lg:pl-40 md:justify-center   lg:pr-16 p-4 md:p-0 ' : 'flex-col md:flex-row md:items-center px-4 py-4 md:px-20 md:py-0'}`}>
             <span className="primary-title mb-5 leading-snug tracking-tight md:text-4xl lg:text-5xl text-white md:mb-16 lg:mb-20">
@@ -22,12 +35,12 @@ const HomeContact = ({data, overlap}) => {
   )
 }
 
-HomeContact.propTypes = {
-  overlap: PropTypes.bool,
-}
+// HomeContact.propTypes = {
+//   overlap: PropTypes.bool,
+// }
 
-HomeContact.defaultProps = {
-  overlap: true
-}
+// HomeContact.defaultProps = {
+//   overlap: true
+// }
 
 export default HomeContact

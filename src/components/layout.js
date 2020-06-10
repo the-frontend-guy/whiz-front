@@ -52,7 +52,7 @@ const Layout = ({ children, hideFooter, hideHamburger }) => {
             <div className="flex flex-col justify-end lg:col-start-1 lg:col-end-4 xl:col-start-auto">
               <ContactInfo />
               <div className="mt-12 mb-6">
-                <SocialIcons />
+                <SocialIcons/>
               </div>
             </div>
           </div>

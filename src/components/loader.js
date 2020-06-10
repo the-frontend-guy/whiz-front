@@ -15,7 +15,7 @@ const Loader = ({ data }) => {
     let stepTime = Math.abs(Math.floor(data / range))
 
     if(typeof document !== 'undefined'){
-  document.body.style.overflow = percentLoaded == percentEnd ? 'auto' : 'hidden';
+  document.body.style.overflow = percentLoaded != percentEnd ? 'hidden' : '';
     }
 
     for(let i = 1; i <= 10; i++){

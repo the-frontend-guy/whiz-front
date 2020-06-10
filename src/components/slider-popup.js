@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react"
 const SliderPopup = ({data}) => {
+  
+  const [animateMouse, setAnimation] = useState(0)
+  const [popupVisible, setVisible] = useState(false);
 
   const openPopup = (content) => {
-    console.log(content);
+    setVisible(true)
+  }
+
+  const closePopup = () => {
+    setVisible(false)
   }
 
   const sentences = data;
 
 
 
-  const [animateMouse, setAnimation] = useState(0)
+ 
   const chunk = (target, size) => {
     return target.reduce(
       (memo, value, index) => {
@@ -30,7 +37,7 @@ const SliderPopup = ({data}) => {
     if (screenPos == 0) {
       screenPos = 1
     }
-    let percent = (screenPos / window.innerWidth) * 30
+    let percent = (screenPos / window.innerWidth) * 40
   
 
     setAnimation(percent - 20)
@@ -53,9 +60,16 @@ const SliderPopup = ({data}) => {
         </div>
       ))}
     </div>
-    <div className="popup-container w-full-screen h-full-screen absolute top-0">
-      <div className="popup"></div>
+    {popupVisible && <div className="popup-container w-screen h-screen fixed bottom-0">
+      <div className="popup">
+        
+      <span className="inline-block w-8" onClick={closePopup}>
+                <img src={`${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/back_0f22caf10c.svg`}
+                 alt="" />
+              </span>
+      </div>
     </div>
+}
     </>
   )
 }

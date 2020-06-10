@@ -38,6 +38,11 @@ useEffect(() => {
   }
 }, [])
 
+const getOffset = (e) => {
+  console.log('vikas');
+  console.log(e);
+}
+
 return(
   <Layout>
     <SEO title="home"/>
@@ -47,7 +52,7 @@ return(
     <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.circle_slider} direction="false"/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.horizontal_slider}/>
     <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.overlay} />
-    <HomeContact data={data.strapiHomeData.form_content}/>
+    <HomeContact onClick={getOffset} data={data.strapiHomeData.form_content} />
   </Layout>
 )
 }
@@ -80,7 +85,6 @@ query HomeData {
         content
         heading
         order
-        sub_heading
         id
         image {
           url
@@ -120,7 +124,6 @@ query HomeData {
       }
     }
     form_content {
-      title
       form_heading
       form_description
     }

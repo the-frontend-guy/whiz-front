@@ -523,7 +523,7 @@ svg:not(:root) {
 
 .canvas-overlay .content-container p {
   width: 65%;
-  color: white;
+  color: black;
   padding: 2rem;
   padding-right: 4rem;
   font-size: 1.5rem;
@@ -779,8 +779,9 @@ height: 30%;
 
 .hamburger-container {
 display: block;
-width: 40px;
-padding: 10px;
+width: 20px;
+padding: 1rem;
+box-sizing: content-box;
 }
 
 .hamburger {
@@ -843,6 +844,7 @@ padding: 10px;
   height: 0.9em;
   overflow: hidden;
   line-height: 1em;
+  position: relative;
   /* pointer-events: none; */
 
 }
@@ -852,8 +854,23 @@ padding: 10px;
 
 }
 
-.menu-link:hover .menu-link-wrap{
+.menu-link:hover .menu-link-wrap,
+.menu-link.active .menu-link-wrap{
   transform: translateY(-1em);
+}
+
+.menu-link.active{
+  padding-left: 2rem;
+}
+
+.menu-link.active::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 16px;
+  background-color: #5466ff;
+  top: 0;
+  left: 0;
 }
 
 .menu-link .border-text{
@@ -887,7 +904,19 @@ padding: 10px;
   font-size: 5vw;
   display: inline-block;
   white-space: nowrap;
+  transition: all .3s linear;
+  opacity: .7;
 }
+
+.sentence-container .sentence:hover{
+  opacity: 1;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+
+
 
 .sentence:last-child{
   margin-left: 5vw;
@@ -914,13 +943,58 @@ padding: 10px;
 /********************** Slider Pop Up**********************/
 
 .hover-slider-container .content{
-  width: 70%;
+  width: 50%;
   display: inline-block;
 }
 
+.hover-slider-container .content li h5{
+  transition: all .5s ease-in-out;
+}
+
+
 .hover-slider-container .hover-slider{
-  width: 30%;
+  width: 40%;
   display: inline-block;
+  min-height: 100vh;
+}
+
+.hover-slide figure{
+  width: 90%;
+    background-color: white;
+    position: relative;
+    padding: 4rem 2rem;
+    z-index: 2;
+}
+
+.hover-slide ul{
+  background-color: orange;
+  padding: 5rem;
+  padding-top: 9rem;
+  margin-top: -9rem;
+  position: relative;
+  left: 50%;
+}
+
+
+.hover-slider-container .hover-slide{
+  transition: all .5s ease-in-out;
+  opacity: 0;
+}
+.hover-slider-container .hover-slide.active{
+  opacity: 1;
+}
+
+.popup-container{
+  background-color: rgba(0,0,0, .8);
+  z-index: 999;
+  display: flex;
+}
+
+.popup {
+  margin:   auto;
+  width: 70%;
+  height: 40%;
+  background-color: white;
 }
 
 

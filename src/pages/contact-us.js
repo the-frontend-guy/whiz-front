@@ -3,6 +3,8 @@ import ContactForm from "./../components/contact-form"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
+import ContactInfo from "../components/contact-info"
+import SocialIcons from "../components/social-icons"
 
 const ContactPage = ({ data }) => {
   const paragraphs = []
@@ -28,10 +30,15 @@ const ContactPage = ({ data }) => {
             <h2 className="text-white section-title text-4xl">
               {data.strapiContactUs.form_heading}
             </h2>
-            <p className="text-white tracking-body mt-4">
+            <p className="text-white tracking-body my-8">
               {data.strapiContactUs.form_description}
             </p>
+            <div className="flex flex-col justify-end lg:col-start-1 lg:col-end-4 xl:col-start-auto">
+              <ContactInfo isContact={true}/>
+              
+            </div>
           </div>
+
           <div className="pr-4 pl-4 w-full md:w-7/12  md:pl-0 md:pr-28">
             <ContactForm isContactPage={true} />
           </div>
@@ -41,18 +48,18 @@ const ContactPage = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  query ContactUs {
-    strapiContactUs {
-      form_description
-      form_heading
-      heading
-      tagline {
-        title
-        id
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query ContactUs {
+//     strapiContactUs {
+//       form_description
+//       form_heading
+//       heading
+//       tagline {
+//         title
+//         id
+//       }
+//     }
+//   }
+// `
 
 export default ContactPage
