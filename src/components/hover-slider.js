@@ -97,9 +97,7 @@ const HoverSlider = ({ data }) => {
       <div className={`hover-slide absolute ${activeSlide === i ? "active" : ""}`}>
         <figure className="mb-10">
           <img
-            src={
-              (process.env.ASSETS_URL || "/staging/whizwafture") + e.image.url
-            }
+            src={process.env.ASSETS_URL+ e.image.url}
             alt=""
           />
         </figure>

@@ -12,7 +12,7 @@ const NotFoundPage = () => (
     <section className="flex flex-col relative not-found">
       <div className="w-full bg-black mx-auto relative image-wrap">
         <div className="img-container absolute w-full">
-      <img src={`${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/404_06ffc640f8.png`} className="m-auto" alt="" style={{
+      <img src={`${process.env.ASSETS_URL}/uploads/404_06ffc640f8.png`} className="m-auto" alt="" style={{
         width: `75%`
       }}/>
         </div>
