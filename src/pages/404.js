@@ -9,10 +9,10 @@ import  SocialIcons  from "./../components/social-icons"
 const NotFoundPage = () => (
   <Layout hideFooter={true} hideHamburger={true}>
     <SEO title="404: Not found" />
-    <section className="flex flex-col relative not-found">
+    {/* <section className="flex flex-col relative not-found">
       <div className="w-full bg-black mx-auto relative image-wrap">
         <div className="img-container absolute w-full">
-      <img src={`${process.env.ASSETS_URL}/uploads/404_06ffc640f8.png`} className="m-auto" alt="" style={{
+      <img src={`${process.env.GATSBY_API_URL}/uploads/404_06ffc640f8.png`} className="m-auto" alt="" style={{
         width: `75%`
       }}/>
         </div>
@@ -30,7 +30,7 @@ const NotFoundPage = () => (
         <Link to={'/'} className="text-blue-100 text-3xl font-display mt-8 md:mt-0">back to homepage</Link>
       </div>
       </div>
-    </section>
+    </section> */}
   </Layout>
 )
 

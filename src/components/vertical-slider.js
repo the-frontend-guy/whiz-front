@@ -27,7 +27,7 @@ const VerticalSlider = ({ data, windowEl, active }) => {
         className="p-4"
       >
         <img
-            src={process.env.ASSETS_URL+e.image.url}
+            src={process.env.GATSBY_API_URL+e.image.url}
             width="60%"
             alt=""
             className ="mb-8"
@@ -65,7 +65,7 @@ const VerticalSlider = ({ data, windowEl, active }) => {
           }}
         >
           <img
-            src={process.env.ASSETS_URL+ e.image.url}
+            src={process.env.GATSBY_API_URL+ e.image.url}
             alt=""
             style={{
               opacity: i === active ? 1 : 0,

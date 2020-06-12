@@ -38,11 +38,11 @@ const AboutUsPage = ({data}) => {
   return(
     <Layout>
       <SEO title="about-us" />
-      <AboutUsBanner data={data.strapiAboutusData.banner}/>
-      <AboutUsMain descData={data.strapiAboutusData.description} sliderData={data.strapiAboutusData.popup_slider}/>
-      <CanvasOverlay windowEl={windowInfo} data={data.strapiAboutusData.overlay} hoverSliderData={data.strapiAboutusData.aboutus_hoverslides}/>
-      <NextPage nextPageData={data.strapiAboutusData.next_page}/>
-      <HomeContact overlap={false} data={{title:'Request Quote'}}/>
+      {/* <AboutUsBanner data={data.strapiAboutusData.banner}/> */}
+      {/* <AboutUsMain descData={data.strapiAboutusData.description} sliderData={data.strapiAboutusData.popup_slider}/> */}
+      {/* <CanvasOverlay windowEl={windowInfo} data={data.strapiAboutusData.overlay} hoverSliderData={data.strapiAboutusData.aboutus_hoverslides}/> */}
+      {/* <NextPage nextPageData={data.strapiAboutusData.next_page}/> */}
+      {/* <HomeContact overlap={false} data={{title:'Request Quote'}}/> */}
     </Layout>
   )
 }

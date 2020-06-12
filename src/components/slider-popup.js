@@ -64,7 +64,7 @@ const SliderPopup = ({data}) => {
       <div className="popup">
         
       <span className="inline-block w-8" onClick={closePopup}>
-                <img src={`${process.env.ASSETS_URL}/uploads/back_0f22caf10c.svg`}
+                <img src={`${process.env.GATSBY_API_URL}/uploads/back_0f22caf10c.svg`}
                  alt="" />
               </span>
       </div>

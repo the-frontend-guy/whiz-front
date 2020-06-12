@@ -12,6 +12,7 @@ import NextPage from "../components/next-page"
 import HomeContact from "../components/home-contact"
 import HorizontalSlider from "../components/horizontal-slider"
 
+let headerOffset = 0;
 
 const ServiceChildDetailPage = ({data, pageContext}) => {
   const initData = {
@@ -39,17 +40,21 @@ useEffect(() => {
   }
 }, [])
 
+const getOffset = (e) => {
+  headerOffset = e;
+}
+
 return(
   <Layout>
     <SEO title={pageContext.pageInfo.title}/>
-      <Navigation data={data.allStrapiPage.nodes} active={pageContext.pageId} windowEl={windowInfo}/>
+      <Navigation data={data.allStrapiPage.nodes} active={pageContext.pageId} windowEl={windowInfo} changeColor={headerOffset}/>
       <Hero data={data.strapiServiceChildDetails.banner}/>
     <FixedSlider windowEl={windowInfo} data={data.strapiServiceChildDetails.fixed_slider}/>
     <ImageGrid data={data.strapiServiceChildDetails.image_grid_1}/>
     <ImageGrid data={data.strapiServiceChildDetails.image_grid_2}/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiServiceChildDetails.horizontal_slider}/>
     <NextPage data={data.allStrapiPage.nodes} currentPage={pageContext.pageId}/>
-    <HomeContact data={data.strapiServiceChildDetails.form_content} overlap={false}/>
+    <HomeContact data={data.strapiServiceChildDetails.form_content} overlap={false} getOffset={getOffset}/>
 
   </Layout>
 )

@@ -24,10 +24,12 @@ const HorizontalSlider = ({ windowEl, data }) => {
   useEffect(() => {
     setSliderContainer(sliderRef.current)
     setSection(sectionRef.current)
-  }, [])
+  }, [windowEl]);
 
+  
   const isMobile = section ? section.offsetWidth < 768 : false
-
+  
+  console.log(isMobile);
   const sectionHeightOffset = section ? section.offsetTop : 0
 
   const [{ moveX }, set] = useSpring(() => ({ moveX: 0 }))
@@ -51,11 +53,11 @@ const HorizontalSlider = ({ windowEl, data }) => {
 
   data.slides.forEach((slide, index) => {
     slides.push(
-      <div className="h-slides-container mb-8 md:mb-0 absolute top-0" key={slide.id}>
+      <div className="h-slides-container mb-8 md:mb-0" key={slide.id}>
         <div className="h-slide">
           <figure className="mb-10">
             <img
-              src={process.env.ASSETS_URL+slide.image.url}
+              src={process.env.GATSBY_API_URL+slide.image.url}
               alt=""
             />
           </figure>
@@ -107,7 +109,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
         }}
         ref={sectionRef}
       >
-        <div className="horizontal-scene">
+        { !isMobile && <div className="horizontal-scene">
           <div className="container mx-auto">
             <div
               className="slider-slides inline-block w-full md:w-7/12"
@@ -138,7 +140,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
               </animated.div>
             </div>
           </div>
-        </div>
+        </div> }
 
         {isMobile && (
           <div>

@@ -11,7 +11,6 @@ import CircleSlider from "../components/circle-slider"
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 
-
 const IndexPage = ({data, pageContext}) => {
   const initData = {
     scrollX : typeof window !== `undefined` ? window.scrollX : 0,
@@ -38,10 +37,7 @@ useEffect(() => {
   }
 }, [])
 
-const getOffset = (e) => {
-  console.log('vikas');
-  console.log(e);
-}
+
 
 return(
   <Layout>
@@ -52,7 +48,7 @@ return(
     <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.circle_slider} direction="false"/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.horizontal_slider}/>
     <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.overlay} />
-    <HomeContact onClick={getOffset} data={data.strapiHomeData.form_content} />
+    <HomeContact data={data.strapiHomeData.form_content}/>
   </Layout>
 )
 }

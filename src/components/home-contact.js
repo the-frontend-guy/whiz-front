@@ -5,7 +5,6 @@ import ContactForm from "./contact-form"
 
 const HomeContact = (props) => {
   const {data, overlap} = props;
-  // console.log(props);
   const [section, setSection] = useState()
   const sectionRef = useRef(null)
 
@@ -14,8 +13,9 @@ const HomeContact = (props) => {
   // }
 
   useEffect(() => {
-    setSection(sectionRef)
-    props.onClick(454)
+    if(props.getOffset){
+      props.getOffset(section ? section.offsetTop : 0)
+    }
   })
   return (
     <>
@@ -35,12 +35,12 @@ const HomeContact = (props) => {
   )
 }
 
-// HomeContact.propTypes = {
-//   overlap: PropTypes.bool,
-// }
+HomeContact.propTypes = {
+  overlap: PropTypes.bool
+}
 
-// HomeContact.defaultProps = {
-//   overlap: true
-// }
+HomeContact.defaultProps = {
+  overlap: true
+}
 
 export default HomeContact

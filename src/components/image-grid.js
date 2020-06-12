@@ -16,7 +16,7 @@ const ImageGrid = ({ data }) => {
     <div className="flex flex-col items-center my-4 md:my-12" key={e.id}>
       <figure className="slide-icon mb-8 w-4/12 md:w-2/12">
           <img
-            src={process.env.ASSETS_URL+e.icon.url}
+            src={process.env.GATSBY_API_URL+e.icon.url}
             className="icon-base"
             alt=""
           />

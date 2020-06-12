@@ -33,9 +33,10 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
     setSection(sectionRef.current)
     setText(textRef.current)
   }, [])
+  const isMobile = section ? section.offsetWidth < 768 : false
+
 
   data.description.forEach(e => {
-    console.log(e)
     paragraphs.push(
       <p
         className={`${
@@ -49,7 +50,6 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
     )
   })
 
-  const isMobile = section ? section.offsetWidth < 768 : false
   if (windowEl.width) {
     font.load().then(e => {
       if (canvasOverlay) {
@@ -180,7 +180,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
         <div
           className={`home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center min-h-screen`}
           style={{
-            backgroundImage: `url('${process.env.ASSETS_URL ||
+            backgroundImage: `url('${process.env.GATSBY_API_URL ||
               "/staging/whizwafture"}/uploads/banner_3d7ab820ac.jpeg')`,
             backgroundSize: `cover`,
             transform: `translateY(${slideStatic}px)`,

@@ -116,7 +116,7 @@ const CircleSlider = ({ data, direction }) => {
         }}
       >
         <img
-          src={process.env.ASSETS_URL + slide.image.url}
+          src={process.env.GATSBY_API_URL + slide.image.url}
           alt=""
           style={{
             transform:
