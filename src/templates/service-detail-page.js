@@ -101,7 +101,6 @@ query ServiceDetails($parentId: Int) {
       }
     }
     form_content {
-      title
       form_heading
     }
     image_grid_1 {
