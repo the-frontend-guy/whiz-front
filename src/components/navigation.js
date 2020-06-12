@@ -1,8 +1,17 @@
 import { Link } from "gatsby"
-import React  from "react"
+import React, {useState}  from "react"
 
-const Navigation = ({ active, data }) => {
+const Navigation = ({ active, data, changeColor, windowEl }) => {
+  const [changeBg,setChange] = useState(false);
   const lists = [];
+
+  if(changeColor){
+    if(windowEl.scrollY > changeColor){
+      setChange(true)
+    } else {
+      setChange(false)
+    }
+  }
 
   
 
@@ -14,7 +23,7 @@ const Navigation = ({ active, data }) => {
     )
   })
   return(
-    <nav className={`p-3 bg-blue-100 top-0 transition ease-in-out duration-500 sticky z-10`}>
+    <nav className={`p-3 top-0 transition ease-in-out duration-500 sticky z-10 ${changeBg ? 'bg-black' : 'bg-blue-100'}`}>
    <ul className="container inline-flex">
    {lists}
    </ul>

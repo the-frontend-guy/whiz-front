@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, {useState} from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -16,7 +16,7 @@ import ServiceList from "./service-list"
 import ContactInfo from "./contact-info"
 import SocialIcons from "./social-icons"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hideFooter, hideHamburger }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,14 +27,19 @@ const Layout = ({ children }) => {
     }
   `)
 
-  console.log(children);
+
+  // const [percentLoaded, setPercent ] = useState(0);
+
+
+
+
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      
+    {/* <h6>{percentLoaded}</h6> */}
+      <Header siteTitle={data.site.siteMetadata.title} hideHamburger={hideHamburger} />
       <main>{children}</main>
-      <footer className="mt-12 lg:mt-40 mx-4 lg:mx-20">
+      {!hideFooter && <footer className="mt-12 lg:mt-40 mx-4 lg:mx-20">
         <div className="container mx-auto">
           <div className="footer-title">
             <span className="capitalize font-display text-blue-100 mb-10 lg:mb-20 block text-3xl tracking-tight">
@@ -47,12 +52,13 @@ const Layout = ({ children }) => {
             <div className="flex flex-col justify-end lg:col-start-1 lg:col-end-4 xl:col-start-auto">
               <ContactInfo />
               <div className="mt-12 mb-6">
-                <SocialIcons />
+                <SocialIcons/>
               </div>
             </div>
           </div>
         </div>
       </footer>
+}
     </>
   )
 }

@@ -11,7 +11,6 @@ import CircleSlider from "../components/circle-slider"
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 
-
 const IndexPage = ({data, pageContext}) => {
   const initData = {
     scrollX : typeof window !== `undefined` ? window.scrollX : 0,
@@ -37,6 +36,8 @@ useEffect(() => {
     window.removeEventListener("resize", windowEvent)
   }
 }, [])
+
+
 
 return(
   <Layout>
@@ -80,7 +81,6 @@ query HomeData {
         content
         heading
         order
-        sub_heading
         id
         image {
           url
@@ -120,7 +120,8 @@ query HomeData {
       }
     }
     form_content {
-      title
+      form_heading
+      form_description
     }
     horizontal_slider {
       heading {
@@ -145,6 +146,11 @@ query HomeData {
     overlay {
       banner_text
       overlay_text
+      description {
+        title
+        id
+      }
+      vertical_text
     }
   }
 }

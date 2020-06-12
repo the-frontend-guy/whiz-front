@@ -59,6 +59,7 @@ const FixedSlider = ({ windowEl, data }) => {
 
   function skipTo() {
     window.scroll({
+      behavior: 'smooth',
       top:
         sectionHeightOffset +
         slideDelay * 2.7 +
@@ -122,18 +123,12 @@ const FixedSlider = ({ windowEl, data }) => {
       >
         <figure className="slide-icon mb-5 md:mb-0">
           <img
-            src={
-              (process.env.ASSETS_URL || "/staging/whizwafture") +
-              slide.inactive_icon.url
-            }
+            src={process.env.GATSBY_API_URL+slide.inactive_icon.url}
             className="icon-base"
             alt=""
           />
           <img
-            src={
-              (process.env.ASSETS_URL || "/staging/whizwafture") +
-              slide.active_icon.url
-            }
+            src={process.env.GATSBY_API_URL+slide.active_icon.url}
             className="icon-active"
             alt=""
           />
@@ -143,7 +138,7 @@ const FixedSlider = ({ windowEl, data }) => {
             <h3 className="primary-title normal-case mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">
               <span className="inline-block">{title}</span>
               <span className="card-arrow inline-block w-8">
-                <img src={`${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/back_0f22caf10c.svg`}
+                <img src={`${process.env.GATSBY_API_URL}/uploads/back_0f22caf10c.svg`}
                  alt="" />
               </span>
             </h3>
@@ -258,7 +253,7 @@ const FixedSlider = ({ windowEl, data }) => {
           </div>
           <div className="container mx-auto text-right">
             <span
-              className={`text-xl underline cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block ${
+              className={`text-xl underline cursor-pointer mr-4 pr-0 md:pr-8 lg:pr-0 inline-block outline-none ${
                 isMobile ? "hidden" : ""
               }`}
               onClick={skipTo}

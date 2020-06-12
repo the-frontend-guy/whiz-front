@@ -12,10 +12,9 @@ import NextPage from "../components/next-page"
 import HomeContact from "../components/home-contact"
 import HorizontalSlider from "../components/horizontal-slider"
 
+let headerOffset = 0;
 
 const ServiceChildDetailPage = ({data, pageContext}) => {
-  console.log(pageContext);
-  console.log(data);
   const initData = {
     scrollX : typeof window !== `undefined` ? window.scrollX : 0,
     scrollY : typeof window !== `undefined` ? window.scrollY : 0,
@@ -41,146 +40,152 @@ useEffect(() => {
   }
 }, [])
 
+const getOffset = (e) => {
+  headerOffset = e;
+}
+
 return(
   <Layout>
     <SEO title={pageContext.pageInfo.title}/>
-      <Navigation data={data.allStrapiPage.nodes} active={pageContext.pageId} windowEl={windowInfo}/>
+      <Navigation data={data.allStrapiPage.nodes} active={pageContext.pageId} windowEl={windowInfo} changeColor={headerOffset}/>
       <Hero data={data.strapiServiceChildDetails.banner}/>
     <FixedSlider windowEl={windowInfo} data={data.strapiServiceChildDetails.fixed_slider}/>
     <ImageGrid data={data.strapiServiceChildDetails.image_grid_1}/>
     <ImageGrid data={data.strapiServiceChildDetails.image_grid_2}/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiServiceChildDetails.horizontal_slider}/>
     <NextPage data={data.allStrapiPage.nodes} currentPage={pageContext.pageId}/>
-    <HomeContact data={data.strapiServiceChildDetails.form_content} overlap={false}/>
+    <HomeContact data={data.strapiServiceChildDetails.form_content} overlap={false} getOffset={getOffset}/>
 
   </Layout>
 )
 
 }
 
-export const query = graphql`
-query ServiceChildDetails($parentId: Int, $serviceChild: Int) {
-  strapiServiceChildDetails(strapiId : {eq:$serviceChild}) {
-    strapiId
-    banner {
-      content
-      heading
-    }
-    fixed_slider {
-      content
-      heading_hide {
-        id
-        title
-      }
-      heading_show {
-        id
-        title
-      }
-      skip_link
-      heading_title
-      theme
-      slides {
-        content_hide
-        content_show
-        id
-        link
-        order
-        title {
-          title
-        }
-        active_icon {
-          url
-        }
-        inactive_icon {
-          url
-        }
-      }
-    }
-    form_content {
-      title
-    }
-    image_grid_1 {
-      grids {
-        icon {
-          url
-        }
-        id
-        order
-        title
-      }
-      heading {
-        title
-        id
-      }
-      sub_heading {
-        id
-        title
-      }
-      theme
-    }
-    horizontal_slider {
-      heading {
-        title
-        id
-      }
-      slides {
-        content
-        id
-        order
-        title
-        image {
-          url
-        }
-      }
-      theme
-      sub_heading {
-        title
-        id
-      }
-    }
-    image_grid_2 {
-      theme
-      grids {
-        title
-        order
-        id
-        icon {
-          url
-        }
-      }
-      heading {
-        title
-        id
-      }
-      sub_heading {
-        title
-        id
-      }
-    }
-  }
+// export const query = graphql`
+// query ServiceChildDetails($parentId: Int, $serviceChild: Int) {
+//   strapiServiceChildDetails(strapiId : {eq:$serviceChild}) {
+//     strapiId
+//     banner {
+//       content
+//       heading
+//     }
+//     fixed_slider {
+//       content
+//       heading_hide {
+//         id
+//         title
+//       }
+//       heading_show {
+//         id
+//         title
+//       }
+//       skip_link
+//       heading_title
+//       theme
+//       slides {
+//         content_hide
+//         content_show
+//         id
+//         link
+//         order
+//         title {
+//           title
+//         }
+//         active_icon {
+//           url
+//         }
+//         inactive_icon {
+//           url
+//         }
+//       }
+//     }
+//     form_content {
+//       title
+//       form_heading
+//       form_description
+//     }
+//     image_grid_1 {
+//       grids {
+//         icon {
+//           url
+//         }
+//         id
+//         order
+//         title
+//       }
+//       heading {
+//         title
+//         id
+//       }
+//       sub_heading {
+//         id
+//         title
+//       }
+//       theme
+//     }
+//     horizontal_slider {
+//       heading {
+//         title
+//         id
+//       }
+//       slides {
+//         content
+//         id
+//         order
+//         title
+//         image {
+//           url
+//         }
+//       }
+//       theme
+//       sub_heading {
+//         title
+//         id
+//       }
+//     }
+//     image_grid_2 {
+//       theme
+//       grids {
+//         title
+//         order
+//         id
+//         icon {
+//           url
+//         }
+//       }
+//       heading {
+//         title
+//         id
+//       }
+//       sub_heading {
+//         title
+//         id
+//       }
+//     }
+//   }
 
-  allStrapiPage(filter: {active: {eq: true}, strapiId : {eq: $parentId }} ) {
-    nodes {
-      name
-      slug
-      strapiId
-      order
-      strapiParent {
-        id
-        name
-        slug
-        order
-      }
-      strapiChildren {
-        name
-        order
-        id
-        slug
-      }
-    }
-  }
-}
+//   allStrapiPage(filter: {active: {eq: true}, strapiId : {eq: $parentId }} ) {
+//     nodes {
+//       name
+//       slug
+//       strapiId
+//       order
+//       strapiParent {
+//         id
+//         name
+//         slug
+//         order
+//       }
+//       strapiChildren {
+//         name
+//         order
+//         id
+//         slug
+//       }
+//     }
+//   }
+// }
 
-`
+// `
 
 export default ServiceChildDetailPage

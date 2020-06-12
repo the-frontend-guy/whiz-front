@@ -1,8 +1,9 @@
 import React, { Fragment} from "react"
 import { Link } from "gatsby"
 
-const NextPage = ({ data, currentPage }) => {
+const NextPage = ({ data, currentPage, nextPageData }) => {
   let nextPage = null;
+  if(data){
   const sortedPages = data[0].strapiChildren.sort((a,b) => a.order - b.order)
   const nextPages = sortedPages.filter( e => e.id > currentPage);
 
@@ -11,8 +12,15 @@ const NextPage = ({ data, currentPage }) => {
   } else {
     nextPage = sortedPages[0]
   }
+}
 
-  console.log(nextPage);
+  if(nextPageData){
+    nextPage ={
+      slug: nextPageData.url,
+      name: nextPageData.name
+    }
+  }
+
 
 
 
