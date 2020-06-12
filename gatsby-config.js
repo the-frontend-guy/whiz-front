@@ -23,21 +23,21 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL:  process.env.GATSBY_API_URL || "http://localhost:1337",
-        // contentTypes: [
-        //   "service-details",
-        //   "service-child-details",
-        //   "page",
-        // ],
-        // singleTypes:[
-        //   `home-data`,`aboutus-data`,`contact-us`
-        // ],  
+        apiURL: "http://localhost:1337",
         contentTypes: [
-          "page"
-        ],     
-        singleTypes: [
-          `home-data`
+          "service-details",
+          "service-child-details",
+          "page",
         ],
+        singleTypes:[
+          `home-data`,`aboutus-data`,`contact-us`
+        ],  
+        // contentTypes: [
+        //   "page"
+        // ],     
+        // singleTypes: [
+        //   `home-data`
+        // ],
         queryLimit: 1000,
       },
     },

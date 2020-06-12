@@ -4,20 +4,19 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import ContactInfo from "../components/contact-info"
-import SocialIcons from "../components/social-icons"
 
 const ContactPage = ({ data }) => {
   const paragraphs = []
-  // data.strapiContactUs.tagline.forEach(e => {
-  //   paragraphs.push(
-  //     <p className="text-white tracking-body mt-5 mb-1 px-4 md:px-0">
-  //       {e.title}
-  //     </p>
-  //   )
-  // })
+  data.strapiContactUs.tagline.forEach(e => {
+    paragraphs.push(
+      <p className="text-white tracking-body mt-5 mb-1 px-4 md:px-0">
+        {e.title}
+      </p>
+    )
+  })
   return (
     <Layout>
-      {/* <section className="contact-us bg-black">
+      <section className="contact-us bg-black">
         <div className="desc text-left md:text-center mb-8">
           <h1 className="text-white section-title md:text-6xl px-4 md:px-0">
             {data.strapiContactUs.heading}
@@ -43,23 +42,23 @@ const ContactPage = ({ data }) => {
             <ContactForm isContactPage={true} />
           </div>
         </div>
-      </section> */}
+      </section>
     </Layout>
   )
 }
 
-// export const query = graphql`
-//   query ContactUs {
-//     strapiContactUs {
-//       form_description
-//       form_heading
-//       heading
-//       tagline {
-//         title
-//         id
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query ContactUs {
+    strapiContactUs {
+      form_description
+      form_heading
+      heading
+      tagline {
+        title
+        id
+      }
+    }
+  }
+`
 
 export default ContactPage

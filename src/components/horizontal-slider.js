@@ -29,7 +29,6 @@ const HorizontalSlider = ({ windowEl, data }) => {
   
   const isMobile = section ? section.offsetWidth < 768 : false
   
-  console.log(isMobile);
   const sectionHeightOffset = section ? section.offsetTop : 0
 
   const [{ moveX }, set] = useSpring(() => ({ moveX: 0 }))

@@ -13,10 +13,13 @@ const HomeContact = (props) => {
   // }
 
   useEffect(() => {
-    if(props.getOffset){
-      props.getOffset(section ? section.offsetTop : 0)
-    }
-  })
+    setSection(sectionRef.current)
+    
+  },[])
+
+  if(section){
+    props.getOffset( section.offsetTop)
+  }
   return (
     <>
       <section className="flex flex-col relative form" ref={sectionRef} >
@@ -36,11 +39,13 @@ const HomeContact = (props) => {
 }
 
 HomeContact.propTypes = {
-  overlap: PropTypes.bool
+  overlap: PropTypes.bool,
+  getOffset: PropTypes.func
 }
 
 HomeContact.defaultProps = {
-  overlap: true
+  overlap: true,
+  getOffset: () => 0
 }
 
 export default HomeContact
