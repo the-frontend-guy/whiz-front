@@ -16,6 +16,8 @@ const ContactPage = ({ data }) => {
   })
   return (
     <Layout>
+    <SEO title="contact-us"/>
+
       <section className="contact-us bg-black">
         <div className="desc text-left md:text-center mb-8">
           <h1 className="text-white section-title md:text-6xl px-4 md:px-0">

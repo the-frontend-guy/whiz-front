@@ -33,13 +33,13 @@ module.exports = {
         //   `home-data`,`aboutus-data`,`contact-us`
         // ],  
         contentTypes: [
-          
           "service-details",
           "service-child-details",
           "page",
         ],     
         singleTypes: [
-          `home-data`
+          "home-data",
+          "aboutus-data"
         ],
         queryLimit: 1000,
       },
