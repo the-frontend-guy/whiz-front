@@ -23,7 +23,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.GATSBY_API_URL || "http://localhost:1337",
+        apiURL: "http://localhost:1337",
         // contentTypes: [
         //   "service-details",
         //   "service-child-details",
@@ -39,6 +39,7 @@ module.exports = {
         ],     
         singleTypes: [
           "home-data",
+          "contact-us",
           "aboutus-data"
         ],
         queryLimit: 1000,

@@ -15,8 +15,8 @@
 }
 
 @font-face {
-  font-family:  "brandanbold";
-  src: url("./../fonts/Barbold.ttf") format("truetype")
+  font-family:  "brandanmedium";
+  src: url("./../fonts/BrandonMedium.otf") format("opentype")
 }
 @import "tailwindcss/components";
 
@@ -137,6 +137,12 @@ nav ul::-webkit-scrollbar {
   font-size: 8vw;
   line-height: 9vw;
 }
+/********************** About Us **********************/
+
+
+.about-us-banner-text{
+  margin-bottom: 30vh;
+}
 
 /********************** Form **********************/
 
@@ -146,7 +152,7 @@ nav ul::-webkit-scrollbar {
 
 form input,
 form textarea {
-  border-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, .6);
 }
 
 .send-button {
@@ -221,7 +227,7 @@ form textarea {
 .fixed-slider .slider-slides {
   position: absolute;
   top: auto;
-  bottom: 0;
+  bottom: 32px;
 }
 
 .fixed-slider .slider-paginator {
@@ -279,7 +285,7 @@ form textarea {
   transition: all 0.3s linear;
 }
 
-.dark .slide-card {
+/* .dark .slide-card {
   flex-direction: column;
 }
 
@@ -289,7 +295,7 @@ form textarea {
 
 .dark.fixed-slider .slider-text-content{
   min-height: 72vh;
-}
+} */
 
 .dark .slide-card::after{
   background-color: #5466ff;
@@ -311,9 +317,9 @@ form textarea {
   display: none;
 }
 
-.dark .slide-card p {
+/* .dark .slide-card p {
   max-height: 24vh;
-}
+} */
 
 .slide-card:first-child {
   margin-left: 0;
@@ -367,6 +373,10 @@ form textarea {
 }
 
 .slide-card.active p {
+  color: rgba(255,255,255,.8);
+}
+
+.dark .slide-card.active p {
   color: rgba(255,255,255,.8);
 }
 
@@ -523,7 +533,6 @@ svg:not(:root) {
 
 .canvas-overlay .content-container p {
   width: 65%;
-  color: black;
   padding: 2rem;
   padding-right: 4rem;
   font-size: 1.5rem;
@@ -562,6 +571,10 @@ left: 40px;
 
 /********************** Image Grid **********************/
 
+.image-grid:nth-of-type(1){
+  margin-bottom: 6rem;
+}
+
 .image-grid img {
   transition: all .5s ease-in-out;
 }
@@ -580,16 +593,17 @@ left: 40px;
 }
 
 .vertical-slider .vertical-slider-content.active p{
-  height: 150px;
-  max-height: 150px;
+  height: 90px;
+  max-height: 90px;
 }
 
 .vertical-slider .vertical-slider-content {
-  margin-left: 2rem;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
 }
 
 .vertical-slider .highlighter {
-  height: 50px;
+  height: 40px;
   width: 10px;
   display: inline-block;
   background-color: #5564f6;
@@ -637,7 +651,7 @@ left: 40px;
   content: '';
   width: 2px;
   height: 100vh;
-  background-color: white;
+  background-color: rgba(255, 255, 255, .4);
 }
 
 
@@ -834,6 +848,22 @@ box-sizing: content-box;
   /* transition: all .2s linear; */
 } 
 
+.home-form-banner { 
+  position: relative;
+  min-height: auto;
+}
+
+.home-form-banner::after{
+  content: "";
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  z-index: -1;
+}
+
 
 /********************** Menu **********************/
 .menu-container{
@@ -904,15 +934,8 @@ box-sizing: content-box;
   font-size: 5vw;
   display: inline-block;
   white-space: nowrap;
-  transition: all .3s linear;
-  opacity: .7;
 }
 
-.sentence-container .sentence:hover{
-  opacity: 1;
-  transform: scale(1.1);
-  cursor: pointer;
-}
 
 
 
@@ -959,10 +982,8 @@ box-sizing: content-box;
 }
 
 .hover-slide figure{
-  width: 90%;
     background-color: white;
     position: relative;
-    padding: 4rem 2rem;
     z-index: 2;
 }
 
@@ -977,11 +998,13 @@ box-sizing: content-box;
 
 
 .hover-slider-container .hover-slide{
-  transition: all .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
   opacity: 0;
 }
 .hover-slider-container .hover-slide.active{
   opacity: 1;
+  transform: translateY(-50%);
+  top: 50%;
 }
 
 .popup-container{
@@ -1028,9 +1051,9 @@ box-sizing: content-box;
     min-height: calc(100vh - 75px) ;
     height: calc(100vh - 75px);
   }
-  .dark .slide-card p{
+  /* .dark .slide-card p{
     max-height: inherit;
-  }
+  } */
   .header-overlay .heading-title{
     font-size: 8vw;
   }

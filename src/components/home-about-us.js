@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react"
 import "./component.css"
 import { Link } from "gatsby"
 import { useSpring, animated } from "react-spring"
-import  Hands  from './hands'
+import Hands from "./hands"
+import SliderPopup from "../components/slider-popup"
 
 const HomeAboutUs = ({ windowEl, data }) => {
   const slideContainerRef = React.useRef(null)
@@ -10,10 +11,10 @@ const HomeAboutUs = ({ windowEl, data }) => {
 
   useEffect(() => {
     setSliderContainer(slideContainerRef.current)
-  },[])
+  }, [])
   const [{ slide }, setSlide] = useSpring(() => ({ slide: 0 }))
   const windowHeight = windowEl.height
-  const scrolled = windowEl.scrollY / .7 
+  const scrolled = windowEl.scrollY / 0.7
 
   if (sliderContainer) {
     const containerHeight =
@@ -23,7 +24,7 @@ const HomeAboutUs = ({ windowEl, data }) => {
     const scrollValue =
       scrolled <= containerHeight ? scrolled - containerHeight : scrolled
     const percentage = (10 * scrollValue) / windowHeight
-    
+
     setSlide({ slide: percentage })
   }
 
@@ -54,6 +55,7 @@ const HomeAboutUs = ({ windowEl, data }) => {
       >
         <div className="text-animation-container bg-blue-100 self-stretch">
           {textSliders}
+          {/* {<SliderPopup />} */}
         </div>
         <div
           className="sqaured-content  w-auto md:w-9/12 lg:w-3/5 flex flex-col bg-white mx-4 md:mx-0"
@@ -70,7 +72,10 @@ const HomeAboutUs = ({ windowEl, data }) => {
               {data.title}
             </h3>
             <p className="text-gray-100 tracking-body mb-5">{data.content}</p>
-            <Link className="link-button text-xl mb-5 hover:text-blue-100" to={`/${data.link.url}`}>
+            <Link
+              className="link-button text-xl mb-5 hover:text-blue-100"
+              to={`/${data.link.url}`}
+            >
               {data.link.name}
             </Link>
           </div>

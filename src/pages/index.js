@@ -8,6 +8,7 @@ import HomeContact from "../components/home-contact"
 import CanvasOverlay from "../components/canvas-overlay"
 import HorizontalSlider from "../components/horizontal-slider"
 import CircleSlider from "../components/circle-slider"
+import HomeFormBanner from "../components/home-form-banner"
 import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 
@@ -47,7 +48,8 @@ return(
     <FixedSlider windowEl={windowInfo} data={data.strapiHomeData.fixed_slider}/>
     <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.circle_slider} direction="false"/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.horizontal_slider}/>
-    <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.overlay} />
+    <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.overlay}/>
+    <HomeFormBanner data ={data.strapiHomeData.overlay} />
     <HomeContact data={data.strapiHomeData.form_content}/>
   </Layout>
 )
@@ -77,6 +79,7 @@ query HomeData {
         title
         id
       }
+      description
       slides {
         content
         heading

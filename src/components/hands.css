@@ -560,15 +560,12 @@
 	#Layer_1 .st441{fill:#474747;}
 
 
-svg polygon{
+/* svg polygon{
   transform: scaleX(0) scaleY(0);
-  /* transition: fill .4s cubic-bezier(.17,.67,.83,.67) opacity .6s ease-in-out; */
   transition: all .4s cubic-bezier(.17,.67,.83,.67);
 }
 
 svg polygon.animating{
-  /* opacity: .3; */
-  /* transition-duration: 1s; */
   fill: #5466ff!important;
 }
 
@@ -580,4 +577,4 @@ svg polygon.visible {
 	svg polygon{
 		transform: scaleX(1) scaleY(1);
 	}
-}
+} */

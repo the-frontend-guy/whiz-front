@@ -2,72 +2,73 @@ import React, { useState } from "react"
 import "./component.css"
 
 const HoverSlider = ({ data }) => {
-  data = [
-    {
-      title: "we think",
-      desc:
-        "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
-      image: {
-        url: "/uploads/why_us-02_a98cfaec57.svg",
-      },
-      desc_headings: [
-        "brand positioning",
-        "customer journeys",
-        "communication strategy",
-        "activation strategy",
-        "inspiration sessions",
-        "shopper marketing",
-      ],
-    },
-    {
-      title: "we create",
-      desc:
-        "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
-      image: {
-        url: "/uploads/why_us-02_a98cfaec57.svg",
-      },
-      desc_headings: [
-        "customer journeys",
-        "shopper marketing",
-        "communication strategy",
-        "brand positioning",
-        "activation strategy",
-        "inspiration sessions",
-      ],
-    },
-    {
-      title: "we build",
-      desc:
-        "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
-      image: {
-        url: "/uploads/why_us-02_a98cfaec57.svg",
-      },
-      desc_headings: [
-        "brand positioning",
-        "customer journeys",
-        "shopper marketing",
-        "inspiration sessions",
-        "communication strategy",
-        "activation strategy",
-      ],
-    },
-    {
-      title: "we optimize",
-      desc:
-        "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
-      image: {
-        url: "/uploads/why_us-02_a98cfaec57.svg",
-      },
-      desc_headings: [
-        "brand positioning",
-        "customer journeys",
-        "communication strategy",
-        "shopper marketing",
-        "activation strategy",
-        "inspiration sessions",
-      ],
-    },
-  ]
+  console.log(data)
+  // data = [
+  //   {
+  //     title: "we think",
+  //     desc:
+  //       "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
+  //     image: {
+  //       url: "/uploads/why_us-02_a98cfaec57.svg",
+  //     },
+  //     desc_headings: [
+  //       "brand positioning",
+  //       "customer journeys",
+  //       "communication strategy",
+  //       "activation strategy",
+  //       "inspiration sessions",
+  //       "shopper marketing",
+  //     ],
+  //   },
+  //   {
+  //     title: "we create",
+  //     desc:
+  //       "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
+  //     image: {
+  //       url: "/uploads/why_us-02_a98cfaec57.svg",
+  //     },
+  //     desc_headings: [
+  //       "customer journeys",
+  //       "shopper marketing",
+  //       "communication strategy",
+  //       "brand positioning",
+  //       "activation strategy",
+  //       "inspiration sessions",
+  //     ],
+  //   },
+  //   {
+  //     title: "we build",
+  //     desc:
+  //       "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
+  //     image: {
+  //       url: "/uploads/why_us-02_a98cfaec57.svg",
+  //     },
+  //     desc_headings: [
+  //       "brand positioning",
+  //       "customer journeys",
+  //       "shopper marketing",
+  //       "inspiration sessions",
+  //       "communication strategy",
+  //       "activation strategy",
+  //     ],
+  //   },
+  //   {
+  //     title: "we optimize",
+  //     desc:
+  //       "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
+  //     image: {
+  //       url: "/uploads/why_us-02_a98cfaec57.svg",
+  //     },
+  //     desc_headings: [
+  //       "brand positioning",
+  //       "customer journeys",
+  //       "communication strategy",
+  //       "shopper marketing",
+  //       "activation strategy",
+  //       "inspiration sessions",
+  //     ],
+  //   },
+  // ]
   const list = []
   const slides = []
 
@@ -89,21 +90,21 @@ const HoverSlider = ({ data }) => {
         >
           {e.title}
         </h5>
-        <p className=" tracking-body">{e.desc}</p>
+        <p className=" tracking-body">{e.description}</p>
       </li>
     )
 
     slides.push(
-      <div className={`hover-slide absolute ${activeSlide === i ? "active" : ""}`}>
+      <div className={`hover-slide absolute w-full bottom-0 ${activeSlide === i ? "active" : ""}`}>
         <figure className="mb-10">
           <img
-            src={process.env.GATSBY_API_URL+ e.image.url}
+            src={process.env.GATSBY_API_URL+ e.img.url}
             alt=""
           />
         </figure>
-        <ul>
+        {/* <ul>
           {e.desc_headings && e.desc_headings.map(e => <li className="my-4">{e}</li>)}
-        </ul>
+        </ul> */}
       </div>
     )
   })

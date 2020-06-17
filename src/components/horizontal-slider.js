@@ -115,7 +115,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
               ref={sliderRef}
             >
               <animated.div
-                className="slide-controller inline-flex items-baseline flex-row"
+                className="slide-controller inline-flex items-center flex-row"
                 style={{ transform: moveSlider }}
               >
                 <div className="slider-title-wrapper mr-0 md:mr-16 md:ml-8 lg:ml-0 ">
@@ -129,13 +129,16 @@ const HorizontalSlider = ({ windowEl, data }) => {
                   <p
                     className={`${
                       data.theme === "dark" ? "text-white" : "text-gray-100"
-                    } tracking-body w-10/12 p-4 hidden md:block md:p-0`}
+                    } tracking-body p-4 hidden md:block md:p-0`}
                   >
                     {data.sub_heading.title}
                   </p>
                 </div>
-
+                <div className="flex">
                 {slides}
+
+                </div>
+
               </animated.div>
             </div>
           </div>

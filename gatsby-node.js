@@ -48,7 +48,6 @@ exports.createPages = async({graphql, actions}) => {
   }
   `)
 
-  console.log(result);
   
 
   const allPages = result.data.allStrapiPage.nodes.filter(page => page.strapiParent || page.strapiChildren.length);

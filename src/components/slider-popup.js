@@ -22,7 +22,7 @@ const SliderPopup = ({data}) => {
       (memo, value, index) => {
         if (index % (target.length / size) == 0 && index !== 0) memo.push([])
         memo[memo.length - 1].push(
-        <span className="sentence my-8 text-white" onClick={() => openPopup(value.content)}>{value.heading}</span>
+        <span className="sentence text-white" onClick={() => openPopup(value.content)}>{value.heading}</span>
         )
         return memo
       },
@@ -37,7 +37,7 @@ const SliderPopup = ({data}) => {
     if (screenPos == 0) {
       screenPos = 1
     }
-    let percent = (screenPos / window.innerWidth) * 40
+    let percent = (screenPos / window.innerWidth) * 30
   
 
     setAnimation(percent - 20)
@@ -46,14 +46,14 @@ const SliderPopup = ({data}) => {
   return (
     <>
     <div
-      className="slider-popup-container heading-title"
+      className="slider-popup-container heading-title py-8"
       onMouseMove={handleMouseMove}
     >
       {lines.map((e, i) => (
         <div
           className="sentence-container"
           style={{
-            transform: `translateX(${animateMouse-10}vw)`,
+            transform: `translateX(${animateMouse}vw)`,
           }}
         >
           {e}

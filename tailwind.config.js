@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ['mont', 'sans-serif'],
-      body: ['brandan','serif']
+      body: ['brandan','serif'],
+      bodyMedium : ['brandanmedium', 'serif']
     },
     fontSize:{
       ...fontSize,

@@ -23,7 +23,7 @@ const Menu = ({ activePage }) => {
     <StaticQuery
       query = {graphql`
       query MenuPageList{
-        allStrapiPage(filter: {active: {eq: true}, slug: {nin: ["home","services"]}}) {
+        allStrapiPage(filter: {active: {eq: true}, slug: {nin: ["services"]}}) {
           nodes {
             name
             slug

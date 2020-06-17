@@ -49,18 +49,18 @@ const ContactPage = ({ data }) => {
   )
 }
 
-// export const query = graphql`
-//   query ContactUs {
-//     strapiContactUs {
-//       form_description
-//       form_heading
-//       heading
-//       tagline {
-//         title
-//         id
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query ContactUs {
+    strapiContactUs {
+      form_description
+      form_heading
+      heading
+      tagline {
+        title
+        id
+      }
+    }
+  }
+`
 
 export default ContactPage

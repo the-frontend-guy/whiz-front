@@ -9,7 +9,7 @@ const Navigation = ({ active, data, changeColor, windowEl }) => {
 
   data[0].strapiChildren.sort((a,b) => a.order - b.order).forEach(list => {
     lists.push(
-      <li key={list.id} className={`mx-12 text-white text-lg opacity-50 hover:opacity-100 transition-opacity  duration-500 ease-in-out ${list.id === active ? 'active opacity-100' : ''}`}>
+      <li key={list.id} className={`mx-12 text-white text-lg tracking-body opacity-50 hover:opacity-100 transition-opacity  duration-500 ease-in-out ${list.id === active ? 'active opacity-100' : ''}`}>
         <Link to={`/${list.slug}`} className="inline-block">{list.name}</Link>
       </li>
     )

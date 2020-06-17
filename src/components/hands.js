@@ -8,20 +8,20 @@ const Hands = ({ windowEl }) => {
 
   const [hand, setHand] = useState()
 
-  useEffect(() => {
-    setHand(handRef.current)
-  }, [])
-  if (hand && windowEl.width > 767) {
-    const rpolygons = document.querySelectorAll(".single-hand svg polygon")
+  // useEffect(() => {
+  //   setHand(handRef.current)
+  // }, [])
+  // if (hand && windowEl.width > 767) {
+  //   const rpolygons = document.querySelectorAll(".single-hand svg polygon")
 
-    if (windowEl.scrollY > hand.offsetTop - windowEl.height / 2) {
-      rpolygons.forEach(e => {
-        setTimeout(() => {
-          e.classList.add("visible")
-        }, (rtime += 5))
-      })
-    }
-  }
+  //   if (windowEl.scrollY > hand.offsetTop - windowEl.height / 2) {
+  //     rpolygons.forEach(e => {
+  //       setTimeout(() => {
+  //         e.classList.add("visible")
+  //       }, (rtime += 5))
+  //     })
+  //   }
+  // }
 
   return (
     <div className="flex flex-col" ref={handRef}>

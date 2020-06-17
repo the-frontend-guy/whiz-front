@@ -11,6 +11,7 @@ import ImageGrid from '../components/image-grid'
 import CanvasOverlay from "../components/canvas-overlay"
 import HomeContact from "../components/home-contact"
 import NextPage from "../components/next-page"
+import VerticalSlider from "../components/vertical-slider"
 
 const ServiceDetailPage = ({data, pageContext}) => {
   const [headerOffset, changeHeader] = useState(0)
@@ -52,9 +53,9 @@ return(
     <FixedSlider windowEl={windowInfo} data={data.strapiServiceDetails.fixed_slider}/>
     <ImageGrid data={data.strapiServiceDetails.image_grid_1}/>
     <ImageGrid data={data.strapiServiceDetails.image_grid_2}/>
-    <CanvasOverlay windowEl={windowInfo} data={data.strapiServiceDetails.overlay} sliderData={data.strapiServiceDetails.vertical_slider} />
+    <CanvasOverlay windowEl={windowInfo} data={data.strapiServiceDetails.overlay} />
+    <VerticalSlider data={data.strapiServiceDetails.vertical_slider} windowEl ={windowInfo}/>
     <NextPage data={data.allStrapiPage.nodes} currentPage={pageContext.pageId}/>
-
     <HomeContact data={data.strapiServiceDetails.form_content} overlap={false} getOffset={getOffset}/>
 
   </Layout>
@@ -63,8 +64,8 @@ return(
 }
 
 export const query = graphql`
-query ServiceDetails($parentId: Int) {
-  strapiServiceDetails {
+query ServiceDetails($parentId: Int, $serviceDetail: Int) {
+  strapiServiceDetails(strapiId: {eq: $serviceDetail }) {
     strapiId
     banner {
       content

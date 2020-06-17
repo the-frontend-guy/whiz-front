@@ -43,11 +43,11 @@ const ServiceList = ({ activeService, menu }) => (
           <li key={i} className="mb-4">
             <Link  className={`text-2xl md:text-3xl xl:text-3xl hover:text-blue-100 ${menu ? 'text-white' : ''}`} to={`/${page.slug}`}>{page.name}</Link>
             <div className="sub-services-links mb-6">
-            {page.strapiChildren.sort((a,b) => a.order - b.order).map((iPage)=>{
+            {page.strapiChildren.sort((a,b) => a.order - b.order).map((iPage, i)=>{
               return (
                 <Fragment key={iPage.id}>
               <Link  className="text-base" to={`/${iPage.slug}`}>{iPage.name}</Link>
-              <span>,</span>
+              { page.strapiChildren.length-1 != i && <span>,</span> }
               </Fragment>
                )
             })}

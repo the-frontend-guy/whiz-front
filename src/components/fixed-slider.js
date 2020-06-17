@@ -59,7 +59,7 @@ const FixedSlider = ({ windowEl, data }) => {
 
   function skipTo() {
     window.scroll({
-      behavior: 'smooth',
+      behavior: "smooth",
       top:
         sectionHeightOffset +
         slideDelay * 2.7 +
@@ -123,12 +123,12 @@ const FixedSlider = ({ windowEl, data }) => {
       >
         <figure className="slide-icon mb-5 md:mb-0">
           <img
-            src={process.env.GATSBY_API_URL+slide.inactive_icon.url}
+            src={process.env.GATSBY_API_URL + slide.inactive_icon.url}
             className="icon-base"
             alt=""
           />
           <img
-            src={process.env.GATSBY_API_URL+slide.active_icon.url}
+            src={process.env.GATSBY_API_URL + slide.active_icon.url}
             className="icon-active"
             alt=""
           />
@@ -138,8 +138,19 @@ const FixedSlider = ({ windowEl, data }) => {
             <h3 className="primary-title normal-case mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">
               <span className="inline-block">{title}</span>
               <span className="card-arrow inline-block w-8">
-                <img src={`${process.env.GATSBY_API_URL}/uploads/back_0f22caf10c.svg`}
-                 alt="" />
+                {data.theme == "light" && (
+                  <img
+                    src={`${process.env.GATSBY_API_URL}/uploads/back_0f22caf10c_a30e2cb951.svg`}
+                    alt=""
+                  />
+                )}
+
+                {data.theme == "dark" && (
+                  <img
+                    src={`${process.env.GATSBY_API_URL}/uploads/white_arrow_047dcc22ed.svg`}
+                    alt=""
+                  />
+                )}
               </span>
             </h3>
             <p className="tracking-body mb-5 pb-5 md:mb-0 md:pb-0">

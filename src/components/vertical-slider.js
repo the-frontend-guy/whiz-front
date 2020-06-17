@@ -1,13 +1,18 @@
-import React from "react"
+import React, {useState} from "react"
 import Slider from "react-slick";
 
-const VerticalSlider = ({ data, windowEl, active }) => {
+const VerticalSlider = ({ data, windowEl }) => {
   const slides = data.slides
 
   const verticalLabels = []
   const circleSlides = []
   const mobileSlides = []
   const isMobile = windowEl.width < 768
+
+  const [active, setActive] = useState(0)
+  const handleHover = i => {
+    setActive(i)
+  }
 
 
   const carouselSettings = {
@@ -18,7 +23,7 @@ const VerticalSlider = ({ data, windowEl, active }) => {
     slidesToScroll: 1,
     arrows: false
   };
-  const radius = windowEl.width > windowEl.height ? `35vw` : `35vh`
+  const radius = windowEl.width > windowEl.height ? `30vw` : `30vh`
 
   slides.forEach((e, i) => {
     mobileSlides.push(
@@ -32,7 +37,7 @@ const VerticalSlider = ({ data, windowEl, active }) => {
             alt=""
             className ="mb-8"
           />
-        <h5 className="text-white font-display text-4xl mb-8">{e.title}</h5>
+        <h5 className="text-white font-display text-3xl mb-8">{e.title}</h5>
         <p className="text-white tracking-body">{e.content}</p>
       </div>
     )
@@ -40,9 +45,10 @@ const VerticalSlider = ({ data, windowEl, active }) => {
       <div
         key={i}
         className={`vertical-slider-content ${i === active ? "active" : ""}`}
+        
       >
-        <h5 className="text-white font-display text-4xl mb-3">{e.title}</h5>
-        <p className="text-white text-xl">{e.content}</p>
+        <h5 className="text-white font-display text-3xl mb-3" onMouseOver={() => handleHover(i)}>{e.title}</h5>
+        <p className="text-white tracking-body">{e.content}</p>
       </div>
     )
     circleSlides.push(
@@ -82,20 +88,20 @@ const VerticalSlider = ({ data, windowEl, active }) => {
  
 
   return (
-    <section className="vertical-slider bg-black h-screen overflow-hidden">
-      {!isMobile && <div className="vertical-slider-wrapper flex h-screen items-center">
-        <div className="w-3/6">
+    <section className="vertical-slider bg-black min-h-screen overflow-hidden w-full">
+      {!isMobile && <div className="vertical-slider-wrapper flex min-h-screen items-center w-9/12 m-auto">
+        <div className="w-3/5 pr-8">
           <div className="vertical-content-container">
             <span
               class="highlighter"
               style={{
-                transform: `translateY(${active * 66}px)`,
+                transform: `translateY(${active * 74}px)`,
               }}
             ></span>
             {verticalLabels}
           </div>
         </div>
-        <div className="w-3/6 h-screen relative">
+        <div className="w-2/5 h-screen relative">
           <div className="slides-container h-screen flex flex-col items-center">
             <span className="circle-static"></span>
             <span className="circle-static"></span>

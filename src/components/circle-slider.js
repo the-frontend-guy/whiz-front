@@ -181,7 +181,7 @@ const CircleSlider = ({ data, direction }) => {
         </div>
 
         <div className="w-auto md:m-full lg-3/6 ml-4 lg:ml-0">
-          <div className="title-block flex mb-5 mt-5 md:mb-8 md:mt-0">
+          <div className="title-block flex  mt-5 mb-3 md:mb-0  md:mt-0">
             <span className="section-title md:text-5xl lg:text-6xl text-blue-100 hidden xl:block">
               {currentActive < 9
                 ? 0 + (currentActive + 1).toString()
@@ -190,6 +190,9 @@ const CircleSlider = ({ data, direction }) => {
             <h2 className="section-title md:text-5xl lg:text-6xl inline-block ml-0 xl:ml-20 leading-snug tracking-tight">
               {heading}
             </h2>
+          </div>
+          <div className="mb-5 md:mb-8">
+              <p className="text-gray-100 w-11/12 2xl:w-9/12 tracking-body pl-4 pr-6">{data.description}</p>
           </div>
           <div className={`arrow-block flex ${isRight ? 'justify-between ml-8' : ''}`}>
             <div className={`arrow-buttons ${isRight ? 'order-2' : ''}`}>

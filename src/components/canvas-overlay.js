@@ -3,10 +3,9 @@ import * as FontFaceObserver from "fontfaceobserver"
 import "./component.css"
 import { animated } from "react-spring"
 import { Stage, Layer, Text, Rect } from "react-konva"
-import VerticalSlider from "../components/vertical-slider"
-import HoverSlider from "../components/hover-slider"
 
-const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
+
+const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
   const fontName = "mont"
   const font = windowEl.width ? new FontFaceObserver(fontName) : {}
   const sectionRef = React.useRef(null)
@@ -16,7 +15,6 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
   const sliderFontSize = windowEl.width / 4
   const paragraphs = []
 
-  let activeSlide = 0
   let revealSlider = windowEl.width
   let moveText = 0
   let slideText = 0
@@ -35,15 +33,26 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
   }, [])
   const isMobile = section ? section.offsetWidth < 768 : false
 
+  let paraClass;
+
+  if(isMobile){
+    paraClass = "tracking-body p-4"
+  } else {
+    paraClass = "tracking-body mb-5 pb-5 md:mb-0 md:pb-0"
+  }
+
+  if(isLightTheme){
+    paraClass = `${paraClass} text-white`
+  } else {
+    paraClass = `${paraClass} text-black`
+
+  }
+
 
   data.description.forEach(e => {
     paragraphs.push(
       <p
-        className={`${
-          isMobile
-            ? "tracking-body text-gray-100 p-4"
-            : "tracking-body mb-5 pb-5 md:mb-0 md:pb-0"
-        }`}
+        className={paraClass}
       >
         {e.title}
       </p>
@@ -60,7 +69,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
 
   if (section && windowEl.width > 767) {
     const triggerPosition = section.offsetTop
-    sectionHeight = sliderData ? windowEl.width * 1.5 + windowEl.height * 4.5 : windowEl.width * 1.5 + windowEl.height * 3.5
+    sectionHeight = windowEl.width * 1.5 + windowEl.height * 2
     if ((windowEl.scrollY) > triggerPosition) {
       let calc = windowEl.width - ((windowEl.scrollY) - triggerPosition)
       revealSlider = calc <= 0 ? 0 : calc 
@@ -90,24 +99,24 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
       slideStatic = slideStatic - moveSlide
     }
 
-    if (sliderData) {
-      if (
-        windowEl.scrollY >
-        triggerPosition + (windowEl.width * 1.5) + windowEl.height * 2
-      ) {
-        let calc =
-          windowEl.scrollY -
-          (triggerPosition + (windowEl.width * 1.5) + windowEl.height * 2)
-        if (calc > windowEl.height) {
-          calc = windowEl.height
-        } else {
-          calc = calc
-        }
-        const jkk = windowEl.height / sliderData.slides.length
-        activeSlide =
-          Math.trunc(calc / jkk) < 1 ? 0 : Math.trunc(calc / jkk) - 1
-      }
-    }
+    // if (sliderData) {
+    //   if (
+    //     windowEl.scrollY >
+    //     triggerPosition + (windowEl.width * 1.5) + windowEl.height * 2
+    //   ) {
+    //     let calc =
+    //       windowEl.scrollY -
+    //       (triggerPosition + (windowEl.width * 1.5) + windowEl.height * 2)
+    //     if (calc > windowEl.height) {
+    //       calc = windowEl.height
+    //     } else {
+    //       calc = calc
+    //     }
+    //     const jkk = windowEl.height / sliderData.slides.length
+    //     activeSlide =
+    //       Math.trunc(calc / jkk) < 1 ? 0 : Math.trunc(calc / jkk) - 1
+    //   }
+    // }
   }
 
   if (isMobile) {
@@ -132,7 +141,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
       >
         {!isMobile && (
           <div
-            className="h-screen overlay-slider absolute top-0 left-0 w-full z-20 bg-white"
+            className={`h-screen overlay-slider absolute top-0 left-0 w-full z-20 ${isLightTheme ? "bg-black" : "bg-white"}`}
             style={{
               top: -moveSlide,
                 transform: `translateX(${windowEl.width-moveText}px)`
@@ -147,7 +156,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
                 <Text
                   ref={textRef}
                   text={data.vertical_text}
-                  fill="black"
+                  fill={isLightTheme ? "white" : "black"}
                   fontSize={sliderFontSize}
                   y={slideText}
                   x={50}
@@ -177,32 +186,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
           </div>
         )}
 
-        <div
-          className={`home-contact-image-container bg-cover bg-no-repeat flex justify-end items-center min-h-screen`}
-          style={{
-            backgroundImage: `url('${process.env.GATSBY_API_URL ||
-              "/staging/whizwafture"}/uploads/banner_3d7ab820ac.jpeg')`,
-            backgroundSize: `cover`,
-            transform: `translateY(${slideStatic}px)`,
-          }}
-        >
-          {sliderData && (
-            <VerticalSlider
-              windowEl={windowEl}
-              active={activeSlide}
-              data={sliderData}
-            />
-          )}
-          {hoverSliderData && <HoverSlider data={hoverSliderData} />}
-
-          {!sliderData && !hoverSliderData && (
-            <div className="wrapper w-auto md:w-4/5 mx-4 md:mx-0">
-              <h2 className="section-title md:text-5xl lg:text-6xl xl:text-7xl leading-snug tracking-tight text-white w-full md:w-4/5">
-                {data.banner_text}
-              </h2>
-            </div>
-          )}
-        </div>
+        
 
         {!isMobile && (
           <animated.div
@@ -239,7 +223,7 @@ const CanvasOverlay = ({ windowEl, data, sliderData, hoverSliderData }) => {
                   width={windowEl.width}
                   height={windowEl.height}
                   x={revealSlider}
-                  fill="black"
+                  fill={isLightTheme ? "white" : "black"}
                 />
               </Layer>
             </Stage>

@@ -25,10 +25,10 @@ const Header = ({ siteTitle, hideHamburger }) => {
   return(
     <>
  <header className="p-4 md:p-5 bg-black relative">
-   <div className="container flex justify-between items-center">
+   <div className="flex justify-between items-center">
    <div className="logo-container">
     <Link className="inline-block w-32 md:w-48" to="/">
-    <img src={`${process.env.ASSETS_URL || '/staging/whizwafture'}/uploads/logo_a140ab2cac.png`}
+    <img src={`${process.env.GATSBY_API_URL}/uploads/logo_db79c79ed5.png`}
     alt="logo"/>
     </Link>
    </div>

@@ -9,6 +9,7 @@ import AboutUsMain from '../components/about-us-main'
 import CanvasOverlay from "../components/canvas-overlay"
 import HomeContact from "../components/home-contact"
 import NextPage from "../components/next-page"
+import HoverSlider from "../components/hover-slider"
 
 const AboutUsPage = ({data}) => {
   const initData = {
@@ -38,54 +39,63 @@ const AboutUsPage = ({data}) => {
   return(
     <Layout>
       <SEO title="about-us" />
-      {/* <AboutUsBanner data={data.strapiAboutusData.banner}/> */}
-      {/* <AboutUsMain descData={data.strapiAboutusData.description} sliderData={data.strapiAboutusData.popup_slider}/> */}
-      {/* <CanvasOverlay windowEl={windowInfo} data={data.strapiAboutusData.overlay} hoverSliderData={data.strapiAboutusData.aboutus_hoverslides}/> */}
-      {/* <NextPage nextPageData={data.strapiAboutusData.next_page}/> */}
-      {/* <HomeContact overlap={false} data={{title:'Request Quote'}}/> */}
+      <AboutUsBanner data={data.strapiAboutusData.banner}/>
+      <AboutUsMain descData={data.strapiAboutusData.description} sliderData={data.strapiAboutusData.popup_slider}/>
+      <CanvasOverlay windowEl={windowInfo} data={data.strapiAboutusData.overlay} isLightTheme={true}/>
+      <HoverSlider data={data.strapiAboutusData.aboutus_hoverslides} /> 
+      <NextPage nextPageData={data.strapiAboutusData.next_page}/>
+      <HomeContact overlap={false} data={data.strapiAboutusData.form_content}/>
     </Layout>
   )
 }
 
 
-// export const query = graphql`
-// query AboutData{
-//   strapiAboutusData {
-//     aboutus_hoverslides {
-//       title
-//       description
-//     }
-//     banner {
-//       banner_desc
-//       blue
-//       post_blue
-//       pre_blue
-//     }
-//     description {
-//       description_hide
-//       description_show
-//       heading
-//       read_more
-//       sub_heading
-//     }
-//     next_page {
-//       id
-//       url
-//       name
-//     }
-//     overlay {
-//       desc_heading
-//       description {
-//         title
-//       }
-//       overlay_text
-//       vertical_text
-//     }
-//     popup_slider {
-//       heading
-//       content
-//     }
-//   }
-// }`
+export const query = graphql`
+query AboutData{
+  strapiAboutusData {
+    aboutus_hoverslides {
+      title
+      description
+      img {
+        url
+      }
+    }
+    banner {
+      banner_desc
+      blue1
+      blue2
+      post_blue
+      pre_blue
+    }
+    description {
+      description_hide
+      description_show
+      heading
+      read_more
+      sub_heading
+    }
+    next_page {
+      id
+      url
+      name
+    }
+    overlay {
+      desc_heading
+      description {
+        title
+      }
+      overlay_text
+      vertical_text
+    }
+    popup_slider {
+      heading
+      content
+    }
+    form_content {
+      form_heading
+      form_description
+    }
+  }
+}`
 
 export default AboutUsPage
