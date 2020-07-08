@@ -16,6 +16,8 @@ const FixedSlider = ({ windowEl, data }) => {
   const titleBlocks = data.heading_show
   const subtitleBlocks = data.heading_hide
 
+  console.log(titleBlocks);
+
   useEffect(() => {
     setSection(sectionRef)
   }, [])
@@ -61,9 +63,7 @@ const FixedSlider = ({ windowEl, data }) => {
     window.scroll({
       behavior: "smooth",
       top:
-        sectionHeightOffset +
-        slideDelay * 2.7 +
-        (bounds.width - windowEl.height),
+        sectionHeightOffset + bounds.width
     })
   }
 
@@ -104,6 +104,12 @@ const FixedSlider = ({ windowEl, data }) => {
 
   const slides = []
 
+  const handleClick = (e,slide) => {
+    if(slide.link === '/'){
+      e.preventDefault();
+    }
+  }
+
   data.slides.forEach((slide, i) => {
     const title = []
     slide.title.forEach((e, i) => {
@@ -116,10 +122,12 @@ const FixedSlider = ({ windowEl, data }) => {
     slides.push(
       <Link
         key={i}
-        to={`/${slide.link}`}
+        to={ slide.link }
         className={`slide-card ${
           currentSlide - 1 === i || isMobile ? "active" : ""
         }`}
+
+        onClick={(e) => handleClick(e,slide)}
       >
         <figure className="slide-icon mb-5 md:mb-0">
           <img
@@ -138,14 +146,14 @@ const FixedSlider = ({ windowEl, data }) => {
             <h3 className="primary-title normal-case mb-5 leading-snug tracking-tight md:text-3xl lg:text-4xl">
               <span className="inline-block">{title}</span>
               <span className="card-arrow inline-block w-8">
-                {data.theme == "light" && (
+                {data.theme === "light" && (
                   <img
                     src={`${process.env.GATSBY_API_URL}/uploads/back_0f22caf10c_a30e2cb951.svg`}
                     alt=""
                   />
                 )}
 
-                {data.theme == "dark" && (
+                {data.theme === "dark" && (
                   <img
                     src={`${process.env.GATSBY_API_URL}/uploads/white_arrow_047dcc22ed.svg`}
                     alt=""
@@ -272,7 +280,6 @@ const FixedSlider = ({ windowEl, data }) => {
               role="button"
               tabIndex={0}
             >
-              {" "}
               {data.skip_link}
             </span>
           </div>

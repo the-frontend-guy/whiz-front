@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, {useState} from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -16,7 +16,7 @@ import ServiceList from "./service-list"
 import ContactInfo from "./contact-info"
 import SocialIcons from "./social-icons"
 
-const Layout = ({ children, hideFooter, hideHamburger }) => {
+const Layout = ({ children, hideFooter, hideHamburger, lightHeader }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,7 +28,6 @@ const Layout = ({ children, hideFooter, hideHamburger }) => {
   `)
 
 
-  // const [percentLoaded, setPercent ] = useState(0);
 
 
 
@@ -36,8 +35,7 @@ const Layout = ({ children, hideFooter, hideHamburger }) => {
 
   return (
     <>
-    {/* <h6>{percentLoaded}</h6> */}
-      <Header siteTitle={data.site.siteMetadata.title} hideHamburger={hideHamburger} />
+      <Header siteTitle={data.site.siteMetadata.title} hideHamburger={hideHamburger} lightHeader={lightHeader}/>
       <main>{children}</main>
       {!hideFooter && <footer className="mt-12 lg:mt-40 mx-4 lg:mx-20">
         <div className="container mx-auto">

@@ -6,30 +6,19 @@
 
 // You can delete this file if you're not using it
 // import React, {useState} from "react"
+// const navigate = require("gatsby")(navigate)
 
-const React = require("react")
-const Loader = require("./src/components/loader").default
-let pageLoadTime = 0
-exports.onClientEntry = () => {
-  
-
-  // if(typeof window !== 'undefined'){
-    let perfData = window.performance.timing;
-    let estimatedTime = -(perfData.loadEventEnd - perfData.navigationStart);
-    pageLoadTime = parseInt((estimatedTime/1000)%60)*100;
-
-    
-  // }
+exports.onInitialClientRender = () => {
+  document.getElementById("___loader").style.display = "none"
 }
 
-exports.wrapPageElement= ({element}) => { 
+exports.onPreRouteUpdate = ({ location }) => {
+  console.log(location)
+  if (location.pathname === "/thank-you/" || location.pathname === "/thank-you") {
+    const { showPage } = location.state || false
 
-  return (<>
-    <Loader data={pageLoadTime}></Loader>
-    {element}
-  </>)
+    // if (!showPage) {
+    //   window.location = location.origin
+    // }
   }
-
-
-
-  
+}

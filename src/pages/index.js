@@ -42,9 +42,9 @@ useEffect(() => {
 
 return(
   <Layout>
-    <SEO title="home"/>
-    <VideoContainer data={data.strapiHomeData.banner}/>
-    <HomeAboutUs windowEl={windowInfo} data={data.strapiHomeData.about_us}  />
+    <SEO title="Home"/>
+    <VideoContainer data={data.strapiHomeData.banner} windowEl={windowInfo}/>
+    <HomeAboutUs windowEl={windowInfo} data={data.strapiHomeData.about_us} sliderData={data.strapiHomeData.popup_slider} />
     <FixedSlider windowEl={windowInfo} data={data.strapiHomeData.fixed_slider}/>
     <CircleSlider windowEl={windowInfo} data={data.strapiHomeData.circle_slider} direction="false"/>
     <HorizontalSlider windowEl={windowInfo} data={data.strapiHomeData.horizontal_slider}/>
@@ -65,14 +65,27 @@ query HomeData {
         name
         url
       }
-      multitext_slider {
-        slider_title
-        id
-      }
       title
     }
     banner {
       heading
+    }
+    popup_slider {
+      heading
+      sub_heading
+      title
+      footer_question
+      footer_ans
+      popup_title
+      image{
+        url
+      }
+      mobile_image{
+        url
+      }
+      content {
+        title
+      }
     }
     circle_slider {
       heading {

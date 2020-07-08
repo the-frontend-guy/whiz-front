@@ -20,7 +20,6 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
   let slideText = 0
   let moveSlide = 0
   let sectionHeight = 0
-  let slideStatic = windowEl.height
   let slidePara = windowEl.height
 
   const [section, setSection] = useState()
@@ -36,9 +35,9 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
   let paraClass;
 
   if(isMobile){
-    paraClass = "tracking-body p-4"
+    paraClass = "tracking-body p-4 font-bodyMedium"
   } else {
-    paraClass = "tracking-body mb-5 pb-5 md:mb-0 md:pb-0"
+    paraClass = "tracking-body mb-5 pb-5 md:mb-0 md:pb-0 font-bodyMedium"
   }
 
   if(isLightTheme){
@@ -96,31 +95,12 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
         windowEl.scrollY -
         (triggerPosition + (windowEl.width * 1.5) + windowEl.height)
       moveSlide = calc > windowEl.height ? windowEl.height : calc
-      slideStatic = slideStatic - moveSlide
     }
 
-    // if (sliderData) {
-    //   if (
-    //     windowEl.scrollY >
-    //     triggerPosition + (windowEl.width * 1.5) + windowEl.height * 2
-    //   ) {
-    //     let calc =
-    //       windowEl.scrollY -
-    //       (triggerPosition + (windowEl.width * 1.5) + windowEl.height * 2)
-    //     if (calc > windowEl.height) {
-    //       calc = windowEl.height
-    //     } else {
-    //       calc = calc
-    //     }
-    //     const jkk = windowEl.height / sliderData.slides.length
-    //     activeSlide =
-    //       Math.trunc(calc / jkk) < 1 ? 0 : Math.trunc(calc / jkk) - 1
-    //   }
-    // }
+  
   }
 
   if (isMobile) {
-    slideStatic = 0
     revealSlider = 0
     moveText = 0
     slideText = 0
@@ -159,7 +139,7 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
                   fill={isLightTheme ? "white" : "black"}
                   fontSize={sliderFontSize}
                   y={slideText}
-                  x={50}
+                  x={100}
                   rotation={-90}
                   fontFamily={fontName}
                   letterSpacing={-1}

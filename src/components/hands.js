@@ -1,30 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import "./hands.css"
 import "./component.css"
 
-const Hands = ({ windowEl }) => {
-  const handRef = React.useRef(null)
-  let rtime = 5
+const Hands = () => {
 
-  const [hand, setHand] = useState()
 
-  // useEffect(() => {
-  //   setHand(handRef.current)
-  // }, [])
-  // if (hand && windowEl.width > 767) {
-  //   const rpolygons = document.querySelectorAll(".single-hand svg polygon")
-
-  //   if (windowEl.scrollY > hand.offsetTop - windowEl.height / 2) {
-  //     rpolygons.forEach(e => {
-  //       setTimeout(() => {
-  //         e.classList.add("visible")
-  //       }, (rtime += 5))
-  //     })
-  //   }
-  // }
+ 
 
   return (
-    <div className="flex flex-col" ref={handRef}>
+    <div className="flex flex-col">
       <div className="r-hand-container single-hand w-7/12 self-end">
         <svg
           version="1.1"

@@ -2,73 +2,7 @@ import React, { useState } from "react"
 import "./component.css"
 
 const HoverSlider = ({ data }) => {
-  console.log(data)
-  // data = [
-  //   {
-  //     title: "we think",
-  //     desc:
-  //       "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
-  //     image: {
-  //       url: "/uploads/why_us-02_a98cfaec57.svg",
-  //     },
-  //     desc_headings: [
-  //       "brand positioning",
-  //       "customer journeys",
-  //       "communication strategy",
-  //       "activation strategy",
-  //       "inspiration sessions",
-  //       "shopper marketing",
-  //     ],
-  //   },
-  //   {
-  //     title: "we create",
-  //     desc:
-  //       "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
-  //     image: {
-  //       url: "/uploads/why_us-02_a98cfaec57.svg",
-  //     },
-  //     desc_headings: [
-  //       "customer journeys",
-  //       "shopper marketing",
-  //       "communication strategy",
-  //       "brand positioning",
-  //       "activation strategy",
-  //       "inspiration sessions",
-  //     ],
-  //   },
-  //   {
-  //     title: "we build",
-  //     desc:
-  //       "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
-  //     image: {
-  //       url: "/uploads/why_us-02_a98cfaec57.svg",
-  //     },
-  //     desc_headings: [
-  //       "brand positioning",
-  //       "customer journeys",
-  //       "shopper marketing",
-  //       "inspiration sessions",
-  //       "communication strategy",
-  //       "activation strategy",
-  //     ],
-  //   },
-  //   {
-  //     title: "we optimize",
-  //     desc:
-  //       "with our strategesits you can spar a lot about what you want and ccan acheive with our branc or organizarion. We build result oriented strategies",
-  //     image: {
-  //       url: "/uploads/why_us-02_a98cfaec57.svg",
-  //     },
-  //     desc_headings: [
-  //       "brand positioning",
-  //       "customer journeys",
-  //       "communication strategy",
-  //       "shopper marketing",
-  //       "activation strategy",
-  //       "inspiration sessions",
-  //     ],
-  //   },
-  // ]
+ 
   const list = []
   const slides = []
 
@@ -91,29 +25,32 @@ const HoverSlider = ({ data }) => {
           {e.title}
         </h5>
         <p className=" tracking-body">{e.description}</p>
+        <ul className="block md:hidden hover-ul p-8 mt-4">
+          {e.slider_text && e.slider_text.map(e => <li className="mb-4">{e.title}</li>)}
+        </ul>
       </li>
     )
 
     slides.push(
-      <div className={`hover-slide absolute w-full bottom-0 ${activeSlide === i ? "active" : ""}`}>
-        <figure className="mb-10">
+      <div className={`hover-slide static md:absolute ${activeSlide === i ? "active" : ""}`}>
+        <figure className="hidden md:block">
           <img
             src={process.env.GATSBY_API_URL+ e.img.url}
             alt=""
           />
         </figure>
-        {/* <ul>
-          {e.desc_headings && e.desc_headings.map(e => <li className="my-4">{e}</li>)}
-        </ul> */}
+        <ul>
+          {e.slider_text && e.slider_text.map(e => <li className="my-2 text-center">{e.title}</li>)}
+        </ul>
       </div>
     )
   })
   return (
-    <div className="hover-slider-container min-h-screen bg-white w-full flex justify-between items-center px-24">
-      <div className="content">
+    <div className="hover-slider-container min-h-screen bg-white w-full flex justify-between items-center px-4 md:px-24">
+      <div className="content my-12">
         <ul>{list}</ul>
       </div>
-      <div className="hover-slider relative">
+      <div className="hidden md:block hover-slider relative">
         {slides}
       </div>
     </div>

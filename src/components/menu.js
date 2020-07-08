@@ -16,6 +16,9 @@ const Menu = ({ activePage }) => {
       <div className="my-12"> 
 
       <SocialIcons isDark={true}/>
+      <span className="text-gray-100 block md:hidden text text-left md:text-right mt-16 text-2xl">
+       {`@ ${n} whizwafture`}
+      </span>
       </div>
       </div>
       <div className="page-container my-20 md:my-0 flex flex-col">
@@ -54,7 +57,7 @@ const Menu = ({ activePage }) => {
     />
     
   </ul>
-  <span className="text-gray-100 block text text-left md:text-right mt-16 text-2xl">
+  <span className="text-gray-100 hidden md:block text text-left md:text-right mt-16 text-2xl">
        {`@ ${n} whizwafture`}
       </span>
       </div>

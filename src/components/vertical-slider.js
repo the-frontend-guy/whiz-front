@@ -90,7 +90,7 @@ const VerticalSlider = ({ data, windowEl }) => {
   return (
     <section className="vertical-slider bg-black min-h-screen overflow-hidden w-full">
       {!isMobile && <div className="vertical-slider-wrapper flex min-h-screen items-center w-9/12 m-auto">
-        <div className="w-3/5 pr-8">
+        <div className="w-3/5 pr-16 my-12">
           <div className="vertical-content-container">
             <span
               class="highlighter"

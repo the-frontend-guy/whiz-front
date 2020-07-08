@@ -182,7 +182,7 @@ const CircleSlider = ({ data, direction }) => {
 
         <div className="w-auto md:m-full lg-3/6 ml-4 lg:ml-0">
           <div className="title-block flex  mt-5 mb-3 md:mb-0  md:mt-0">
-            <span className="section-title md:text-5xl lg:text-6xl text-blue-100 hidden xl:block">
+            <span className="section-title text-3xl md:text-5xl lg:text-6xl text-blue-100 block">
               {currentActive < 9
                 ? 0 + (currentActive + 1).toString()
                 : (currentActive + 1).toString()}
@@ -199,7 +199,7 @@ const CircleSlider = ({ data, direction }) => {
               <div className="processBlock__navSteps">
                 <div
                   className="ms-transition__line-2 prevNextBttn needClick top"
-                  onClick={rotateUp} onKeyDown={rotateUp} role="button" tabIndex={0}
+                  onClick={rotateDown} onKeyDown={rotateDown} role="button" tabIndex={0}
                 >
                   <div className="prevNextBttn__bg"></div>
                   <svg
@@ -229,7 +229,7 @@ const CircleSlider = ({ data, direction }) => {
                 </div>
                 <div
                   className="ms-transition__line-3 prevNextBttn needClick bottom"
-                  onClick={rotateDown} onKeyDown={rotateDown} role="button" tabIndex={0}
+                  onClick={rotateUp} onKeyDown={rotateUp} role="button" tabIndex={0}
                 >
                   <div className="prevNextBttn__bg"></div>
                   <svg

@@ -5,9 +5,9 @@ module.exports = {
   pathPrefix: `/staging/whizwafture/`,
   // pathPrefix: '/',
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Whizwafture`,
+    description: `A creative web solution company | Mumbai`,
+    author: `@whizwafture`,
   },
 
   plugins: [
@@ -23,7 +23,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "http://localhost:1337",
+        apiURL: process.env.GATSBY_API_URL,
         // contentTypes: [
         //   "service-details",
         //   "service-child-details",

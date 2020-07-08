@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import "./component.css"
 import { animated, useSpring } from "react-spring"
 import Slider from "react-slick"
-import useMeasure from "react-use-measure"
 
 const HorizontalSlider = ({ windowEl, data }) => {
   const sliderRef = React.useRef(null)
@@ -61,16 +60,14 @@ const HorizontalSlider = ({ windowEl, data }) => {
             />
           </figure>
           <span
-            className={`text-blue-100 font-display text-3xl ${
+            className={`text-white font-display text-3xl ${
               data.theme !== "dark" ? "hidden" : ""
             }`}
           >
             {index < 9 ? 0 + (index + 1).toString() : (index + 1).toString()}
           </span>
           <h4
-            className={`${
-              data.theme === "dark" ? "text-white" : "text-blue-100"
-            } mb-5 primary-title leading-snug tracking-tight md:text-3xl lg:text-4xl`}
+            className={`text-blue-100 mb-5 primary-title leading-snug tracking-tight md:text-3xl lg:text-4xl`}
           >
             {slide.title}
           </h4>

@@ -29,7 +29,7 @@ const NextPage = ({ data, currentPage, nextPageData }) => {
     nextPage && <section className="h-auto min-h-0">
     <Link to={`/${nextPage.slug}`} className="block text-center py-16 md:py-40">
       <span className="uppercase block text-gray-300 text-2xl font-display mb-8">next page</span>
-      <h5 class="section-title leading-snug tracking-tight text-6xl "> {nextPage.name}</h5>
+      <h5 class="section-title leading-snug tracking-tight text-4xl md:text-6xl"> {nextPage.name}</h5>
    
     </Link>
   </section>

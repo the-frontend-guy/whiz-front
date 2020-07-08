@@ -10,6 +10,7 @@ import CanvasOverlay from "../components/canvas-overlay"
 import HomeContact from "../components/home-contact"
 import NextPage from "../components/next-page"
 import HoverSlider from "../components/hover-slider"
+import HorizontalScroll from "../components/horizontal-scroll"
 
 const AboutUsPage = ({data}) => {
   const initData = {
@@ -40,8 +41,8 @@ const AboutUsPage = ({data}) => {
     <Layout>
       <SEO title="about-us" />
       <AboutUsBanner data={data.strapiAboutusData.banner}/>
-      <AboutUsMain descData={data.strapiAboutusData.description} sliderData={data.strapiAboutusData.popup_slider}/>
-      <CanvasOverlay windowEl={windowInfo} data={data.strapiAboutusData.overlay} isLightTheme={true}/>
+      <AboutUsMain  windowEl ={windowInfo} descData={data.strapiAboutusData.description} sliderData={data.strapiAboutusData.multi_text_slider}/>
+      <HorizontalScroll windowEl={windowInfo} data={data.strapiAboutusData.overlay} />
       <HoverSlider data={data.strapiAboutusData.aboutus_hoverslides} /> 
       <NextPage nextPageData={data.strapiAboutusData.next_page}/>
       <HomeContact overlap={false} data={data.strapiAboutusData.form_content}/>
@@ -59,6 +60,9 @@ query AboutData{
       img {
         url
       }
+      slider_text{
+        title
+      }
     }
     banner {
       banner_desc
@@ -66,6 +70,9 @@ query AboutData{
       blue2
       post_blue
       pre_blue
+    }
+    multi_text_slider{
+      slider_title
     }
     description {
       description_hide
@@ -87,10 +94,7 @@ query AboutData{
       overlay_text
       vertical_text
     }
-    popup_slider {
-      heading
-      content
-    }
+   
     form_content {
       form_heading
       form_description

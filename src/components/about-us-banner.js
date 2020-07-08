@@ -10,7 +10,7 @@ const AboutUsBanner = ({data}) => {
           <span className="block"><span className="text-blue-100">{data.blue2}</span> {data.post_blue} </span>
 
         </h1>
-        <p className="text-white lg:text-lg tracking-body mb-5">
+        <p className="text-white p-4 w-full text-center m-auto md:w-4/6 lg:text-lg tracking-body mb-5">
          {data.banner_desc}
         </p>
       </div>
