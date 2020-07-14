@@ -40,7 +40,7 @@ const SliderPopup = ({ data, windowEl }) => {
                 />
           </div>
           <span
-            className="sentence text-white text-4xl block w-4/6"
+            className="sentence text-white text-4xl block text-center"
           >
             {element.popup_title}
           </span>
@@ -71,7 +71,6 @@ const SliderPopup = ({ data, windowEl }) => {
   const lines = chunk(sentences, 3)
 
   const handleMouseMove = e => {
-    // console.log(e);
     let screenPos = e.screenX
     if (screenPos == 0) {
       screenPos = 1
@@ -88,6 +87,7 @@ const SliderPopup = ({ data, windowEl }) => {
         className={`slider-popup-container heading-title py-8 ${isMobile ? "w-screen overflow-x-auto" : "w-auto"}`}
         onMouseMove={handleMouseMove}
       >
+        <div>
         {!isMobile && lines.map((e, i) => (
           <div
             className="sentence-container relative z-10"
@@ -98,6 +98,7 @@ const SliderPopup = ({ data, windowEl }) => {
             {e}
           </div>
         ))}
+        </div>
 
         {isMobile && <div className="inline-flex">
           {mobileSentences}

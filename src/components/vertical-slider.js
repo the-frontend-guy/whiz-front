@@ -33,12 +33,12 @@ const VerticalSlider = ({ data, windowEl }) => {
       >
         <img
             src={process.env.GATSBY_API_URL+e.image.url}
-            width="60%"
+            width="80%"
             alt=""
-            className ="mb-8"
+            className ="mb-8 mx-auto"
           />
         <h5 className="text-white font-display text-3xl mb-8">{e.title}</h5>
-        <p className="text-white tracking-body">{e.content}</p>
+        <p className="text-white tracking-body text-left">{e.content}</p>
       </div>
     )
     verticalLabels.push(

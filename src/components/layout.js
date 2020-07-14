@@ -15,8 +15,9 @@ import PageList from "./page-list"
 import ServiceList from "./service-list"
 import ContactInfo from "./contact-info"
 import SocialIcons from "./social-icons"
+import AnimatedCursor from "./animated-cursor"
 
-const Layout = ({ children, hideFooter, hideHamburger, lightHeader }) => {
+const Layout = ({ children, hideFooter, hideHamburger, lightHeader, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

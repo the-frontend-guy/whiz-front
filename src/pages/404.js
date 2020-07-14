@@ -12,7 +12,7 @@ const NotFoundPage = () => (
     <section className="flex flex-col relative not-found">
       <div className="w-full bg-black mx-auto relative image-wrap">
         <div className="img-container absolute w-full">
-      <img src={`${process.env.GATSBY_API_URL}/uploads/404_06ffc640f8.png`} className="m-auto" alt="" style={{
+      <img src={`${process.env.GATSBY_API_URL}/uploads/404_085887a45f.png`} className="m-auto" alt="" style={{
         width: `75%`
       }}/>
         </div>
@@ -21,9 +21,9 @@ const NotFoundPage = () => (
       <div className="content-wrap flex p-4 md:p-6 xl:p-12">
       <div className="content-container w-full flex flex-col md:flex-row md:justify-between md:items-center">
         <div className="message flex flex-col justify-center">
-          <p className="text-2xl">Oops! An error occured.</p>
+          <p className="text-2xl font-bodyMedium">Oops! An error occured.</p>
           <div className="flex items-start  flex-col md:flex-row md:items-center">
-          <p className="text-2xl">Don't worry you can find us : </p>
+          <p className="text-2xl font-bodyMedium">Don't worry you can find us : </p>
             <div className="ml-4"><SocialIcons/></div>
           </div>
         </div>

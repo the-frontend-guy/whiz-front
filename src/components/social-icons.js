@@ -3,7 +3,7 @@ import React from "react"
 const SocialIcons = ({isDark}) => {
   return (
     <>
-      <div className={`social-icon-container flex justify-start lg:justify-end ${isDark ? 'dark' : ''}`}>
+      <div className={`social-icon-container flex  ${isDark ? 'dark' : 'justify-start lg:justify-end'}`}>
       <a href="https://www.facebook.com/WhizWaftureLLP" target="_blank" className="inline-block w-6 h-6">
           <img src={`${process.env.GATSBY_API_URL}/uploads/facebook_black_7e12645796.svg`} alt="facebook" />
           <img src={`${process.env.GATSBY_API_URL}/uploads/facebook_white_8399bae4ae.svg`} alt="facebook" />

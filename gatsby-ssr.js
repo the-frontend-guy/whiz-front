@@ -5,11 +5,21 @@
  */
 
 // You can delete this file if you're not using it
+const React = require("react")
+const AnimatedCursor = require("./src/components/animated-cursor").default
 
 
 
 
+exports.wrapPageElement= ({element, props}) => { 
+  console.log(props);
+  return (
+  <div>
+    <div>{<AnimatedCursor />} </div>
+    <div>{element}</div>
 
+    </div>)
+  }
 
 
 

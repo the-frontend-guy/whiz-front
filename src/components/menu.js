@@ -16,7 +16,7 @@ const Menu = ({ activePage }) => {
       <div className="my-12"> 
 
       <SocialIcons isDark={true}/>
-      <span className="text-gray-100 block md:hidden text text-left md:text-right mt-16 text-2xl">
+      <span className="text-gray-100 block md:hidden text text-left md:text-right mt-16 text-lg">
        {`@ ${n} whizwafture`}
       </span>
       </div>

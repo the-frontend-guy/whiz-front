@@ -51,7 +51,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
 
   data.slides.forEach((slide, index) => {
     slides.push(
-      <div className="h-slides-container mb-8 md:mb-0" key={slide.id}>
+      <div className="h-slides-container" key={slide.id}>
         <div className="h-slide">
           <figure className="mb-10">
             <img

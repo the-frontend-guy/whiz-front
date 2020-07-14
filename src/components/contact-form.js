@@ -91,7 +91,6 @@ const ContactForm = ({ isContactPage }) => {
 
   const handleMultiChange = event => {
     setMulti(event)
-    console.log(event.map(e => e.value))
     setFormData({
       ...formDatas,
       services: event.map(e => e.value).toString(),
@@ -228,7 +227,7 @@ const ContactForm = ({ isContactPage }) => {
       </div>
       <div className="flex  justify-between">
         <button
-          className="font-display text-white lowercase text-xl cursor-pointer relative"
+          className="font-display text-white lowercase text-xl cursor-pointer relative send-button attach-button"
           type="button"
         >
           <input
@@ -238,7 +237,7 @@ const ContactForm = ({ isContactPage }) => {
             onChange={handleFileChange}
             name="uploaded_file"
           ></input>
-          <span className="cursor-pointer">+ attach file</span>
+          <span className="cursor-pointer">attach file</span>
         </button>
         <button
           disabled={disableSubmit}

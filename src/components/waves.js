@@ -114,20 +114,17 @@ const Waves = ({ windowEl}) => {
 
 				//
 
-				// window.addEventListener( 'resize', onWindowResize );
+				window.addEventListener( 'resize', onWindowResize );
 
 			}
 
 			function onWindowResize() {
-        console.log('resized');
-				windowHalfX = windowEl.width / 2;
-        windowHalfY = windowEl.height / 2;
+				windowHalfX = window.innerWidth / 2;
+        windowHalfY = window.innerHeight / 2;
 
-				camera.aspect = windowEl.width / windowEl.height;
+				camera.aspect =  window.innerWidth  /  window.innerHeight ;
 				camera.updateProjectionMatrix();
-        console.log(windowEl.width)
-        console.log(windowEl.height)
-				renderer.setSize( windowEl.width, windowEl.height );
+				renderer.setSize( window.innerWidth,window.innerHeight);
 
 			}
 
@@ -221,11 +218,11 @@ const Waves = ({ windowEl}) => {
         animate();
       },[])
 
-      useEffect(()=>{
-        if(camera){
-          onWindowResize()
-        }
-      }, [windowEl.width, windowEl.height])
+      // useEffect(()=>{
+      //   if(camera){
+      //     onWindowResize()
+      //   }
+      // }, [windowEl.width, windowEl.height])
       
       return (
         <canvas id="waveanimation"></canvas>

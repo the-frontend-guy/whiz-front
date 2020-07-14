@@ -19,11 +19,11 @@ export default function HTML(props) {
               key={`loader`}
               id="___loader"
               style={{
-                alignItems: "center",
                 backgroundColor: "#F2F2F2",
                 display: "flex",
-                justifyContent: "center",
-                position: "absolute",
+                position: "fixed",
+                width: "100vw",
+                height: "100vh",
                 left: 0,
                 top: 0,
                 right: 0,
@@ -32,7 +32,30 @@ export default function HTML(props) {
               }}
            >
               <Loader/>
-        </div>
+
+
+              <div style={{
+                width: "100%",
+                height: "5px",
+                position: "absolute",
+                bottom: "30px",
+                background: '#1a1a1a',
+                zIndex: 9999,
+                
+              }}>
+              <div id="loader-counter"
+              style={{
+                width: "10%",
+                zIndex: 9999,
+                height: "100%",
+                background:"#5566ff",
+              }}
+              >
+                
+              </div>
+              </div>
+              </div>
+
 
         {props.preBodyComponents}
         <div

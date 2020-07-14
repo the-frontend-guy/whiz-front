@@ -16,7 +16,6 @@ const FixedSlider = ({ windowEl, data }) => {
   const titleBlocks = data.heading_show
   const subtitleBlocks = data.heading_hide
 
-  console.log(titleBlocks);
 
   useEffect(() => {
     setSection(sectionRef)
@@ -155,7 +154,7 @@ const FixedSlider = ({ windowEl, data }) => {
 
                 {data.theme === "dark" && (
                   <img
-                    src={`${process.env.GATSBY_API_URL}/uploads/white_arrow_047dcc22ed.svg`}
+                    src={`${process.env.GATSBY_API_URL}/uploads/barrow_c183835b67.svg`}
                     alt=""
                   />
                 )}

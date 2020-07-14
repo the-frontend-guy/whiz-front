@@ -20,10 +20,17 @@ const Loader = ({ data }) => {
   //  transform: `translateX(${percentLoaded == percentEnd ? '-100%' : '0'} )`
  }}>
 
-   <div className="loader-wrap  m-auto h-full w-full flex flex-col justify-center">
+   <div style={{
+     display: 'flex',
+     justifyContent: 'center',
+     height: '100%',
+     width: '100%'
+   }}>
 
-  <div className="percent-text-wrap relative text-center m-auto">
-    <img src="loader.gif" width="300" alt=""/>
+  <div style={{
+    margin: 'auto'
+  }}>
+    <img src={process.env.GATSBY_API_URL+'/uploads/loader_6ae7802dbd.png'} width="300" alt=""/>
    </div>
    </div>
 
