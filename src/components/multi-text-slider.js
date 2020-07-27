@@ -12,7 +12,6 @@ const MultiTextSlider = ({ windowEl, data }) => {
   const [{ slide }, setSlide] = useSpring(() => ({ slide: 0 }))
   const windowHeight = windowEl.height
   const scrolled = windowEl.scrollY / 0.7
-  const isMobile = windowEl.width < 768
 
   if (sliderContainer) {
     const containerHeight =
@@ -46,7 +45,7 @@ const MultiTextSlider = ({ windowEl, data }) => {
   })
 
   return (
-    <div  ref={slideContainerRef}>
+    <div ref={slideContainerRef}>
       <div className="py-20 bg-blue-100 self-stretch overflow-hidden">
         {textSliders}
       </div>

@@ -9,9 +9,6 @@ const HomeContact = props => {
   const [section, setSection] = useState()
   const sectionRef = useRef(null)
 
-  // const getOffset = () => {
-  //   // props
-  // }
 
   useEffect(() => {
     setSection(sectionRef.current)
@@ -41,23 +38,26 @@ const HomeContact = props => {
               </span>
             )}
 
-            {
-              !overlap && <div className="px-4 w-full  md:px-16 lg:px-28 md:w-5/12 ">
-              <h2 className={`text-white section-title text-4xl ${!overlap ? "mb-8" : ''}`}>
-                {data.form_heading}
-              </h2>
-              {/* <p className="text-white tracking-body my-8">
-                {data.strapiContactUs.form_description}
-              </p> */}
-              <div className="flex flex-col justify-end lg:col-start-1 lg:col-end-4 xl:col-start-auto">
-                <ContactInfo isLight={true}/>
+            {!overlap && (
+              <div className="px-4 w-full  md:px-16 lg:px-28 md:w-5/12 ">
+                <h2
+                  className={`text-white section-title text-4xl ${
+                    !overlap ? "mb-8" : ""
+                  }`}
+                >
+                  {data.form_heading}
+                </h2>
                 
+                <div className="flex flex-col justify-end lg:col-start-1 lg:col-end-4 xl:col-start-auto">
+                  <ContactInfo isLight={true} />
+                </div>
               </div>
-            </div>
-            }
+            )}
             <div
               className={` ${
-                overlap ? "w-full lg:w-11/12 mr-0 md:mr-8" : "w-full lg:w-7/12 mr-0 md:mr-28"
+                overlap
+                  ? "w-full lg:w-11/12 mr-0 md:mr-8"
+                  : "w-full lg:w-7/12 mr-0 md:mr-28"
               }`}
             >
               <ContactForm />

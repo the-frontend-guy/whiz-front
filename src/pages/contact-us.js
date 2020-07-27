@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import ContactForm from "./../components/contact-form"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -16,7 +16,7 @@ const ContactPage = ({ data }) => {
   })
   return (
     <Layout>
-    <SEO title="contact-us"/>
+      <SEO title="contact-us" />
 
       <section className="contact-us bg-black">
         <div className="desc text-left md:text-center mb-8">
@@ -35,12 +35,11 @@ const ContactPage = ({ data }) => {
               {data.strapiContactUs.form_description}
             </p>
             <div className="flex flex-col justify-end lg:col-start-1 lg:col-end-4 xl:col-start-auto">
-              <ContactInfo isContact={true}/>
-              
+              <ContactInfo isContact={true} />
             </div>
           </div>
 
-          <div className="pr-4 pl-4 w-full md:w-7/12  md:pl-0 md:pr-28">
+          <div className="pr-4 pb-16 pt-16 md:pb-0 md:mt-0 pl-4 w-full md:w-7/12  md:pl-0 md:pr-28">
             <ContactForm isContactPage={true} />
           </div>
         </div>

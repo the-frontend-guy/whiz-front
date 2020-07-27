@@ -4,7 +4,6 @@ import "./component.css"
 import { animated } from "react-spring"
 import { Stage, Layer, Text, Rect } from "react-konva"
 
-
 const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
   const fontName = "mont"
   const font = windowEl.width ? new FontFaceObserver(fontName) : {}
@@ -14,6 +13,7 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
   const fontSize = windowEl.width / 9
   const sliderFontSize = windowEl.width / 4
   const paragraphs = []
+
 
   let revealSlider = windowEl.width
   let moveText = 0
@@ -32,30 +32,22 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
   }, [])
   const isMobile = section ? section.offsetWidth < 768 : false
 
-  let paraClass;
+  let paraClass
 
-  if(isMobile){
+  if (isMobile) {
     paraClass = "tracking-body p-4 font-bodyMedium"
   } else {
     paraClass = "tracking-body mb-5 pb-5 md:mb-0 md:pb-0 font-bodyMedium"
   }
 
-  if(isLightTheme){
+  if (isLightTheme) {
     paraClass = `${paraClass} text-white`
   } else {
     paraClass = `${paraClass} text-black`
-
   }
 
-
   data.description.forEach(e => {
-    paragraphs.push(
-      <p
-        className={paraClass}
-      >
-        {e.title}
-      </p>
-    )
+    paragraphs.push(<p className={paraClass}>{e.title}</p>)
   })
 
   if (windowEl.width) {
@@ -69,35 +61,32 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
   if (section && windowEl.width > 767) {
     const triggerPosition = section.offsetTop
     sectionHeight = windowEl.width * 1.5 + windowEl.height * 2
-    if ((windowEl.scrollY) > triggerPosition) {
-      let calc = windowEl.width - ((windowEl.scrollY) - triggerPosition)
-      revealSlider = calc <= 0 ? 0 : calc 
+    if (windowEl.scrollY > triggerPosition) {
+      let calc = windowEl.width - (windowEl.scrollY - triggerPosition)
+      revealSlider = calc <= 0 ? 0 : calc
     }
     if (windowEl.scrollY > triggerPosition + windowEl.width) {
       let calc = windowEl.scrollY - (triggerPosition + windowEl.width)
-      moveText = calc > windowEl.width ? windowEl.width : calc 
+      moveText = calc > windowEl.width ? windowEl.width : calc
     }
 
-    if (windowEl.scrollY > triggerPosition + (windowEl.width * 1.5) ) {
-      let calc = windowEl.scrollY - (triggerPosition + (windowEl.width * 1.5 ))
+    if (windowEl.scrollY > triggerPosition + windowEl.width * 1.5) {
+      let calc = windowEl.scrollY - (triggerPosition + windowEl.width * 1.5)
       let ui = text.width() / windowEl.height
-  
-      slideText = 
-       calc * ui
-      slidePara = slidePara - (slideText / ui)
+
+      slideText = calc * ui
+      slidePara = slidePara - slideText / ui
     }
 
     if (
       windowEl.scrollY >
-      triggerPosition + (windowEl.width * 1.5) + windowEl.height
+      triggerPosition + windowEl.width * 1.5 + windowEl.height
     ) {
       let calc =
         windowEl.scrollY -
-        (triggerPosition + (windowEl.width * 1.5) + windowEl.height)
+        (triggerPosition + windowEl.width * 1.5 + windowEl.height)
       moveSlide = calc > windowEl.height ? windowEl.height : calc
     }
-
-  
   }
 
   if (isMobile) {
@@ -117,14 +106,15 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
         minHeight: `auto`,
       }}
     >
-      <div className={`overlay-fixed top-0 ${!isMobile ? "sticky" : ""}`}
-      >
+      <div className={`overlay-fixed top-0 ${!isMobile ? "sticky" : ""}`}>
         {!isMobile && (
           <div
-            className={`h-screen overlay-slider absolute top-0 left-0 w-full z-20 ${isLightTheme ? "bg-black" : "bg-white"}`}
+            className={`h-screen overlay-slider absolute top-0 left-0 w-full z-20 ${
+              isLightTheme ? "bg-black" : "bg-white"
+            }`}
             style={{
               top: -moveSlide,
-                transform: `translateX(${windowEl.width-moveText}px)`
+              transform: `translateX(${windowEl.width - moveText}px)`,
             }}
           >
             <Stage
@@ -165,8 +155,6 @@ const CanvasOverlay = ({ windowEl, data, isLightTheme }) => {
             <div>{paragraphs}</div>
           </div>
         )}
-
-        
 
         {!isMobile && (
           <animated.div

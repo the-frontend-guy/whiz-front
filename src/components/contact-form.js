@@ -68,10 +68,10 @@ const ContactForm = ({ isContactPage }) => {
       if (request.readyState !== XMLHttpRequest.DONE) return
       if (request.status === 200) {
         form.reset()
-        navigate("thank-you",{
-          state:{
-            showPage: true
-          }
+        navigate("thank-you", {
+          state: {
+            showPage: true,
+          },
         })
         setDisable(false)
       } else {
@@ -247,7 +247,7 @@ const ContactForm = ({ isContactPage }) => {
           send
         </button>
       </div>
-      {/* <span className="font-display text-white">{fileName}</span> */}
+      <span className="font-display text-white">{fileName}</span>
     </form>
   )
 }

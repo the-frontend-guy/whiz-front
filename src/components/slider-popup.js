@@ -78,7 +78,7 @@ const SliderPopup = ({ data, windowEl }) => {
     let percent = (screenPos / window.innerWidth) * 30
 
     setAnimation(percent - 20)
-    setMove({customMoveX: e.pageX - 75, customMoveY: e.pageY - 75})
+    setMove({customMoveX: e.pageY - 75, customMoveY: e.pageX - 75})
   }
 
   return (
@@ -124,9 +124,9 @@ const SliderPopup = ({ data, windowEl }) => {
             </div>
             </div>}
       {popupVisible && (
-        <div className="popup-container w-screen min-h-screen fixed bottom-0">
+        <div className="popup-container w-screen min-h-screen  fixed top-0 left-0 right-0 bottom-0">
           <div className="popup relative">
-            <div className="md:absolute sticky top-0 bg-white text-right w-full">
+            <div className="absolute top-0 bg-white text-right w-full">
             <span className="inline-block w-8 m-4" onClick={closePopup}>
               <img
                 src={process.env.GATSBY_API_URL + '/uploads/close_276da97d34.svg'}
@@ -163,7 +163,7 @@ const SliderPopup = ({ data, windowEl }) => {
                 />
               </div>
             </div>
-            <div className="footer bg-blue-100 flex py-8 px-8 md:px-16 flex-col md:flex-row justify-between sticky bottom-0 md:static">
+            <div className="footer bg-blue-100 flex py-8 px-8 md:px-16 flex-col md:flex-row justify-between absolute bottom-0 w-full md:static">
               <span className="text-white tracking-body hidden md:block text-xl mb-8 md:mb-0">
                 {popupData.footer_question}
               </span>

@@ -21,7 +21,6 @@ const HorizontalScroll = ({ windowEl, data }) => {
 
   const para = []
 
-
   useEffect(() => {
     setText(textRef.current)
     setSection(sectionRef.current)
@@ -57,11 +56,15 @@ const HorizontalScroll = ({ windowEl, data }) => {
 
   data.description.forEach(element => {
     para.push(
-      <p className={`text-white tracking-body font-bodyMedium ${isMobile ? 'p-4' : ''}`}>
-      {element.title}
-    </p>
+      <p
+        className={`text-white tracking-body font-bodyMedium ${
+          isMobile ? "p-4" : ""
+        }`}
+      >
+        {element.title}
+      </p>
     )
-  });
+  })
 
   return (
     <section
@@ -73,52 +76,57 @@ const HorizontalScroll = ({ windowEl, data }) => {
       }}
     >
       <div
-        className={`overlay-fixed top-0 min-h-screen ${!isMobile ? "sticky" : ""}`}
+        className={`overlay-fixed top-0 min-h-screen ${
+          !isMobile ? "sticky" : ""
+        }`}
       >
-        {!isMobile && <div className={`h-screen overlay-slider absolute top-0 left-0 w-full`}>
-          <Stage
-            width={windowEl.width / 3}
-            height={sectionHeight}
-            className="absolute"
-          >
-            <Layer ref={canvasRef}>
-              <Text
-                ref={textRef}
-                text={data.vertical_text}
-                fill="white"
-                fontSize={sliderFontSize}
-                y={slideText}
-                x={100}
-                rotation={-90}
-                fontFamily={fontName}
-                letterSpacing={-1}
-              />
-            </Layer>
-          </Stage>
+        {!isMobile && (
           <div
-            className="content-container"
-            style={{
-              transform: `translateY(${slidePara}px)`,
-            }}
+            className={`h-screen overlay-slider absolute top-0 left-0 w-full`}
           >
-            <div className="content-wrap">
-              <h4 class="secondary-title text-lg mb-5 text-blue-100">
-                Our Story
-              </h4>
-              {para}
+            <Stage
+              width={windowEl.width / 3}
+              height={sectionHeight}
+              className="absolute"
+            >
+              <Layer ref={canvasRef}>
+                <Text
+                  ref={textRef}
+                  text={data.vertical_text}
+                  fill="white"
+                  fontSize={sliderFontSize}
+                  y={slideText}
+                  x={100}
+                  rotation={-90}
+                  fontFamily={fontName}
+                  letterSpacing={-1}
+                />
+              </Layer>
+            </Stage>
+            <div
+              className="content-container"
+              style={{
+                transform: `translateY(${slidePara}px)`,
+              }}
+            >
+              <div className="content-wrap">
+                <h4 class="secondary-title text-lg mb-5 text-blue-100">
+                  Our Story
+                </h4>
+                {para}
+              </div>
             </div>
           </div>
-        </div>
-}
+        )}
 
-{isMobile && (
+        {isMobile && (
           <div className="my-12">
             <h2 className="section-title text-white p-4 md:text-5xl lg:text-6xl leading-snug tracking-tight">
               {data.vertical_text}
             </h2>
             <h4 class="secondary-title text-lg mb-5 text-blue-100 pl-4">
-                Our Story
-              </h4>
+              Our Story
+            </h4>
             {para}
           </div>
         )}

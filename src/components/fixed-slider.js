@@ -16,7 +16,6 @@ const FixedSlider = ({ windowEl, data }) => {
   const titleBlocks = data.heading_show
   const subtitleBlocks = data.heading_hide
 
-
   useEffect(() => {
     setSection(sectionRef)
   }, [])
@@ -61,8 +60,7 @@ const FixedSlider = ({ windowEl, data }) => {
   function skipTo() {
     window.scroll({
       behavior: "smooth",
-      top:
-        sectionHeightOffset + bounds.width
+      top: sectionHeightOffset + bounds.width,
     })
   }
 
@@ -103,9 +101,9 @@ const FixedSlider = ({ windowEl, data }) => {
 
   const slides = []
 
-  const handleClick = (e,slide) => {
-    if(slide.link === '/'){
-      e.preventDefault();
+  const handleClick = (e, slide) => {
+    if (slide.link === "/") {
+      e.preventDefault()
     }
   }
 
@@ -121,12 +119,11 @@ const FixedSlider = ({ windowEl, data }) => {
     slides.push(
       <Link
         key={i}
-        to={ slide.link }
+        to={slide.link}
         className={`slide-card ${
           currentSlide - 1 === i || isMobile ? "active" : ""
         }`}
-
-        onClick={(e) => handleClick(e,slide)}
+        onClick={e => handleClick(e, slide)}
       >
         <figure className="slide-icon mb-5 md:mb-0">
           <img

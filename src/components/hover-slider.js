@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import "./component.css"
 
 const HoverSlider = ({ data }) => {
- 
   const list = []
   const slides = []
 
@@ -26,21 +25,26 @@ const HoverSlider = ({ data }) => {
         </h5>
         <p className=" tracking-body">{e.description}</p>
         <ul className="block md:hidden hover-ul p-8 mt-4">
-          {e.slider_text && e.slider_text.map(e => <li className="mb-4">{e.title}</li>)}
+          {e.slider_text &&
+            e.slider_text.map(e => <li className="mb-4">{e.title}</li>)}
         </ul>
       </li>
     )
 
     slides.push(
-      <div className={`hover-slide static md:absolute ${activeSlide === i ? "active" : ""}`}>
+      <div
+        className={`hover-slide static md:absolute ${
+          activeSlide === i ? "active" : ""
+        }`}
+      >
         <figure className="hidden md:block">
-          <img
-            src={process.env.GATSBY_API_URL+ e.img.url}
-            alt=""
-          />
+          <img src={process.env.GATSBY_API_URL + e.img.url} alt="" />
         </figure>
         <ul>
-          {e.slider_text && e.slider_text.map(e => <li className="my-2 text-center">{e.title}</li>)}
+          {e.slider_text &&
+            e.slider_text.map(e => (
+              <li className="my-2 text-center">{e.title}</li>
+            ))}
         </ul>
       </div>
     )
@@ -50,9 +54,7 @@ const HoverSlider = ({ data }) => {
       <div className="content my-12">
         <ul>{list}</ul>
       </div>
-      <div className="hidden md:block hover-slider relative">
-        {slides}
-      </div>
+      <div className="hidden md:block hover-slider relative">{slides}</div>
     </div>
   )
 }

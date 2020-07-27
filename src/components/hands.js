@@ -3,10 +3,6 @@ import "./hands.css"
 import "./component.css"
 
 const Hands = () => {
-
-
- 
-
   return (
     <div className="flex flex-col">
       <div className="r-hand-container single-hand w-7/12 self-end">
@@ -162,7 +158,10 @@ const Hands = () => {
               className="st420"
               points="440.5,276.9 501.8,262.4 484.2,220.3 	"
             />
-            <polygon className="st409" points="587.1,190 523.5,217.5 550,265.1 	" />
+            <polygon
+              className="st409"
+              points="587.1,190 523.5,217.5 550,265.1 	"
+            />
             <polygon
               className="st413"
               points="409.1,265.8 440.5,276.9 484.2,220.3 	"
@@ -231,7 +230,10 @@ const Hands = () => {
               className="st422"
               points="477.3,194.8 440.4,197.2 463.6,207.3 	"
             />
-            <polygon className="st420" points="550,265.1 602.7,237.5 587.1,190 	" />
+            <polygon
+              className="st420"
+              points="550,265.1 602.7,237.5 587.1,190 	"
+            />
             <polygon
               className="st415"
               points="602.7,237.5 659.2,199.4 587.1,190 	"
@@ -252,7 +254,10 @@ const Hands = () => {
               className="st413"
               points="136.4,223.1 129.3,212.1 108.4,228.9 	"
             />
-            <polygon className="st422" points="87.5,221 93.3,235.3 108.4,228.9 	" />
+            <polygon
+              className="st422"
+              points="87.5,221 93.3,235.3 108.4,228.9 	"
+            />
             <polygon
               className="st407"
               points="110.6,246 149.9,250.1 133.4,239.3 	"
@@ -285,7 +290,10 @@ const Hands = () => {
               className="st419"
               points="165.9,247.2 136.4,223.1 133.4,239.3 	"
             />
-            <polygon className="st412" points="106.4,214.6 87.5,221 108.4,228.9 	" />
+            <polygon
+              className="st412"
+              points="106.4,214.6 87.5,221 108.4,228.9 	"
+            />
             <polygon
               className="st407"
               points="159.5,226.6 136.4,223.1 165.9,247.2 	"
@@ -350,7 +358,10 @@ const Hands = () => {
               className="st409"
               points="142.2,265.4 159.6,274.1 169.1,264.1 	"
             />
-            <polygon className="st410" points="93.3,235.3 110.6,246 108.4,228.9 	" />
+            <polygon
+              className="st410"
+              points="93.3,235.3 110.6,246 108.4,228.9 	"
+            />
             <polygon
               className="st426"
               points="256.6,264.9 267.6,259.3 267.5,259.3 242.9,264.8 	"
@@ -383,7 +394,10 @@ const Hands = () => {
               className="st425"
               points="211.9,238.2 193.1,251.3 225.4,253.6 	"
             />
-            <polygon className="st426" points="242.9,264.8 240,258 227.1,259.3 	" />
+            <polygon
+              className="st426"
+              points="242.9,264.8 240,258 227.1,259.3 	"
+            />
             <polygon
               className="st412"
               points="225.4,253.6 193.1,251.3 210,256.6 	"
@@ -392,12 +406,18 @@ const Hands = () => {
               className="st415"
               points="177.3,281.6 176.9,281.8 177.4,289.5 198.9,282.8 	"
             />
-            <polygon className="st423" points="240,258 225.4,253.6 227.1,259.3 	" />
+            <polygon
+              className="st423"
+              points="240,258 225.4,253.6 227.1,259.3 	"
+            />
             <polygon
               className="st419"
               points="227.1,259.3 225.4,253.6 210,256.6 	"
             />
-            <polygon className="st413" points="201.5,211 182.7,223.4 182,241.2 	" />
+            <polygon
+              className="st413"
+              points="201.5,211 182.7,223.4 182,241.2 	"
+            />
             <polygon
               className="st411"
               points="214.8,202.5 201.5,211 211.9,238.2 	"
@@ -410,7 +430,10 @@ const Hands = () => {
               className="st419"
               points="211.9,238.2 201.5,211 193.1,251.3 	"
             />
-            <polygon className="st419" points="193.1,251.3 201.5,211 182,241.2 	" />
+            <polygon
+              className="st419"
+              points="193.1,251.3 201.5,211 182,241.2 	"
+            />
             <polygon
               className="st413"
               points="182,241.2 182.7,223.4 165.9,247.2 	"
@@ -427,7 +450,10 @@ const Hands = () => {
               className="st415"
               points="247.1,244.6 257,229.2 234.4,229.5 	"
             />
-            <polygon className="st429" points="240,258 243.3,255.5 225.4,253.6 	" />
+            <polygon
+              className="st429"
+              points="240,258 243.3,255.5 225.4,253.6 	"
+            />
             <polygon
               className="st430"
               points="267,259.3 257.1,258 243.3,255.5 240,258 	"
@@ -468,7 +494,10 @@ const Hands = () => {
               className="st431"
               points="279.4,301.7 285.8,314 301.3,294.3 	"
             />
-            <polygon className="st426" points="223,332.6 226,347.9 239.8,337.6 	" />
+            <polygon
+              className="st426"
+              points="223,332.6 226,347.9 239.8,337.6 	"
+            />
             <polygon
               className="st413"
               points="334.8,477.8 347.9,467.7 325.8,460.9 	"
@@ -481,9 +510,18 @@ const Hands = () => {
               className="st413"
               points="235.2,314.7 212.1,328.8 228.5,324.2 	"
             />
-            <polygon className="st414" points="211.7,338.4 226,347.9 223,332.6 	" />
-            <polygon className="st432" points="285.8,314 320,292.2 301.3,294.3 	" />
-            <polygon className="st426" points="226,347.9 247,344.4 239.8,337.6 	" />
+            <polygon
+              className="st414"
+              points="211.7,338.4 226,347.9 223,332.6 	"
+            />
+            <polygon
+              className="st432"
+              points="285.8,314 320,292.2 301.3,294.3 	"
+            />
+            <polygon
+              className="st426"
+              points="226,347.9 247,344.4 239.8,337.6 	"
+            />
             <polygon
               className="st432"
               points="310.2,286.6 320,292.2 330.4,280.2 	"
@@ -525,7 +563,10 @@ const Hands = () => {
               className="st432"
               points="301.3,294.3 320,292.2 310.2,286.6 	"
             />
-            <polygon className="st409" points="797.3,43.9 714.9,68 764.1,75.4 	" />
+            <polygon
+              className="st409"
+              points="797.3,43.9 714.9,68 764.1,75.4 	"
+            />
             <polygon
               className="st428"
               points="314.1,273.4 345.8,278.3 294.1,262.7 	"
@@ -638,8 +679,14 @@ const Hands = () => {
               className="st428"
               points="330.4,280.2 314.1,273.4 302.8,277.6 	"
             />
-            <polygon className="st419" points="81.1,301.3 86,311.8 98.3,290.2 	" />
-            <polygon className="st421" points="64.3,224.4 74.7,233.4 71.3,220.2 	" />
+            <polygon
+              className="st419"
+              points="81.1,301.3 86,311.8 98.3,290.2 	"
+            />
+            <polygon
+              className="st421"
+              points="64.3,224.4 74.7,233.4 71.3,220.2 	"
+            />
             <polygon
               className="st413"
               points="149.2,250.2 149.4,250.3 149.9,250.1 	"
@@ -648,7 +695,10 @@ const Hands = () => {
               className="st412"
               points="108.2,264.3 99.5,273.8 125.2,258.4 	"
             />
-            <polygon className="st422" points="71.3,220.2 74.7,233.4 87.5,221 	" />
+            <polygon
+              className="st422"
+              points="71.3,220.2 74.7,233.4 87.5,221 	"
+            />
             <polygon
               className="st415"
               points="255.5,192.5 244.4,210.8 273.4,205.7 	"
@@ -657,8 +707,14 @@ const Hands = () => {
               className="st407"
               points="677,105.1 636.6,142.2 679.5,126.9 	"
             />
-            <polygon className="st409" points="74.7,233.4 93.3,235.3 87.5,221 	" />
-            <polygon className="st407" points="74.1,311.4 86,311.8 81.1,301.3 	" />
+            <polygon
+              className="st409"
+              points="74.7,233.4 93.3,235.3 87.5,221 	"
+            />
+            <polygon
+              className="st407"
+              points="74.1,311.4 86,311.8 81.1,301.3 	"
+            />
             <polygon
               className="st420"
               points="401.3,218 370.2,228.7 398.1,231.1 	"
@@ -667,10 +723,22 @@ const Hands = () => {
               className="st420"
               points="98.3,290.2 133.5,278.9 99.5,273.8 	"
             />
-            <polygon className="st420" points="60.9,301.2 74.1,311.4 81.1,301.3 	" />
-            <polygon className="st410" points="114.4,300 133.5,278.9 98.3,290.2 	" />
-            <polygon className="st419" points="86,311.8 114.4,300 98.3,290.2 	" />
-            <polygon className="st409" points="401.3,218 412.1,200.7 370,212.5 	" />
+            <polygon
+              className="st420"
+              points="60.9,301.2 74.1,311.4 81.1,301.3 	"
+            />
+            <polygon
+              className="st410"
+              points="114.4,300 133.5,278.9 98.3,290.2 	"
+            />
+            <polygon
+              className="st419"
+              points="86,311.8 114.4,300 98.3,290.2 	"
+            />
+            <polygon
+              className="st409"
+              points="401.3,218 412.1,200.7 370,212.5 	"
+            />
             <polygon
               className="st408"
               points="412.1,200.7 361.9,200.6 370,212.5 	"
@@ -767,18 +835,30 @@ const Hands = () => {
               className="st415"
               points="371.4,404.3 351.8,444.6 406.3,416.4 	"
             />
-            <polygon className="st419" points="160,310.8 173.4,319.6 176,303.6 	" />
+            <polygon
+              className="st419"
+              points="160,310.8 173.4,319.6 176,303.6 	"
+            />
             <polygon
               className="st419"
               points="173.4,319.6 189.1,316.8 176,303.6 	"
             />
-            <polygon className="st412" points="55.3,291.5 60.9,301.2 75.9,291.3 	" />
+            <polygon
+              className="st412"
+              points="55.3,291.5 60.9,301.2 75.9,291.3 	"
+            />
             <polygon
               className="st413"
               points="445.3,381.3 502.5,376.8 448.2,354.1 	"
             />
-            <polygon className="st415" points="44.6,304.1 54.4,312.1 60.9,301.2 	" />
-            <polygon className="st407" points="54.4,312.1 74.1,311.4 60.9,301.2 	" />
+            <polygon
+              className="st415"
+              points="44.6,304.1 54.4,312.1 60.9,301.2 	"
+            />
+            <polygon
+              className="st407"
+              points="54.4,312.1 74.1,311.4 60.9,301.2 	"
+            />
             <polygon
               className="st409"
               points="150.4,327.9 161.3,334.5 160,310.8 	"
@@ -787,8 +867,14 @@ const Hands = () => {
               className="st409"
               points="161.3,334.5 173.4,319.6 160,310.8 	"
             />
-            <polygon className="st409" points="138.2,351.2 157.4,349 137,341.7 	" />
-            <polygon className="st419" points="157.4,349 161.3,334.5 137,341.7 	" />
+            <polygon
+              className="st409"
+              points="138.2,351.2 157.4,349 137,341.7 	"
+            />
+            <polygon
+              className="st419"
+              points="157.4,349 161.3,334.5 137,341.7 	"
+            />
             <polygon
               className="st415"
               points="141.9,327.9 137,341.7 150.4,327.9 	"
@@ -797,7 +883,10 @@ const Hands = () => {
               className="st413"
               points="137,341.7 161.3,334.5 150.4,327.9 	"
             />
-            <polygon className="st413" points="370,212.5 370.2,228.7 401.3,218 	" />
+            <polygon
+              className="st413"
+              points="370,212.5 370.2,228.7 401.3,218 	"
+            />
             <polygon
               className="st436"
               points="157.4,349 182.7,334.6 161.3,334.5 	"
@@ -826,8 +915,14 @@ const Hands = () => {
               className="st431"
               points="173.4,319.6 182.7,334.6 189.1,316.8 	"
             />
-            <polygon className="st407" points="137,341.7 127,349.2 138.2,351.2 	" />
-            <polygon className="st407" points="122.9,339.2 127,349.2 137,341.7 	" />
+            <polygon
+              className="st407"
+              points="137,341.7 127,349.2 138.2,351.2 	"
+            />
+            <polygon
+              className="st407"
+              points="122.9,339.2 127,349.2 137,341.7 	"
+            />
             <polygon
               className="st423"
               points="138.2,351.2 140.4,359.9 160.9,355.8 	"
@@ -844,9 +939,18 @@ const Hands = () => {
               className="st423"
               points="175.5,347.9 182.7,334.6 157.4,349 	"
             />
-            <polygon className="st412" points="158.8,301.2 147.2,316 160,310.8 	" />
-            <polygon className="st408" points="160,310.8 147.2,316 150.4,327.9 	" />
-            <polygon className="st421" points="176,303.6 158.8,301.2 160,310.8 	" />
+            <polygon
+              className="st412"
+              points="158.8,301.2 147.2,316 160,310.8 	"
+            />
+            <polygon
+              className="st408"
+              points="160,310.8 147.2,316 150.4,327.9 	"
+            />
+            <polygon
+              className="st421"
+              points="176,303.6 158.8,301.2 160,310.8 	"
+            />
             <polygon
               className="st411"
               points="141.9,327.9 122.9,339.2 137,341.7 	"
@@ -911,30 +1015,66 @@ const Hands = () => {
               className="st433"
               points="273.9,263.5 294.1,262.7 267.8,259.4 	"
             />
-            <polygon className="st415" points="35.7,292.1 35.1,301.1 44.6,304.1 	" />
+            <polygon
+              className="st415"
+              points="35.7,292.1 35.1,301.1 44.6,304.1 	"
+            />
             <polygon
               className="st409"
               points="176.9,281.8 176.7,281.9 158.8,301.2 177.4,289.5 	"
             />
-            <polygon className="st418" points="56.1,323.5 83.3,324.7 54.4,312.1 	" />
-            <polygon className="st412" points="60.9,301.2 35.7,292.1 44.6,304.1 	" />
-            <polygon className="st409" points="35.1,301.1 39.9,316.7 44.6,304.1 	" />
-            <polygon className="st420" points="39.9,316.7 56.1,323.5 54.4,312.1 	" />
-            <polygon className="st407" points="44.6,304.1 39.9,316.7 54.4,312.1 	" />
+            <polygon
+              className="st418"
+              points="56.1,323.5 83.3,324.7 54.4,312.1 	"
+            />
+            <polygon
+              className="st412"
+              points="60.9,301.2 35.7,292.1 44.6,304.1 	"
+            />
+            <polygon
+              className="st409"
+              points="35.1,301.1 39.9,316.7 44.6,304.1 	"
+            />
+            <polygon
+              className="st420"
+              points="39.9,316.7 56.1,323.5 54.4,312.1 	"
+            />
+            <polygon
+              className="st407"
+              points="44.6,304.1 39.9,316.7 54.4,312.1 	"
+            />
             <polygon
               className="st410"
               points="345.8,278.3 400.4,305.3 376.8,281.7 	"
             />
-            <polygon className="st437" points="108.2,264.3 74,274.9 99.5,273.8 	" />
-            <polygon className="st409" points="99.5,273.8 74,274.9 98.3,290.2 	" />
+            <polygon
+              className="st437"
+              points="108.2,264.3 74,274.9 99.5,273.8 	"
+            />
+            <polygon
+              className="st409"
+              points="99.5,273.8 74,274.9 98.3,290.2 	"
+            />
             <polygon
               className="st422"
               points="115.9,252.4 92.9,264.7 74,274.9 108.2,264.3 	"
             />
-            <polygon className="st437" points="74,274.9 35.7,292.1 55.3,291.5 	" />
-            <polygon className="st412" points="98.3,290.2 74,274.9 75.9,291.3 	" />
-            <polygon className="st412" points="75.9,291.3 74,274.9 55.3,291.5 	" />
-            <polygon className="st407" points="55.3,291.5 35.7,292.1 60.9,301.2 	" />
+            <polygon
+              className="st437"
+              points="74,274.9 35.7,292.1 55.3,291.5 	"
+            />
+            <polygon
+              className="st412"
+              points="98.3,290.2 74,274.9 75.9,291.3 	"
+            />
+            <polygon
+              className="st412"
+              points="75.9,291.3 74,274.9 55.3,291.5 	"
+            />
+            <polygon
+              className="st407"
+              points="55.3,291.5 35.7,292.1 60.9,301.2 	"
+            />
             <polygon
               className="st426"
               points="133.5,278.9 131.2,299.6 141.3,288.6 	"
@@ -955,7 +1095,10 @@ const Hands = () => {
               className="st418"
               points="133.5,278.9 165.5,285.9 159.6,274.1 	"
             />
-            <polygon className="st413" points="54.4,312.1 83.3,324.7 74.1,311.4 	" />
+            <polygon
+              className="st413"
+              points="54.4,312.1 83.3,324.7 74.1,311.4 	"
+            />
             <polygon
               className="st413"
               points="176.9,281.6 176.7,281.9 176.9,281.8 	"
@@ -968,9 +1111,18 @@ const Hands = () => {
               className="st418"
               points="114.4,300 131.2,299.6 133.5,278.9 	"
             />
-            <polygon className="st438" points="83.3,324.7 109,313.3 86,311.8 	" />
-            <polygon className="st432" points="74.1,311.4 83.3,324.7 86,311.8 	" />
-            <polygon className="st417" points="109,313.3 131.2,299.6 114.4,300 	" />
+            <polygon
+              className="st438"
+              points="83.3,324.7 109,313.3 86,311.8 	"
+            />
+            <polygon
+              className="st432"
+              points="74.1,311.4 83.3,324.7 86,311.8 	"
+            />
+            <polygon
+              className="st417"
+              points="109,313.3 131.2,299.6 114.4,300 	"
+            />
             <polygon className="st426" points="86,311.8 109,313.3 114.4,300 	" />
             <polygon
               className="st407"
@@ -1012,7 +1164,10 @@ const Hands = () => {
               className="st418"
               points="458.5,397.5 474.2,405.3 502.5,376.8 	"
             />
-            <polygon className="st426" points="421,444.8 440.7,427 419.3,433.4 	" />
+            <polygon
+              className="st426"
+              points="421,444.8 440.7,427 419.3,433.4 	"
+            />
             <polygon
               className="st418"
               points="386.9,458.5 401.2,449.3 385.5,439.7 	"
@@ -1193,7 +1348,10 @@ const Hands = () => {
               className="st413"
               points="502.5,376.8 549.5,329.9 478.8,338.8 	"
             />
-            <polygon className="st409" points="679.9,85.3 649.9,110.9 677,105.1 	" />
+            <polygon
+              className="st409"
+              points="679.9,85.3 649.9,110.9 677,105.1 	"
+            />
             <polygon
               className="st410"
               points="478.8,338.8 549.5,329.9 526.7,311.2 	"
@@ -1234,18 +1392,27 @@ const Hands = () => {
               className="st426"
               points="651.9,237.2 691.6,195.1 659.2,199.4 	"
             />
-            <polygon className="st409" points="748.2,110.1 705,98.6 679.5,126.9 	" />
+            <polygon
+              className="st409"
+              points="748.2,110.1 705,98.6 679.5,126.9 	"
+            />
             <polygon
               className="st409"
               points="149.4,250.3 149.2,250.2 115.9,252.4 125.2,258.4 	"
             />
-            <polygon className="st407" points="679.5,126.9 705,98.6 677,105.1 	" />
+            <polygon
+              className="st407"
+              points="679.5,126.9 705,98.6 677,105.1 	"
+            />
             <polygon
               className="st409"
               points="722,158.6 748.2,110.1 679.5,126.9 	"
             />
             <polygon className="st407" points="705,98.6 714.9,68 677,105.1 	" />
-            <polygon className="st408" points="714.9,68 679.9,85.3 677,105.1 	" />
+            <polygon
+              className="st408"
+              points="714.9,68 679.9,85.3 677,105.1 	"
+            />
             <polygon
               className="st431"
               points="653.7,277.6 651.9,237.2 593.9,282.3 	"
@@ -1407,13 +1574,22 @@ const Hands = () => {
               className="st413"
               points="115.3,202.7 100,206.2 106.4,214.6 	"
             />
-            <polygon className="st409" points="106.4,214.6 100,206.2 87.5,221 	" />
+            <polygon
+              className="st409"
+              points="106.4,214.6 100,206.2 87.5,221 	"
+            />
             <polygon
               className="st407"
               points="182.7,223.4 175,196.1 159.5,226.6 	"
             />
-            <polygon className="st407" points="201.5,211 175,196.1 182.7,223.4 	" />
-            <polygon className="st408" points="203.6,190.1 175,196.1 201.5,211 	" />
+            <polygon
+              className="st407"
+              points="201.5,211 175,196.1 182.7,223.4 	"
+            />
+            <polygon
+              className="st408"
+              points="203.6,190.1 175,196.1 201.5,211 	"
+            />
             <polygon
               className="st412"
               points="161.5,205.9 142.9,202.3 159.5,226.6 	"
@@ -1426,11 +1602,23 @@ const Hands = () => {
               className="st409"
               points="159.5,226.6 175,196.1 161.5,205.9 	"
             />
-            <polygon className="st413" points="64.3,224.4 67,238.9 74.7,233.4 	" />
-            <polygon className="st413" points="74.7,233.4 84.2,247.1 93.3,235.3 	" />
+            <polygon
+              className="st413"
+              points="64.3,224.4 67,238.9 74.7,233.4 	"
+            />
+            <polygon
+              className="st413"
+              points="74.7,233.4 84.2,247.1 93.3,235.3 	"
+            />
             <polygon className="st407" points="87.5,221 82.4,207 71.3,220.2 	" />
-            <polygon className="st419" points="93.3,235.3 84.2,247.1 110.6,246 	" />
-            <polygon className="st420" points="84.2,247.1 115.9,252.4 110.6,246 	" />
+            <polygon
+              className="st419"
+              points="93.3,235.3 84.2,247.1 110.6,246 	"
+            />
+            <polygon
+              className="st420"
+              points="84.2,247.1 115.9,252.4 110.6,246 	"
+            />
             <polygon
               className="st408"
               points="214.8,202.5 203.6,190.1 201.5,211 	"
@@ -1439,12 +1627,30 @@ const Hands = () => {
               className="st425"
               points="149.2,250.1 149.2,250.2 149.9,250.1 110.6,246 115.9,252.4 149.2,250.2 	"
             />
-            <polygon className="st407" points="67,238.9 84.2,247.1 74.7,233.4 	" />
-            <polygon className="st421" points="63.4,210.3 59.3,213.9 71.3,220.2 	" />
-            <polygon className="st437" points="82.4,207 63.4,210.3 71.3,220.2 	" />
-            <polygon className="st409" points="71.3,220.2 59.3,213.9 64.3,224.4 	" />
-            <polygon className="st409" points="57.1,228.6 67,238.9 64.3,224.4 	" />
-            <polygon className="st411" points="59.3,213.9 57.1,228.6 64.3,224.4 	" />
+            <polygon
+              className="st407"
+              points="67,238.9 84.2,247.1 74.7,233.4 	"
+            />
+            <polygon
+              className="st421"
+              points="63.4,210.3 59.3,213.9 71.3,220.2 	"
+            />
+            <polygon
+              className="st437"
+              points="82.4,207 63.4,210.3 71.3,220.2 	"
+            />
+            <polygon
+              className="st409"
+              points="71.3,220.2 59.3,213.9 64.3,224.4 	"
+            />
+            <polygon
+              className="st409"
+              points="57.1,228.6 67,238.9 64.3,224.4 	"
+            />
+            <polygon
+              className="st411"
+              points="59.3,213.9 57.1,228.6 64.3,224.4 	"
+            />
             <polygon
               className="st409"
               points="255.5,192.5 244.9,182.3 244.4,210.8 	"
@@ -1549,8 +1755,14 @@ const Hands = () => {
               className="st407"
               points="302.7,203.6 287.1,188.4 273.4,205.7 	"
             />
-            <polygon className="st409" points="60.9,301.2 81.1,301.3 75.9,291.3 	" />
-            <polygon className="st407" points="75.9,291.3 81.1,301.3 98.3,290.2 	" />
+            <polygon
+              className="st409"
+              points="60.9,301.2 81.1,301.3 75.9,291.3 	"
+            />
+            <polygon
+              className="st407"
+              points="75.9,291.3 81.1,301.3 98.3,290.2 	"
+            />
             <polygon
               className="st432"
               points="205.3,287.7 216.7,280.1 207.8,275.4 	"
@@ -1567,10 +1779,22 @@ const Hands = () => {
               className="st407"
               points="850.9,130.5 809.8,143.1 797.4,167.9 	"
             />
-            <polygon className="st426" points="826,163.5 863.6,133.3 859.5,165 	" />
-            <polygon className="st414" points="807,124.8 872.5,75.4 855.5,110.7 	" />
-            <polygon className="st409" points="820.6,84.6 807,124.8 768.4,135.9 	" />
-            <polygon className="st407" points="826.4,37.6 812.8,54.8 848.5,46.3 	" />
+            <polygon
+              className="st426"
+              points="826,163.5 863.6,133.3 859.5,165 	"
+            />
+            <polygon
+              className="st414"
+              points="807,124.8 872.5,75.4 855.5,110.7 	"
+            />
+            <polygon
+              className="st409"
+              points="820.6,84.6 807,124.8 768.4,135.9 	"
+            />
+            <polygon
+              className="st407"
+              points="826.4,37.6 812.8,54.8 848.5,46.3 	"
+            />
           </g>
           <g>
             <path
@@ -1828,35 +2052,83 @@ const Hands = () => {
         >
           <g>
             <g>
-              <polygon className="st0" points="86,483.7 123.3,478.8 135.3,442.6 		" />
-              <polygon className="st0" points="31,433.5 70.5,416.5 80.1,390.5 		" />
-              <polygon className="st0" points="18.7,400.1 18.1,432.1 52.1,398 		" />
-              <polygon className="st0" points="15.6,490.7 75.2,434.4 28.6,453.7 		" />
+              <polygon
+                className="st0"
+                points="86,483.7 123.3,478.8 135.3,442.6 		"
+              />
+              <polygon
+                className="st0"
+                points="31,433.5 70.5,416.5 80.1,390.5 		"
+              />
+              <polygon
+                className="st0"
+                points="18.7,400.1 18.1,432.1 52.1,398 		"
+              />
+              <polygon
+                className="st0"
+                points="15.6,490.7 75.2,434.4 28.6,453.7 		"
+              />
               <polygon
                 className="st0"
                 points="112.4,419.1 75.2,434.4 66.2,475.8 		"
               />
-              <polygon className="st0" points="65.5,523.1 77.2,504.6 42.6,516.9 		" />
+              <polygon
+                className="st0"
+                points="65.5,523.1 77.2,504.6 42.6,516.9 		"
+              />
             </g>
-            <polygon className="st1" points="469.8,328.1 457.7,342.7 479,337.6 	" />
-            <polygon className="st2" points="557,320.3 554.1,315.5 509.4,310.5 	" />
-            <polygon className="st3" points="530.9,321.2 557,320.3 509.4,310.5 	" />
-            <polygon className="st3" points="560.2,312.7 567.9,301 509.4,310.5 	" />
-            <polygon className="st4" points="567.9,301 596.9,295.7 588.1,284.1 	" />
-            <polygon className="st5" points="529.5,296.9 567.9,301 588.1,284.1 	" />
-            <polygon className="st6" points="509.4,310.5 567.9,301 529.5,296.9 	" />
+            <polygon
+              className="st1"
+              points="469.8,328.1 457.7,342.7 479,337.6 	"
+            />
+            <polygon
+              className="st2"
+              points="557,320.3 554.1,315.5 509.4,310.5 	"
+            />
+            <polygon
+              className="st3"
+              points="530.9,321.2 557,320.3 509.4,310.5 	"
+            />
+            <polygon
+              className="st3"
+              points="560.2,312.7 567.9,301 509.4,310.5 	"
+            />
+            <polygon
+              className="st4"
+              points="567.9,301 596.9,295.7 588.1,284.1 	"
+            />
+            <polygon
+              className="st5"
+              points="529.5,296.9 567.9,301 588.1,284.1 	"
+            />
+            <polygon
+              className="st6"
+              points="509.4,310.5 567.9,301 529.5,296.9 	"
+            />
             <polygon
               className="st7"
               points="699.2,242.7 692.7,238.5 671.7,241.6 	"
             />
-            <polygon className="st8" points="479,337.6 506.9,331 469.8,328.1 	" />
-            <polygon className="st9" points="457.7,342.7 473.6,347.7 479,337.6 	" />
+            <polygon
+              className="st8"
+              points="479,337.6 506.9,331 469.8,328.1 	"
+            />
+            <polygon
+              className="st9"
+              points="457.7,342.7 473.6,347.7 479,337.6 	"
+            />
             <polygon
               className="st10"
               points="459.6,315.9 530.9,321.2 509.4,310.5 	"
             />
-            <polygon className="st11" points="506.9,331 530.9,321.2 459.6,315.9 	" />
-            <polygon className="st12" points="469.8,328.1 506.9,331 459.6,315.9 	" />
+            <polygon
+              className="st11"
+              points="506.9,331 530.9,321.2 459.6,315.9 	"
+            />
+            <polygon
+              className="st12"
+              points="469.8,328.1 506.9,331 459.6,315.9 	"
+            />
             <polygon
               className="st13"
               points="554.1,315.5 560.2,312.7 509.4,310.5 	"
@@ -1893,22 +2165,46 @@ const Hands = () => {
               className="st20"
               points="625.2,287.5 655.5,292.5 610.6,270.5 	"
             />
-            <polygon className="st21" points="649.4,226.6 683.5,210 654.5,219.3 	" />
-            <polygon className="st22" points="662.5,211 655.6,206.8 654.5,219.3 	" />
+            <polygon
+              className="st21"
+              points="649.4,226.6 683.5,210 654.5,219.3 	"
+            />
+            <polygon
+              className="st22"
+              points="662.5,211 655.6,206.8 654.5,219.3 	"
+            />
             <polygon
               className="st23"
               points="683.5,210 684.1,209.7 662.5,211 654.5,219.3 	"
             />
-            <polygon className="st24" points="473.6,347.7 506.9,331 479,337.6 	" />
-            <polygon className="st25" points="385.8,304.2 363.6,264.3 347,311.3 	" />
-            <polygon className="st21" points="423,243.2 363.6,264.3 385.8,304.2 	" />
-            <polygon className="st1" points="286.7,345.6 347,311.3 315.5,266.8 	" />
-            <polygon className="st6" points="455.4,250.8 423,243.2 385.8,304.2 	" />
+            <polygon
+              className="st24"
+              points="473.6,347.7 506.9,331 479,337.6 	"
+            />
+            <polygon
+              className="st25"
+              points="385.8,304.2 363.6,264.3 347,311.3 	"
+            />
+            <polygon
+              className="st21"
+              points="423,243.2 363.6,264.3 385.8,304.2 	"
+            />
+            <polygon
+              className="st1"
+              points="286.7,345.6 347,311.3 315.5,266.8 	"
+            />
+            <polygon
+              className="st6"
+              points="455.4,250.8 423,243.2 385.8,304.2 	"
+            />
             <polygon
               className="st5"
               points="363.6,264.3 333.5,218.5 315.5,266.8 	"
             />
-            <polygon className="st20" points="347,311.3 363.6,264.3 315.5,266.8 	" />
+            <polygon
+              className="st20"
+              points="347,311.3 363.6,264.3 315.5,266.8 	"
+            />
             <polygon
               className="st26"
               points="407.6,314.9 455.4,250.8 385.8,304.2 	"
@@ -1921,7 +2217,10 @@ const Hands = () => {
               className="st26"
               points="470.1,284.1 455.4,250.8 407.6,314.9 	"
             />
-            <polygon className="st28" points="347,311.3 395.4,328.8 385.8,304.2 	" />
+            <polygon
+              className="st28"
+              points="347,311.3 395.4,328.8 385.8,304.2 	"
+            />
             <polygon
               className="st29"
               points="431.8,322.4 457.7,342.7 469.8,328.1 	"
@@ -1942,12 +2241,18 @@ const Hands = () => {
               className="st31"
               points="330.9,349.3 348.9,365.5 395.4,328.8 	"
             />
-            <polygon className="st4" points="269.9,254.6 266.1,300 315.5,266.8 	" />
+            <polygon
+              className="st4"
+              points="269.9,254.6 266.1,300 315.5,266.8 	"
+            />
             <polygon
               className="st26"
               points="459.6,315.9 431.8,322.4 469.8,328.1 	"
             />
-            <polygon className="st32" points="347,311.3 330.9,349.3 395.4,328.8 	" />
+            <polygon
+              className="st32"
+              points="347,311.3 330.9,349.3 395.4,328.8 	"
+            />
             <polygon
               className="st33"
               points="407.6,314.9 431.8,322.4 459.6,315.9 	"
@@ -1956,19 +2261,34 @@ const Hands = () => {
               className="st32"
               points="395.4,328.8 431.8,322.4 407.6,314.9 	"
             />
-            <polygon className="st17" points="315.5,266.8 266.1,300 286.7,345.6 	" />
-            <polygon className="st28" points="266.1,300 214,344.1 286.7,345.6 	" />
-            <polygon className="st34" points="286.7,345.6 330.9,349.3 347,311.3 	" />
+            <polygon
+              className="st17"
+              points="315.5,266.8 266.1,300 286.7,345.6 	"
+            />
+            <polygon
+              className="st28"
+              points="266.1,300 214,344.1 286.7,345.6 	"
+            />
+            <polygon
+              className="st34"
+              points="286.7,345.6 330.9,349.3 347,311.3 	"
+            />
             <polygon
               className="st35"
               points="242.7,398.5 330.9,349.3 286.7,345.6 	"
             />
-            <polygon className="st34" points="214,344.1 242.7,398.5 286.7,345.6 	" />
+            <polygon
+              className="st34"
+              points="214,344.1 242.7,398.5 286.7,345.6 	"
+            />
             <polygon
               className="st36"
               points="731.1,263.5 739.4,273.6 758.4,254.7 	"
             />
-            <polygon className="st24" points="780,260.3 772.7,246.6 758.4,254.7 	" />
+            <polygon
+              className="st24"
+              points="780,260.3 772.7,246.6 758.4,254.7 	"
+            />
             <polygon
               className="st4"
               points="754.3,237.9 714.8,238.1 732.3,247.1 	"
@@ -2001,7 +2321,10 @@ const Hands = () => {
               className="st40"
               points="699.2,242.7 731.1,263.5 732.3,247.1 	"
             />
-            <polygon className="st27" points="761.9,268.6 780,260.3 758.4,254.7 	" />
+            <polygon
+              className="st27"
+              points="761.9,268.6 780,260.3 758.4,254.7 	"
+            />
             <polygon
               className="st16"
               points="707.8,262.5 731.1,263.5 699.2,242.7 	"
@@ -2030,7 +2353,10 @@ const Hands = () => {
               className="st14"
               points="694.1,226.3 682.2,222.3 666.8,228.9 	"
             />
-            <polygon className="st36" points="683.5,210 684.5,209.7 684.1,209.7 	" />
+            <polygon
+              className="st36"
+              points="683.5,210 684.5,209.7 684.1,209.7 	"
+            />
             <polygon
               className="st36"
               points="684.5,209.7 684.4,209.6 684.1,209.7 	"
@@ -2071,9 +2397,18 @@ const Hands = () => {
               className="st45"
               points="607.1,235 596.8,241.8 596.8,241.8 620.7,233.6 	"
             />
-            <polygon className="st46" points="666.8,228.9 649.4,226.6 637,237.4 	" />
-            <polygon className="st47" points="654.4,238.2 666.8,228.9 637,237.4 	" />
-            <polygon className="st41" points="636.1,226.6 607.1,235 620.7,233.6 	" />
+            <polygon
+              className="st46"
+              points="666.8,228.9 649.4,226.6 637,237.4 	"
+            />
+            <polygon
+              className="st47"
+              points="654.4,238.2 666.8,228.9 637,237.4 	"
+            />
+            <polygon
+              className="st41"
+              points="636.1,226.6 607.1,235 620.7,233.6 	"
+            />
             <polygon
               className="st48"
               points="649.4,226.6 636.1,226.6 620.7,233.6 	"
@@ -2082,12 +2417,18 @@ const Hands = () => {
               className="st49"
               points="671.7,241.6 666.8,228.9 654.4,238.2 	"
             />
-            <polygon className="st50" points="637,237.4 649.4,226.6 620.7,233.6 	" />
+            <polygon
+              className="st50"
+              points="637,237.4 649.4,226.6 620.7,233.6 	"
+            />
             <polygon
               className="st51"
               points="654.5,256.7 671.7,241.6 639.3,242.8 	"
             />
-            <polygon className="st48" points="620.7,233.6 624.4,240.1 637,237.4 	" />
+            <polygon
+              className="st48"
+              points="620.7,233.6 624.4,240.1 637,237.4 	"
+            />
             <polygon
               className="st31"
               points="639.3,242.8 671.7,241.6 654.4,238.2 	"
@@ -2096,8 +2437,14 @@ const Hands = () => {
               className="st52"
               points="684.1,209.7 684.4,209.6 683.1,201.9 662.5,211 	"
             />
-            <polygon className="st53" points="624.4,240.1 639.3,242.8 637,237.4 	" />
-            <polygon className="st54" points="637,237.4 639.3,242.8 654.4,238.2 	" />
+            <polygon
+              className="st53"
+              points="624.4,240.1 639.3,242.8 637,237.4 	"
+            />
+            <polygon
+              className="st54"
+              points="637,237.4 639.3,242.8 654.4,238.2 	"
+            />
             <polygon
               className="st36"
               points="667.8,282.6 685.1,268.2 683.8,250.4 	"
@@ -2122,9 +2469,18 @@ const Hands = () => {
               className="st23"
               points="683.8,250.4 685.1,268.2 699.2,242.7 	"
             />
-            <polygon className="st11" points="610.6,270.5 655.5,292.5 633,267.8 	" />
-            <polygon className="st57" points="633,267.8 655.5,292.5 654.5,256.7 	" />
-            <polygon className="st10" points="618.7,254.2 610.6,270.5 633,267.8 	" />
+            <polygon
+              className="st11"
+              points="610.6,270.5 655.5,292.5 633,267.8 	"
+            />
+            <polygon
+              className="st57"
+              points="633,267.8 655.5,292.5 654.5,256.7 	"
+            />
+            <polygon
+              className="st10"
+              points="618.7,254.2 610.6,270.5 633,267.8 	"
+            />
             <polygon
               className="st58"
               points="624.4,240.1 621.3,242.9 639.3,242.8 	"
@@ -2133,25 +2489,58 @@ const Hands = () => {
               className="st59"
               points="597.4,241.8 607.4,241.9 621.3,242.9 624.4,240.1 	"
             />
-            <polygon className="st60" points="621.3,242.9 618.7,254.2 633,267.8 	" />
-            <polygon className="st44" points="639.3,242.8 621.3,242.9 633,267.8 	" />
-            <polygon className="st10" points="633,267.8 654.5,256.7 639.3,242.8 	" />
-            <polygon className="st61" points="592.7,173 572.7,189.4 589,187.2 	" />
-            <polygon className="st62" points="615.9,161 607.9,155 603.5,174.3 	" />
-            <polygon className="st63" points="607.9,155 592.7,173 603.5,174.3 	" />
-            <polygon className="st63" points="603.5,174.3 592.7,173 589,187.2 	" />
-            <polygon className="st64" points="589,187.2 572.7,189.4 580.4,200.9 	" />
+            <polygon
+              className="st60"
+              points="621.3,242.9 618.7,254.2 633,267.8 	"
+            />
+            <polygon
+              className="st44"
+              points="639.3,242.8 621.3,242.9 633,267.8 	"
+            />
+            <polygon
+              className="st10"
+              points="633,267.8 654.5,256.7 639.3,242.8 	"
+            />
+            <polygon
+              className="st61"
+              points="592.7,173 572.7,189.4 589,187.2 	"
+            />
+            <polygon
+              className="st62"
+              points="615.9,161 607.9,155 603.5,174.3 	"
+            />
+            <polygon
+              className="st63"
+              points="607.9,155 592.7,173 603.5,174.3 	"
+            />
+            <polygon
+              className="st63"
+              points="603.5,174.3 592.7,173 589,187.2 	"
+            />
+            <polygon
+              className="st64"
+              points="589,187.2 572.7,189.4 580.4,200.9 	"
+            />
             <polygon
               className="st58"
               points="580.4,200.9 572.7,189.4 559.4,210.7 	"
             />
-            <polygon className="st43" points="633.2,164.1 628.5,149.2 615.9,161 	" />
-            <polygon className="st36" points="506.1,31.9 494.2,43.5 517,47.7 	" />
+            <polygon
+              className="st43"
+              points="633.2,164.1 628.5,149.2 615.9,161 	"
+            />
+            <polygon
+              className="st36"
+              points="506.1,31.9 494.2,43.5 517,47.7 	"
+            />
             <polygon
               className="st65"
               points="644.4,166.7 643.7,157.1 633.2,164.1 	"
             />
-            <polygon className="st30" points="623,183.2 644.4,166.7 628.5,173.1 	" />
+            <polygon
+              className="st30"
+              points="623,183.2 644.4,166.7 628.5,173.1 	"
+            />
             <polygon
               className="st19"
               points="643.7,157.1 628.5,149.2 633.2,164.1 	"
@@ -2160,13 +2549,22 @@ const Hands = () => {
               className="st43"
               points="572.7,189.4 541.1,214.8 559.4,210.7 	"
             />
-            <polygon className="st66" points="628.5,149.2 607.9,155 615.9,161 	" />
+            <polygon
+              className="st66"
+              points="628.5,149.2 607.9,155 615.9,161 	"
+            />
             <polygon
               className="st67"
               points="551.4,219.3 541.1,214.8 532.1,227.9 	"
             />
-            <polygon className="st18" points="182.4,351.9 155.6,320 150.9,353.1 	" />
-            <polygon className="st68" points="155.6,320 108.7,359.6 150.9,353.1 	" />
+            <polygon
+              className="st18"
+              points="182.4,351.9 155.6,320 150.9,353.1 	"
+            />
+            <polygon
+              className="st68"
+              points="155.6,320 108.7,359.6 150.9,353.1 	"
+            />
             <polygon
               className="st0"
               points="123.3,478.8 173.1,480.8 179.6,449.3 	"
@@ -2183,9 +2581,18 @@ const Hands = () => {
               className="st15"
               points="108.7,359.6 156.1,391.5 150.9,353.1 	"
             />
-            <polygon className="st70" points="532.1,227.9 517,231.5 549.1,232.9 	" />
-            <polygon className="st71" points="620.5,173.8 623,183.2 628.5,173.1 	" />
-            <polygon className="st58" points="541.1,214.8 517,231.5 532.1,227.9 	" />
+            <polygon
+              className="st70"
+              points="532.1,227.9 517,231.5 549.1,232.9 	"
+            />
+            <polygon
+              className="st71"
+              points="620.5,173.8 623,183.2 628.5,173.1 	"
+            />
+            <polygon
+              className="st58"
+              points="541.1,214.8 517,231.5 532.1,227.9 	"
+            />
             <polygon
               className="st58"
               points="559.4,210.7 541.1,214.8 551.4,219.3 	"
@@ -2194,28 +2601,52 @@ const Hands = () => {
               className="st72"
               points="93.8,513.7 173.1,480.8 123.3,478.8 	"
             />
-            <polygon className="st56" points="549.1,232.9 517,231.5 570.1,241.4 	" />
+            <polygon
+              className="st56"
+              points="549.1,232.9 517,231.5 570.1,241.4 	"
+            />
             <polygon
               className="st73"
               points="628.5,173.1 644.4,166.7 633.2,164.1 	"
             />
-            <polygon className="st63" points="611.8,186.8 589,187.2 594.2,200.1 	" />
+            <polygon
+              className="st63"
+              points="611.8,186.8 589,187.2 594.2,200.1 	"
+            />
             <polygon
               className="st74"
               points="620.5,173.8 603.5,174.3 611.8,186.8 	"
             />
-            <polygon className="st75" points="589,187.2 580.4,200.9 594.2,200.1 	" />
-            <polygon className="st76" points="603.5,174.3 589,187.2 611.8,186.8 	" />
-            <polygon className="st77" points="611.8,186.8 623,183.2 620.5,173.8 	" />
+            <polygon
+              className="st75"
+              points="589,187.2 580.4,200.9 594.2,200.1 	"
+            />
+            <polygon
+              className="st76"
+              points="603.5,174.3 589,187.2 611.8,186.8 	"
+            />
+            <polygon
+              className="st77"
+              points="611.8,186.8 623,183.2 620.5,173.8 	"
+            />
             <polygon
               className="st78"
               points="594.2,200.1 580.4,200.9 589.3,214.8 	"
             />
-            <polygon className="st79" points="633.2,164.1 615.9,161 620.5,173.8 	" />
+            <polygon
+              className="st79"
+              points="633.2,164.1 615.9,161 620.5,173.8 	"
+            />
             <polygon className="st71" points="570.1,241.4 589,225 569.3,235 	" />
             <polygon className="st66" points="569.3,235 589,225 549.1,232.9 	" />
-            <polygon className="st80" points="615.9,161 603.5,174.3 620.5,173.8 	" />
-            <polygon className="st81" points="549.1,232.9 570.1,241.4 569.3,235 	" />
+            <polygon
+              className="st80"
+              points="615.9,161 603.5,174.3 620.5,173.8 	"
+            />
+            <polygon
+              className="st81"
+              points="549.1,232.9 570.1,241.4 569.3,235 	"
+            />
             <polygon
               className="st82"
               points="580.4,200.9 559.4,210.7 570.7,220.5 	"
@@ -2228,12 +2659,18 @@ const Hands = () => {
               className="st74"
               points="589.3,214.8 580.4,200.9 570.7,220.5 	"
             />
-            <polygon className="st43" points="570.7,220.5 589,225 589.3,214.8 	" />
+            <polygon
+              className="st43"
+              points="570.7,220.5 589,225 589.3,214.8 	"
+            />
             <polygon
               className="st83"
               points="589.3,214.8 598.6,212.2 594.2,200.1 	"
             />
-            <polygon className="st84" points="589,225 598.6,212.2 589.3,214.8 	" />
+            <polygon
+              className="st84"
+              points="589,225 598.6,212.2 589.3,214.8 	"
+            />
             <polygon
               className="st64"
               points="559.4,210.7 551.4,219.3 570.7,220.5 	"
@@ -2242,7 +2679,10 @@ const Hands = () => {
               className="st18"
               points="594.2,200.1 610.7,201.1 611.8,186.8 	"
             />
-            <polygon className="st85" points="610.7,201.1 623,183.2 611.8,186.8 	" />
+            <polygon
+              className="st85"
+              points="610.7,201.1 623,183.2 611.8,186.8 	"
+            />
             <polygon
               className="st54"
               points="598.6,212.2 610.7,201.1 594.2,200.1 	"
@@ -2255,8 +2695,14 @@ const Hands = () => {
               className="st58"
               points="570.7,220.5 551.4,219.3 559.8,227.4 	"
             />
-            <polygon className="st86" points="559.8,227.4 589,225 570.7,220.5 	" />
-            <polygon className="st76" points="549.1,232.9 589,225 559.8,227.4 	" />
+            <polygon
+              className="st86"
+              points="559.8,227.4 589,225 570.7,220.5 	"
+            />
+            <polygon
+              className="st76"
+              points="549.1,232.9 589,225 559.8,227.4 	"
+            />
             <polygon
               className="st87"
               points="532.1,227.9 549.1,232.9 559.8,227.4 	"
@@ -2269,12 +2715,18 @@ const Hands = () => {
               className="st17"
               points="802.7,254.3 791.4,246.5 796.1,259.2 	"
             />
-            <polygon className="st36" points="715.4,238 715.3,237.9 714.8,238.1 	" />
+            <polygon
+              className="st36"
+              points="715.4,238 715.3,237.9 714.8,238.1 	"
+            />
             <polygon
               className="st9"
               points="754.7,219.4 762.3,209.1 738.4,227.2 	"
             />
-            <polygon className="st24" points="796.1,259.2 791.4,246.5 780,260.3 	" />
+            <polygon
+              className="st24"
+              points="796.1,259.2 791.4,246.5 780,260.3 	"
+            />
             <polygon
               className="st36"
               points="616.1,306.9 625.2,287.5 596.9,295.7 	"
@@ -2283,7 +2735,10 @@ const Hands = () => {
               className="st31"
               points="206.6,439.8 242.7,398.5 201.8,418.3 	"
             />
-            <polygon className="st28" points="791.4,246.5 772.7,246.6 780,260.3 	" />
+            <polygon
+              className="st28"
+              points="791.4,246.5 772.7,246.6 780,260.3 	"
+            />
             <polygon
               className="st49"
               points="783.4,168.9 771.6,169.8 777.6,179.7 	"
@@ -2324,13 +2779,22 @@ const Hands = () => {
               className="st29"
               points="509.4,310.5 529.5,296.9 500.1,299.5 	"
             />
-            <polygon className="st36" points="518,282.2 498.2,283.4 500.1,299.5 	" />
-            <polygon className="st5" points="529.5,296.9 518,282.2 500.1,299.5 	" />
+            <polygon
+              className="st36"
+              points="518,282.2 498.2,283.4 500.1,299.5 	"
+            />
+            <polygon
+              className="st5"
+              points="529.5,296.9 518,282.2 500.1,299.5 	"
+            />
             <polygon
               className="st26"
               points="588.1,284.1 542.3,278.8 529.5,296.9 	"
             />
-            <polygon className="st88" points="570.5,271 542.3,278.8 588.1,284.1 	" />
+            <polygon
+              className="st88"
+              points="570.5,271 542.3,278.8 588.1,284.1 	"
+            />
             <polygon
               className="st6"
               points="378.2,185.8 333.5,218.5 363.6,264.3 	"
@@ -2339,23 +2803,68 @@ const Hands = () => {
               className="st11"
               points="470.1,284.1 407.6,314.9 468.4,297.4 	"
             />
-            <polygon className="st26" points="542.3,278.8 518,282.2 529.5,296.9 	" />
-            <polygon className="st8" points="201.8,418.3 242.7,398.5 214,344.1 	" />
+            <polygon
+              className="st26"
+              points="542.3,278.8 518,282.2 529.5,296.9 	"
+            />
+            <polygon
+              className="st8"
+              points="201.8,418.3 242.7,398.5 214,344.1 	"
+            />
             <polygon className="st28" points="509.9,64 492.8,66.8 477.7,109 	" />
-            <polygon className="st49" points="392,125.3 350.5,150.6 406.8,139.9 	" />
-            <polygon className="st36" points="406.9,167.3 423.3,150 406.8,139.9 	" />
-            <polygon className="st29" points="441.8,100.8 392,125.3 477.7,109 	" />
-            <polygon className="st57" points="441.6,132.5 392,125.3 406.8,139.9 	" />
-            <polygon className="st57" points="423.3,150 441.6,132.5 406.8,139.9 	" />
-            <polygon className="st10" points="427,85.3 392,125.3 441.8,100.8 	" />
-            <polygon className="st52" points="477.7,109 392,125.3 441.6,132.5 	" />
-            <polygon className="st26" points="459.9,75.4 427,85.3 441.8,100.8 	" />
-            <polygon className="st23" points="494.2,43.5 492.8,66.8 517,47.7 	" />
+            <polygon
+              className="st49"
+              points="392,125.3 350.5,150.6 406.8,139.9 	"
+            />
+            <polygon
+              className="st36"
+              points="406.9,167.3 423.3,150 406.8,139.9 	"
+            />
+            <polygon
+              className="st29"
+              points="441.8,100.8 392,125.3 477.7,109 	"
+            />
+            <polygon
+              className="st57"
+              points="441.6,132.5 392,125.3 406.8,139.9 	"
+            />
+            <polygon
+              className="st57"
+              points="423.3,150 441.6,132.5 406.8,139.9 	"
+            />
+            <polygon
+              className="st10"
+              points="427,85.3 392,125.3 441.8,100.8 	"
+            />
+            <polygon
+              className="st52"
+              points="477.7,109 392,125.3 441.6,132.5 	"
+            />
+            <polygon
+              className="st26"
+              points="459.9,75.4 427,85.3 441.8,100.8 	"
+            />
+            <polygon
+              className="st23"
+              points="494.2,43.5 492.8,66.8 517,47.7 	"
+            />
             <polygon className="st88" points="517,47.7 492.8,66.8 509.9,64 	" />
-            <polygon className="st36" points="492.8,66.8 459.9,75.4 441.8,100.8 	" />
-            <polygon className="st52" points="477.7,109 492.8,66.8 441.8,100.8 	" />
-            <polygon className="st88" points="698.2,178.9 683.8,171.6 683,187.8 	" />
-            <polygon className="st4" points="683.8,171.6 668.5,176 683,187.8 	" />
+            <polygon
+              className="st36"
+              points="492.8,66.8 459.9,75.4 441.8,100.8 	"
+            />
+            <polygon
+              className="st52"
+              points="477.7,109 492.8,66.8 441.8,100.8 	"
+            />
+            <polygon
+              className="st88"
+              points="698.2,178.9 683.8,171.6 683,187.8 	"
+            />
+            <polygon
+              className="st4"
+              points="683.8,171.6 668.5,176 683,187.8 	"
+            />
             <polygon
               className="st0"
               points="804.3,186.6 797.7,177.6 783.9,189.1 	"
@@ -2364,8 +2873,14 @@ const Hands = () => {
               className="st89"
               points="406.8,139.9 350.5,150.6 406.9,167.3 	"
             />
-            <polygon className="st28" points="813.5,173 803,166.1 797.7,177.6 	" />
-            <polygon className="st29" points="803,166.1 783.4,168.9 797.7,177.6 	" />
+            <polygon
+              className="st28"
+              points="813.5,173 803,166.1 797.7,177.6 	"
+            />
+            <polygon
+              className="st29"
+              points="803,166.1 783.4,168.9 797.7,177.6 	"
+            />
             <polygon
               className="st49"
               points="705.8,160.9 694.3,155.5 698.2,178.9 	"
@@ -2394,10 +2909,19 @@ const Hands = () => {
               className="st2"
               points="500.1,299.5 498.2,283.4 468.4,297.4 	"
             />
-            <polygon className="st61" points="696.6,140.6 673,157.7 694.3,155.5 	" />
+            <polygon
+              className="st61"
+              points="696.6,140.6 673,157.7 694.3,155.5 	"
+            />
             <polygon className="st45" points="673,157.7 654,181.4 668.5,176 	" />
-            <polygon className="st48" points="645.9,198.3 628.2,204.6 628.3,217 	" />
-            <polygon className="st76" points="654,181.4 628.2,204.6 645.9,198.3 	" />
+            <polygon
+              className="st48"
+              points="645.9,198.3 628.2,204.6 628.3,217 	"
+            />
+            <polygon
+              className="st76"
+              points="654,181.4 628.2,204.6 645.9,198.3 	"
+            />
             <polygon
               className="st45"
               points="715.4,136.4 692.3,134.2 696.6,140.6 	"
@@ -2406,7 +2930,10 @@ const Hands = () => {
               className="st91"
               points="696.6,140.6 692.3,134.2 678.7,143.7 	"
             />
-            <polygon className="st79" points="683.8,171.6 673,157.7 668.5,176 	" />
+            <polygon
+              className="st79"
+              points="683.8,171.6 673,157.7 668.5,176 	"
+            />
             <polygon
               className="st36"
               points="717.6,145.6 726.7,137.1 715.4,136.4 	"
@@ -2423,8 +2950,14 @@ const Hands = () => {
               className="st17"
               points="726.7,137.1 712.2,127.9 715.4,136.4 	"
             />
-            <polygon className="st67" points="694.3,155.5 673,157.7 683.8,171.6 	" />
-            <polygon className="st64" points="678.7,143.7 673,157.7 696.6,140.6 	" />
+            <polygon
+              className="st67"
+              points="694.3,155.5 673,157.7 683.8,171.6 	"
+            />
+            <polygon
+              className="st64"
+              points="678.7,143.7 673,157.7 696.6,140.6 	"
+            />
             <polygon
               className="st42"
               points="700.4,188.3 710.3,172.3 698.2,178.9 	"
@@ -2433,7 +2966,10 @@ const Hands = () => {
               className="st31"
               points="698.2,178.9 710.3,172.3 705.8,160.9 	"
             />
-            <polygon className="st33" points="683,187.8 700.4,188.3 698.2,178.9 	" />
+            <polygon
+              className="st33"
+              points="683,187.8 700.4,188.3 698.2,178.9 	"
+            />
             <polygon
               className="st92"
               points="714.2,159.9 731.9,146.6 717.6,145.6 	"
@@ -2442,13 +2978,22 @@ const Hands = () => {
               className="st69"
               points="705.8,160.9 710.3,172.3 714.2,159.9 	"
             />
-            <polygon className="st29" points="683.1,201.9 700.4,188.3 683,187.8 	" />
+            <polygon
+              className="st29"
+              points="683.1,201.9 700.4,188.3 683,187.8 	"
+            />
             <polygon
               className="st93"
               points="710.3,172.3 731.9,146.6 714.2,159.9 	"
             />
-            <polygon className="st82" points="628.2,204.6 610.1,224.3 628.3,217 	" />
-            <polygon className="st94" points="570.1,241.4 517,231.5 531.9,243.4 	" />
+            <polygon
+              className="st82"
+              points="628.2,204.6 610.1,224.3 628.3,217 	"
+            />
+            <polygon
+              className="st94"
+              points="570.1,241.4 517,231.5 531.9,243.4 	"
+            />
             <polygon
               className="st20"
               points="547.3,262.1 570.1,241.4 520.5,258.1 	"
@@ -2457,8 +3002,14 @@ const Hands = () => {
               className="st25"
               points="520.5,258.1 570.1,241.4 531.9,243.4 	"
             />
-            <polygon className="st5" points="520.5,258.1 517,231.5 485.8,231.4 	" />
-            <polygon className="st21" points="531.9,243.4 517,231.5 520.5,258.1 	" />
+            <polygon
+              className="st5"
+              points="520.5,258.1 517,231.5 485.8,231.4 	"
+            />
+            <polygon
+              className="st21"
+              points="531.9,243.4 517,231.5 520.5,258.1 	"
+            />
             <polygon
               className="st40"
               points="569.7,257.6 570.1,241.4 547.3,262.1 	"
@@ -2471,7 +3022,10 @@ const Hands = () => {
               className="st25"
               points="596.7,241.8 596.6,241.8 570.1,241.4 569.7,257.6 	"
             />
-            <polygon className="st76" points="628.3,217 610.1,224.3 619.2,225.7 	" />
+            <polygon
+              className="st76"
+              points="628.3,217 610.1,224.3 619.2,225.7 	"
+            />
             <polygon
               className="st81"
               points="610.1,224.3 570.1,241.4 590.1,238.3 	"
@@ -2480,17 +3034,38 @@ const Hands = () => {
               className="st87"
               points="590.1,238.3 570.1,241.4 596.6,241.8 	"
             />
-            <polygon className="st57" points="823.7,183.8 823.3,174.8 813.5,173 	" />
+            <polygon
+              className="st57"
+              points="823.7,183.8 823.3,174.8 813.5,173 	"
+            />
             <polygon
               className="st32"
               points="684.4,209.6 684.7,209.5 700.4,188.3 683.1,201.9 	"
             />
-            <polygon className="st95" points="800,154.9 772.9,156.7 803,166.1 	" />
-            <polygon className="st0" points="797.7,177.6 823.7,183.8 813.5,173 	" />
-            <polygon className="st7" points="823.3,174.8 816.9,159.9 813.5,173 	" />
-            <polygon className="st40" points="816.9,159.9 800,154.9 803,166.1 	" />
-            <polygon className="st57" points="813.5,173 816.9,159.9 803,166.1 	" />
-            <polygon className="st89" points="517,231.5 459.7,210.6 485.8,231.4 	" />
+            <polygon
+              className="st95"
+              points="800,154.9 772.9,156.7 803,166.1 	"
+            />
+            <polygon
+              className="st0"
+              points="797.7,177.6 823.7,183.8 813.5,173 	"
+            />
+            <polygon
+              className="st7"
+              points="823.3,174.8 816.9,159.9 813.5,173 	"
+            />
+            <polygon
+              className="st40"
+              points="816.9,159.9 800,154.9 803,166.1 	"
+            />
+            <polygon
+              className="st57"
+              points="813.5,173 816.9,159.9 803,166.1 	"
+            />
+            <polygon
+              className="st89"
+              points="517,231.5 459.7,210.6 485.8,231.4 	"
+            />
             <polygon
               className="st69"
               points="754.7,219.4 787.6,205.1 762.3,209.1 	"
@@ -2519,7 +3094,10 @@ const Hands = () => {
               className="st72"
               points="804.3,186.6 823.7,183.8 797.7,177.6 	"
             />
-            <polygon className="st99" points="727.9,207.7 728,186.9 719.2,198.9 	" />
+            <polygon
+              className="st99"
+              points="727.9,207.7 728,186.9 719.2,198.9 	"
+            />
             <polygon
               className="st48"
               points="702.5,215.3 695.4,204.2 682.2,222.3 	"
@@ -2528,12 +3106,18 @@ const Hands = () => {
               className="st77"
               points="727.9,207.7 719.2,198.9 695.4,204.2 	"
             />
-            <polygon className="st45" points="695.4,204.2 719.2,198.9 728,186.9 	" />
+            <polygon
+              className="st45"
+              points="695.4,204.2 719.2,198.9 728,186.9 	"
+            />
             <polygon
               className="st100"
               points="727.9,207.7 695.4,204.2 702.5,215.3 	"
             />
-            <polygon className="st23" points="803,166.1 772.9,156.7 783.4,168.9 	" />
+            <polygon
+              className="st23"
+              points="803,166.1 772.9,156.7 783.4,168.9 	"
+            />
             <polygon
               className="st36"
               points="684.5,209.7 684.7,209.5 684.4,209.6 	"
@@ -2542,7 +3126,10 @@ const Hands = () => {
               className="st48"
               points="682.2,222.3 695.4,204.2 684.7,209.5 684.5,209.7 	"
             />
-            <polygon className="st77" points="744.7,184.6 728,186.9 727.9,207.7 	" />
+            <polygon
+              className="st77"
+              points="744.7,184.6 728,186.9 727.9,207.7 	"
+            />
             <polygon
               className="st91"
               points="772.9,156.7 748.6,170.8 771.6,169.8 	"
@@ -2551,7 +3138,10 @@ const Hands = () => {
               className="st99"
               points="783.4,168.9 772.9,156.7 771.6,169.8 	"
             />
-            <polygon className="st66" points="748.6,170.8 728,186.9 744.7,184.6 	" />
+            <polygon
+              className="st66"
+              points="748.6,170.8 728,186.9 744.7,184.6 	"
+            />
             <polygon
               className="st48"
               points="771.6,169.8 748.6,170.8 744.7,184.6 	"
@@ -2560,46 +3150,94 @@ const Hands = () => {
               className="st36"
               points="439.2,145.2 460.8,132.7 441.6,132.5 	"
             />
-            <polygon className="st53" points="324,141.3 306.5,163.9 350.5,150.6 	" />
-            <polygon className="st45" points="375.5,119.3 345.2,136 350.5,150.6 	" />
+            <polygon
+              className="st53"
+              points="324,141.3 306.5,163.9 350.5,150.6 	"
+            />
+            <polygon
+              className="st45"
+              points="375.5,119.3 345.2,136 350.5,150.6 	"
+            />
             <polygon
               className="st2"
               points="350.5,150.6 306.5,163.9 308.9,202.4 	"
             />
-            <polygon className="st65" points="345.2,136 324,141.3 350.5,150.6 	" />
+            <polygon
+              className="st65"
+              points="345.2,136 324,141.3 350.5,150.6 	"
+            />
             <polygon
               className="st101"
               points="308.9,202.4 306.5,163.9 285.6,192.9 	"
             />
-            <polygon className="st51" points="261.1,191.3 219,227.8 285.6,192.9 	" />
+            <polygon
+              className="st51"
+              points="261.1,191.3 219,227.8 285.6,192.9 	"
+            />
             <polygon
               className="st64"
               points="306.5,163.9 261.1,191.3 285.6,192.9 	"
             />
             <polygon className="st79" points="443.3,67.5 424,74.1 427,85.3 	" />
-            <polygon className="st71" points="392,125.3 375.5,119.3 350.5,150.6 	" />
+            <polygon
+              className="st71"
+              points="392,125.3 375.5,119.3 350.5,150.6 	"
+            />
             <polygon className="st76" points="424,74.1 406.4,94 427,85.3 	" />
-            <polygon className="st51" points="456.5,56.8 443.3,67.5 459.9,75.4 	" />
+            <polygon
+              className="st51"
+              points="456.5,56.8 443.3,67.5 459.9,75.4 	"
+            />
             <polygon className="st54" points="427,85.3 406.4,94 392,125.3 	" />
-            <polygon className="st45" points="406.4,94 375.5,119.3 392,125.3 	" />
-            <polygon className="st99" points="459.9,75.4 443.3,67.5 427,85.3 	" />
-            <polygon className="st79" points="168.7,289.9 137.6,317.9 155.6,320 	" />
-            <polygon className="st38" points="118.2,327 94.4,348.5 108.7,359.6 	" />
-            <polygon className="st36" points="137.6,317.9 118.2,327 155.6,320 	" />
-            <polygon className="st11" points="155.6,320 118.2,327 108.7,359.6 	" />
-            <polygon className="st74" points="285.6,192.9 219,227.8 211,265.8 	" />
+            <polygon
+              className="st45"
+              points="406.4,94 375.5,119.3 392,125.3 	"
+            />
+            <polygon
+              className="st99"
+              points="459.9,75.4 443.3,67.5 427,85.3 	"
+            />
+            <polygon
+              className="st79"
+              points="168.7,289.9 137.6,317.9 155.6,320 	"
+            />
+            <polygon
+              className="st38"
+              points="118.2,327 94.4,348.5 108.7,359.6 	"
+            />
+            <polygon
+              className="st36"
+              points="137.6,317.9 118.2,327 155.6,320 	"
+            />
+            <polygon
+              className="st11"
+              points="155.6,320 118.2,327 108.7,359.6 	"
+            />
+            <polygon
+              className="st74"
+              points="285.6,192.9 219,227.8 211,265.8 	"
+            />
             <polygon
               className="st40"
               points="485.8,231.4 459.7,210.6 430.5,216.7 	"
             />
-            <polygon className="st6" points="94.4,348.5 49.1,381.2 108.7,359.6 	" />
-            <polygon className="st44" points="183.4,266 168.7,289.9 211,265.8 	" />
+            <polygon
+              className="st6"
+              points="94.4,348.5 49.1,381.2 108.7,359.6 	"
+            />
+            <polygon
+              className="st44"
+              points="183.4,266 168.7,289.9 211,265.8 	"
+            />
             <polygon className="st73" points="219,227.8 183.4,266 211,265.8 	" />
             <polygon
               className="st95"
               points="217.2,305.7 168.7,289.9 182.4,351.9 	"
             />
-            <polygon className="st85" points="182.4,351.9 168.7,289.9 155.6,320 	" />
+            <polygon
+              className="st85"
+              points="182.4,351.9 168.7,289.9 155.6,320 	"
+            />
             <polygon
               className="st101"
               points="211,265.8 168.7,289.9 217.2,305.7 	"
@@ -2608,14 +3246,26 @@ const Hands = () => {
               className="st96"
               points="738.4,227.2 748.3,232.1 754.7,219.4 	"
             />
-            <polygon className="st36" points="423.3,150 439.2,145.2 441.6,132.5 	" />
-            <polygon className="st57" points="422.2,166.4 439.2,145.2 423.3,150 	" />
+            <polygon
+              className="st36"
+              points="423.3,150 439.2,145.2 441.6,132.5 	"
+            />
+            <polygon
+              className="st57"
+              points="422.2,166.4 439.2,145.2 423.3,150 	"
+            />
             <polygon
               className="st36"
               points="460.8,132.7 471.6,124.1 493.3,108.2 441.6,132.5 	"
             />
-            <polygon className="st29" points="441.6,132.5 493.3,108.2 477.7,109 	" />
-            <polygon className="st33" points="406.9,167.3 422.2,166.4 423.3,150 	" />
+            <polygon
+              className="st29"
+              points="441.6,132.5 493.3,108.2 477.7,109 	"
+            />
+            <polygon
+              className="st33"
+              points="406.9,167.3 422.2,166.4 423.3,150 	"
+            />
             <polygon
               className="st27"
               points="412.4,188.6 422.2,166.4 386.1,202.5 	"
@@ -2628,7 +3278,10 @@ const Hands = () => {
               className="st36"
               points="459.7,210.6 412.4,188.6 430.5,216.7 	"
             />
-            <polygon className="st17" points="477.7,109 493.3,108.2 509.9,64 	" />
+            <polygon
+              className="st17"
+              points="477.7,109 493.3,108.2 509.9,64 	"
+            />
             <polygon
               className="st57"
               points="386.1,202.5 422.2,166.4 406.9,167.3 	"
@@ -2638,19 +3291,49 @@ const Hands = () => {
               points="409.2,205.3 412.4,188.6 386.1,202.5 	"
             />
             <polygon className="st36" points="525,54.5 525.6,33.6 517,47.7 	" />
-            <polygon className="st16" points="506.3,15.1 486,30.9 494.2,43.5 	" />
+            <polygon
+              className="st16"
+              points="506.3,15.1 486,30.9 494.2,43.5 	"
+            />
             <polygon className="st18" points="486,30.9 471,50.2 494.2,43.5 	" />
-            <polygon className="st47" points="506.1,31.9 506.3,15.1 494.2,43.5 	" />
-            <polygon className="st44" points="518.3,18.2 506.3,15.1 506.1,31.9 	" />
-            <polygon className="st60" points="494.2,43.5 471,50.2 492.8,66.8 	" />
-            <polygon className="st86" points="492.8,66.8 471,50.2 459.9,75.4 	" />
-            <polygon className="st100" points="471,50.2 456.5,56.8 459.9,75.4 	" />
+            <polygon
+              className="st47"
+              points="506.1,31.9 506.3,15.1 494.2,43.5 	"
+            />
+            <polygon
+              className="st44"
+              points="518.3,18.2 506.3,15.1 506.1,31.9 	"
+            />
+            <polygon
+              className="st60"
+              points="494.2,43.5 471,50.2 492.8,66.8 	"
+            />
+            <polygon
+              className="st86"
+              points="492.8,66.8 471,50.2 459.9,75.4 	"
+            />
+            <polygon
+              className="st100"
+              points="471,50.2 456.5,56.8 459.9,75.4 	"
+            />
             <polygon className="st36" points="509.9,64 525,54.5 517,47.7 	" />
             <polygon className="st57" points="512.7,81.8 525,54.5 509.9,64 	" />
-            <polygon className="st30" points="525.6,33.6 518.3,18.2 517,47.7 	" />
-            <polygon className="st52" points="493.3,108.2 512.7,81.8 509.9,64 	" />
-            <polygon className="st20" points="517,47.7 518.3,18.2 506.1,31.9 	" />
-            <polygon className="st40" points="569.7,257.6 547.3,262.1 570.5,271 	" />
+            <polygon
+              className="st30"
+              points="525.6,33.6 518.3,18.2 517,47.7 	"
+            />
+            <polygon
+              className="st52"
+              points="493.3,108.2 512.7,81.8 509.9,64 	"
+            />
+            <polygon
+              className="st20"
+              points="517,47.7 518.3,18.2 506.1,31.9 	"
+            />
+            <polygon
+              className="st40"
+              points="569.7,257.6 547.3,262.1 570.5,271 	"
+            />
             <polygon
               className="st8"
               points="406.9,167.3 350.5,150.6 378.2,185.8 	"
@@ -2663,7 +3346,10 @@ const Hands = () => {
               className="st7"
               points="350.5,150.6 308.9,202.4 378.2,185.8 	"
             />
-            <polygon className="st102" points="206,459.8 233,431 206.6,439.8 	" />
+            <polygon
+              className="st102"
+              points="206,459.8 233,431 206.6,439.8 	"
+            />
             <polygon
               className="st28"
               points="378.2,185.8 308.9,202.4 333.5,218.5 	"
@@ -2672,7 +3358,10 @@ const Hands = () => {
               className="st20"
               points="333.5,218.5 308.9,202.4 269.9,254.6 	"
             />
-            <polygon className="st88" points="455.4,250.8 430.5,216.7 423,243.2 	" />
+            <polygon
+              className="st88"
+              points="455.4,250.8 430.5,216.7 423,243.2 	"
+            />
             <polygon
               className="st23"
               points="308.9,202.4 285.6,192.9 269.9,254.6 	"
@@ -2689,8 +3378,14 @@ const Hands = () => {
               className="st22"
               points="409.2,205.3 386.1,202.5 363.6,264.3 	"
             />
-            <polygon className="st47" points="423,243.2 409.2,205.3 363.6,264.3 	" />
-            <polygon className="st51" points="430.5,216.7 409.2,205.3 423,243.2 	" />
+            <polygon
+              className="st47"
+              points="423,243.2 409.2,205.3 363.6,264.3 	"
+            />
+            <polygon
+              className="st51"
+              points="430.5,216.7 409.2,205.3 423,243.2 	"
+            />
             <polygon
               className="st103"
               points="217.2,305.7 182.4,351.9 214,344.1 	"
@@ -2719,27 +3414,54 @@ const Hands = () => {
               className="st106"
               points="173.1,480.8 206,459.8 206.6,439.8 	"
             />
-            <polygon className="st22" points="211,265.8 217.2,305.7 269.9,254.6 	" />
-            <polygon className="st68" points="214,344.1 182.4,351.9 201.8,418.3 	" />
-            <polygon className="st71" points="285.6,192.9 211,265.8 269.9,254.6 	" />
-            <polygon className="st95" points="269.9,254.6 217.2,305.7 266.1,300 	" />
+            <polygon
+              className="st22"
+              points="211,265.8 217.2,305.7 269.9,254.6 	"
+            />
+            <polygon
+              className="st68"
+              points="214,344.1 182.4,351.9 201.8,418.3 	"
+            />
+            <polygon
+              className="st71"
+              points="285.6,192.9 211,265.8 269.9,254.6 	"
+            />
+            <polygon
+              className="st95"
+              points="269.9,254.6 217.2,305.7 266.1,300 	"
+            />
             <polygon
               className="st12"
               points="520.5,258.1 485.8,231.4 491.9,257.4 	"
             />
-            <polygon className="st1" points="266.1,300 217.2,305.7 214,344.1 	" />
+            <polygon
+              className="st1"
+              points="266.1,300 217.2,305.7 214,344.1 	"
+            />
             <polygon
               className="st33"
               points="386.1,202.5 406.9,167.3 378.2,185.8 	"
             />
-            <polygon className="st75" points="636.1,226.6 619.2,225.7 607.1,235 	" />
-            <polygon className="st67" points="655.6,206.8 628.3,217 645.1,215.6 	" />
-            <polygon className="st76" points="628.3,217 619.2,225.7 645.1,215.6 	" />
+            <polygon
+              className="st75"
+              points="636.1,226.6 619.2,225.7 607.1,235 	"
+            />
+            <polygon
+              className="st67"
+              points="655.6,206.8 628.3,217 645.1,215.6 	"
+            />
+            <polygon
+              className="st76"
+              points="628.3,217 619.2,225.7 645.1,215.6 	"
+            />
             <polygon
               className="st36"
               points="596.6,241.8 596.7,241.8 596.8,241.8 	"
             />
-            <polygon className="st87" points="619.2,225.7 590.1,238.3 607.1,235 	" />
+            <polygon
+              className="st87"
+              points="619.2,225.7 590.1,238.3 607.1,235 	"
+            />
             <polygon
               className="st107"
               points="607.1,235 590.1,238.3 596.6,241.8 596.8,241.8 	"
@@ -2748,26 +3470,56 @@ const Hands = () => {
               className="st76"
               points="645.1,215.6 619.2,225.7 636.1,226.6 	"
             />
-            <polygon className="st13" points="655.6,206.8 683.1,201.9 663,193.4 	" />
-            <polygon className="st54" points="683.1,201.9 683,187.8 663,193.4 	" />
-            <polygon className="st38" points="645.9,198.3 655.6,206.8 663,193.4 	" />
-            <polygon className="st67" points="654,181.4 645.9,198.3 663,193.4 	" />
-            <polygon className="st50" points="655.6,206.8 645.9,198.3 628.3,217 	" />
-            <polygon className="st101" points="683,187.8 668.5,176 663,193.4 	" />
+            <polygon
+              className="st13"
+              points="655.6,206.8 683.1,201.9 663,193.4 	"
+            />
+            <polygon
+              className="st54"
+              points="683.1,201.9 683,187.8 663,193.4 	"
+            />
+            <polygon
+              className="st38"
+              points="645.9,198.3 655.6,206.8 663,193.4 	"
+            />
+            <polygon
+              className="st67"
+              points="654,181.4 645.9,198.3 663,193.4 	"
+            />
+            <polygon
+              className="st50"
+              points="655.6,206.8 645.9,198.3 628.3,217 	"
+            />
+            <polygon
+              className="st101"
+              points="683,187.8 668.5,176 663,193.4 	"
+            />
             <polygon className="st76" points="668.5,176 654,181.4 663,193.4 	" />
-            <polygon className="st25" points="542.3,278.8 520.5,258.1 518,282.2 	" />
-            <polygon className="st10" points="570.5,271 547.3,262.1 542.3,278.8 	" />
+            <polygon
+              className="st25"
+              points="542.3,278.8 520.5,258.1 518,282.2 	"
+            />
+            <polygon
+              className="st10"
+              points="570.5,271 547.3,262.1 542.3,278.8 	"
+            />
             <path className="st36" d="M596.8,241.8L596.8,241.8L596.8,241.8z" />
             <polygon
               className="st108"
               points="662.5,211 683.1,201.9 655.6,206.8 	"
             />
-            <polygon className="st5" points="596.7,241.8 569.7,257.6 570.5,271 	" />
+            <polygon
+              className="st5"
+              points="596.7,241.8 569.7,257.6 570.5,271 	"
+            />
             <polygon
               className="st30"
               points="498.2,283.4 520.5,258.1 491.9,257.4 	"
             />
-            <polygon className="st21" points="518,282.2 520.5,258.1 498.2,283.4 	" />
+            <polygon
+              className="st21"
+              points="518,282.2 520.5,258.1 498.2,283.4 	"
+            />
             <polygon
               className="st26"
               points="547.3,262.1 520.5,258.1 542.3,278.8 	"
@@ -2776,7 +3528,10 @@ const Hands = () => {
               className="st36"
               points="596.8,241.8 596.7,241.8 597.4,241.8 	"
             />
-            <polygon className="st25" points="588.1,284.1 596.7,241.8 570.5,271 	" />
+            <polygon
+              className="st25"
+              points="588.1,284.1 596.7,241.8 570.5,271 	"
+            />
             <polygon
               className="st41"
               points="621.3,242.9 607.4,241.9 597.4,241.8 596.7,241.8 618.7,254.2 	"
@@ -2793,9 +3548,18 @@ const Hands = () => {
               className="st7"
               points="182.4,351.9 156.1,391.5 201.8,418.3 	"
             />
-            <polygon className="st98" points="727,284.9 754.3,281.5 739.4,273.6 	" />
-            <polygon className="st15" points="731.1,263.5 727,284.9 739.4,273.6 	" />
-            <polygon className="st57" points="707.8,262.5 727,284.9 731.1,263.5 	" />
+            <polygon
+              className="st98"
+              points="727,284.9 754.3,281.5 739.4,273.6 	"
+            />
+            <polygon
+              className="st15"
+              points="731.1,263.5 727,284.9 739.4,273.6 	"
+            />
+            <polygon
+              className="st57"
+              points="707.8,262.5 727,284.9 731.1,263.5 	"
+            />
             <polygon
               className="st8"
               points="739.4,273.6 754.3,281.5 761.9,268.6 	"
@@ -2808,7 +3572,10 @@ const Hands = () => {
               className="st33"
               points="754.3,281.5 769.2,276.3 761.9,268.6 	"
             />
-            <polygon className="st27" points="761.9,268.6 769.2,276.3 780,260.3 	" />
+            <polygon
+              className="st27"
+              points="761.9,268.6 769.2,276.3 780,260.3 	"
+            />
             <polygon
               className="st24"
               points="685.1,268.2 695.8,294.5 707.8,262.5 	"
@@ -2817,9 +3584,18 @@ const Hands = () => {
               className="st37"
               points="667.8,282.6 695.8,294.5 685.1,268.2 	"
             />
-            <polygon className="st98" points="668,303.6 695.8,294.5 667.8,282.6 	" />
-            <polygon className="st39" points="708.1,283.3 727,284.9 707.8,262.5 	" />
-            <polygon className="st37" points="695.8,294.5 727,284.9 708.1,283.3 	" />
+            <polygon
+              className="st98"
+              points="668,303.6 695.8,294.5 667.8,282.6 	"
+            />
+            <polygon
+              className="st39"
+              points="708.1,283.3 727,284.9 707.8,262.5 	"
+            />
+            <polygon
+              className="st37"
+              points="695.8,294.5 727,284.9 708.1,283.3 	"
+            />
             <polygon
               className="st35"
               points="707.8,262.5 695.8,294.5 708.1,283.3 	"
@@ -2832,7 +3608,10 @@ const Hands = () => {
               className="st36"
               points="791.4,246.5 780.4,233.9 772.7,246.6 	"
             />
-            <polygon className="st92" points="780,260.3 786.5,273.5 796.1,259.2 	" />
+            <polygon
+              className="st92"
+              points="780,260.3 786.5,273.5 796.1,259.2 	"
+            />
             <polygon
               className="st23"
               points="772.7,246.6 780.4,233.9 754.3,237.9 	"
@@ -2841,7 +3620,10 @@ const Hands = () => {
               className="st23"
               points="780.4,233.9 748.3,232.1 754.3,237.9 	"
             />
-            <polygon className="st9" points="655.5,292.5 668,303.6 667.8,282.6 	" />
+            <polygon
+              className="st9"
+              points="655.5,292.5 668,303.6 667.8,282.6 	"
+            />
             <polygon
               className="st14"
               points="715.5,238 715.4,238 714.8,238.1 754.3,237.9 748.3,232.1 715.4,238 	"
@@ -2874,7 +3656,10 @@ const Hands = () => {
               className="st12"
               points="616.1,306.9 627.7,315.8 625.2,287.5 	"
             />
-            <polygon className="st33" points="506.9,331 534.8,329.3 530.9,321.2 	" />
+            <polygon
+              className="st33"
+              points="506.9,331 534.8,329.3 530.9,321.2 	"
+            />
             <polygon
               className="st27"
               points="467.4,354.9 492.3,349.3 473.6,347.7 	"
@@ -2887,14 +3672,23 @@ const Hands = () => {
               className="st34"
               points="457.7,342.7 467.4,354.9 473.6,347.7 	"
             />
-            <polygon className="st98" points="492.3,349.3 534.8,329.3 506.9,331 	" />
-            <polygon className="st68" points="473.6,347.7 492.3,349.3 506.9,331 	" />
+            <polygon
+              className="st98"
+              points="492.3,349.3 534.8,329.3 506.9,331 	"
+            />
+            <polygon
+              className="st68"
+              points="473.6,347.7 492.3,349.3 506.9,331 	"
+            />
             <polygon
               className="st32"
               points="431.8,322.4 409.8,363.6 457.7,342.7 	"
             />
             <polygon className="st72" points="233,431 283,403.2 242.7,398.5 	" />
-            <polygon className="st7" points="242.7,398.5 283,403.2 330.9,349.3 	" />
+            <polygon
+              className="st7"
+              points="242.7,398.5 283,403.2 330.9,349.3 	"
+            />
             <polygon
               className="st112"
               points="283,403.2 328.6,388.9 409.8,363.6 348.9,365.5 	"
@@ -2903,13 +3697,22 @@ const Hands = () => {
               className="st105"
               points="348.9,365.5 409.8,363.6 431.8,322.4 	"
             />
-            <polygon className="st55" points="330.9,349.3 283,403.2 348.9,365.5 	" />
-            <polygon className="st33" points="530.9,321.2 534.8,329.3 557,320.3 	" />
+            <polygon
+              className="st55"
+              points="330.9,349.3 283,403.2 348.9,365.5 	"
+            />
+            <polygon
+              className="st33"
+              points="530.9,321.2 534.8,329.3 557,320.3 	"
+            />
             <polygon
               className="st24"
               points="608.8,316.7 627.7,315.8 616.1,306.9 	"
             />
-            <polygon className="st92" points="206.6,439.8 233,431 242.7,398.5 	" />
+            <polygon
+              className="st92"
+              points="206.6,439.8 233,431 242.7,398.5 	"
+            />
             <polygon
               className="st10"
               points="585.2,314.4 608.8,316.7 596.9,295.7 	"
@@ -2918,20 +3721,38 @@ const Hands = () => {
               className="st21"
               points="596.9,295.7 608.8,316.7 616.1,306.9 	"
             />
-            <polygon className="st1" points="627.7,315.8 645.3,309 625.2,287.5 	" />
-            <polygon className="st31" points="625.2,287.5 645.3,309 655.5,292.5 	" />
+            <polygon
+              className="st1"
+              points="627.7,315.8 645.3,309 625.2,287.5 	"
+            />
+            <polygon
+              className="st31"
+              points="625.2,287.5 645.3,309 655.5,292.5 	"
+            />
             <polygon
               className="st113"
               points="534.8,329.3 585.2,314.4 557,320.3 	"
             />
-            <polygon className="st32" points="557,320.3 585.2,314.4 554.1,315.5 	" />
-            <polygon className="st92" points="645.3,309 668,303.6 655.5,292.5 	" />
-            <polygon className="st28" points="560.2,312.7 585.2,314.4 567.9,301 	" />
+            <polygon
+              className="st32"
+              points="557,320.3 585.2,314.4 554.1,315.5 	"
+            />
+            <polygon
+              className="st92"
+              points="645.3,309 668,303.6 655.5,292.5 	"
+            />
+            <polygon
+              className="st28"
+              points="560.2,312.7 585.2,314.4 567.9,301 	"
+            />
             <polygon
               className="st40"
               points="554.1,315.5 585.2,314.4 560.2,312.7 	"
             />
-            <polygon className="st88" points="567.9,301 585.2,314.4 596.9,295.7 	" />
+            <polygon
+              className="st88"
+              points="567.9,301 585.2,314.4 596.9,295.7 	"
+            />
             <polygon
               className="st55"
               points="797.7,177.6 777.6,179.7 783.9,189.1 	"
@@ -2948,12 +3769,27 @@ const Hands = () => {
               className="st41"
               points="654.5,219.3 645.1,215.6 636.1,226.6 	"
             />
-            <polygon className="st0" points="135.3,442.6 123.3,478.8 86,483.7 	" />
+            <polygon
+              className="st0"
+              points="135.3,442.6 123.3,478.8 86,483.7 	"
+            />
             <polygon className="st0" points="31,433.5 70.5,416.5 80.1,390.5 	" />
-            <polygon className="st18" points="52.1,398 18.1,432.1 18.7,400.1 	" />
-            <polygon className="st2" points="75.2,434.4 15.6,490.7 28.6,453.7 	" />
-            <polygon className="st42" points="66.2,475.8 75.2,434.4 112.4,419.1 	" />
-            <polygon className="st0" points="65.5,523.1 77.2,504.6 42.6,516.9 	" />
+            <polygon
+              className="st18"
+              points="52.1,398 18.1,432.1 18.7,400.1 	"
+            />
+            <polygon
+              className="st2"
+              points="75.2,434.4 15.6,490.7 28.6,453.7 	"
+            />
+            <polygon
+              className="st42"
+              points="66.2,475.8 75.2,434.4 112.4,419.1 	"
+            />
+            <polygon
+              className="st0"
+              points="65.5,523.1 77.2,504.6 42.6,516.9 	"
+            />
           </g>
         </svg>
       </div>

@@ -5,18 +5,13 @@ import Hands from "./hands"
 import SliderPopup from "../components/slider-popup"
 
 const HomeAboutUs = ({ windowEl, data, sliderData }) => {
-  
-
   return (
     <>
-      <section
-        className="items-center flex flex-col overflow-hidden"
-      >
+      <section className="items-center flex flex-col overflow-hidden">
         <div className="text-animation-container bg-blue-100 self-stretch">
           <div className="slider-container">
-        <SliderPopup windowEl={windowEl} data={sliderData}/>
-      </div>
-
+            <SliderPopup windowEl={windowEl} data={sliderData} />
+          </div>
         </div>
         <div
           className="sqaured-content  w-auto md:w-9/12 lg:w-3/5 flex flex-col bg-white mx-4 md:mx-0"

@@ -3,13 +3,12 @@ import "./component.css"
 import { PropTypes } from "prop-types"
 import useMeasure from "react-use-measure"
 
-const CircleSlider = ({ data, direction }) => {
+const CircleSlider = ({ data, windowEl }) => {
   const [rotateDeg, setRotation] = useState(0)
   const [currentActive, setActive] = useState(0)
   const [ref, bounds] = useMeasure()
 
-  const isRight = false;
-
+  const isRight = false
 
   const circlePositions = {
     2: [
@@ -53,21 +52,22 @@ const CircleSlider = ({ data, direction }) => {
     ],
   }
 
-
   let dimension =
-    bounds.width < bounds.height
-      ? bounds.width - 10
-      : bounds.height - 10
+    windowEl.width < windowEl.height ? window.width - 10 : windowEl.height - 10;
 
+    
   const cicleCount = data.slides.length
   const circles = []
   const circleSlides = []
   const heading = []
   const toRotate = 360 / cicleCount
-  let circleDimension;
-  if(bounds.width < 768) {
+  let circleDimension
+  if (bounds.width < 768) {
     circleDimension = 70
-  } else if (bounds.height > bounds.width) {
+  } else if(bounds.width < 1025 && bounds.width > 767){
+    circleDimension = 50
+  }
+  else if (bounds.height > bounds.width) {
     circleDimension = bounds.height / 20
   } else {
     circleDimension = bounds.width / 55
@@ -121,7 +121,8 @@ const CircleSlider = ({ data, direction }) => {
           style={{
             transform:
               i === currentActive
-                ? `rotate(${(360 / cicleCount) * (currentActive) + (isRight ? +90 : -90) }deg)`
+                ? `rotate(${(360 / cicleCount) * currentActive +
+                    (isRight ? +90 : -90)}deg)`
                 : `none`,
           }}
         />
@@ -137,32 +138,36 @@ const CircleSlider = ({ data, direction }) => {
         <h5 className="primary-title mb-5 md:text-3xl lg:text-4xl text-blue-100 leading-snug tracking-tight">
           {slide.heading}
         </h5>
-        {/* <h6 className="secondary-title text-xl mb-5 leading-snug tracking-tight">{slide.sub_heading}</h6> */}
-        <p className="text-gray-100 w-10/12 2xl:w-8/12 tracking-body">{slide.content}</p>
+        <p className="text-gray-100 w-10/12 2xl:w-8/12 tracking-body">
+          {slide.content}
+        </p>
       </div>
     )
   })
 
   return (
     <>
-      <section className="min-h-screen circle-slider flex items-center flex-col lg:flex-row" ref={ref}>
-        <div className={`w-auto lg:w-3/6 
-        ${isRight ? 'order-2' : ''}
-        `}>
+      <section
+        className="min-h-screen circle-slider flex items-center flex-col xl:flex-row"
+        ref={ref}
+      >
+        <div
+          className={`w-auto xl:w-3/6 
+        ${isRight ? "order-2" : ""}
+        `}
+        >
           <div
             className={`transform rotate-90 relative`}
             style={{
               height: dimension >= 0 ? dimension : 600,
               width: dimension >= 0 ? dimension : 600,
-              transform:
-                isRight ?
-                bounds.width > 767 && bounds.width < 1024
-                ? `translateX(65%)rotate(-90deg)`
-                : `translate(50%)rotate(-90deg)`
-                 :
-                 bounds.width > 767 && bounds.width < 1024
-                  ? `translateX(-65%)rotate(90deg)`
-                  : `translate(-50%)rotate(90deg)`,
+              transform: isRight
+                ? bounds.width > 767 && bounds.width < 1024
+                  ? `translateX(65%)rotate(-90deg)`
+                  : `translate(50%)rotate(-90deg)`
+                : bounds.width > 767 && bounds.width < 1024
+                ? `translateX(-65%)rotate(90deg)`
+                : `translate(-50%)rotate(90deg)`,
             }}
           >
             <div
@@ -180,7 +185,7 @@ const CircleSlider = ({ data, direction }) => {
           </div>
         </div>
 
-        <div className="w-auto md:m-full lg-3/6 ml-4 lg:ml-0">
+        <div className="w-auto md:m-full xl:w-3/6 ml-4 lg:ml-0">
           <div className="title-block flex  mt-5 mb-3 md:mb-0  md:mt-0">
             <span className="section-title text-3xl md:text-5xl lg:text-6xl text-blue-100 block">
               {currentActive < 9
@@ -192,14 +197,23 @@ const CircleSlider = ({ data, direction }) => {
             </h2>
           </div>
           <div className="mb-5 md:mb-8">
-              <p className="text-gray-100 w-11/12 2xl:w-9/12 tracking-body pl-4 pr-6">{data.description}</p>
+            <p className="text-gray-100 w-11/12 2xl:w-9/12 tracking-body pl-4 pr-6">
+              {data.description}
+            </p>
           </div>
-          <div className={`arrow-block flex ${isRight ? 'justify-between ml-8' : ''}`}>
-            <div className={`arrow-buttons ${isRight ? 'order-2' : ''}`}>
+          <div
+            className={`arrow-block flex ${
+              isRight ? "justify-between ml-8" : ""
+            }`}
+          >
+            <div className={`arrow-buttons ${isRight ? "order-2" : ""}`}>
               <div className="processBlock__navSteps">
                 <div
                   className="ms-transition__line-2 prevNextBttn needClick top"
-                  onClick={rotateDown} onKeyDown={rotateDown} role="button" tabIndex={0}
+                  onClick={rotateDown}
+                  onKeyDown={rotateDown}
+                  role="button"
+                  tabIndex={0}
                 >
                   <div className="prevNextBttn__bg"></div>
                   <svg
@@ -229,7 +243,10 @@ const CircleSlider = ({ data, direction }) => {
                 </div>
                 <div
                   className="ms-transition__line-3 prevNextBttn needClick bottom"
-                  onClick={rotateUp} onKeyDown={rotateUp} role="button" tabIndex={0}
+                  onClick={rotateUp}
+                  onKeyDown={rotateUp}
+                  role="button"
+                  tabIndex={0}
                 >
                   <div className="prevNextBttn__bg"></div>
                   <svg
@@ -269,11 +286,11 @@ const CircleSlider = ({ data, direction }) => {
 }
 
 CircleSlider.propTypes = {
-  direction: PropTypes.string
+  direction: PropTypes.string,
 }
 
 CircleSlider.defaultProps = {
-  direction: `left`
+  direction: `left`,
 }
 
 export default CircleSlider

@@ -12,50 +12,49 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
-      <div
-              key={`loader`}
-              id="___loader"
-              style={{
-                backgroundColor: "#F2F2F2",
-                display: "flex",
-                position: "fixed",
-                width: "100vw",
-                height: "100vh",
-                left: 0,
-                top: 0,
-                right: 0,
-                bottom: 0,
-                zIndex: 1,
-              }}
-           >
-              <Loader/>
+        <div
+          key={`loader`}
+          id="___loader"
+          style={{
+            backgroundColor: "#F2F2F2",
+            display: "flex",
+            position: "fixed",
+            width: "100vw",
+            height: "100vh",
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 9999,
+          }}
+        >
+          <Loader />
 
-
-              <div style={{
-                width: "100%",
-                height: "5px",
-                position: "absolute",
-                bottom: "30px",
-                background: '#1a1a1a',
-                zIndex: 9999,
-                
-              }}>
-              <div id="loader-counter"
+          <div
+            style={{
+              width: "100%",
+              height: "5px",
+              position: "fixed",
+              bottom: "30px",
+              background: "#1a1a1a",
+              zIndex: 9999,
+            }}
+          >
+            <div
+              id="loader-counter"
               style={{
                 width: "10%",
                 zIndex: 9999,
                 height: "100%",
-                background:"#5566ff",
+                background: "#5566ff",
               }}
-              >
-                
-              </div>
-              </div>
-              </div>
-
+            ></div>
+          </div>
+        </div>
 
         {props.preBodyComponents}
         <div

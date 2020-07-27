@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import Slider from "react-slick";
+import React, { useState } from "react"
+import Slider from "react-slick"
 
 const VerticalSlider = ({ data, windowEl }) => {
   const slides = data.slides
@@ -14,30 +14,28 @@ const VerticalSlider = ({ data, windowEl }) => {
     setActive(i)
   }
 
-
   const carouselSettings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false
-  };
+    arrows: false,
+  }
   const radius = windowEl.width > windowEl.height ? `30vw` : `30vh`
 
   slides.forEach((e, i) => {
     mobileSlides.push(
-      <div
-        key={i}
-        className="p-4"
-      >
+      <div key={i} className="p-4">
         <img
-            src={process.env.GATSBY_API_URL+e.image.url}
-            width="80%"
-            alt=""
-            className ="mb-8 mx-auto"
-          />
-        <h5 className="text-white font-display text-3xl mb-8">{e.title}</h5>
+          src={process.env.GATSBY_API_URL + e.image.url}
+          width="80%"
+          alt=""
+          className="mb-8 mx-auto"
+        />
+        <h5 className="text-white font-display text-3xl text-center mb-8">
+          {e.title}
+        </h5>
         <p className="text-white tracking-body text-left">{e.content}</p>
       </div>
     )
@@ -45,9 +43,13 @@ const VerticalSlider = ({ data, windowEl }) => {
       <div
         key={i}
         className={`vertical-slider-content ${i === active ? "active" : ""}`}
-        
       >
-        <h5 className="text-white font-display text-3xl mb-3" onMouseOver={() => handleHover(i)}>{e.title}</h5>
+        <h5
+          className="text-white font-display text-3xl mb-3"
+          onMouseOver={() => handleHover(i)}
+        >
+          {e.title}
+        </h5>
         <p className="text-white tracking-body">{e.content}</p>
       </div>
     )
@@ -71,7 +73,7 @@ const VerticalSlider = ({ data, windowEl }) => {
           }}
         >
           <img
-            src={process.env.GATSBY_API_URL+ e.image.url}
+            src={process.env.GATSBY_API_URL + e.image.url}
             alt=""
             style={{
               opacity: i === active ? 1 : 0,
@@ -83,37 +85,32 @@ const VerticalSlider = ({ data, windowEl }) => {
     )
   })
 
-
-
- 
-
   return (
     <section className="vertical-slider bg-black min-h-screen overflow-hidden w-full">
-      {!isMobile && <div className="vertical-slider-wrapper flex min-h-screen items-center w-9/12 m-auto">
-        <div className="w-3/5 pr-16 my-12">
-          <div className="vertical-content-container">
-            <span
-              class="highlighter"
-              style={{
-                transform: `translateY(${active * 74}px)`,
-              }}
-            ></span>
-            {verticalLabels}
+      {!isMobile && (
+        <div className="vertical-slider-wrapper flex min-h-screen items-center w-9/12 m-auto">
+          <div className="w-3/5 pr-16 my-12">
+            <div className="vertical-content-container">
+              <span
+                class="highlighter"
+                style={{
+                  transform: `translateY(${active * 74}px)`,
+                }}
+              ></span>
+              {verticalLabels}
+            </div>
+          </div>
+          <div className="w-2/5 h-screen relative">
+            <div className="slides-container h-screen flex flex-col items-center">
+              <span className="circle-static"></span>
+              <span className="circle-static"></span>
+              {circleSlides}
+            </div>
           </div>
         </div>
-        <div className="w-2/5 h-screen relative">
-          <div className="slides-container h-screen flex flex-col items-center">
-            <span className="circle-static"></span>
-            <span className="circle-static"></span>
-            {circleSlides}
-          </div>
-        </div>
-      </div>}
+      )}
 
-      {isMobile && <Slider {...carouselSettings}>
-          {mobileSlides}
-        </Slider>
-        }
+      {isMobile && <Slider {...carouselSettings}>{mobileSlides}</Slider>}
     </section>
   )
 }
