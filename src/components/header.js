@@ -43,13 +43,16 @@ const Header = ({ siteTitle, hideHamburger, lightHeader }) => {
               {!lightHeader && (
                 <img
                   src={`${process.env.GATSBY_API_URL}/uploads/logo_db79c79ed5.png`}
-                  alt="logo"
+                  alt="Whizwafture Logo"
+                  title="Whizwafture"
                 />
               )}
               {lightHeader && (
                 <img
                   src={`${process.env.GATSBY_API_URL}/uploads/fial_logo_01_a0ada17518.png`}
-                  alt="logo"
+                  alt="Whizwafture Logo"
+                  title="Whizwafture"
+                  
                 />
               )}
             </Link>

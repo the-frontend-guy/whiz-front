@@ -26,7 +26,7 @@ const AnimatedCursor = ({ location }) => {
   
   let innerSize = 10
   let outerSize = 30
-  let outerScale = 4
+  let outerScale = 3
   let innerScale = 1
 
   const cursorOuterRef = React.useRef()

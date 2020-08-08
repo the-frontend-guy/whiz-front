@@ -2,11 +2,12 @@ import React, { useState } from "react"
 import "./component.css"
 import { PropTypes } from "prop-types"
 import useMeasure from "react-use-measure"
+import { ResizeObserver } from '@juggle/resize-observer'
 
 const CircleSlider = ({ data, windowEl }) => {
   const [rotateDeg, setRotation] = useState(0)
   const [currentActive, setActive] = useState(0)
-  const [ref, bounds] = useMeasure()
+  const [ref, bounds] = useMeasure({ polyfill: ResizeObserver })
 
   const isRight = false
 
@@ -148,7 +149,7 @@ const CircleSlider = ({ data, windowEl }) => {
   return (
     <>
       <section
-        className="min-h-screen circle-slider flex items-center flex-col xl:flex-row"
+        className="min-h-screen circle-slider flex items-center overflow-hidden flex-col xl:flex-row"
         ref={ref}
       >
         <div

@@ -3,12 +3,14 @@ import "./component.css"
 import { useTrail, animated, useSpring } from "react-spring"
 import useMeasure from "react-use-measure"
 import { Link } from "gatsby"
+import { ResizeObserver } from '@juggle/resize-observer'
+
 const FixedSlider = ({ windowEl, data }) => {
   const sliderRef = React.useRef(null)
   const sectionRef = React.useRef(null)
 
   const [section, setSection] = useState()
-  const [ref, bounds] = useMeasure()
+  const [ref, bounds] = useMeasure({ polyfill: ResizeObserver })
 
   const totalSlide = data.slides.length
   let currentSlide = 0

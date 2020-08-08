@@ -77,8 +77,8 @@ const SliderPopup = ({ data, windowEl }) => {
     }
     let percent = (screenPos / window.innerWidth) * 30
 
-    setAnimation(percent - 20)
-    setMove({customMoveX: e.pageY - 75, customMoveY: e.pageX - 75})
+    setAnimation(-(percent - 10))
+    setMove({customMoveX: e.pageX - 75, customMoveY: e.pageY - 75})
   }
 
   return (
