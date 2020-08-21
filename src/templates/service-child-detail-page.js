@@ -11,6 +11,7 @@ import ImageGrid from "../components/image-grid"
 import NextPage from "../components/next-page"
 import HomeContact from "../components/home-contact"
 import HorizontalSlider from "../components/horizontal-slider"
+import BlogList from "../components/blog-list"
 
 const ServiceChildDetailPage = ({ data, pageContext }) => {
   const [headerOffset, changeHeader] = useState(0)
@@ -67,6 +68,10 @@ const ServiceChildDetailPage = ({ data, pageContext }) => {
         data={data.allStrapiPage.nodes}
         currentPage={pageContext.pageId}
       />
+      <BlogList
+            query={{ category: "web-development" }}
+            isOtherPage={true}
+          />
       <HomeContact
         data={data.strapiServiceChildDetails.form_content}
         overlap={false}

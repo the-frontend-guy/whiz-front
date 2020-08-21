@@ -1,17 +1,17 @@
 import React from "react"
 
-const SocialIcons = ({ isDark }) => {
+const SocialIcons = ({ isDark, isBlog }) => {
   return (
     <>
       <div
-        className={`social-icon-container flex  ${
+        className={`social-icon-container flex items-center  ${
           isDark ? "dark" : "justify-start lg:justify-end"
         }`}
       >
         <a
           href="https://www.facebook.com/WhizWaftureLLP"
           target="_blank" rel="noopener noreferrer"
-          className="inline-block w-6 h-6"
+          className={`inline-block  ${isBlog ? 'ml-3 w-4 h-4 opacity-50' : 'ml-8 w-6 h-6'}`}
         >
           <img
             src={`${process.env.GATSBY_API_URL}/uploads/facebook_black_7e12645796.svg`}
@@ -25,7 +25,7 @@ const SocialIcons = ({ isDark }) => {
         <a
           href="https://www.instagram.com/whizwafture/"
           target="_blank" rel="noopener noreferrer"
-          className="inline-block w-6 h-6  ml-8"
+          className={`inline-block  ${isBlog ? 'ml-3 w-4 h-4 opacity-50' : 'ml-8 w-6 h-6'}`}
         >
           <img
             src={`${process.env.GATSBY_API_URL}/uploads/instagram_black_bef14512b7.svg`}
@@ -39,7 +39,7 @@ const SocialIcons = ({ isDark }) => {
         <a
           href="https://linkedin.com/company/whizwafture"
           target="blank"
-          className="inline-block w-6 h-6 ml-8"
+          className={`inline-block  ${isBlog ? 'ml-3 w-4 h-4 opacity-50' : 'ml-8 w-6 h-6'}`}
         >
           <img
             src={`${process.env.GATSBY_API_URL}/uploads/linkedin_black_de6e7aec03.svg`}
@@ -53,7 +53,7 @@ const SocialIcons = ({ isDark }) => {
         <a
           href="https://twitter.com/WhizWaftureLLP"
           target="_blank" rel="noopener noreferrer"
-          className="inline-block w-6 h-6 ml-8"
+          className={`inline-block  ${isBlog ? 'ml-3 w-4 h-4 opacity-50' : 'ml-8 w-6 h-6'}`}
         >
           <img
             src={`${process.env.GATSBY_API_URL}/uploads/twitter_black_ac5facf836.svg`}
@@ -68,7 +68,7 @@ const SocialIcons = ({ isDark }) => {
         <a
           href="https://dribbble.com/whizwafture"
           target="_blank" rel="noopener noreferrer"
-          className="inline-block w-6 h-6 ml-8"
+          className={`inline-block  ${isBlog ? 'ml-3 w-4 h-4 opacity-50' : 'ml-8 w-6 h-6'}`}
         >
           <img
             src={`${process.env.GATSBY_API_URL}/uploads/dribble_black_15591289d2.svg`}

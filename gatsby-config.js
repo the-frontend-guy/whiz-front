@@ -28,13 +28,17 @@ module.exports = {
           "service-details",
           "service-child-details",
           "page",
+          // "blogs",
+          // "blog-tags",
+          "blog-categories",
         ],     
         singleTypes: [
           "home-data",
           "contact-us",
-          "aboutus-data"
+          "aboutus-data",
+          "blog-page"
         ],
-        queryLimit: 1000,
+        queryLimit: 100,
       },
     },
     `gatsby-transformer-sharp`,

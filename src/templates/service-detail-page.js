@@ -12,7 +12,7 @@ import CanvasOverlay from "../components/canvas-overlay"
 import HomeContact from "../components/home-contact"
 import NextPage from "../components/next-page"
 import VerticalSlider from "../components/vertical-slider"
-
+import BlogList from "../components/blog-list"
 const ServiceDetailPage = ({ data, pageContext }) => {
   const [headerOffset, changeHeader] = useState(0)
 
@@ -72,6 +72,10 @@ const ServiceDetailPage = ({ data, pageContext }) => {
         data={data.allStrapiPage.nodes}
         currentPage={pageContext.pageId}
       />
+      <BlogList
+            query={{ category: "web-development" }}
+            isOtherPage={true}
+          />
       <HomeContact
         data={data.strapiServiceDetails.form_content}
         overlap={false}

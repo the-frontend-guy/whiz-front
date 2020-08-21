@@ -9,6 +9,8 @@ import CanvasOverlay from "../components/canvas-overlay"
 import HorizontalSlider from "../components/horizontal-slider"
 import CircleSlider from "../components/circle-slider"
 import HomeFormBanner from "../components/home-form-banner"
+import BlogList from "../components/blog-list"
+
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 
@@ -62,7 +64,16 @@ const IndexPage = ({ data }) => {
       />
       <CanvasOverlay windowEl={windowInfo} data={data.strapiHomeData.overlay} />
       <HomeFormBanner data={data.strapiHomeData.overlay} />
-      <HomeContact data={data.strapiHomeData.form_content} />
+      <div className="flex flex-col relative">
+        <div className="wrapper self-end w-full mt-0 md:w-4/5 bg-white">
+          <BlogList
+            query={{ category: "all" }}
+            isOtherPage={true}
+            isHomePage={true}
+          />
+        </div>
+      </div>
+      <HomeContact data={data.strapiHomeData.form_content} overlap={false} />
     </Layout>
   )
 }
