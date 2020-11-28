@@ -131,12 +131,14 @@ const FixedSlider = ({ windowEl, data }) => {
           <img
             src={process.env.GATSBY_API_URL + slide.inactive_icon.url}
             className="icon-base"
-            alt=""
+            title={slide.inactive_icon.caption}
+            alt={slide.inactive_icon.alternativeText}
           />
           <img
             src={process.env.GATSBY_API_URL + slide.active_icon.url}
             className="icon-active"
-            alt=""
+            title={slide.active_icon.caption}
+            alt={slide.active_icon.alternativeText}
           />
         </figure>
         <span className="slide-card-body">

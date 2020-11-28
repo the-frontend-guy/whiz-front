@@ -9,11 +9,9 @@ import BlogList from "../components/blog-list"
 import BlogInner from "../components/blog-inner"
 
 const BlogPage = ({ data, location }) => {
-  console.log(location);
   const locationParams = location.pathname.split("/")
   let blogSlug =  "";
   const currentCategory = location.state ? location.state.category : "all"
-  console.log(currentCategory);
 
   if(locationParams.length === 3){
     blogSlug = locationParams[2];
@@ -23,6 +21,7 @@ const BlogPage = ({ data, location }) => {
 
   return (
     <Layout>
+
       <BlogNavigation
         data={data.allStrapiBlogCategories.nodes}
         activeLink={currentCategory}

@@ -38,7 +38,7 @@ const AboutUsPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="about-us" />
+      <SEO title={data.strapiPage.title} description={data.strapiPage.description} />
       <AboutUsBanner data={data.strapiAboutusData.banner} />
       <AboutUsMain
         windowEl={windowInfo}
@@ -105,6 +105,13 @@ export const query = graphql`
         form_description
       }
     }
+
+   
+    strapiPage(slug: {eq: "about-us"}) {
+      title
+      description
+    }
+    
   }
 `
 

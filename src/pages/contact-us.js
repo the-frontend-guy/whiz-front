@@ -16,7 +16,9 @@ const ContactPage = ({ data }) => {
   })
   return (
     <Layout>
-      <SEO title="contact-us" />
+      
+      <SEO title={data.strapiPage.title} description={data.strapiPage.description} />
+
 
       <section className="contact-us bg-black">
         <div className="desc text-left md:text-center mb-8">
@@ -58,6 +60,11 @@ export const query = graphql`
         title
         id
       }
+    }
+
+    strapiPage(slug: {eq: "contact-us"}) {
+      title
+      description
     }
   }
 `

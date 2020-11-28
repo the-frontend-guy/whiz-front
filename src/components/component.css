@@ -1234,6 +1234,55 @@ section.hero {
   background-color: #dfe2f7;
 }
 
+.blog-content-parse > * {
+  margin-bottom: 10px;
+}
+
+.blog-content-parse h1 {
+  font-weight: bold;
+  font-size: 2.6rem;
+}
+
+.blog-content-parse h2 {
+  font-weight: bold;
+  font-size: 2.3rem;
+}
+
+.blog-content-parse h3 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.blog-content-parse h4 {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.blog-content-parse h5 {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.blog-content-parse h6 {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.blog-content-parse strong{
+  font-weight: bold;
+}
+
+.blog-content-parse > img {
+  max-width: 90%;
+  margin: auto;
+}
+
+.blog-content-parse blockquote
+ {
+  text-align: center;
+  font-weight: bold;
+}
+
 .skeleton {
   overflow: hidden;
 }

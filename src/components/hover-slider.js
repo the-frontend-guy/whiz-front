@@ -38,7 +38,7 @@ const HoverSlider = ({ data }) => {
         }`}
       >
         <figure className="hidden md:block">
-          <img src={process.env.GATSBY_API_URL + e.img.url} alt="" />
+          <img src={process.env.GATSBY_API_URL + e.img.url} alt={e.img.alternativeText} title={e.img.caption}/>
         </figure>
         <ul>
           {e.slider_text &&

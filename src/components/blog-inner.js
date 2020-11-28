@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import { navigate, Link } from "gatsby"
-import ReactMarkdown from "react-markdown"
+import parser from "html-react-parser"
 import BlogCard from "./blog-card"
 import SocialIcons from "./social-icons"
 import Moment from "react-moment"
 
 const BlogInner = ({ query }) => {
-  console.log(query)
   const blogUrl = `${process.env.GATSBY_API_URL}/blogs`
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setError] = useState(false)
@@ -62,7 +61,8 @@ const BlogInner = ({ query }) => {
           <img
             src={process.env.GATSBY_API_URL + data.blogData.image.url}
             className="icon-base"
-            alt=""
+            title={data.blogData.image.caption}
+            alt={data.blogData.image.alternativeText}
           />
 
           <div className="secondary-title  text-lg my-8 text-blue-100">
@@ -89,8 +89,8 @@ const BlogInner = ({ query }) => {
               <SocialIcons isBlog={true} />
             </div>
           </div>
-          <div className="mb-12">
-            <ReactMarkdown source={data.blogData.content} />
+          <div className="mb-12 blog-content-parse">
+            {parser(data.blogData.content)}
           </div>
           {data.blogData.blog_tags.length && (
             <div className="tags">
@@ -111,7 +111,8 @@ const BlogInner = ({ query }) => {
                     <img
                       src={process.env.GATSBY_API_URL + data.prev.image.url}
                       className="icon-base"
-                      alt=""
+                      alt={data.prev.image.alternativeText}
+                      title={data.prev.image.caption}
                     />
                     <Link
                       to={`/blog/${data.prev.slug}`}
@@ -142,7 +143,8 @@ const BlogInner = ({ query }) => {
                     <img
                       src={process.env.GATSBY_API_URL + data.next.image.url}
                       className="icon-base"
-                      alt=""
+                      title={data.next.image.caption}
+                      alt={data.next.image.alternativeText}
                     />
                   </div>
                   <h4 className="secondary-title  text-lg text-right">

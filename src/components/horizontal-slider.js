@@ -53,7 +53,7 @@ const HorizontalSlider = ({ windowEl, data }) => {
       <div className="h-slides-container" key={slide.id}>
         <div className="h-slide">
           <figure className="mb-10">
-            <img src={process.env.GATSBY_API_URL + slide.image.url} alt="" />
+            <img src={process.env.GATSBY_API_URL + slide.image.url} title={slide.image.caption} alt={slide.image.alternativeText} />
           </figure>
           <span
             className={`text-white font-display text-3xl ${

@@ -46,7 +46,7 @@ const ServiceDetailPage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={pageContext.pageInfo.title} />
+      <SEO title={pageContext.pageInfo.title} description={pageContext.pageInfo.description} />
       <Navigation
         data={data.allStrapiPage.nodes}
         active={pageContext.pageId}

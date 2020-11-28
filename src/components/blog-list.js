@@ -64,14 +64,16 @@ const BlogList = ({ query, loadMore, isOtherPage, isHomePage }) => {
       .get(`${blogUrl}${queryConstructor(query)}`)
       .catch(e => setError(true))
     setIsLoading(false)
-    console.log(query)
-    if (query.category && query.category !== category) {
+    console.log(res);
+    if(res.count && res.articles){
+    if (query.category && query.category !== category ) {
       setBlogs(res.data.articles)
     } else {
       setBlogs([...blogs, ...res.data.articles])
     }
 
     setCount(res.data.count)
+  }
   }
   useEffect(() => {
     if (category && category === query.category) {
@@ -88,11 +90,12 @@ const BlogList = ({ query, loadMore, isOtherPage, isHomePage }) => {
     }
   }
 
+
   return (
     <div className="w-auto  mx-4 md:mx-auto md:w-11/12 xl:w-10/12 2xl:w-9/12">
       <div className="block">
         {!blogs.length && isLoading && <div>{blogListSkeleton}</div>}
-        {blogs.length && blogs.map(e => <BlogCard data={e} />)}
+        {blogs.length > 1 && blogs.map(e => <BlogCard data={e} />)}
       </div>
       {loadMore && blogs.length < count && (
         <div className="text-center">
@@ -110,7 +113,7 @@ const BlogList = ({ query, loadMore, isOtherPage, isHomePage }) => {
         </div>
       )}
 
-      {isOtherPage && blogs.length && (
+      {isOtherPage && blogs.length > 1 && (
         <div className="text-right">
           <Link
             to={`/blog`}

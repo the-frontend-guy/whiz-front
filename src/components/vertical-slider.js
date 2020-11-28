@@ -30,7 +30,8 @@ const VerticalSlider = ({ data, windowEl }) => {
         <img
           src={process.env.GATSBY_API_URL + e.image.url}
           width="80%"
-          alt=""
+          alt={e.image.alternativeText}
+          title={e.image.caption}
           className="mb-8 mx-auto"
         />
         <h5 className="text-white font-display text-3xl text-center mb-8">
@@ -74,7 +75,8 @@ const VerticalSlider = ({ data, windowEl }) => {
         >
           <img
             src={process.env.GATSBY_API_URL + e.image.url}
-            alt=""
+            alt={e.image.alternativeText}
+            title={e.image.caption}
             style={{
               opacity: i === active ? 1 : 0,
               transition: `all .5s ease-in-out`,

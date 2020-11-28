@@ -17,12 +17,14 @@ exports.createPages = async ({ graphql, actions }) => {
           strapiId
           order
           title
+          description
           strapiParent {
             id
             name
             slug
             order
             title
+            description
           }
           strapiChildren {
             name
@@ -30,6 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             slug
             title
+            description
           }
           service_child_detail {
             id

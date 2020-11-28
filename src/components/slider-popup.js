@@ -37,6 +37,8 @@ const SliderPopup = ({ data, windowEl }) => {
           <div className="image-card">
           <img
                   src={process.env.GATSBY_API_URL+ element.mobile_image.url}
+                  alt={element.mobile_image.alternativeText}
+                  title={element.mobile_image.caption}
                 />
           </div>
           <span
@@ -160,6 +162,8 @@ const SliderPopup = ({ data, windowEl }) => {
               <div className="hidden md:block image-container w-full md:w-2/6">
                 <img
                   src={process.env.GATSBY_API_URL+ popupData.image.url}
+                  alt={popupData.image.alternativeText}
+                  title={popupData.image.caption}
                 />
               </div>
             </div>

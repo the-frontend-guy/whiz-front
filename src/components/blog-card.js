@@ -11,7 +11,8 @@ const BlogCard = ({ data }) => {
       <img
         src={process.env.GATSBY_API_URL + data.image.url}
         className="icon-base"
-        alt=""
+        title={data.image.caption}
+        alt={data.image.alternativeText}
       />
       <div className="blog-card-wrapper p-8">
         <div className="secondary-title  text-lg mb-5 text-blue-100">{data.blog_category.title}</div>

@@ -42,7 +42,8 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title={data.strapiPage.title} description={data.strapiPage.description} />
+
       <VideoContainer data={data.strapiHomeData.banner} windowEl={windowInfo} />
       <HomeAboutUs
         windowEl={windowInfo}
@@ -102,9 +103,13 @@ export const query = graphql`
         popup_title
         image {
           url
+          caption
+          alternativeText
         }
         mobile_image {
           url
+          caption
+          alternativeText
         }
         content {
           title
@@ -123,6 +128,8 @@ export const query = graphql`
           id
           image {
             url
+            caption
+            alternativeText
           }
         }
         theme
@@ -174,6 +181,8 @@ export const query = graphql`
           title
           image {
             url
+            caption
+            alternativeText
           }
         }
         theme
@@ -191,6 +200,11 @@ export const query = graphql`
         }
         vertical_text
       }
+    }
+
+    strapiPage(slug: {eq: "/"}) {
+      title
+      description
     }
   }
 `

@@ -118,7 +118,8 @@ const CircleSlider = ({ data, windowEl }) => {
       >
         <img
           src={process.env.GATSBY_API_URL + slide.image.url}
-          alt=""
+          alt={slide.image.alternativeText}
+          title={slide.image.caption}
           style={{
             transform:
               i === currentActive

@@ -21,7 +21,8 @@ const ImageGrid = ({ data }) => {
           <img
             src={process.env.GATSBY_API_URL + e.icon.url}
             className="icon-base"
-            alt=""
+            title={e.icon.caption}
+            alt={e.icon.alternativeText}
           />
         </figure>
         <h4 className="text-center lg:text-left font-bodyMedium">{e.title}</h4>
