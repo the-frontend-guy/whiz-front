@@ -51,6 +51,7 @@ const ServiceList = ({ activeService, menu }) => (
                       menu ? "text-white" : ""
                     }`}
                     to={`/${page.slug}`}
+                    title={page.name}
                   >
                     {page.name}
                   </Link>
@@ -67,6 +68,7 @@ const ServiceList = ({ activeService, menu }) => (
                                   : "hover:text-blue-100"
                               }`}
                               to={`/${iPage.slug}`}
+                              title={iPage.name}
                             >
                               {iPage.name}
                             </Link>

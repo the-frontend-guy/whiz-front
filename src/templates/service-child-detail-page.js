@@ -13,7 +13,7 @@ import HomeContact from "../components/home-contact"
 import HorizontalSlider from "../components/horizontal-slider"
 import BlogList from "../components/blog-list"
 
-const ServiceChildDetailPage = ({ data, pageContext }) => {
+const ServiceChildDetailPage = ({ data, pageContext, location }) => {
   const [headerOffset, changeHeader] = useState(0)
   const initData = {
     scrollX: typeof window !== `undefined` ? window.scrollX : 0,
@@ -46,7 +46,7 @@ const ServiceChildDetailPage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={pageContext.pageInfo.title} description={pageContext.pageInfo.description} />
+      <SEO title={pageContext.pageInfo.title} description={pageContext.pageInfo.description} location={location} />
       <Navigation
         data={data.allStrapiPage.nodes}
         active={pageContext.pageId}

@@ -21,6 +21,7 @@ const BlogPage = ({ data, location }) => {
 
   return (
     <Layout>
+      <SEO title={data.strapiPage.title} description={data.strapiPage.description} location={location} />
 
       <BlogNavigation
         data={data.allStrapiBlogCategories.nodes}
@@ -50,6 +51,11 @@ export const query = graphql`
         content
         heading
       }
+    }
+
+    strapiPage(slug: {eq: "blog"}) {
+      title
+      description
     }
   }
 `

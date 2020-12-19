@@ -27,6 +27,7 @@ const NextPage = ({ data, currentPage, nextPageData }) => {
         <section className="h-auto min-h-0">
           <Link
             to={`/${nextPage.slug}`}
+            title={nextPage.name}
             className="block text-center py-16 md:py-40"
           >
             <span className="uppercase block text-gray-300 text-2xl font-display mb-8">

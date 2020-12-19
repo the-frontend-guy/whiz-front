@@ -11,7 +11,7 @@ import NextPage from "../components/next-page"
 import HoverSlider from "../components/hover-slider"
 import HorizontalScroll from "../components/horizontal-scroll"
 
-const AboutUsPage = ({ data }) => {
+const AboutUsPage = ({ data,location }) => {
   const initData = {
     scrollX: typeof window !== `undefined` ? window.scrollX : 0,
     scrollY: typeof window !== `undefined` ? window.scrollY : 0,
@@ -38,7 +38,7 @@ const AboutUsPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={data.strapiPage.title} description={data.strapiPage.description} />
+      <SEO title={data.strapiPage.title} description={data.strapiPage.description} location={location} />
       <AboutUsBanner data={data.strapiAboutusData.banner} />
       <AboutUsMain
         windowEl={windowInfo}

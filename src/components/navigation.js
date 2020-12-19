@@ -17,6 +17,7 @@ const Navigation = ({ active, data, changeColor, windowEl }) => {
           <Link
             to={`/${list.slug}`}
             className="inline-block whitespace-no-wrap"
+            title={list.name}
           >
             {list.name}
           </Link>

@@ -13,7 +13,7 @@ import HomeContact from "../components/home-contact"
 import NextPage from "../components/next-page"
 import VerticalSlider from "../components/vertical-slider"
 import BlogList from "../components/blog-list"
-const ServiceDetailPage = ({ data, pageContext }) => {
+const ServiceDetailPage = ({ data, pageContext, location }) => {
   const [headerOffset, changeHeader] = useState(0)
 
   const initData = {
@@ -46,7 +46,7 @@ const ServiceDetailPage = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={pageContext.pageInfo.title} description={pageContext.pageInfo.description} />
+      <SEO title={pageContext.pageInfo.title} description={pageContext.pageInfo.description} location={location} />
       <Navigation
         data={data.allStrapiPage.nodes}
         active={pageContext.pageId}

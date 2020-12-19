@@ -14,7 +14,7 @@ import BlogList from "../components/blog-list"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const initData = {
     scrollX: typeof window !== `undefined` ? window.scrollX : 0,
     scrollY: typeof window !== `undefined` ? window.scrollY : 0,
@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={data.strapiPage.title} description={data.strapiPage.description} />
+      <SEO title={data.strapiPage.title} description={data.strapiPage.description} location={location}  />
 
       <VideoContainer data={data.strapiHomeData.banner} windowEl={windowInfo} />
       <HomeAboutUs

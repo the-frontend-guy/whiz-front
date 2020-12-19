@@ -64,7 +64,6 @@ const BlogList = ({ query, loadMore, isOtherPage, isHomePage }) => {
       .get(`${blogUrl}${queryConstructor(query)}`)
       .catch(e => setError(true))
     setIsLoading(false)
-    console.log(res);
     if(res.count && res.articles){
     if (query.category && query.category !== category ) {
       setBlogs(res.data.articles)

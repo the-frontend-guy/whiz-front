@@ -8,6 +8,7 @@ module.exports = {
     title: `Whizwafture`,
     description: `A creative web solution company | Mumbai`,
     author: `@whizwafture`,
+    siteURL: `https://www.whizwafture.com`
   },
 
   plugins: [

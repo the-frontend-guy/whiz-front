@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import ContactInfo from "../components/contact-info"
 
-const ContactPage = ({ data }) => {
+const ContactPage = ({ data, location }) => {
   const paragraphs = []
   data.strapiContactUs.tagline.forEach(e => {
     paragraphs.push(
@@ -17,7 +17,7 @@ const ContactPage = ({ data }) => {
   return (
     <Layout>
       
-      <SEO title={data.strapiPage.title} description={data.strapiPage.description} />
+      <SEO title={data.strapiPage.title} description={data.strapiPage.description} location={location} />
 
 
       <section className="contact-us bg-black">

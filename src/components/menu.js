@@ -48,6 +48,7 @@ const Menu = ({ activePage }) => {
                         className="text-4xl md:text-6xl text-left menu-link md:text-right overflow-hidden"
                         activeClassName="active"
                         to={`/${page.slug}`}
+                        title={page.name}
                       >
                         <span className={`menu-link-wrap block`}>
                           <span className="solid text-white block uppercase">

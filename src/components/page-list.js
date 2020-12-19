@@ -38,6 +38,7 @@ const PageList = ({ activePage }) => (
                     className="text-3xl md:text-4xl xl:text-5xl hover:text-blue-100"
                     activeClassName="active"
                     to={`/${page.slug}`}
+                    title={page.name}
                   >
                     {page.name}
                   </Link>
